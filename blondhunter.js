@@ -620,7 +620,7 @@
             '<h4 class="bh-tg-card-title">' + p.title + '</h4>' +
             '<p class="bh-tg-card-desc">' + p.desc + '</p>' +
             '<div class="bh-card-actions">' +
-              '<a href="' + p.url + '" onclick="window.location.href=\\'tg://resolve?domain=blondhunter' + (postId ? '&post=' + postId : '') + '\\';" target="_blank" rel="noopener" class="bh-card-btn-tg">Смотреть срез в Telegram →</a>' +
+              '<a href="' + p.url + '" target="_blank" rel="noopener" class="bh-card-btn-tg">Смотреть срез в Telegram →</a>' +
               '<a href="https://max.ru/u/f9LHodD0cOKu_NdSA68R7JlIWv1dBiiK_yoA5ITTmEVHTmQdiijwgmxBvBc" target="_blank" rel="noopener" class="bh-card-btn-max">Забронировать в MAX (без VPN)</a>' +
             '</div>' +
           '</div>';
@@ -629,14 +629,35 @@
         grid.innerHTML = cardsHtml;
       })
       .catch(function(err) {
-        // При ошибке остаются красивые дефолтные карточки
         console.log('Using default cards');
       });
   }
+
+  // Делегированный обработчик кликов по Telegram-ссылкам
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('t.me') !== -1) {
+      var match = href.match(/t\.me\/([^\/\?]+)(?:\/(\d+))?/);
+      if (match && match[1]) {
+        var domain = match[1];
+        var postId = match[2];
+        var deeplink = 'tg://resolve?domain=' + domain + (postId ? '&post=' + postId : '');
+        window.location.href = deeplink;
+      }
+    }
+  });
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', mount);
   } else {
     mount();
   }
+  // Дополнительная страховка: повторный вызов при полной загрузке страницы
+  window.addEventListener('load', function() {
+    if (!document.getElementById('blondhunter-wrapper')) {
+      mount();
+    }
+  });
 })();
