@@ -62,8 +62,8 @@ def main():
         print("No posts fetched.")
         return
 
-    # Take latest 9 posts
-    latest = all_posts[-9:]
+    # Take latest 13 posts
+    latest = all_posts[-13:]
     latest.reverse()
     
     clean_ru = []
@@ -138,7 +138,7 @@ def main():
             specs_en.append(f"€{price_eur.group(1)}")
 
         tag_ru = " • ".join(specs_ru) if specs_ru else "Детский блонд"
-        tag_en = " • ".join(specs_en) if specs_en else "Virgin Slavic Blonde"
+        tag_en = " • ".join(specs_en) if specs_ru else "Virgin Slavic Blonde"
 
         clean_lines = [l.strip() for l in text.split('\\n') if l.strip() and not l.startswith('http') and not 'whatsapp' in l.lower() and not 'telegram' in l.lower()]
         desc_ru = " ".join(clean_lines)[:140] if clean_lines else "Эксклюзивный срез детского славянского блонда."
@@ -179,7 +179,7 @@ def main():
         json.dump(clean_ru, f, ensure_ascii=False, indent=2)
     with open(posts_en_file, 'w', encoding='utf-8') as f:
         json.dump(clean_en, f, ensure_ascii=False, indent=2)
-    print("Updated 9 posts for both RU and EN!")
+    print("Updated 13 posts for both RU and EN in fetch_posts.py!")
 
 if __name__ == '__main__':
     main()
