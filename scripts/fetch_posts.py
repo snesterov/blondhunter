@@ -62,8 +62,8 @@ def main():
         print("No posts fetched.")
         return
 
-    # Take latest 13 posts
-    latest = all_posts[-13:]
+    # Take latest 12 posts
+    latest = all_posts[-12:]
     latest.reverse()
     
     clean_ru = []
@@ -179,7 +179,7 @@ def main():
         json.dump(clean_ru, f, ensure_ascii=False, indent=2)
     with open(posts_en_file, 'w', encoding='utf-8') as f:
         json.dump(clean_en, f, ensure_ascii=False, indent=2)
-    print("Updated 13 posts for both RU and EN in fetch_posts.py!")
+    print("Updated 12 posts for both RU and EN in fetch_posts.py!")
 
 if __name__ == '__main__':
     main()
