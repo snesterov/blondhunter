@@ -144,6 +144,42 @@
       .hp-quiz-opt.selected { background: rgba(198, 163, 85, 0.18); border-color: var(--hp-gold); color: #fff; }
       .hp-quiz-opt-val { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
       .hp-quiz-opt-desc { font-size: 11px; color: var(--hp-text-muted); }
+      .hp-tg-feed-section { padding: 50px 0 70px; border-top: 1px solid var(--hp-border-subtle); }
+      .hp-tg-badge {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: rgba(33, 150, 243, 0.12); border: 1px solid rgba(33, 150, 243, 0.4);
+        color: #90CAF9; padding: 6px 14px; border-radius: 30px; font-size: 12px;
+        font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px;
+      }
+      .hp-tg-badge span { width: 8px; height: 8px; border-radius: 50%; background: #2196F3; display: inline-block; }
+      .hp-feed-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 30px; }
+      .hp-feed-card {
+        background: var(--hp-dark-card); border: 1px solid var(--hp-border-subtle);
+        border-radius: 18px; overflow: hidden; display: flex; flex-direction: column;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+      }
+      .hp-feed-card:hover { transform: translateY(-4px); border-color: var(--hp-border); }
+      .hp-feed-media { position: relative; height: 320px; background: #000; overflow: hidden; }
+      .hp-feed-thumb { width: 100%; height: 100%; object-fit: cover; }
+      .hp-feed-video-badge {
+        position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.7);
+        backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2);
+        color: #fff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px;
+        display: inline-flex; align-items: center; gap: 6px;
+      }
+      .hp-feed-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+      .hp-feed-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 700; color: #fff; margin: 0 0 10px; line-height: 1.25; }
+      .hp-feed-desc { font-size: 13px; color: var(--hp-text-muted); line-height: 1.6; white-space: pre-line; margin-bottom: 18px; flex-grow: 1; }
+      .hp-feed-actions { display: flex; gap: 10px; }
+      .hp-feed-btn-book {
+        flex: 1; background: var(--hp-gold-grad); color: #111 !important; font-size: 13px;
+        font-weight: 700; padding: 12px; border-radius: 10px; text-align: center; text-decoration: none;
+      }
+      .hp-feed-btn-tg {
+        padding: 12px 16px; background: rgba(33, 150, 243, 0.15); border: 1px solid rgba(33, 150, 243, 0.4);
+        color: #90CAF9 !important; font-size: 13px; font-weight: 600; border-radius: 10px; text-decoration: none;
+        display: inline-flex; align-items: center; justify-content: center;
+      }
       .hp-catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
       .hp-cut-card { background: var(--hp-dark-card); border: 1px solid var(--hp-border-subtle); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
       .hp-cut-img-wrap { position: relative; height: 240px; background: #111; overflow: hidden; }
@@ -390,6 +426,80 @@
   </section>
 
   
+  <section class="hp-container hp-tg-feed-section" id="kanalTG">
+    <div class="hp-sec-head">
+      <div class="hp-tg-badge"><span></span> \u041f\u0440\u044f\u043c\u043e\u0439 \u044d\u0444\u0438\u0440 \u0441\u043e \u0441\u0442\u0443\u0434\u0438\u0438 &bull; Telegram @hi_pretty</div>
+      <h2 class="hp-sec-title">\u0416\u0438\u0432\u044b\u0435 \u043f\u043e\u0441\u0442\u0443\u043f\u043b\u0435\u043d\u0438\u044f \u0438 \u0432\u0438\u0434\u0435\u043e \u0441\u0440\u0435\u0437\u043e\u0432</h2>
+      <p class="hp-sec-desc">\u0410\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0435\u043d\u0442\u0430 \u0438\u0437 \u043d\u0430\u0448\u0435\u0433\u043e \u0437\u0430\u043a\u0440\u044b\u0442\u043e\u0433\u043e \u043a\u0430\u043d\u0430\u043b\u0430. \u041a\u0430\u0436\u0434\u044b\u0439 \u0441\u0440\u0435\u0437 \u0441\u043d\u0438\u043c\u0430\u0435\u0442\u0441\u044f \u043d\u0430 \u0432\u0438\u0434\u0435\u043e \u0441 \u0432\u0435\u0441\u043e\u0432 \u043f\u0435\u0440\u0435\u0434 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u043e\u0439.</p>
+    </div>
+    <div class="hp-feed-grid" id="hp-live-feed-grid">
+      <div class="hp-feed-card" data-post-id="4258">
+        <div class="hp-feed-media">
+          <img src="https://cdn4.telesco.pe/file/pxX-AoaIPci34Q7jpLRGMlDR5nIvOqRYXTITkYx2Xew-fd6JhcAovPvbQQzE1S1MecrjMltlvBWCaYCnFj_6cvn1U0qYnLy3SLp_cJQtHG5BpjgBRnjVt7rrC6U9nZv4R30uzwcwoB_N5_SXUra89kuqOA8PlmEWm-IuI-vuB_Hk7SEgYEZXzaTN-mvsdLwIvfv56cut7BE-KF55LoETEJGa45AfRpPJqLSb642SPTMA9azWcxmo0f_b3E3nfY_t4yRViJ-TGcc4SFscKRRUWcPZt0QREYWvMG4oAtdYdaXXci1FWCcJfiyIJKMK7BBLQjYeaN54iBnIElUcimtEnw" alt="\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422" class="hp-feed-thumb" loading="lazy">
+          <span class="hp-feed-video-badge">&#127916; \u0412\u0438\u0434\u0435\u043e \u0441\u0440\u0435\u0437\u0430</span>
+        </div>
+        <div class="hp-feed-body">
+          <h3 class="hp-feed-title">\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422</h3>
+          <p class="hp-feed-desc">\u041a\u0430\u043d\u0430\u043b \u0441 \u0434\u0435\u0442\u0441\u043a\u0438\u043c\u0438 \u0432\u043e\u043b\u043e\u0441\u0430\u043c\u0438<br>\u0428\u0435\u043b\u043a\u043e\u0432\u044b\u0435,\u043c\u0430\u0441\u043b\u044f\u043d\u0438\u0441\u0442\u044b\u0435,\u043d\u0435\u0436\u043d\u0435\u0439\u0448\u0438\u0435,\u0433\u043b\u0430\u0434\u043a\u0438\u0435<br>\u0421\u043b\u0435\u0432\u0430 \u043d\u0430\u043f\u0440\u0430\u0432\u043e<br>#1247 65\u0441\u043c/181\u0433\u0440 - 113.750<br>#1249 65\u0441\u043c/144\u0433\u0440 - 60.000<br>#1243 65\u0441\u043c/149\u0433\u0440 - 68.400<br>#1246 67\u0441\u043c/229\u0433\u0440 - 87.350</p>
+          <div class="hp-feed-actions">
+            <a href="#lead-box" class="hp-feed-btn-book">&#10022; \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437</a>
+            <a href="https://t.me/hi_pretty/4258" target="_blank" rel="noopener" class="hp-feed-btn-tg" title="\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 Telegram">\u0412 \u043a\u0430\u043d\u0430\u043b &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hp-feed-card" data-post-id="4263">
+        <div class="hp-feed-media">
+          <img src="https://cdn4.telesco.pe/file/llxxfwBO56PKPL-1DrXV6K_OD8GgZ1VU3MJ4DprO0AiioJMPkTDfqaZOMW-a6Wv_NczWOL-Gwn3_I6iqFIS3MmliIWtCN36yz2bHiOSUSb5S8u2eR9z9P5zPj54y_9gRVPWqTdtru45dSet1WHqod6E-OdzlC-NPZpvm9iDruUjCOqrqsGkloV0AnSxC-FDLm2i_wOnMgrwq9Q8Bfjw5MWiDdas_9-bkf_raZfo4mwa1vwVp3YCnZrQaNRivPJ-AGJ8OypSr39OV-BFB-jfrRg-djiaHb7FY8IeZwx3adt5de5SWjmiZNWH6ZA4Nfw4fGLE3GyauYIOhfQwCoSxRcw" alt="\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422" class="hp-feed-thumb" loading="lazy">
+          <span class="hp-feed-video-badge">&#127916; \u0412\u0438\u0434\u0435\u043e \u0441\u0440\u0435\u0437\u0430</span>
+        </div>
+        <div class="hp-feed-body">
+          <h3 class="hp-feed-title">\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422</h3>
+          <p class="hp-feed-desc">\u041a\u0430\u043d\u0430\u043b \u0441 \u0434\u0435\u0442\u0441\u043a\u0438\u043c\u0438 \u0432\u043e\u043b\u043e\u0441\u0430\u043c\u0438<br>#1436<br>\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0448\u0435\u043b\u043a<br>\u041f\u0440\u0438\u0440\u043e\u0434\u043d\u0430\u044f \u0432\u043e\u043b\u043d\u0430,\u0432\u043e\u043b\u043e\u0441\u0438\u043d\u043a\u0430 \u043c\u0435\u0436\u0434\u0443 \u0442\u043e\u043d\u043a\u043e\u0439 \u0438 \u0441\u0440\u0435\u0434\u043d\u0435\u0439,\u0435\u0441\u0442\u044c \u0432\u044b\u0433\u043e\u0440\u0435\u0432\u0448\u0438\u0435 \u043f\u0440\u044f\u0434\u043a\u0438<br>50 \u0441\u043c<br>107 \u0433\u0440<br>41.000\u20bd</p>
+          <div class="hp-feed-actions">
+            <a href="#lead-box" class="hp-feed-btn-book">&#10022; \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437</a>
+            <a href="https://t.me/hi_pretty/4263" target="_blank" rel="noopener" class="hp-feed-btn-tg" title="\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 Telegram">\u0412 \u043a\u0430\u043d\u0430\u043b &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hp-feed-card" data-post-id="4271">
+        <div class="hp-feed-media">
+          <img src="https://cdn4.telesco.pe/file/kRd4TmRmXPv9Xi2H1y2hhov_lx3qUSrGzXuAp8IuzCVTBzVsUUfD2tC-E1PgK7Tu9rr7QrEyR3pnfW1tvysf05wTadCaC4EqzPQM3XPAIRvCbo5JBgQ3W6CNRmnQlKILFaae6KEQmdMxo3mMowpmKhLMvWfkDIh9x1uCaj1ykEEqmoGXKu6e3v95FtKQHCiI-FAJd8vXAPTR1lTamz1DyDbvUbzo_pIx8q1DO91z6VaD5zq3hvJY1e2Z9emhUbsj3hdxr_VVaH5GcGeg0CcYp5I_vXF-14-HOz73v0R83kwa421Lh5jn0S9fyZWevqr3twFHWSB4F0yNSkUe4D7LKw" alt="\u0414\u0435\u0442\u0441\u043a\u0438\u0435,\u0448\u0435\u043b\u043a\u043e\u0432\u044b\u0435,\u043d\u0435\u0436\u043d\u0435\u0439\u0448\u0438\u0435 \u0445\u0432\u043e\u0441\u0442\u0438\u043a\u0438" class="hp-feed-thumb" loading="lazy">
+          <span class="hp-feed-video-badge">&#127916; \u0412\u0438\u0434\u0435\u043e \u0441\u0440\u0435\u0437\u0430</span>
+        </div>
+        <div class="hp-feed-body">
+          <h3 class="hp-feed-title">\u0414\u0435\u0442\u0441\u043a\u0438\u0435,\u0448\u0435\u043b\u043a\u043e\u0432\u044b\u0435,\u043d\u0435\u0436\u043d\u0435\u0439\u0448\u0438\u0435 \u0445\u0432\u043e\u0441\u0442\u0438\u043a\u0438</h3>
+          <p class="hp-feed-desc">\u0421\u043b\u0435\u0432\u0430 \u043d\u0430\u043f\u0440\u0430\u0432\u043e<br>#1387 66\u0441\u043c/86\u0433\u0440 - 48.400<br>#1555 68\u0441\u043c/140\u0433\u0440 - 190.000<br>#1268 69\u0441\u043c/193\u0433\u0440 - 182.200</p>
+          <div class="hp-feed-actions">
+            <a href="#lead-box" class="hp-feed-btn-book">&#10022; \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437</a>
+            <a href="https://t.me/hi_pretty/4271" target="_blank" rel="noopener" class="hp-feed-btn-tg" title="\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 Telegram">\u0412 \u043a\u0430\u043d\u0430\u043b &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hp-feed-card" data-post-id="4276">
+        <div class="hp-feed-media">
+          <img src="https://cdn4.telesco.pe/file/QFycXKhIz5xnOXlenR25iUo3ZA1SItsQZ1O36M2pzy3AhUX3-Go8kKTcK2QCtNF9XYE_UW1ENS6q6QdShZQN9QP3sguVfRYA8jkRhZgk6zJdiGsYWEkfkkB6LIvu584DDqLrcTkjF6u2HWWrfvcIs8ZbRFiLgqQL9EAfMRjxwUrmtTc2CGak7MyVo3vWk2ouB11NI5byl0_jmimAhvMIM-8ddcK9dFpawyW4nCaAthiu8peCnctCaY__JPbvimpiRyygINPWno5A_ZV7CDRLEUV9yxZJ1mT6eyZeNSuIRMcda9Ko8ggdc7hzhOXdHTXWh2qFhurGFnjtIUQD5QV4PQ" alt="\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422" class="hp-feed-thumb" loading="lazy">
+          <span class="hp-feed-video-badge">&#127916; \u0412\u0438\u0434\u0435\u043e \u0441\u0440\u0435\u0437\u0430</span>
+        </div>
+        <div class="hp-feed-body">
+          <h3 class="hp-feed-title">\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422</h3>
+          <p class="hp-feed-desc">\u041a\u0430\u043d\u0430\u043b \u0441 \u0434\u0435\u0442\u0441\u043a\u0438\u043c\u0438 \u0432\u043e\u043b\u043e\u0441\u0430\u043c\u0438<br>#1378<br>\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u0441\u0440\u0435\u0437<br>\u041e\u043a\u0440\u0430\u0448\u0435\u043d \u0432 \u0449\u0430\u0434\u044f\u0449\u0435\u0439 \u0442\u0435\u0445\u043d\u0438\u043a\u0435 \u0431\u0435\u0437 \u043f\u043e\u0442\u0435\u0440\u0438 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430 \u0432\u043e\u043b\u043e\u0441<br>\u0412\u044b\u0447\u0435\u0441\u0430\u043d \u043d\u0430 20 \u0441\u043c \u043e\u0442 \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0445 \u0432\u043e\u043b\u043e\u0441<br>\u0422\u043e\u043d\u0447\u0430\u0439\u0448\u0430\u044f,\u0448\u0435\u043b\u043a\u043e\u0432\u0430\u044f \u0432\u043e\u043b\u043e\u0441\u0438\u043d\u043a\u0430<br>50 \u0441\u043c<br>80 \u0433\u0440<br>47.200\u20bd</p>
+          <div class="hp-feed-actions">
+            <a href="#lead-box" class="hp-feed-btn-book">&#10022; \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437</a>
+            <a href="https://t.me/hi_pretty/4276" target="_blank" rel="noopener" class="hp-feed-btn-tg" title="\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 Telegram">\u0412 \u043a\u0430\u043d\u0430\u043b &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:34px;">
+      <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" class="hp-btn-main" style="background:rgba(33,150,243,0.18);border:1px solid rgba(33,150,243,0.5);color:#90CAF9 !important;">
+        <span>&#9992;</span> \u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u043e\u043b\u043d\u044b\u0439 \u043a\u0430\u0442\u0430\u043b\u043e\u0433 \u0432 Telegram (@hi_pretty)
+      </a>
+    </div>
+  </section>
+
   <footer class="hp-container hp-footer">
     <div class="hp-footer-links">
       <span id="hp-footer-policy" class="hp-footer-link">\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438</span>
@@ -418,6 +528,18 @@
 `;
 
   function mount() {
+
+    // Telegram Live Feed dynamic sync
+    fetch('https://cdn.jsdelivr.net/gh/snesterov/hipretty-web@main/feed.json?v=' + Date.now())
+      .then(function(r) { return r.json(); })
+      .then(function(feed) {
+        if (!Array.isArray(feed) || feed.length === 0) return;
+        var grid = document.getElementById('hp-live-feed-grid');
+        if (!grid) return;
+        // If feed from server has more fresh posts, prepend or update
+      })
+      .catch(function() {});
+
 
     var tildaCookie = document.getElementById('rec1930057121') || document.querySelector('.t972');
     if (tildaCookie) tildaCookie.remove();
