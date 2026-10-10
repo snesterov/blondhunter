@@ -11,6 +11,7 @@
     var s = document.createElement('style');
     s.id = 'hp-styles';
     s.textContent = `
+      #rec1930057121, #t-footer, .t972 { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
       :root {
         --hp-gold: #c6a355;
         --hp-gold-grad: linear-gradient(135deg, #ECC880 0%, #c6a355 50%, #9e7d32 100%);
@@ -417,6 +418,12 @@
 `;
 
   function mount() {
+
+    var tildaCookie = document.getElementById('rec1930057121') || document.querySelector('.t972');
+    if (tildaCookie) tildaCookie.remove();
+    var tFooter = document.getElementById('t-footer');
+    if (tFooter) tFooter.remove();
+
     var existingApp = document.getElementById('hp-app');
     if (existingApp) existingApp.remove();
 
