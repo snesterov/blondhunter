@@ -1,0 +1,38 @@
+[
+  {
+    "id": "4570",
+    "title": "Hair Cut #99",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4570.jpg",
+    "badge": "● Hot Deal 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "57 cm • 187 g • Tone 57/187 • 177 000 ₽ / 1770 €",
+    "desc": "Cold blonde tone 8/9, luxurious thick ponytail (187 g / 57 cm). Special price 177,000 ₽ (€1,770). Fast worldwide express shipping.",
+    "url": "https://t.me/blondhunter/4570",
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%234570%20%2857%20cm%20%E2%80%A2%20187%20g%20%E2%80%A2%20Tone%2057/187%20%E2%80%A2%20177%20000%20%E2%82%BD%20/%201770%20%E2%82%AC%29.%20Is%20it%20available%20for%20delivery%3F"
+  },
+  {
+    "id": "4568",
+    "title": "Hair Cut #4568",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4568.jpg",
+    "badge": "● Sold Out",
+    "badge_type": "sold",
+    "is_sold": true,
+    "tag": "57 cm • 164 g",
+    "desc": "Exclusive virgin child blonde 57 cm / 164 g. This lot is sold out! Click WhatsApp below to request an identical cut from studio stock.",
+    "url": "https://t.me/blondhunter/4568",
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20saw%20Hair%20Cut%20%234568%20%2857%20cm%20%E2%80%A2%20164%20g%29%20is%20SOLD%20OUT.%20Can%20you%20show%20me%20similar%20available%20options%3F"
+  },
+  {
+    "id": "4567",
+    "title": "Hair Cut #4567",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4567.jpg",
+    "badge": "● Fresh Arrival",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "50 cm • 128 g",
+    "desc": "Silky natural virgin blonde 50 cm / 128 g. Untreated, silicone-free, soft natural ends. Available for direct reserve and worldwide dispatch.",
+    "url": "https://t.me/blondhunter/4567",
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%234567%20%2850%20cm%20%E2%80%A2%20128%20g%29.%20Is%20it%20available%20for%20delivery%3F"
+  }
+]
