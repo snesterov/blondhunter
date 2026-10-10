@@ -62,7 +62,8 @@ def main():
         print("No posts fetched.")
         return
 
-    latest = all_posts[-3:]
+    # Take latest 9 posts
+    latest = all_posts[-9:]
     latest.reverse()
     
     clean_ru = []
@@ -92,12 +93,14 @@ def main():
             badge_ru, badge_en, badge_type = "● Продан / Sold", "● Sold Out", "sold"
         elif 'hot' in lower_text or 'огонь' in lower_text:
             badge_ru, badge_en, badge_type = "● Горячее предложение 🔥", "● Hot Deal 🔥", "hot"
-        elif 'скидк' in lower_text or '%' in lower_text:
+        elif 'скидк' in lower_text or '%' in lower_text or 'акци' in lower_text:
             badge_ru, badge_en, badge_type = "● Со скидкой", "● Special Price", "discount"
         elif 'first haircut' in lower_text or 'первый срез' in lower_text:
             badge_ru, badge_en, badge_type = "● Первый срез 👶", "● First Haircut 👶", "first"
         elif 'кудр' in lower_text or 'curly' in lower_text:
             badge_ru, badge_en, badge_type = "● Кудри 🦁", "● Curly Waves 🦁", "curly"
+        elif 'наличи' in lower_text or 'студи' in lower_text:
+            badge_ru, badge_en, badge_type = "● В наличии", "● In Stock", "stock"
         else:
             badge_ru, badge_en, badge_type = "● Свежий лот", "● Fresh Arrival", "fresh"
 
@@ -127,6 +130,9 @@ def main():
         if price_rub and price_eur:
             specs_ru.append(f"{price_rub.group(1)} 000 ₽ / {price_eur.group(1)} €")
             specs_en.append(f"{price_rub.group(1)} 000 ₽ / €{price_eur.group(1)}")
+        elif price_rub:
+            specs_ru.append(f"{price_rub.group(1)} 000 ₽")
+            specs_en.append(f"{price_rub.group(1)} 000 ₽")
         elif price_eur:
             specs_ru.append(f"{price_eur.group(1)} €")
             specs_en.append(f"€{price_eur.group(1)}")
@@ -135,7 +141,7 @@ def main():
         tag_en = " • ".join(specs_en) if specs_en else "Virgin Slavic Blonde"
 
         clean_lines = [l.strip() for l in text.split('\\n') if l.strip() and not l.startswith('http') and not 'whatsapp' in l.lower() and not 'telegram' in l.lower()]
-        desc_ru = " ".join(clean_lines)[:140]
+        desc_ru = " ".join(clean_lines)[:140] if clean_lines else "Эксклюзивный срез детского славянского блонда."
         desc_en = f"Exclusive virgin child blonde ({tag_en}). 100% natural, ethically sourced Slavic hair. Worldwide express delivery."
 
         # WhatsApp text
@@ -173,7 +179,7 @@ def main():
         json.dump(clean_ru, f, ensure_ascii=False, indent=2)
     with open(posts_en_file, 'w', encoding='utf-8') as f:
         json.dump(clean_en, f, ensure_ascii=False, indent=2)
-    print("Both posts.json and posts_en.json updated successfully!")
+    print("Updated 9 posts for both RU and EN!")
 
 if __name__ == '__main__':
     main()
