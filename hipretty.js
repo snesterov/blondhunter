@@ -11,9 +11,9 @@
     var s = document.createElement('style');
     s.id = 'hp-styles';
     s.textContent = `
-      /* Скрываем все дублирующиеся и дефолтные блоки Тильды, кроме popup контактной формы rec1915062531 и загрузчика rec4673156001 */
-      #allrecords > .r:not(#rec4673156001):not(#rec1915062531),
-      #allrecords > div.r:not(#rec4673156001):not(#rec1915062531),
+      /* Скрываем дубликаты и дефолтные блоки, но сохраняем попапы #rec1915062531 (#popup:contact) и #rec1935129061 */
+      #allrecords > .r:not(#rec4673156001):not(#rec1915062531):not(#rec1935129061),
+      #allrecords > div.r:not(#rec4673156001):not(#rec1915062531):not(#rec1935129061),
       #t-footer, .t972, #rec1930057121 {
         display: none !important;
         opacity: 0 !important;
@@ -23,16 +23,6 @@
         min-height: 0 !important;
         margin: 0 !important;
         padding: 0 !important;
-      }
-
-      /* При показе нативного попапа #popup:contact делаем его видимым */
-      #rec1915062531.t-popup_show,
-      #rec1915062531 .t-popup_show {
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        pointer-events: auto !important;
-        height: auto !important;
       }
 
       :root {
@@ -321,7 +311,7 @@
       .hp-media-badge-txt { font-size: 11.5px; font-weight: 600; color: #fff; }
       .hp-media-badge-tag { font-size: 10.5px; color: var(--hp-rose); font-weight: 700; }
 
-      /* LEAD GENERATION SECTION (Контролируемый блок захвата) */
+      /* LEAD GENERATION SECTION */
       .hp-lead-section {
         padding: 68px 0;
         background: rgba(22, 19, 29, 0.85);
@@ -378,7 +368,6 @@
       }
       .hp-lead-sub-accent { color: #fbcfe8; font-weight: 600; }
 
-      /* МЕТОДЫ СВЯЗИ */
       .hp-method-label {
         font-size: 13px;
         font-weight: 600;
@@ -845,7 +834,244 @@
         cursor: pointer;
       }
 
-      /* MOBILE ADAPTATION */
+      /* ==============================================================
+         РЕСТАЙЛИНГ ВСЕХ НА ТИЛЬДЕ ПОПАПОВ (rec1915062531 и rec1935129061)
+         ПРЕВРАЩАЕМ БЕЛЫЕ ДЕФОЛТНЫЕ ОКНА В РОСКОШНЫЙ NOIR & ROSE-GOLD СТИЛЬ
+         ============================================================== */
+      .t-popup,
+      #rec1915062531 .t-popup,
+      #rec1935129061 .t-popup {
+        background-color: rgba(7, 6, 10, 0.88) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+      }
+
+      #rec1915062531 .t-popup__container,
+      #rec1935129061 .t-popup__container {
+        background: #15121c !important;
+        border: 1px solid rgba(244, 114, 182, 0.35) !important;
+        border-radius: 28px !important;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(244, 114, 182, 0.25) !important;
+        padding: 36px 32px !important;
+        color: #f9f8fc !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+
+      /* Свечение по верхней границе попапа */
+      #rec1915062531 .t-popup__container::before,
+      #rec1935129061 .t-popup__container::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent 0%, var(--hp-rose) 50%, transparent 100%);
+        pointer-events: none;
+      }
+
+      /* Кнопка закрытия попапа */
+      #rec1915062531 .t-popup__close-wrapper,
+      #rec1935129061 .t-popup__close-wrapper {
+        background: rgba(255, 255, 255, 0.08) !important;
+        border-radius: 50% !important;
+        width: 36px !important;
+        height: 36px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: background-color 0.2s ease, transform 0.2s ease !important;
+      }
+      #rec1915062531 .t-popup__close-wrapper:hover,
+      #rec1935129061 .t-popup__close-wrapper:hover {
+        background: rgba(244, 114, 182, 0.25) !important;
+        transform: scale(1.08) !important;
+      }
+      #rec1915062531 .t-popup__close-icon g,
+      #rec1915062531 .t-popup__close-icon rect,
+      #rec1935129061 .t-popup__close-icon g,
+      #rec1935129061 .t-popup__close-icon rect {
+        fill: #fbcfe8 !important;
+      }
+
+      /* Заголовки попапа */
+      #rec1915062531 .t702__title,
+      #rec1935129061 .t702__title {
+        font-family: 'Cormorant Garamond', serif !important;
+        font-size: clamp(26px, 3.4vw, 36px) !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        line-height: 1.2 !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
+      }
+      #rec1915062531 .t702__title strong,
+      #rec1935129061 .t702__title strong {
+        color: #ffffff !important;
+      }
+      #rec1915062531 .t702__descr,
+      #rec1935129061 .t702__descr {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 14px !important;
+        color: var(--hp-text-muted) !important;
+        line-height: 1.55 !important;
+        margin-bottom: 24px !important;
+        text-align: center !important;
+      }
+
+      /* Поля ввода в попапе */
+      #rec1915062531 .t-input,
+      #rec1935129061 .t-input {
+        background: #1c1825 !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 14px !important;
+        color: #ffffff !important;
+        padding: 14px 18px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+      }
+      #rec1915062531 .t-input:focus,
+      #rec1935129061 .t-input:focus {
+        border-color: var(--hp-rose) !important;
+        box-shadow: 0 0 16px rgba(244, 114, 182, 0.3) !important;
+        outline: none !important;
+      }
+      #rec1915062531 .t-input::placeholder,
+      #rec1935129061 .t-input::placeholder {
+        color: #7d7588 !important;
+      }
+
+      /* Блок выбора метода связи в попапе */
+      #rec1915062531 .t-input-title,
+      #rec1935129061 .t-input-title {
+        color: #fbcfe8 !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-weight: 600 !important;
+        font-size: 13px !important;
+        margin-bottom: 10px !important;
+      }
+      #rec1915062531 .t-contact-method__types-container {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px !important;
+        margin-bottom: 16px !important;
+      }
+      #rec1915062531 .t-contact-method__type {
+        background: #1c1825 !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 12px !important;
+        padding: 10px 6px !important;
+        transition: all 0.2s ease !important;
+        margin: 0 !important;
+      }
+      #rec1915062531 .t-contact-method__type-label {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        cursor: pointer !important;
+      }
+      #rec1915062531 .t-contact-method__title {
+        color: #d1c8db !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+      }
+      #rec1915062531 .t-contact-method__type:hover {
+        border-color: rgba(244, 114, 182, 0.4) !important;
+      }
+      #rec1915062531 .t-contact-method__type:has(>.t-radio:checked) {
+        background-color: rgba(244, 114, 182, 0.2) !important;
+        border-color: var(--hp-rose) !important;
+        box-shadow: 0 0 15px rgba(244, 114, 182, 0.35) !important;
+      }
+      #rec1915062531 .t-contact-method__type:has(>.t-radio:checked) .t-contact-method__title {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+      }
+
+      /* Подсказки под методами связи */
+      #rec1915062531 .t-input-group_tx .t-text {
+        color: #a69fb0 !important;
+        font-size: 12px !important;
+        line-height: 1.55 !important;
+      }
+      #rec1915062531 .t-input-group_tx strong {
+        color: #fbcfe8 !important;
+      }
+      #rec1915062531 .t-input-group_tx u {
+        color: #fff !important;
+        text-decoration-color: var(--hp-rose) !important;
+      }
+
+      /* Чекбокс согласия 152-ФЗ в попапе */
+      #rec1915062531 .t-checkbox__control span,
+      #rec1915062531 .t-checkbox__control span * {
+        color: #8f8699 !important;
+        font-size: 11.5px !important;
+      }
+      #rec1915062531 .t-checkbox__indicator {
+        border: 1px solid var(--hp-rose) !important;
+        background: #1c1825 !important;
+        border-radius: 4px !important;
+      }
+      #rec1915062531 .t-checkbox__indicator:after {
+        border-color: var(--hp-rose) !important;
+      }
+
+      /* Кнопка отправки формы попапа */
+      #rec1915062531 .t-btnflex.t-btnflex_type_submit,
+      #rec1915062531 .t-submit,
+      #rec1935129061 .t-btnflex.t-btnflex_type_submit,
+      #rec1935129061 .t-submit {
+        background: var(--hp-pink-grad) !important;
+        color: #1a0815 !important;
+        border: none !important;
+        border-radius: 16px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-weight: 700 !important;
+        font-size: 15px !important;
+        padding: 16px 28px !important;
+        box-shadow: 0 6px 25px rgba(244, 114, 182, 0.5) !important;
+        cursor: pointer !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+      }
+      #rec1915062531 .t-btnflex.t-btnflex_type_submit:hover,
+      #rec1935129061 .t-btnflex.t-btnflex_type_submit:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 32px rgba(244, 114, 182, 0.7) !important;
+      }
+      #rec1915062531 .t-btnflex__text,
+      #rec1935129061 .t-btnflex__text {
+        color: #1a0815 !important;
+        font-weight: 700 !important;
+      }
+
+      /* Телефонная маска флаги и селектор стран */
+      #rec1915062531 .t-input-phonemask__select,
+      #rec1915062531 .t-phonemask-country-selector {
+        background: #1c1825 !important;
+        border-color: rgba(255, 255, 255, 0.12) !important;
+        color: #fff !important;
+      }
+
+      /* Адаптив попапа на мобилках */
+      @media (max-width: 560px) {
+        #rec1915062531 .t-popup__container,
+        #rec1935129061 .t-popup__container {
+          padding: 28px 18px !important;
+          border-radius: 20px !important;
+        }
+        #rec1915062531 .t-contact-method__types-container {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+
+      /* MOBILE ADAPTATION ДЛЯ СТРАНИЦЫ */
       @media (max-width: 860px) {
         .hp-hero-grid { display: flex; flex-direction: column; gap: 30px; text-align: center; }
         .hp-hero-cta-box { justify-content: center; }
@@ -1090,7 +1316,7 @@
         </div>
         <div class="hp-feed-body">
           <h3 class="hp-feed-title">\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422</h3>
-          <p class="hp-feed-desc">\u041a\u0430\u043d\u0430\u043b \u0441 \u0434\u0435\u0442\u0441\u043a\u0438\u043c\u0438 \u0432\u043e\u043b\u043e\u0441\u0430\u043c\u0438<br>#1436<br>\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0448\u0435\u043b\u043a<br>\u041f\u0440\u0438\u0440\u043e\u0434\u043d\u0430\u044f \u0432\u043e\u043b\u043d\u0430,\u0432\u043e\u043b\u043e\u0441\u0438\u043d\u043a\u0430 \u043c\u0435\u0436\u0434\u0443 \u0442\u043e\u043d\u043a\u043e\u0439 \u0438 \u0441\u0440\u0435\u0434\u043d\u0435\u0439<br>50 \u0441\u043c<br>107 \u0433\u0440<br>41.000\u20bd</p>
+          <p class="hp-feed-desc">\u041a\u0430\u043d\u0430\u043b \u0441 \u0434\u0435\u0442\u0441\u043a\u0438\u043c\u0438 \u0432\u043e\u043b\u043e\u0441\u0430\u043c\u0438<br>#1436<br>\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0448\u0435\u043b\u043a<br>\u041f\u0440\u0438\u0440\u043e\u0434\u043d\u0430\u044f \u0432\u043e\u043b\u043e\u043d\u0430,\u0432\u043e\u043b\u043e\u0441\u0438\u043d\u043a\u0430 \u043c\u0435\u0436\u0434\u0443 \u0442\u043e\u043d\u043a\u043e\u0439 \u0438 \u0441\u0440\u0435\u0434\u043d\u0435\u0439<br>50 \u0441\u043c<br>107 \u0433\u0440<br>41.000\u20bd</p>
           <div class="hp-feed-actions">
             <a href="#lead-box" class="hp-feed-btn-book">&#10022; \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437</a>
             <a href="https://t.me/hi_pretty/4263" target="_blank" rel="noopener" class="hp-feed-btn-tg" title="\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 Telegram">\u0412 \u043a\u0430\u043d\u0430\u043b &rarr;</a>
@@ -1120,7 +1346,7 @@
         </div>
         <div class="hp-feed-body">
           <h3 class="hp-feed-title">\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422</h3>
-          <p class="hp-feed-desc">\u041a\u0430\u043d\u0430\u043b \u0441 \u0434\u0435\u0442\u0441\u043a\u0438\u043c\u0438 \u0432\u043e\u043b\u043e\u0441\u0430\u043c\u0438<br>#1378<br>\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u0441\u0440\u0435\u0437<br>\u041e\u043a\u0440\u0430\u0448\u0435\u043d \u0432 \u0449\u0430\u0434\u044f\u0449\u0435\u0439 \u0442\u0435\u0445\u043d\u0438\u043a\u0435<br>\u0422\u043e\u043d\u0447\u0430\u0439\u0448\u0430\u044f,\u0448\u0435\u043b\u043a\u043e\u0432\u0430\u044f \u0432\u043e\u043b\u043e\u0441\u0438\u043d\u043a\u0430<br>50 \u0441\u043c<br>80 \u0433\u0440<br>47.200\u20bd</p>
+          <p class="hp-feed-desc">\u041a\u0430\u043d\u0430\u043b \u0441 \u0434\u0435\u0442\u0441\u043a\u0438\u043c\u0438 \u0432\u043e\u043b\u043e\u0441\u0430\u043c\u0438<br>#1378<br>\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u0441\u0440\u0435\u0437<br>\u041e\u043a\u0440\u0430\u0448\u0435\u043d \u0432 \u0449\u0430\u0434\u044f\u0449\u0435\u0439 \u0442\u0435\u0445\u043d\u0438\u043a\u0435 \u0431\u0435\u0437 \u043f\u043e\u0442\u0435\u0440\u0438 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430 \u0432\u043e\u043b\u043e\u0441<br>\u0412\u044b\u0447\u0435\u0441\u0430\u043d \u043d\u0430 20 \u0441\u043c \u043e\u0442 \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0445 \u0432\u043e\u043b\u043e\u0441<br>\u0422\u043e\u043d\u0447\u0430\u0439\u0448\u0430\u044f,\u0448\u0435\u043b\u043a\u043e\u0432\u0430\u044f \u0432\u043e\u043b\u043e\u0441\u0438\u043d\u043a\u0430<br>50 \u0441\u043c<br>80 \u0433\u0440<br>47.200\u20bd</p>
           <div class="hp-feed-actions">
             <a href="#lead-box" class="hp-feed-btn-book">&#10022; \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437</a>
             <a href="https://t.me/hi_pretty/4276" target="_blank" rel="noopener" class="hp-feed-btn-tg" title="\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 Telegram">\u0412 \u043a\u0430\u043d\u0430\u043b &rarr;</a>
@@ -1166,6 +1392,42 @@
 `;
 
   var currentMethod = 'max_messenger';
+
+  function polishTildaPopup() {
+    // Рестайлинг нативного попапа Tilda #rec1915062531
+    var popupRec = document.getElementById('rec1915062531');
+    if (!popupRec) return;
+
+    // Сделать кнопку закрытия аккуратной
+    var closeBtn = popupRec.querySelector('.t-popup__close-wrapper');
+    if (closeBtn) {
+      closeBtn.setAttribute('title', 'Закрыть');
+    }
+
+    // Если в кнопке отправки текст дефолтный или пустой, обновляем на лакшери
+    var subBtn = popupRec.querySelector('.t-btnflex__text, .t-submit');
+    if (subBtn && (!subBtn.textContent || subBtn.textContent.trim() === '')) {
+      subBtn.textContent = 'Подобрать срез \u2726';
+    }
+
+    // Подставляем русские плейсхолдеры в поля Тильды
+    var nameInp = popupRec.querySelector('input[name="Name"]');
+    if (nameInp && !nameInp.placeholder) {
+      nameInp.placeholder = 'Ваше имя';
+    }
+
+    // Слушатель отправки нативного попапа для Яндекс.Метрики
+    var tildaForm = popupRec.querySelector('form');
+    if (tildaForm && !tildaForm.dataset.hpBound) {
+      tildaForm.dataset.hpBound = 'true';
+      tildaForm.addEventListener('submit', function() {
+        if (typeof window.ym === 'function') {
+          window.ym(90792799, 'reachGoal', 'submitted');
+          window.ym(90792799, 'reachGoal', 'gamelead_send');
+        }
+      });
+    }
+  }
 
   function mount() {
     // Dynamic feed sync from github feed.json
@@ -1284,7 +1546,6 @@
           if (tName) tName.value = name;
 
           // Переключаем тип контакта в Тильде
-          var methodRadios = tildaForm.querySelectorAll('input[name="messenger-type"], .t-contact-method__type');
           var methodRadio = tildaForm.querySelector('[data-method-type="' + currentMethod + '"] label, [data-method-type="' + currentMethod + '"] input');
           if (methodRadio) {
             methodRadio.click();
@@ -1309,6 +1570,11 @@
         document.getElementById('hp-submit-btn').disabled = true;
       });
     }
+
+    // Рестайлинг нативного попапа Tilda
+    polishTildaPopup();
+    setTimeout(polishTildaPopup, 1000);
+    setTimeout(polishTildaPopup, 2500);
 
     // Юридический модал
     var modal = document.getElementById('hp-legal-modal');
