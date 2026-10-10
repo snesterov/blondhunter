@@ -1,32 +1,35 @@
 [
   {
+    "id": "4570",
+    "title": "Срез #99",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4570.jpg",
+    "badge": "● Горячее предложение 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "57 см • 187 г • Тон 57/187 • 177 000 ₽ / 1770 €",
+    "desc": "#99,57/187 g ,8/9 ,cold Hot💥💥💥 177 т😍1770 euro",
+    "url": "https://t.me/blondhunter/4570"
+  },
+  {
     "id": "4568",
-    "post_full": "blondhunter/4568",
-    "url": "https://t.me/blondhunter/4568",
-    "image": "https://snesterov.github.io/blondhunter/images/post_4568.jpg",
-    "badge": "● Продан",
-    "title": "Партия срезов",
+    "title": "Срез #4568",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4568.jpg",
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
     "tag": "57 см • 164 г",
-    "desc": "57 cm/164 g New🔆 https://api.whatsapp.com/send/?phone=79266721978"
+    "desc": "57 cm/164 g New🔆 Продан/sold💥",
+    "url": "https://t.me/blondhunter/4568"
   },
   {
     "id": "4567",
-    "post_full": "blondhunter/4567",
-    "url": "https://t.me/blondhunter/4567",
-    "image": "https://snesterov.github.io/blondhunter/images/post_4567.jpg",
+    "title": "Срез #4567",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4567.jpg",
     "badge": "● Свежий лот",
-    "title": "Партия срезов",
+    "badge_type": "fresh",
+    "is_sold": false,
     "tag": "50 см • 128 г",
-    "desc": "50 cm/128 g New"
-  },
-  {
-    "id": "4566",
-    "post_full": "blondhunter/4566",
-    "url": "https://t.me/blondhunter/4566",
-    "image": "https://snesterov.github.io/blondhunter/images/post_4566.jpg",
-    "badge": "● Свежий лот",
-    "title": "Партия срезов",
-    "tag": "58 см • 100 г",
-    "desc": "58 cm/100 g New 132 т 💥💥💥"
+    "desc": "50 cm/128 g New",
+    "url": "https://t.me/blondhunter/4567"
   }
 ]
