@@ -1,1 +1,2 @@
-/**\n * HIPRETTY.RU LUXURY LANDING ENGINE\n * Synced via GitHub (snesterov/blondhunter)\n */\nconsole.log('HiPretty Engine Loaded');
+// test content
+console.log('test');
