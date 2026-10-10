@@ -97,5 +97,49 @@
     "tag": "56 см • 147 г • 195 000 ₽ / 1950 €",
     "desc": "#37(right) справа 56 cm/147 g First haircut 👶 195 т 1950 euro💥💥💥 Hottest💎 (#75 second twins sold)",
     "url": "https://t.me/blondhunter/4560"
+  },
+  {
+    "id": "4559",
+    "title": "Срез #37",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4559.jpg",
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
+    "tag": "56 см • 147 г • 195 000 ₽ / 1950 €",
+    "desc": "#37 56 cm/147 g First haircut 👶 195 т 1950 euro💥💥💥 Hottest💎 (#75 second twins sold)",
+    "url": "https://t.me/blondhunter/4559"
+  },
+  {
+    "id": "4558",
+    "title": "Срез #47",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4558.jpg",
+    "badge": "● Кудри 🦁",
+    "badge_type": "curly",
+    "is_sold": false,
+    "tag": "173 г • 195 000 ₽ / 1950 €",
+    "desc": "Eahhh Ееее🦁❤️ #47 48 в кудре/in curly 173 g💝 195 т💥💥💥 1950 euro",
+    "url": "https://t.me/blondhunter/4558"
+  },
+  {
+    "id": "4557",
+    "title": "Срез #99",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4557.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "57 см • 187 г • Тон 8/9",
+    "desc": "#99,57/187 g ,8/9 ,cold",
+    "url": "https://t.me/blondhunter/4557"
+  },
+  {
+    "id": "4556",
+    "title": "Срез #99",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4556.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "57 см • 187 г • Тон 8/9",
+    "desc": "#99,57/187 g ,8/9 ,cold",
+    "url": "https://t.me/blondhunter/4556"
   }
 ]
