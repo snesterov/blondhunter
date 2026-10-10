@@ -4,7 +4,7 @@ import json
 import os
 
 HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0 Safari/537.36'
 }
 
 def fetch_channel_posts():
@@ -36,35 +36,13 @@ def fetch_channel_posts():
         m_date = re.search(r'<time[^>]*datetime="([^"]+)"[^>]*>([^<]+)</time>', chunk)
         date_str = m_date.group(2) if m_date else ""
         
-        # We need posts with images and hair descriptions
-        if img_url and ('#' in text or 'cm' in text or 'см' in text or 'срез' in text.lower() or 'лот' in text.lower() or 'g' in text or 'г' in text or 'euro' in text):
-            # Extract number, length, weight
-            num_match = re.search(r'#(\d+)', text)
-            lot_num = num_match.group(1) if num_match else "Лот"
-            
-            # Extract length / weight
-            tag_parts = []
-            len_m = re.search(r'(\d+)\s*(?:cm|см)', text, re.IGNORECASE)
-            if len_m:
-                tag_parts.append(f"{len_m.group(1)} см")
-            wt_m = re.search(r'(\d+)\s*(?:g|г)', text, re.IGNORECASE)
-            if wt_m:
-                tag_parts.append(f"{wt_m.group(1)} г")
-                
-            tag = " • ".join(tag_parts) if tag_parts else "Детский блонд"
-            
-            # Short clean desc (up to 160 chars)
-            first_lines = [l.strip() for l in text.split('\n') if l.strip()]
-            desc = " ".join(first_lines[:3])[:160]
-            
+        if img_url and post_id:
+            num = post_id.split('/')[-1]
             posts.append({
-                'id': post_id.split('/')[-1] if post_id else '',
-                'post_full': post_id or '',
-                'url': f'https://t.me/{post_id}' if post_id else 'https://t.me/blondhunter',
-                'image': img_url,
-                'title': f'Срез #{lot_num}',
-                'tag': tag,
-                'desc': desc,
+                'num': num,
+                'post_full': post_id,
+                'img_url': img_url,
+                'text': text,
                 'date': date_str
             })
 
@@ -72,18 +50,89 @@ def fetch_channel_posts():
 
 def main():
     repo_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    images_dir = os.path.join(repo_dir, 'images')
     posts_file = os.path.join(repo_dir, 'posts.json')
+    os.makedirs(images_dir, exist_ok=True)
     
-    posts = fetch_channel_posts()
-    if posts and len(posts) >= 3:
-        # Take the latest 3-4 posts
-        latest_posts = posts[-3:]
-        latest_posts.reverse() # newest first
-        with open(posts_file, 'w', encoding='utf-8') as f:
-            json.dump(latest_posts, f, ensure_ascii=False, indent=2)
-        print(f"Saved {len(latest_posts)} posts to posts.json")
-    else:
-        print("Using existing posts or not enough posts found.")
+    all_posts = fetch_channel_posts()
+    if not all_posts:
+        print("No posts fetched.")
+        return
+
+    # Take latest 3 posts
+    latest = all_posts[-3:]
+    latest.reverse()
+    
+    clean_posts = []
+    for p in latest:
+        num = p['num']
+        img_url = p['img_url']
+        text = p['text']
+        
+        # Download image locally
+        local_img_name = f"post_{num}.jpg"
+        local_img_path = os.path.join(images_dir, local_img_name)
+        
+        # Download if not exists or small
+        try:
+            req = urllib.request.Request(img_url, headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                data = r.read()
+            with open(local_img_path, 'wb') as f:
+                f.write(data)
+            print(f"Downloaded {local_img_name} ({len(data)} bytes)")
+            permanent_url = f"https://raw.githubusercontent.com/snesterov/blondhunter/main/images/{local_img_name}"
+        except Exception as e:
+            print(f"Failed to download image for {num}: {e}")
+            permanent_url = f"https://raw.githubusercontent.com/snesterov/blondhunter/main/images/{local_img_name}"
+
+        # Extract tags & parameters
+        badge = "● Свежий лот"
+        lower_text = text.lower()
+        if 'скидк' in lower_text or '%' in lower_text or 'акци' in lower_text:
+            badge = "● Со скидкой"
+        elif 'first haircut' in lower_text or 'первый срез' in lower_text:
+            badge = "● Первый срез 👶"
+        elif 'кудр' in lower_text or 'curly' in lower_text:
+            badge = "● Кудри 🦁"
+        elif 'sold' in lower_text or 'продан' in lower_text:
+            badge = "● Продан"
+        elif 'наличи' in lower_text or 'студи' in lower_text:
+            badge = "● В наличии"
+
+        num_m = re.search(r'#(\d+)', text)
+        lot_name = f"Срез #{num_m.group(1)}" if num_m else "Партия срезов"
+
+        params = []
+        len_m = re.search(r'(\d+)\s*(?:cm|см)', text, re.IGNORECASE)
+        if len_m:
+            params.append(f"{len_m.group(1)} см")
+        wt_m = re.search(r'(\d+)\s*(?:g|г|гр)', text, re.IGNORECASE)
+        if wt_m:
+            params.append(f"{wt_m.group(1)} г")
+        tone_m = re.search(r'(?:tone|тон|холод|cold)\s*(\d+/\d+|\d+)', text, re.IGNORECASE)
+        if tone_m:
+            params.append(f"Тон {tone_m.group(1)}")
+        
+        param_tag = " • ".join(params) if params else "Детский блонд"
+
+        first_lines = [l.strip() for l in text.split('\n') if l.strip()]
+        desc = " ".join(first_lines[:3])[:140]
+
+        clean_posts.append({
+            'id': num,
+            'post_full': p['post_full'],
+            'url': f"https://t.me/blondhunter/{num}",
+            'image': permanent_url,
+            'badge': badge,
+            'title': lot_name,
+            'tag': param_tag,
+            'desc': desc
+        })
+
+    with open(posts_file, 'w', encoding='utf-8') as f:
+        json.dump(clean_posts, f, ensure_ascii=False, indent=2)
+    print("posts.json successfully updated with permanent images.")
 
 if __name__ == '__main__':
     main()
