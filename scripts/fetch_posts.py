@@ -2,10 +2,12 @@ import urllib.request
 import re
 import json
 import os
+import urllib.parse
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0 Safari/537.36'
 }
+WHATSAPP_NUMBER = "79266721978"
 
 def fetch_channel_posts():
     url = 'https://t.me/s/blondhunter'
@@ -17,20 +19,20 @@ def fetch_channel_posts():
         print(f"Error fetching channel: {e}")
         return None
 
-    messages = re.split(r'<div class="tgme_widget_message\b', html)
+    messages = re.split(r'<div class="tgme_widget_message\\b', html)
     posts = []
     
     for chunk in messages[1:]:
         m_post = re.search(r'data-post="([^"]+)"', chunk)
         post_id = m_post.group(1) if m_post else None
         
-        m_img = re.search(r"background-image:url\('([^']+)'\)", chunk)
+        m_img = re.search(r"background-image:url\\('([^']+)'\\)", chunk)
         img_url = m_img.group(1) if m_img else None
         
         m_text = re.search(r'<div class="tgme_widget_message_text[^>]*>(.*?)</div>', chunk, re.DOTALL)
         text = ""
         if m_text:
-            text = re.sub(r'<br/?>', '\n', m_text.group(1))
+            text = re.sub(r'<br/?>', '\\n', m_text.group(1))
             text = re.sub(r'<[^>]+>', '', text).strip()
             
         m_date = re.search(r'<time[^>]*datetime="([^"]+)"[^>]*>([^<]+)</time>', chunk)
@@ -51,7 +53,8 @@ def fetch_channel_posts():
 def main():
     repo_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     images_dir = os.path.join(repo_dir, 'images')
-    posts_file = os.path.join(repo_dir, 'posts.json')
+    posts_ru_file = os.path.join(repo_dir, 'posts.json')
+    posts_en_file = os.path.join(repo_dir, 'posts_en.json')
     os.makedirs(images_dir, exist_ok=True)
     
     all_posts = fetch_channel_posts()
@@ -59,18 +62,18 @@ def main():
         print("No posts fetched.")
         return
 
-    # Take latest 3 posts
     latest = all_posts[-3:]
     latest.reverse()
     
-    clean_posts = []
+    clean_ru = []
+    clean_en = []
+
     for p in latest:
         num = p['num']
         img_url = p['img_url']
         text = p['text']
         lower_text = text.lower()
         
-        # Download image locally to repo
         local_img_name = f"post_{num}.jpg"
         local_img_path = os.path.join(images_dir, local_img_name)
         try:
@@ -79,83 +82,98 @@ def main():
                 data = r.read()
             with open(local_img_path, 'wb') as f:
                 f.write(data)
-            print(f"Downloaded {local_img_name} ({len(data)} bytes)")
             permanent_url = f"https://raw.githubusercontent.com/snesterov/blondhunter/main/images/{local_img_name}"
-        except Exception as e:
-            print(f"Failed to download image for {num}: {e}")
+        except Exception:
             permanent_url = f"https://raw.githubusercontent.com/snesterov/blondhunter/main/images/{local_img_name}"
 
-        # 1. STATUS PARSER (Priority 1: SOLD)
+        # Status check
         is_sold = 'sold' in lower_text or 'продан' in lower_text
         if is_sold:
-            badge = "● Продан / Sold"
-            badge_type = "sold"
+            badge_ru, badge_en, badge_type = "● Продан / Sold", "● Sold Out", "sold"
         elif 'hot' in lower_text or 'огонь' in lower_text:
-            badge = "● Горячее предложение 🔥"
-            badge_type = "hot"
-        elif 'скидк' in lower_text or '%' in lower_text or 'акци' in lower_text:
-            badge = "● Со скидкой"
-            badge_type = "discount"
+            badge_ru, badge_en, badge_type = "● Горячее предложение 🔥", "● Hot Deal 🔥", "hot"
+        elif 'скидк' in lower_text or '%' in lower_text:
+            badge_ru, badge_en, badge_type = "● Со скидкой", "● Special Price", "discount"
         elif 'first haircut' in lower_text or 'первый срез' in lower_text:
-            badge = "● Первый срез 👶"
-            badge_type = "first"
+            badge_ru, badge_en, badge_type = "● Первый срез 👶", "● First Haircut 👶", "first"
         elif 'кудр' in lower_text or 'curly' in lower_text:
-            badge = "● Кудри 🦁"
-            badge_type = "curly"
-        elif 'наличи' in lower_text or 'студи' in lower_text:
-            badge = "● В наличии"
-            badge_type = "stock"
+            badge_ru, badge_en, badge_type = "● Кудри 🦁", "● Curly Waves 🦁", "curly"
         else:
-            badge = "● Свежий лот"
-            badge_type = "fresh"
+            badge_ru, badge_en, badge_type = "● Свежий лот", "● Fresh Arrival", "fresh"
 
-        # 2. TITLE
-        num_m = re.search(r'#(\d+)', text)
-        lot_title = f"Срез #{num_m.group(1)}" if num_m else f"Срез #{num}"
+        num_m = re.search(r'#(\\d+)', text)
+        lot_id = num_m.group(1) if num_m else num
+        title_ru = f"Срез #{lot_id}"
+        title_en = f"Hair Cut #{lot_id}"
 
-        # 3. SPECS (Length, Weight, Tone, Price)
-        specs = []
-        len_m = re.search(r'(\d+)\s*(?:cm|см)', text, re.IGNORECASE)
-        if not len_m:
-            len_m = re.search(r'#\d+,\s*(\d+)/', text)
+        # Specs
+        specs_ru = []
+        specs_en = []
+        len_m = re.search(r'(\\d+)\\s*(?:cm|см)', text, re.IGNORECASE) or re.search(r'#\\d+,\\s*(\\d+)/', text)
         if len_m:
-            specs.append(f"{len_m.group(1)} см")
-
-        wt_m = re.search(r'(\d+)\s*(?:g|г|гр)', text, re.IGNORECASE)
+            specs_ru.append(f"{len_m.group(1)} см")
+            specs_en.append(f"{len_m.group(1)} cm")
+        wt_m = re.search(r'(\\d+)\\s*(?:g|г|гр)', text, re.IGNORECASE)
         if wt_m:
-            specs.append(f"{wt_m.group(1)} г")
-
-        tone_m = re.search(r'(?:tone|тон|холод|cold|\b)([89](?:/[890])?)(?:\b|tone|тон|cold|холод)', text, re.IGNORECASE)
+            specs_ru.append(f"{wt_m.group(1)} г")
+            specs_en.append(f"{wt_m.group(1)} g")
+        tone_m = re.search(r'(?:tone|тон|холод|cold|\\b)([89](?:/[890])?)(?:\\b|tone|тон|cold|холод)', text, re.IGNORECASE)
         if tone_m:
-            specs.append(f"Тон {tone_m.group(1)}")
+            specs_ru.append(f"Тон {tone_m.group(1)}")
+            specs_en.append(f"Tone {tone_m.group(1)}")
 
-        price_rub = re.search(r'(\d+)\s*(?:т|тыс|000)', text)
-        price_eur = re.search(r'(\d+)\s*(?:euro|еuro|€)', text, re.IGNORECASE)
+        price_rub = re.search(r'(\\d+)\\s*(?:т|тыс|000)', text)
+        price_eur = re.search(r'(\\d+)\\s*(?:euro|еuro|€)', text, re.IGNORECASE)
         if price_rub and price_eur:
-            specs.append(f"{price_rub.group(1)} 000 ₽ / {price_eur.group(1)} €")
-        elif price_rub:
-            specs.append(f"{price_rub.group(1)} 000 ₽")
+            specs_ru.append(f"{price_rub.group(1)} 000 ₽ / {price_eur.group(1)} €")
+            specs_en.append(f"{price_rub.group(1)} 000 ₽ / €{price_eur.group(1)}")
+        elif price_eur:
+            specs_ru.append(f"{price_eur.group(1)} €")
+            specs_en.append(f"€{price_eur.group(1)}")
 
-        tag_str = " • ".join(specs) if specs else "Детский блонд"
+        tag_ru = " • ".join(specs_ru) if specs_ru else "Детский блонд"
+        tag_en = " • ".join(specs_en) if specs_en else "Virgin Slavic Blonde"
 
-        clean_lines = [l.strip() for l in text.split('\n') if l.strip() and not l.startswith('http') and not 'whatsapp' in l.lower() and not 'telegram' in l.lower()]
-        desc = " ".join(clean_lines)[:140]
+        clean_lines = [l.strip() for l in text.split('\\n') if l.strip() and not l.startswith('http') and not 'whatsapp' in l.lower() and not 'telegram' in l.lower()]
+        desc_ru = " ".join(clean_lines)[:140]
+        desc_en = f"Exclusive virgin child blonde ({tag_en}). 100% natural, ethically sourced Slavic hair. Worldwide express delivery."
 
-        clean_posts.append({
+        # WhatsApp text
+        if is_sold:
+            wa_text = f"Hello Olga! I saw Hair Cut #{lot_id} ({tag_en}) is SOLD OUT. Can you show me similar available options?"
+        else:
+            wa_text = f"Hello Olga! I would like to order Hair Cut #{lot_id} ({tag_en}). Is it available?"
+        wa_url = f"https://wa.me/{WHATSAPP_NUMBER}?text={urllib.parse.quote(wa_text)}"
+
+        clean_ru.append({
             'id': num,
-            'title': lot_title,
+            'title': title_ru,
             'image': permanent_url,
-            'badge': badge,
+            'badge': badge_ru,
             'badge_type': badge_type,
             'is_sold': is_sold,
-            'tag': tag_str,
-            'desc': desc,
+            'tag': tag_ru,
+            'desc': desc_ru,
             'url': f"https://t.me/blondhunter/{num}"
         })
+        clean_en.append({
+            'id': num,
+            'title': title_en,
+            'image': permanent_url,
+            'badge': badge_en,
+            'badge_type': badge_type,
+            'is_sold': is_sold,
+            'tag': tag_en,
+            'desc': desc_en,
+            'url': f"https://t.me/blondhunter/{num}",
+            'wa_url': wa_url
+        })
 
-    with open(posts_file, 'w', encoding='utf-8') as f:
-        json.dump(clean_posts, f, ensure_ascii=False, indent=2)
-    print("posts.json updated with SOLD priority and specs.")
+    with open(posts_ru_file, 'w', encoding='utf-8') as f:
+        json.dump(clean_ru, f, ensure_ascii=False, indent=2)
+    with open(posts_en_file, 'w', encoding='utf-8') as f:
+        json.dump(clean_en, f, ensure_ascii=False, indent=2)
+    print("Both posts.json and posts_en.json updated successfully!")
 
 if __name__ == '__main__':
     main()
