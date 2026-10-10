@@ -1,17 +1,19 @@
 (function() {
+  // Загрузка премиальных шрифтов
   if (!document.getElementById('hp-fonts')) {
     var f = document.createElement('link');
     f.id = 'hp-fonts';
     f.rel = 'stylesheet';
-    f.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700&display=swap';
+    f.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Montserrat:wght@400;500;600;700;800&display=swap';
     document.head.appendChild(f);
   }
 
+  // Инъекция лакшери стилей
   if (!document.getElementById('hp-styles')) {
     var s = document.createElement('style');
     s.id = 'hp-styles';
     s.textContent = `
-      /* Скрываем дубликаты и дефолтные блоки, но сохраняем попапы #rec1915062531 (#popup:contact) и #rec1935129061 */
+      /* Скрываем дубликаты и дефолтные блоки Tilda, оставляя только попапы */
       #allrecords > .r:not(#rec4673156001):not(#rec1915062531):not(#rec1935129061),
       #allrecords > div.r:not(#rec4673156001):not(#rec1915062531):not(#rec1935129061),
       #t-footer, .t972, #rec1930057121 {
@@ -28,18 +30,19 @@
       :root {
         --hp-rose: #f472b6;
         --hp-rose-dark: #db2777;
+        --hp-rose-light: #fbcfe8;
         --hp-pink-grad: linear-gradient(135deg, #fbcfe8 0%, #f472b6 50%, #db2777 100%);
-        --hp-gold: #c6a355;
-        --hp-gold-grad: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
-        --hp-bg-noir: #0a090d;
-        --hp-card: rgba(22, 19, 29, 0.78);
-        --hp-card-hover: rgba(30, 25, 40, 0.95);
-        --hp-surface: #191622;
+        --hp-gold: #e2b774;
+        --hp-gold-grad: linear-gradient(135deg, #fde68a 0%, #e2b774 50%, #b45309 100%);
+        --hp-bg-noir: #0a080e;
+        --hp-card: rgba(22, 18, 29, 0.82);
+        --hp-card-hover: rgba(32, 26, 42, 0.96);
+        --hp-surface: #171321;
         --hp-text: #f9f8fc;
-        --hp-text-muted: #a69fb0;
+        --hp-text-muted: #aca3b5;
         --hp-border: rgba(244, 114, 182, 0.28);
         --hp-border-subtle: rgba(255, 255, 255, 0.08);
-        --hp-glow: 0 0 30px rgba(244, 114, 182, 0.25);
+        --hp-glow: 0 0 35px rgba(244, 114, 182, 0.25);
       }
 
       * { box-sizing: border-box !important; }
@@ -53,20 +56,21 @@
         width: 100% !important;
         max-width: 100vw !important;
         -webkit-font-smoothing: antialiased;
+        scroll-behavior: smooth;
       }
 
       #hp-app {
         width: 100%;
         max-width: 100vw;
         overflow-x: hidden;
-        background: radial-gradient(circle at 50% -10%, #2a1122 0%, #0d0b12 45%, #070609 100%);
+        background: radial-gradient(circle at 50% -5%, #2d1225 0%, #0d0b13 45%, #07060a 100%);
         position: relative;
         z-index: 10;
       }
 
       .hp-container {
         width: 100%;
-        max-width: 1220px;
+        max-width: 1240px;
         margin: 0 auto;
         padding: 0 20px;
       }
@@ -76,12 +80,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 20px 0;
+        padding: 18px 0;
         border-bottom: 1px solid var(--hp-border-subtle);
         position: sticky;
         top: 0;
-        background: rgba(10, 9, 13, 0.88);
-        backdrop-filter: blur(14px);
+        background: rgba(10, 8, 14, 0.92);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         z-index: 100;
       }
       .hp-logo-wrap { text-decoration: none; display: flex; flex-direction: column; }
@@ -89,7 +94,7 @@
         font-family: 'Cormorant Garamond', serif;
         font-size: 32px;
         font-weight: 700;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
         line-height: 1;
         background: linear-gradient(135deg, #ffffff 0%, #fbcfe8 50%, #f472b6 100%);
         -webkit-background-clip: text;
@@ -97,14 +102,27 @@
         text-transform: lowercase;
       }
       .hp-logo-sub {
-        font-size: 10.5px;
+        font-size: 11px;
         color: var(--hp-rose);
         letter-spacing: 2px;
         text-transform: uppercase;
         margin-top: 5px;
         font-weight: 600;
       }
-      .hp-header-actions { display: flex; align-items: center; gap: 16px; }
+      .hp-nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .hp-nav-link {
+        color: #d1c8db;
+        text-decoration: none;
+        font-size: 13.5px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+      .hp-nav-link:hover { color: var(--hp-rose); }
+      .hp-header-actions { display: flex; align-items: center; gap: 14px; }
       .hp-header-phone {
         color: #fff;
         text-decoration: none;
@@ -118,41 +136,44 @@
         color: #1a0815 !important;
         font-weight: 700;
         font-size: 13px;
-        padding: 11px 22px;
+        padding: 10px 20px;
         border-radius: 25px;
         text-decoration: none;
         box-shadow: 0 4px 18px rgba(244, 114, 182, 0.4);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
       }
       .hp-btn-header-cta:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 24px rgba(244, 114, 182, 0.6);
       }
 
-      /* HERO SECTION */
-      .hp-hero { padding: 48px 0 70px; }
+      /* HERO SECTION (ГЛАВНЫЙ ЭКРАН С ТРЕМЯ ДЕВОЧКАМИ) */
+      .hp-hero { padding: 40px 0 65px; position: relative; }
       .hp-hero-grid {
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 44px;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 40px;
         align-items: center;
       }
-      .hp-badge-live {
+      .hp-badge-brand {
         display: inline-flex;
         align-items: center;
         gap: 9px;
         background: rgba(244, 114, 182, 0.12);
         border: 1px solid var(--hp-border);
         color: #fce7f3;
-        padding: 7px 16px;
+        padding: 8px 18px;
         border-radius: 30px;
         font-size: 12px;
         font-weight: 600;
-        letter-spacing: 1.2px;
+        letter-spacing: 1.5px;
         text-transform: uppercase;
         margin-bottom: 22px;
       }
-      .hp-badge-live span {
+      .hp-badge-brand span {
         width: 8px; height: 8px;
         border-radius: 50%;
         background: #10B981;
@@ -161,7 +182,7 @@
       }
       .hp-hero-title {
         font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(34px, 4.4vw, 56px);
+        font-size: clamp(34px, 4.3vw, 56px);
         font-weight: 700;
         line-height: 1.12;
         margin: 0 0 20px;
@@ -181,8 +202,8 @@
       .hp-hero-cta-box {
         display: flex;
         flex-wrap: wrap;
-        gap: 14px;
-        margin-bottom: 38px;
+        gap: 12px;
+        margin-bottom: 36px;
       }
       .hp-btn-main {
         background: var(--hp-pink-grad);
@@ -195,12 +216,14 @@
         box-shadow: 0 6px 25px rgba(244, 114, 182, 0.45);
         display: inline-flex;
         align-items: center;
-        gap: 9px;
+        gap: 8px;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+        border: none;
       }
       .hp-btn-main:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(244, 114, 182, 0.65);
+        box-shadow: 0 8px 32px rgba(244, 114, 182, 0.65);
       }
       .hp-btn-max {
         background: rgba(33, 150, 243, 0.14);
@@ -208,7 +231,7 @@
         color: #90CAF9 !important;
         font-size: 14px;
         font-weight: 600;
-        padding: 16px 24px;
+        padding: 15px 22px;
         border-radius: 30px;
         text-decoration: none;
         display: inline-flex;
@@ -217,406 +240,373 @@
         transition: all 0.2s ease;
       }
       .hp-btn-max:hover {
-        background: rgba(33, 150, 243, 0.25);
+        background: rgba(33, 150, 243, 0.26);
         border-color: #2196F3;
       }
-      .hp-btn-wa-soft {
-        background: rgba(37, 211, 102, 0.09);
-        border: 1px solid rgba(37, 211, 102, 0.35);
-        color: #69F0AE !important;
-        font-size: 13.5px;
+      .hp-btn-tg-soft {
+        background: rgba(0, 136, 204, 0.12);
+        border: 1px solid rgba(0, 136, 204, 0.4);
+        color: #81D4FA !important;
+        font-size: 14px;
         font-weight: 600;
-        padding: 16px 20px;
+        padding: 15px 22px;
         border-radius: 30px;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
-        gap: 7px;
+        gap: 8px;
         transition: all 0.2s ease;
       }
-      .hp-btn-wa-soft:hover {
-        background: rgba(37, 211, 102, 0.2);
-        border-color: #25D366;
+      .hp-btn-tg-soft:hover {
+        background: rgba(0, 136, 204, 0.24);
+        border-color: #0088cc;
       }
 
-      .hp-stats {
+      /* HERO VISUAL: КАРТОЧКА С ТРЕМЯ ДЕВОЧКАМИ */
+      .hp-hero-girls-showcase {
+        position: relative;
+        background: radial-gradient(ellipse at 50% 20%, rgba(244, 114, 182, 0.2) 0%, rgba(20, 16, 28, 0.95) 75%);
+        border: 1px solid var(--hp-border);
+        border-radius: 28px;
+        padding: 16px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(244, 114, 182, 0.2);
+        overflow: hidden;
+      }
+      .hp-girls-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 20px;
+        object-fit: cover;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+      .hp-hero-float-badge {
+        position: absolute;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background: rgba(18, 14, 25, 0.85);
+        border: 1px solid rgba(244, 114, 182, 0.4);
+        border-radius: 16px;
+        padding: 10px 16px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .hp-hero-float-badge.top-left {
+        top: 28px;
+        left: 28px;
+      }
+      .hp-hero-float-badge.bottom-right {
+        bottom: 28px;
+        right: 28px;
+      }
+      .hp-badge-icon {
+        font-size: 18px;
+      }
+
+      /* СТАТИСТИКА ПОД ГЕРОЕМ */
+      .hp-hero-stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-        padding-top: 26px;
-        border-top: 1px solid var(--hp-border-subtle);
+        gap: 16px;
+        margin-top: 10px;
+      }
+      .hp-stat-card {
+        background: var(--hp-card);
+        border: 1px solid var(--hp-border-subtle);
+        border-radius: 18px;
+        padding: 18px 20px;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+      .hp-stat-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--hp-border);
       }
       .hp-stat-val {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 36px;
+        font-size: 34px;
         font-weight: 700;
-        color: #fbcfe8;
         line-height: 1;
+        background: var(--hp-pink-grad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 6px;
       }
       .hp-stat-lbl {
         font-size: 12px;
         color: var(--hp-text-muted);
-        margin-top: 6px;
+        line-height: 1.4;
       }
 
-      /* HERO MEDIA COLLAGE (Модели + Студийный склад) */
-      .hp-hero-collage {
-        position: relative;
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 14px;
-      }
-      .hp-hero-card-main {
-        position: relative;
-        border-radius: 24px;
-        overflow: hidden;
-        border: 1px solid var(--hp-border);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-        background: #181520;
-        height: 520px;
-      }
-      .hp-hero-card-main img {
-        width: 100%; height: 100%; object-fit: cover; display: block;
-      }
-      .hp-hero-side-cards {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        height: 520px;
-      }
-      .hp-hero-card-sub {
-        position: relative;
-        border-radius: 18px;
-        overflow: hidden;
-        border: 1px solid var(--hp-border);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        background: #181520;
-        flex: 1;
-      }
-      .hp-hero-card-sub img {
-        width: 100%; height: 100%; object-fit: cover; display: block;
-      }
-      .hp-media-badge {
-        position: absolute;
-        bottom: 12px; left: 12px; right: 12px;
-        background: rgba(12, 10, 16, 0.88);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(244, 114, 182, 0.3);
-        border-radius: 14px;
-        padding: 9px 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .hp-media-badge-txt { font-size: 11.5px; font-weight: 600; color: #fff; }
-      .hp-media-badge-tag { font-size: 10.5px; color: var(--hp-rose); font-weight: 700; }
-
-      /* LEAD GENERATION SECTION */
-      .hp-lead-section {
-        padding: 68px 0;
-        background: rgba(22, 19, 29, 0.85);
-        border-top: 1px solid var(--hp-border-subtle);
-        border-bottom: 1px solid var(--hp-border-subtle);
-        position: relative;
-      }
-      .hp-lead-section::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 50%;
-        transform: translateX(-50%);
-        width: 80%;
-        height: 1px;
-        background: linear-gradient(90deg, transparent 0%, var(--hp-rose) 50%, transparent 100%);
-      }
-      .hp-lead-box {
-        max-width: 720px;
-        margin: 0 auto;
-        background: var(--hp-card);
-        backdrop-filter: blur(16px);
-        border: 1px solid var(--hp-border);
-        border-radius: 28px;
-        padding: 42px 36px;
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), var(--hp-glow);
+      /* СЕКЦИИ ОБЩИЕ ЗАГОЛОВКИ */
+      .hp-sec-head {
         text-align: center;
+        max-width: 780px;
+        margin: 0 auto 46px;
       }
-      .hp-lead-badge {
+      .hp-sec-badge {
         display: inline-block;
-        background: rgba(244, 114, 182, 0.15);
-        border: 1px solid var(--hp-rose);
-        color: #fbcfe8;
-        padding: 5px 14px;
-        border-radius: 20px;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        margin-bottom: 14px;
-      }
-      .hp-lead-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(28px, 3.5vw, 40px);
-        font-weight: 700;
-        color: #ffffff;
-        margin: 0 0 12px;
-        line-height: 1.2;
-      }
-      .hp-lead-subtitle {
-        font-size: 14.5px;
-        color: var(--hp-text-muted);
-        margin: 0 0 28px;
-        line-height: 1.6;
-      }
-      .hp-lead-sub-accent { color: #fbcfe8; font-weight: 600; }
-
-      .hp-method-label {
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 600;
-        color: #fce7f3;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--hp-rose);
         margin-bottom: 12px;
-        text-align: left;
       }
-      .hp-method-selector {
+      .hp-sec-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(30px, 3.8vw, 48px);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.18;
+        margin: 0 0 16px;
+      }
+      .hp-sec-title span {
+        background: var(--hp-pink-grad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hp-sec-desc {
+        font-size: 15.5px;
+        color: var(--hp-text-muted);
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      /* ПРЕИМУЩЕСТВА (УТП) */
+      .hp-features-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        margin-bottom: 22px;
+        gap: 20px;
+        margin-bottom: 70px;
       }
-      .hp-method-btn {
-        background: var(--hp-surface);
+      .hp-feature-card {
+        background: var(--hp-card);
         border: 1px solid var(--hp-border-subtle);
-        color: var(--hp-text-muted);
-        padding: 13px 8px;
-        border-radius: 14px;
-        font-size: 12.5px;
-        font-weight: 600;
-        cursor: pointer;
+        border-radius: 22px;
+        padding: 30px 24px;
+        position: relative;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+      .hp-feature-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--hp-border);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), var(--hp-glow);
+      }
+      .hp-feature-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        background: rgba(244, 114, 182, 0.12);
+        border: 1px solid var(--hp-border);
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 6px;
-        transition: all 0.2s ease;
+        font-size: 24px;
+        margin-bottom: 20px;
       }
-      .hp-method-btn:hover { border-color: rgba(244, 114, 182, 0.4); color: #fff; }
-      .hp-method-btn.active.max {
-        border-color: #2196F3;
-        background: rgba(33, 150, 243, 0.22);
-        color: #90CAF9;
-        box-shadow: 0 0 15px rgba(33, 150, 243, 0.35);
-      }
-      .hp-method-btn.active.tg {
-        border-color: #03A9F4;
-        background: rgba(3, 169, 244, 0.22);
-        color: #81D4FA;
-        box-shadow: 0 0 15px rgba(3, 169, 244, 0.35);
-      }
-      .hp-method-btn.active.wa {
-        border-color: #25D366;
-        background: rgba(37, 211, 102, 0.22);
-        color: #A5D6A7;
-        box-shadow: 0 0 15px rgba(37, 211, 102, 0.35);
-      }
-      .hp-method-btn.active.phone {
-        border-color: var(--hp-rose);
-        background: rgba(244, 114, 182, 0.22);
-        color: #fff;
-        box-shadow: 0 0 15px rgba(244, 114, 182, 0.35);
-      }
-
-      .hp-input-group { margin-bottom: 16px; text-align: left; }
-      .hp-input {
-        width: 100%;
-        background: var(--hp-surface);
-        border: 1px solid var(--hp-border-subtle);
-        border-radius: 15px;
-        padding: 15px 20px;
-        color: #ffffff;
-        font-size: 15px;
-        outline: none;
-        font-family: 'Montserrat', sans-serif;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease;
-      }
-      .hp-input:focus {
-        border-color: var(--hp-rose);
-        box-shadow: 0 0 16px rgba(244, 114, 182, 0.25);
-      }
-      .hp-input-hint {
-        font-size: 11.5px;
-        color: #9f96aa;
-        margin-top: 7px;
-        padding-left: 4px;
-      }
-      .hp-form-submit {
-        width: 100%;
-        background: var(--hp-pink-grad);
-        color: #1a0815;
-        font-size: 16px;
-        font-weight: 700;
-        padding: 17px;
-        border-radius: 16px;
-        border: none;
-        cursor: pointer;
-        margin-top: 10px;
-        box-shadow: 0 6px 25px rgba(244, 114, 182, 0.5);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-      .hp-form-submit:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 32px rgba(244, 114, 182, 0.7);
-      }
-      .hp-form-policy {
-        font-size: 11px;
-        color: #7d7588;
-        margin-top: 14px;
-      }
-      .hp-form-policy a {
-        color: #baa7cc;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-
-      /* QUIZ SECTION */
-      .hp-quiz-section { padding: 65px 0; }
-      .hp-sec-head { text-align: center; max-width: 650px; margin: 0 auto 40px; }
-      .hp-sec-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(30px, 3.8vw, 44px);
-        color: #fff;
-        margin: 0 0 12px;
-      }
-      .hp-sec-desc { font-size: 14.5px; color: var(--hp-text-muted); line-height: 1.6; }
-      .hp-quiz-card {
-        background: var(--hp-card);
-        border: 1px solid var(--hp-border);
-        border-radius: 24px;
-        padding: 34px 30px;
-        max-width: 840px;
-        margin: 0 auto;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-      }
-      .hp-quiz-step-title {
-        font-size: 16px;
-        font-weight: 600;
-        color: #fbcfe8;
-        margin-bottom: 15px;
-      }
-      .hp-quiz-options {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        margin-bottom: 26px;
-      }
-      .hp-quiz-opt {
-        background: var(--hp-surface);
-        border: 1px solid var(--hp-border-subtle);
-        border-radius: 14px;
-        padding: 18px 12px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
-      .hp-quiz-opt:hover { border-color: rgba(244, 114, 182, 0.4); }
-      .hp-quiz-opt.selected {
-        background: rgba(244, 114, 182, 0.16);
-        border-color: var(--hp-rose);
-        color: #fff;
-        box-shadow: 0 0 18px rgba(244, 114, 182, 0.25);
-      }
-      .hp-quiz-opt-val { font-size: 16.5px; font-weight: 700; margin-bottom: 4px; }
-      .hp-quiz-opt-desc { font-size: 11.5px; color: var(--hp-text-muted); }
-
-      /* CATALOG PREVIEW */
-      .hp-catalog-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-        gap: 24px;
-      }
-      .hp-cut-card {
-        background: var(--hp-card);
-        border: 1px solid var(--hp-border-subtle);
-        border-radius: 20px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.25s ease, border-color 0.25s ease;
-      }
-      .hp-cut-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--hp-border);
-      }
-      .hp-cut-img-wrap { position: relative; height: 260px; background: #121018; overflow: hidden; }
-      .hp-cut-img { width: 100%; height: 100%; object-fit: cover; }
-      .hp-cut-badge {
-        position: absolute;
-        top: 12px; right: 12px;
-        background: rgba(16, 185, 129, 0.25);
-        border: 1px solid rgba(16, 185, 129, 0.5);
-        color: #34d399;
-        font-size: 11px;
-        font-weight: 700;
-        padding: 5px 12px;
-        border-radius: 20px;
-        backdrop-filter: blur(8px);
-      }
-      .hp-cut-info { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; }
-      .hp-cut-title {
+      .hp-feature-title {
         font-family: 'Cormorant Garamond', serif;
         font-size: 22px;
         font-weight: 700;
         color: #fff;
+        margin: 0 0 10px;
+        line-height: 1.25;
+      }
+      .hp-feature-desc {
+        font-size: 13.5px;
+        color: var(--hp-text-muted);
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      /* КАТАЛОГ СРЕЗОВ С ФИЛЬТРАМИ */
+      .hp-catalog-section { padding: 40px 0 75px; }
+      .hp-catalog-filters {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 36px;
+      }
+      .hp-filter-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--hp-border-subtle);
+        color: #cfc7d8;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 13.5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .hp-filter-btn:hover {
+        border-color: var(--hp-border);
+        color: #fff;
+      }
+      .hp-filter-btn.active {
+        background: rgba(244, 114, 182, 0.2);
+        border-color: var(--hp-rose);
+        color: #fff;
+        box-shadow: 0 0 18px rgba(244, 114, 182, 0.3);
+      }
+      .hp-catalog-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+      }
+      .hp-cut-card {
+        background: var(--hp-card);
+        border: 1px solid var(--hp-border-subtle);
+        border-radius: 24px;
+        overflow: hidden;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        display: flex;
+        flex-direction: column;
+      }
+      .hp-cut-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--hp-border);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(244, 114, 182, 0.2);
+      }
+      .hp-cut-img-wrap {
+        height: 320px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hp-cut-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .hp-cut-card:hover .hp-cut-img {
+        transform: scale(1.04);
+      }
+      .hp-cut-badge {
+        position: absolute;
+        top: 14px; left: 14px;
+        background: rgba(14, 10, 20, 0.85);
+        backdrop-filter: blur(8px);
+        border: 1px solid var(--hp-border);
+        color: #fbcfe8;
+        padding: 5px 12px;
+        border-radius: 14px;
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+      .hp-cut-body {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+      .hp-cut-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
         margin: 0 0 8px;
+        line-height: 1.2;
+      }
+      .hp-cut-meta {
+        display: flex;
+        gap: 12px;
+        font-size: 12.5px;
+        color: var(--hp-rose);
+        font-weight: 600;
+        margin-bottom: 12px;
       }
       .hp-cut-desc {
-        font-size: 13px;
+        font-size: 13.5px;
         color: var(--hp-text-muted);
         line-height: 1.55;
-        margin-bottom: 18px;
+        margin: 0 0 20px;
         flex-grow: 1;
       }
       .hp-cut-btn {
-        width: 100%;
-        background: var(--hp-pink-grad);
-        color: #1a0815;
-        font-size: 13.5px;
-        font-weight: 700;
-        padding: 13px;
-        border-radius: 12px;
+        background: rgba(244, 114, 182, 0.14);
+        border: 1px solid var(--hp-border);
+        color: #fbcfe8 !important;
         text-align: center;
+        padding: 13px;
+        border-radius: 16px;
+        font-weight: 700;
+        font-size: 13.5px;
         text-decoration: none;
-        cursor: pointer;
-        border: none;
-        transition: opacity 0.2s ease;
+        transition: all 0.2s ease;
+        display: block;
       }
-      .hp-cut-btn:hover { opacity: 0.92; }
+      .hp-cut-btn:hover {
+        background: var(--hp-pink-grad);
+        color: #1a0815 !important;
+        box-shadow: 0 4px 20px rgba(244, 114, 182, 0.5);
+      }
 
-      /* TELEGRAM LIVE FEED */
-      .hp-tg-feed-section { padding: 60px 0 80px; border-top: 1px solid var(--hp-border-subtle); }
-      .hp-tg-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(3, 169, 244, 0.12);
-        border: 1px solid rgba(3, 169, 244, 0.4);
-        color: #81D4FA;
-        padding: 6px 14px;
-        border-radius: 30px;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
+      /* КВИЗ / ЭКСПРЕСС-ПОДБОР */
+      .hp-quiz-section { padding: 40px 0 75px; }
+      .hp-quiz-card {
+        background: var(--hp-card);
+        border: 1px solid var(--hp-border);
+        border-radius: 28px;
+        padding: 40px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .hp-quiz-step-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: #ffffff;
         margin-bottom: 16px;
       }
-      .hp-tg-badge span {
-        width: 8px; height: 8px;
-        border-radius: 50%;
-        background: #03A9F4;
-        display: inline-block;
-        box-shadow: 0 0 10px #03A9F4;
+      .hp-quiz-options {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-bottom: 28px;
       }
+      .hp-quiz-opt {
+        background: #1b1725;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 18px;
+        padding: 18px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: center;
+      }
+      .hp-quiz-opt:hover {
+        border-color: rgba(244, 114, 182, 0.5);
+        background: #221b2f;
+      }
+      .hp-quiz-opt.selected {
+        background: rgba(244, 114, 182, 0.18);
+        border-color: var(--hp-rose);
+        box-shadow: 0 0 20px rgba(244, 114, 182, 0.3);
+      }
+      .hp-quiz-opt-val {
+        font-weight: 700;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 6px;
+      }
+      .hp-quiz-opt-desc {
+        font-size: 12px;
+        color: var(--hp-text-muted);
+      }
+
+      /* ЖИВАЯ ЛЕНТА TELEGRAM & MAX */
+      .hp-tg-feed-section { padding: 40px 0 75px; }
       .hp-feed-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-        gap: 24px;
-        margin-top: 32px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
       }
       .hp-feed-card {
         background: var(--hp-card);
@@ -628,177 +618,626 @@
         transition: transform 0.25s ease, border-color 0.25s ease;
       }
       .hp-feed-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-4px);
         border-color: var(--hp-border);
       }
-      .hp-feed-media { position: relative; height: 320px; background: #000; overflow: hidden; }
-      .hp-feed-thumb { width: 100%; height: 100%; object-fit: cover; }
+      .hp-feed-media {
+        position: relative;
+        height: 230px;
+        background: #000;
+      }
+      .hp-feed-thumb {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
       .hp-feed-video-badge {
         position: absolute;
-        top: 12px; left: 12px;
-        background: rgba(10, 8, 14, 0.78);
-        backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
+        top: 10px; right: 10px;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(6px);
         color: #fff;
-        font-size: 11.5px;
-        font-weight: 700;
-        padding: 5px 12px;
-        border-radius: 20px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
+        padding: 4px 9px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 600;
       }
-      .hp-feed-body { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; }
-      .hp-feed-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 21px;
-        font-weight: 700;
-        color: #fff;
-        margin: 0 0 10px;
-        line-height: 1.25;
-      }
-      .hp-feed-desc {
-        font-size: 13px;
-        color: var(--hp-text-muted);
-        line-height: 1.6;
-        white-space: pre-line;
-        margin-bottom: 20px;
+      .hp-feed-body {
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
         flex-grow: 1;
       }
-      .hp-feed-actions { display: flex; gap: 10px; }
+      .hp-feed-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 8px;
+        line-height: 1.3;
+      }
+      .hp-feed-desc {
+        font-size: 12.5px;
+        color: var(--hp-text-muted);
+        line-height: 1.5;
+        margin: 0 0 16px;
+        flex-grow: 1;
+        max-height: 90px;
+        overflow: hidden;
+      }
+      .hp-feed-actions {
+        display: flex;
+        gap: 8px;
+      }
       .hp-feed-btn-book {
-        flex: 1;
         background: var(--hp-pink-grad);
         color: #1a0815 !important;
-        font-size: 13px;
         font-weight: 700;
-        padding: 13px;
+        font-size: 12px;
+        padding: 9px 12px;
         border-radius: 12px;
-        text-align: center;
         text-decoration: none;
+        flex-grow: 1;
+        text-align: center;
       }
       .hp-feed-btn-tg {
-        padding: 13px 18px;
-        background: rgba(3, 169, 244, 0.15);
-        border: 1px solid rgba(3, 169, 244, 0.4);
+        background: rgba(0, 136, 204, 0.16);
         color: #81D4FA !important;
-        font-size: 13px;
-        font-weight: 600;
+        border: 1px solid rgba(0, 136, 204, 0.4);
+        padding: 9px 12px;
         border-radius: 12px;
+        font-size: 12px;
+        font-weight: 600;
         text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
       }
 
-      /* FOOTER */
-      .hp-footer {
-        padding: 44px 0 85px;
-        border-top: 1px solid var(--hp-border-subtle);
+      /* ГЛАВНЫЙ БЛОК ЗАХВАТА ЗАЯВКИ (LEAD GENERATION) */
+      .hp-lead-section { padding: 40px 0 75px; }
+      .hp-lead-box {
+        background: radial-gradient(ellipse at 50% -10%, #301328 0%, #171321 70%);
+        border: 1px solid var(--hp-border);
+        border-radius: 32px;
+        padding: 48px 40px;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8), 0 0 40px rgba(244, 114, 182, 0.2);
+        max-width: 820px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+      }
+      .hp-lead-badge {
+        display: inline-block;
+        background: rgba(244, 114, 182, 0.15);
+        border: 1px solid var(--hp-border);
+        color: #fbcfe8;
+        padding: 7px 18px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .hp-lead-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(30px, 4vw, 46px);
+        font-weight: 700;
+        line-height: 1.15;
+        margin: 0 0 14px;
+        color: #fff;
+      }
+      .hp-lead-subtitle {
+        font-size: 15.5px;
+        line-height: 1.6;
+        color: var(--hp-text-muted);
+        margin: 0 auto 32px;
+        max-width: 620px;
+      }
+      .hp-method-label {
+        font-size: 13.5px;
+        color: #fce7f3;
+        font-weight: 600;
+        margin-bottom: 14px;
+        text-align: left;
+      }
+      .hp-method-selector {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-bottom: 22px;
+      }
+      .hp-method-btn {
+        background: #1e1929;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        padding: 13px 8px;
+        color: #ccc;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        transition: all 0.2s ease;
+      }
+      .hp-method-btn:hover {
+        border-color: rgba(244, 114, 182, 0.4);
+      }
+      .hp-method-btn.active.max {
+        background: rgba(33, 150, 243, 0.22);
+        border-color: #2196F3;
+        color: #fff;
+        box-shadow: 0 0 16px rgba(33, 150, 243, 0.35);
+      }
+      .hp-method-btn.active.tg {
+        background: rgba(0, 136, 204, 0.22);
+        border-color: #0088cc;
+        color: #fff;
+        box-shadow: 0 0 16px rgba(0, 136, 204, 0.35);
+      }
+      .hp-method-btn.active.wa {
+        background: rgba(37, 211, 102, 0.22);
+        border-color: #25D366;
+        color: #fff;
+        box-shadow: 0 0 16px rgba(37, 211, 102, 0.35);
+      }
+      .hp-method-btn.active.phone {
+        background: rgba(244, 114, 182, 0.22);
+        border-color: var(--hp-rose);
+        color: #fff;
+        box-shadow: 0 0 16px rgba(244, 114, 182, 0.35);
+      }
+      .hp-input-group { margin-bottom: 16px; text-align: left; }
+      .hp-input {
+        width: 100%;
+        background: #1c1825;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 16px;
+        color: #fff;
+        padding: 16px 20px;
+        font-size: 15px;
+        font-family: 'Montserrat', sans-serif;
+        outline: none;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .hp-input:focus {
+        border-color: var(--hp-rose);
+        box-shadow: 0 0 16px rgba(244, 114, 182, 0.3);
+      }
+      .hp-input-hint {
         font-size: 12px;
         color: var(--hp-text-muted);
-        line-height: 1.65;
-        text-align: center;
+        margin-top: 8px;
+        line-height: 1.5;
       }
-      .hp-footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        margin-bottom: 16px;
-        flex-wrap: wrap;
+      .hp-input-hint strong { color: #fbcfe8; }
+      .hp-form-submit {
+        width: 100%;
+        background: var(--hp-pink-grad);
+        color: #1a0815;
+        border: none;
+        border-radius: 18px;
+        padding: 18px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 8px 30px rgba(244, 114, 182, 0.5);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        margin-top: 10px;
       }
-      .hp-footer-link {
+      .hp-form-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 35px rgba(244, 114, 182, 0.7);
+      }
+      .hp-form-policy {
+        font-size: 12px;
+        color: #8c8296;
+        margin-top: 14px;
+        line-height: 1.5;
+      }
+      .hp-form-policy a {
         color: #fbcfe8;
         text-decoration: underline;
         cursor: pointer;
       }
 
-      /* UI CONTROLS & WIDGETS */
-      #hp-btn-top {
-        position: fixed !important;
-        bottom: 14px !important;
-        left: 14px !important;
-        width: 40px !important;
-        height: 40px !important;
-        background: #ffffff !important;
-        color: #1a0815 !important;
-        border: 1px solid #e2d9eb !important;
+      /* ОТЗЫВЫ */
+      .hp-reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        margin-bottom: 70px;
+      }
+      .hp-review-card {
+        background: var(--hp-card);
+        border: 1px solid var(--hp-border-subtle);
+        border-radius: 22px;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .hp-review-stars {
+        color: #eab308;
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+      .hp-review-text {
+        font-size: 14px;
+        color: #e2dce8;
+        line-height: 1.6;
+        margin: 0 0 18px;
+        font-style: italic;
+      }
+      .hp-review-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .hp-review-avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(244, 114, 182, 0.2);
+        border: 1px solid var(--hp-border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #fbcfe8;
+      }
+      .hp-review-name { font-weight: 700; font-size: 14px; color: #fff; }
+      .hp-review-role { font-size: 12px; color: var(--hp-text-muted); }
+
+      /* FAQ АККОРДЕОН */
+      .hp-faq-list {
+        max-width: 820px;
+        margin: 0 auto 75px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .hp-faq-item {
+        background: var(--hp-card);
+        border: 1px solid var(--hp-border-subtle);
+        border-radius: 18px;
+        overflow: hidden;
+        transition: border-color 0.2s ease;
+      }
+      .hp-faq-item.active {
+        border-color: var(--hp-border);
+      }
+      .hp-faq-question {
+        padding: 20px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+      }
+      .hp-faq-icon {
+        font-size: 20px;
+        color: var(--hp-rose);
+        transition: transform 0.25s ease;
+      }
+      .hp-faq-item.active .hp-faq-icon {
+        transform: rotate(45deg);
+      }
+      .hp-faq-answer {
+        padding: 0 24px 20px;
+        font-size: 14px;
+        color: var(--hp-text-muted);
+        line-height: 1.6;
+        display: none;
+      }
+      .hp-faq-item.active .hp-faq-answer {
+        display: block;
+      }
+
+      /* КОНТАКТЫ И ШОУРУМ */
+      .hp-contacts-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        background: var(--hp-card);
+        border: 1px solid var(--hp-border);
+        border-radius: 30px;
+        padding: 40px;
+        margin-bottom: 70px;
+      }
+      .hp-contact-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 16px;
+      }
+      .hp-contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+      .hp-ci-icon {
+        font-size: 20px;
+        color: var(--hp-rose);
+        line-height: 1.2;
+      }
+      .hp-ci-label { font-size: 12px; color: var(--hp-text-muted); text-transform: uppercase; letter-spacing: 1px; }
+      .hp-ci-val { font-size: 15px; color: #fff; font-weight: 600; margin-top: 2px; }
+      .hp-ci-val a { color: #fbcfe8; text-decoration: none; }
+      .hp-showroom-img-box {
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        height: 100%;
+        min-height: 280px;
+      }
+      .hp-showroom-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hp-showroom-badge {
+        position: absolute;
+        bottom: 16px; left: 16px;
+        background: rgba(14, 10, 20, 0.85);
+        backdrop-filter: blur(8px);
+        border: 1px solid var(--hp-border);
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      /* FOOTER */
+      .hp-footer {
+        padding: 40px 0 60px;
+        border-top: 1px solid var(--hp-border-subtle);
+        text-align: center;
+        font-size: 13px;
+        color: #8c8296;
+        line-height: 1.65;
+      }
+      .hp-footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+      .hp-footer-link {
+        color: #ccc;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+
+      /* ==============================================================
+         РЕСТАЙЛИНГ ВСЕХ НА ТИЛЬДЕ ПОПАПОВ (rec1915062531 и rec1935129061)
+         ============================================================== */
+      .t-popup,
+      #rec1915062531 .t-popup,
+      #rec1935129061 .t-popup {
+        background-color: rgba(7, 6, 10, 0.88) !important;
+        backdrop-filter: blur(14px) !important;
+        -webkit-backdrop-filter: blur(14px) !important;
+      }
+
+      #rec1915062531 .t-popup__container,
+      #rec1935129061 .t-popup__container {
+        background: #15121c !important;
+        border: 1px solid rgba(244, 114, 182, 0.35) !important;
+        border-radius: 28px !important;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(244, 114, 182, 0.25) !important;
+        padding: 36px 32px !important;
+        color: #f9f8fc !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+
+      #rec1915062531 .t-popup__container::before,
+      #rec1935129061 .t-popup__container::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent 0%, var(--hp-rose) 50%, transparent 100%);
+        pointer-events: none;
+      }
+
+      #rec1915062531 .t-popup__close-wrapper,
+      #rec1935129061 .t-popup__close-wrapper {
+        background: rgba(255, 255, 255, 0.08) !important;
         border-radius: 50% !important;
+        width: 36px !important;
+        height: 36px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: background-color 0.2s ease, transform 0.2s ease !important;
+      }
+      #rec1915062531 .t-popup__close-wrapper:hover,
+      #rec1935129061 .t-popup__close-wrapper:hover {
+        background: rgba(244, 114, 182, 0.25) !important;
+        transform: scale(1.08) !important;
+      }
+      #rec1915062531 .t-popup__close-icon g,
+      #rec1915062531 .t-popup__close-icon rect,
+      #rec1935129061 .t-popup__close-icon g,
+      #rec1935129061 .t-popup__close-icon rect {
+        fill: #fbcfe8 !important;
+      }
+
+      #rec1915062531 .t702__title,
+      #rec1935129061 .t702__title {
+        font-family: 'Cormorant Garamond', serif !important;
+        font-size: clamp(26px, 3.4vw, 36px) !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+        line-height: 1.2 !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
+      }
+      #rec1915062531 .t702__descr,
+      #rec1935129061 .t702__descr {
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 14px !important;
+        color: var(--hp-text-muted) !important;
+        line-height: 1.55 !important;
+        margin-bottom: 24px !important;
+        text-align: center !important;
+      }
+
+      #rec1915062531 .t-input,
+      #rec1935129061 .t-input {
+        background: #1c1825 !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-radius: 14px !important;
+        color: #ffffff !important;
+        padding: 14px 18px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+      }
+      #rec1915062531 .t-input:focus,
+      #rec1935129061 .t-input:focus {
+        border-color: var(--hp-rose) !important;
+        box-shadow: 0 0 16px rgba(244, 114, 182, 0.3) !important;
+        outline: none !important;
+      }
+
+      #rec1915062531 .t-input-title,
+      #rec1935129061 .t-input-title {
+        color: #fbcfe8 !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-weight: 600 !important;
+        font-size: 13px !important;
+        margin-bottom: 10px !important;
+      }
+      #rec1915062531 .t-contact-method__types-container {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 8px !important;
+        margin-bottom: 16px !important;
+      }
+      #rec1915062531 .t-contact-method__type {
+        background: #1c1825 !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 12px !important;
+        padding: 10px 6px !important;
+        transition: all 0.2s ease !important;
+        margin: 0 !important;
+      }
+      #rec1915062531 .t-contact-method__type-label {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        cursor: pointer !important;
+      }
+      #rec1915062531 .t-contact-method__title {
+        color: #d1c8db !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+      }
+      #rec1915062531 .t-contact-method__type:has(>.t-radio:checked) {
+        background-color: rgba(244, 114, 182, 0.2) !important;
+        border-color: var(--hp-rose) !important;
+        box-shadow: 0 0 15px rgba(244, 114, 182, 0.35) !important;
+      }
+      #rec1915062531 .t-contact-method__type:has(>.t-radio:checked) .t-contact-method__title {
+        color: #ffffff !important;
+        font-weight: 700 !important;
+      }
+
+      #rec1915062531 .t-btnflex.t-btnflex_type_submit,
+      #rec1915062531 .t-submit,
+      #rec1935129061 .t-btnflex.t-btnflex_type_submit,
+      #rec1935129061 .t-submit {
+        background: var(--hp-pink-grad) !important;
+        color: #1a0815 !important;
+        border: none !important;
+        border-radius: 16px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-weight: 700 !important;
+        font-size: 15px !important;
+        padding: 16px 28px !important;
+        box-shadow: 0 6px 25px rgba(244, 114, 182, 0.5) !important;
+        cursor: pointer !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+      }
+      #rec1915062531 .t-btnflex__text,
+      #rec1935129061 .t-btnflex__text {
+        color: #1a0815 !important;
+        font-weight: 700 !important;
+      }
+
+      /* ПЛАВАЮЩИЕ КНОПКИ (MOBILE-FIRST) */
+      /* Кнопка наверх: СТРОГО СЛЕВА ВНИЗУ (14px, 14px, 40x40px) */
+      #hp-btn-top {
+        position: fixed;
+        bottom: 14px;
+        left: 14px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(21, 18, 28, 0.88);
+        border: 1px solid var(--hp-border);
+        color: var(--hp-rose);
         display: none;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        z-index: 9998 !important;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+        z-index: 9999;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+        transition: transform 0.2s ease, background 0.2s ease;
       }
-      #hp-btn-top svg { width: 18px; height: 18px; fill: currentColor; }
+      #hp-btn-top:hover {
+        transform: translateY(-2px);
+        background: rgba(244, 114, 182, 0.25);
+      }
+      #hp-btn-top svg { width: 20px; height: 20px; fill: currentColor; }
 
+      /* Плавающий виджет заявки: СТРОГО СПРАВА ВНИЗУ (14px, 14px) */
       #hp-widget-lead {
-        position: fixed !important;
-        bottom: 14px !important;
-        right: 14px !important;
-        z-index: 9998 !important;
+        position: fixed;
+        bottom: 14px;
+        right: 14px;
+        z-index: 9998;
       }
       .hp-widget-pulse-btn {
-        background: var(--hp-pink-grad) !important;
+        background: var(--hp-pink-grad);
         color: #1a0815 !important;
-        border: none !important;
-        border-radius: 25px !important;
-        padding: 12px 20px !important;
-        font-size: 13.5px !important;
-        font-weight: 700 !important;
-        cursor: pointer !important;
-        text-decoration: none !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        animation: hp-glow 2.5s infinite alternate;
-      }
-      @keyframes hp-glow {
-        0% { box-shadow: 0 4px 16px rgba(244, 114, 182, 0.4); }
-        100% { box-shadow: 0 8px 30px rgba(244, 114, 182, 0.8); }
-      }
-
-      /* COOKIE BANNER */
-      #hp-cookie-banner {
-        position: fixed !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        background: rgba(14, 12, 18, 0.96) !important;
-        backdrop-filter: blur(12px) !important;
-        border-top: 1px solid var(--hp-border) !important;
-        padding: 12px 20px !important;
-        color: #f5f5f7 !important;
-        font-size: 12px !important;
-        z-index: 99999 !important;
-        display: flex;
-        justify-content: space-between;
+        font-weight: 700;
+        font-size: 13.5px;
+        padding: 12px 22px;
+        border-radius: 30px;
+        text-decoration: none;
+        display: inline-flex;
         align-items: center;
-        gap: 14px;
+        gap: 8px;
+        box-shadow: 0 6px 25px rgba(244, 114, 182, 0.55);
+        animation: hpPulse 2.8s infinite;
+        transition: transform 0.2s ease;
       }
-      .hp-cookie-btns { display: flex; gap: 8px; }
-      .hp-cookie-btn-accept {
-        background: var(--hp-rose) !important;
-        color: #120914 !important;
-        border: none !important;
-        padding: 7px 15px !important;
-        border-radius: 16px !important;
-        font-size: 12px !important;
-        font-weight: 700 !important;
-        cursor: pointer !important;
+      .hp-widget-pulse-btn:hover {
+        transform: scale(1.05);
       }
-      .hp-cookie-btn-opt {
-        background: transparent !important;
-        color: #bbb !important;
-        border: 1px solid #555 !important;
-        padding: 7px 15px !important;
-        border-radius: 16px !important;
-        font-size: 12px !important;
-        cursor: pointer !important;
+      @keyframes hpPulse {
+        0% { box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.7); }
+        70% { box-shadow: 0 0 0 16px rgba(244, 114, 182, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(244, 114, 182, 0); }
       }
 
-      /* LEGAL MODAL */
+      /* МОДАЛКА 152-ФЗ */
       #hp-legal-modal {
         position: fixed;
         top: 0; left: 0;
@@ -834,559 +1273,573 @@
         cursor: pointer;
       }
 
-      /* ==============================================================
-         РЕСТАЙЛИНГ ВСЕХ НА ТИЛЬДЕ ПОПАПОВ (rec1915062531 и rec1935129061)
-         ПРЕВРАЩАЕМ БЕЛЫЕ ДЕФОЛТНЫЕ ОКНА В РОСКОШНЫЙ NOIR & ROSE-GOLD СТИЛЬ
-         ============================================================== */
-      .t-popup,
-      #rec1915062531 .t-popup,
-      #rec1935129061 .t-popup {
-        background-color: rgba(7, 6, 10, 0.88) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
+      /* АДАПТИВНОСТЬ ДЛЯ ПЛАНШЕТОВ И СМАРТФОНОВ */
+      @media (max-width: 1024px) {
+        .hp-features-grid { grid-template-columns: repeat(2, 1fr); }
+        .hp-catalog-grid { grid-template-columns: repeat(2, 1fr); }
+        .hp-feed-grid { grid-template-columns: repeat(2, 1fr); }
+        .hp-reviews-grid { grid-template-columns: 1fr; }
+        .hp-contacts-grid { grid-template-columns: 1fr; }
       }
 
-      #rec1915062531 .t-popup__container,
-      #rec1935129061 .t-popup__container {
-        background: #15121c !important;
-        border: 1px solid rgba(244, 114, 182, 0.35) !important;
-        border-radius: 28px !important;
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 35px rgba(244, 114, 182, 0.25) !important;
-        padding: 36px 32px !important;
-        color: #f9f8fc !important;
-        position: relative !important;
-        overflow: hidden !important;
-      }
-
-      /* Свечение по верхней границе попапа */
-      #rec1915062531 .t-popup__container::before,
-      #rec1935129061 .t-popup__container::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 50%;
-        transform: translateX(-50%);
-        width: 70%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent 0%, var(--hp-rose) 50%, transparent 100%);
-        pointer-events: none;
-      }
-
-      /* Кнопка закрытия попапа */
-      #rec1915062531 .t-popup__close-wrapper,
-      #rec1935129061 .t-popup__close-wrapper {
-        background: rgba(255, 255, 255, 0.08) !important;
-        border-radius: 50% !important;
-        width: 36px !important;
-        height: 36px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        transition: background-color 0.2s ease, transform 0.2s ease !important;
-      }
-      #rec1915062531 .t-popup__close-wrapper:hover,
-      #rec1935129061 .t-popup__close-wrapper:hover {
-        background: rgba(244, 114, 182, 0.25) !important;
-        transform: scale(1.08) !important;
-      }
-      #rec1915062531 .t-popup__close-icon g,
-      #rec1915062531 .t-popup__close-icon rect,
-      #rec1935129061 .t-popup__close-icon g,
-      #rec1935129061 .t-popup__close-icon rect {
-        fill: #fbcfe8 !important;
-      }
-
-      /* Заголовки попапа */
-      #rec1915062531 .t702__title,
-      #rec1935129061 .t702__title {
-        font-family: 'Cormorant Garamond', serif !important;
-        font-size: clamp(26px, 3.4vw, 36px) !important;
-        font-weight: 700 !important;
-        color: #ffffff !important;
-        line-height: 1.2 !important;
-        margin-bottom: 10px !important;
-        text-align: center !important;
-      }
-      #rec1915062531 .t702__title strong,
-      #rec1935129061 .t702__title strong {
-        color: #ffffff !important;
-      }
-      #rec1915062531 .t702__descr,
-      #rec1935129061 .t702__descr {
-        font-family: 'Montserrat', sans-serif !important;
-        font-size: 14px !important;
-        color: var(--hp-text-muted) !important;
-        line-height: 1.55 !important;
-        margin-bottom: 24px !important;
-        text-align: center !important;
-      }
-
-      /* Поля ввода в попапе */
-      #rec1915062531 .t-input,
-      #rec1935129061 .t-input {
-        background: #1c1825 !important;
-        border: 1px solid rgba(255, 255, 255, 0.12) !important;
-        border-radius: 14px !important;
-        color: #ffffff !important;
-        padding: 14px 18px !important;
-        font-family: 'Montserrat', sans-serif !important;
-        font-size: 15px !important;
-        font-weight: 500 !important;
-        transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
-      }
-      #rec1915062531 .t-input:focus,
-      #rec1935129061 .t-input:focus {
-        border-color: var(--hp-rose) !important;
-        box-shadow: 0 0 16px rgba(244, 114, 182, 0.3) !important;
-        outline: none !important;
-      }
-      #rec1915062531 .t-input::placeholder,
-      #rec1935129061 .t-input::placeholder {
-        color: #7d7588 !important;
-      }
-
-      /* Блок выбора метода связи в попапе */
-      #rec1915062531 .t-input-title,
-      #rec1935129061 .t-input-title {
-        color: #fbcfe8 !important;
-        font-family: 'Montserrat', sans-serif !important;
-        font-weight: 600 !important;
-        font-size: 13px !important;
-        margin-bottom: 10px !important;
-      }
-      #rec1915062531 .t-contact-method__types-container {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 8px !important;
-        margin-bottom: 16px !important;
-      }
-      #rec1915062531 .t-contact-method__type {
-        background: #1c1825 !important;
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 12px !important;
-        padding: 10px 6px !important;
-        transition: all 0.2s ease !important;
-        margin: 0 !important;
-      }
-      #rec1915062531 .t-contact-method__type-label {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 6px !important;
-        cursor: pointer !important;
-      }
-      #rec1915062531 .t-contact-method__title {
-        color: #d1c8db !important;
-        font-size: 12px !important;
-        font-weight: 600 !important;
-      }
-      #rec1915062531 .t-contact-method__type:hover {
-        border-color: rgba(244, 114, 182, 0.4) !important;
-      }
-      #rec1915062531 .t-contact-method__type:has(>.t-radio:checked) {
-        background-color: rgba(244, 114, 182, 0.2) !important;
-        border-color: var(--hp-rose) !important;
-        box-shadow: 0 0 15px rgba(244, 114, 182, 0.35) !important;
-      }
-      #rec1915062531 .t-contact-method__type:has(>.t-radio:checked) .t-contact-method__title {
-        color: #ffffff !important;
-        font-weight: 700 !important;
-      }
-
-      /* Подсказки под методами связи */
-      #rec1915062531 .t-input-group_tx .t-text {
-        color: #a69fb0 !important;
-        font-size: 12px !important;
-        line-height: 1.55 !important;
-      }
-      #rec1915062531 .t-input-group_tx strong {
-        color: #fbcfe8 !important;
-      }
-      #rec1915062531 .t-input-group_tx u {
-        color: #fff !important;
-        text-decoration-color: var(--hp-rose) !important;
-      }
-
-      /* Чекбокс согласия 152-ФЗ в попапе */
-      #rec1915062531 .t-checkbox__control span,
-      #rec1915062531 .t-checkbox__control span * {
-        color: #8f8699 !important;
-        font-size: 11.5px !important;
-      }
-      #rec1915062531 .t-checkbox__indicator {
-        border: 1px solid var(--hp-rose) !important;
-        background: #1c1825 !important;
-        border-radius: 4px !important;
-      }
-      #rec1915062531 .t-checkbox__indicator:after {
-        border-color: var(--hp-rose) !important;
-      }
-
-      /* Кнопка отправки формы попапа */
-      #rec1915062531 .t-btnflex.t-btnflex_type_submit,
-      #rec1915062531 .t-submit,
-      #rec1935129061 .t-btnflex.t-btnflex_type_submit,
-      #rec1935129061 .t-submit {
-        background: var(--hp-pink-grad) !important;
-        color: #1a0815 !important;
-        border: none !important;
-        border-radius: 16px !important;
-        font-family: 'Montserrat', sans-serif !important;
-        font-weight: 700 !important;
-        font-size: 15px !important;
-        padding: 16px 28px !important;
-        box-shadow: 0 6px 25px rgba(244, 114, 182, 0.5) !important;
-        cursor: pointer !important;
-        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-        width: 100% !important;
-        margin-top: 10px !important;
-      }
-      #rec1915062531 .t-btnflex.t-btnflex_type_submit:hover,
-      #rec1935129061 .t-btnflex.t-btnflex_type_submit:hover {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 8px 32px rgba(244, 114, 182, 0.7) !important;
-      }
-      #rec1915062531 .t-btnflex__text,
-      #rec1935129061 .t-btnflex__text {
-        color: #1a0815 !important;
-        font-weight: 700 !important;
-      }
-
-      /* Телефонная маска флаги и селектор стран */
-      #rec1915062531 .t-input-phonemask__select,
-      #rec1915062531 .t-phonemask-country-selector {
-        background: #1c1825 !important;
-        border-color: rgba(255, 255, 255, 0.12) !important;
-        color: #fff !important;
-      }
-
-      /* Адаптив попапа на мобилках */
-      @media (max-width: 560px) {
-        #rec1915062531 .t-popup__container,
-        #rec1935129061 .t-popup__container {
-          padding: 28px 18px !important;
-          border-radius: 20px !important;
-        }
-        #rec1915062531 .t-contact-method__types-container {
-          grid-template-columns: repeat(2, 1fr) !important;
-        }
-      }
-
-      /* MOBILE ADAPTATION ДЛЯ СТРАНИЦЫ */
       @media (max-width: 860px) {
-        .hp-hero-grid { display: flex; flex-direction: column; gap: 30px; text-align: center; }
+        .hp-nav-links { display: none; }
+        .hp-hero-grid { display: flex; flex-direction: column; text-align: center; gap: 32px; }
         .hp-hero-cta-box { justify-content: center; }
-        .hp-hero-collage { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
-        .hp-hero-card-main { height: 380px; }
-        .hp-hero-side-cards { flex-direction: row; height: 180px; }
-        .hp-quiz-options { grid-template-columns: 1fr; }
+        .hp-hero-stats { grid-template-columns: 1fr; }
+        .hp-catalog-grid { grid-template-columns: 1fr; }
+        .hp-feed-grid { grid-template-columns: 1fr; }
+        .hp-features-grid { grid-template-columns: 1fr; }
         .hp-method-selector { grid-template-columns: repeat(2, 1fr); }
+        .hp-quiz-options { grid-template-columns: 1fr; }
+        .hp-hero-float-badge.top-left { top: 12px; left: 12px; font-size: 11.5px; padding: 6px 12px; }
+        .hp-hero-float-badge.bottom-right { bottom: 12px; right: 12px; font-size: 11.5px; padding: 6px 12px; }
       }
     `;
     document.head.appendChild(s);
   }
 
+  // HTML ШАБЛОН СТРАНИЦЫ
   var html = `
 <div id="hp-app">
-  <!-- HEADER -->
+  <!-- ХЕДЕР -->
   <header class="hp-container hp-header">
     <a href="https://hipretty.ru" class="hp-logo-wrap">
-      <div class="hp-logo">hi, pretty!</div>
-      <div class="hp-logo-sub">\u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0435 \u0432\u043e\u043b\u043e\u0441\u044b \u2022 \u043c\u043e\u0441\u043a\u0432\u0430</div>
+      <div class="hp-logo">привет, волосы!</div>
+      <div class="hp-logo-sub">магазин натуральных волос • москва</div>
     </a>
+    <nav class="hp-nav-links">
+      <a href="#catalog" class="hp-nav-link">Срезы в наличии</a>
+      <a href="#why-us" class="hp-nav-link">Преимущества</a>
+      <a href="#quiz" class="hp-nav-link">Онлайн-подбор</a>
+      <a href="#kanalTG" class="hp-nav-link">Telegram-канал</a>
+      <a href="#reviews" class="hp-nav-link">Отзывы</a>
+      <a href="#contacts" class="hp-nav-link">Контакты</a>
+    </nav>
     <div class="hp-header-actions">
       <a href="tel:+79933365357" class="hp-header-phone">8 (993) 336-53-57</a>
-      <a href="#lead-box" class="hp-btn-header-cta">\u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u0441\u0440\u0435\u0437 \u2726</a>
+      <a href="#popup:contact" class="hp-btn-header-cta">Консультация ✦</a>
     </div>
   </header>
 
-  <!-- HERO SECTION WITH REAL PHOTO COLLAGE -->
+  <!-- ГЛАВНЫЙ ЭКРАН (HERO) С ФОТОГРАФИЕЙ ТРЕХ ДЕВОЧЕК -->
   <section class="hp-container hp-hero">
     <div class="hp-hero-grid">
       <div class="hp-hero-info">
-        <div class="hp-badge-live"><span></span> \u0411\u043e\u043b\u0435\u0435 30 \u043a\u0433 \u0432 \u043d\u0430\u043b\u0438\u0447\u0438\u0438 \u0432 \u0441\u0442\u0443\u0434\u0438\u0438</div>
-        <h1 class="hp-hero-title">\u041e\u0442\u0431\u043e\u0440\u043d\u044b\u0435 \u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0435 \u0432\u043e\u043b\u043e\u0441\u044b <span>\u0432\u044b\u0441\u0448\u0435\u0439 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438</span></h1>
-        <p class="hp-hero-desc">\u0421\u043b\u0430\u0432\u044f\u043d\u0441\u043a\u0438\u0435 \u0438 \u0434\u0435\u0442\u0441\u043a\u0438\u0435 \u0441\u0440\u0435\u0437\u044b \u043e\u0442 40 \u0434\u043e 80 \u0441\u043c \u043d\u0430\u043f\u0440\u044f\u043c\u0443\u044e \u0441\u043e \u0441\u0442\u0443\u0434\u0438\u0438 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435. 100% \u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0439 \u0432\u043e\u043b\u043e\u0441 \u0431\u0435\u0437 \u0432\u044b\u0447\u0435\u0441\u0430, \u0441\u0438\u043b\u0438\u043a\u043e\u043d\u043e\u0432 \u0438 \u043f\u0435\u0440\u0435\u0432\u0435\u0440\u0442\u044b\u0448\u0435\u0439. \u0412\u0438\u0434\u0435\u043e-\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0441\u0440\u0435\u0437\u0430 \u043d\u0430 \u0432\u0435\u0441\u0430\u0445 \u043f\u0435\u0440\u0435\u0434 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u043e\u0439.</p>
+        <div class="hp-badge-brand"><span></span> Премиальный магазин натуральных волос</div>
+        <h1 class="hp-hero-title">Детские и славянские срезы <span>высшей категории</span></h1>
+        <p class="hp-hero-desc">
+          Отборные натуральные волосы в наличии в шоуруме в центре Москвы. 
+          100% живой срез от одного донора, плотные густые концы, шелковистая структура без силикона и химической обработки. 
+          Специальные условия для мастеров и салонов красоты. Быстрая доставка по всей России и миру.
+        </p>
         <div class="hp-hero-cta-box">
-          <a href="#lead-box" class="hp-btn-main">\u2726 \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u0438\u0434\u0435\u0430\u043b\u044c\u043d\u044b\u0439 \u0441\u0440\u0435\u0437</a>
-          <a href="https://max.ru/u/f9LHodD0cOKu_NdSA68R7JlIWv1dBiiK_yoA5ITTmEVHTmQdiijwgmxBvBc" target="_blank" rel="noopener" class="hp-btn-max">\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u0432 MAX (\u0431\u0435\u0437 VPN)</a>
-          <a href="https://wa.me/79933365357?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B8%D1%82%D1%8C%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8E." target="_blank" rel="noopener" class="hp-btn-wa-soft">WhatsApp</a>
+          <a href="#lead-box" class="hp-btn-main">✦ Подобрать идеальный срез</a>
+          <a href="https://max.ru/u/f9LHodD0cOKu_NdSA68R7JlIWv1dBiiK_yoA5ITTmEVHTmQdiijwgmxBvBc" target="_blank" rel="noopener" class="hp-btn-max">
+            <span>●</span> Написать в MAX (без VPN)
+          </a>
+          <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" class="hp-btn-tg-soft">
+            <span>✈</span> Telegram (@hi_pretty)
+          </a>
         </div>
-        <div class="hp-stats">
-          <div><div class="hp-stat-val">&gt;30 \u043a\u0433</div><div class="hp-stat-lbl">\u0416\u0438\u0432\u043e\u0433\u043e \u0441\u043a\u043b\u0430\u0434\u0430 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435</div></div>
-          <div><div class="hp-stat-val">40\u201380 \u0441\u043c</div><div class="hp-stat-lbl">\u0414\u043b\u0438\u043d\u044b \u0441\u043b\u0430\u0432\u044f\u043d\u0441\u043a\u0438\u0445 \u0441\u0440\u0435\u0437\u043e\u0432</div></div>
-          <div><div class="hp-stat-val">100%</div><div class="hp-stat-lbl">\u041f\u043b\u043e\u0442\u043d\u044b\u0435 \u043a\u043e\u043d\u0446\u044b, \u0431\u0435\u0437 \u0441\u0438\u043b\u0438\u043a\u043e\u043d\u0430</div></div>
-        </div>
-      </div>
-
-      <!-- COLLAGE WITH REAL HAIR & MODELS -->
-      <div class="hp-hero-collage">
-        <div class="hp-hero-card-main">
-          <img src="https://static.tildacdn.com/tild6532-6566-4133-b335-336432383935/IMG_0159.jpg" alt="\u0412\u0438\u0442\u0440\u0438\u043d\u0430 \u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0445 \u0432\u043e\u043b\u043e\u0441 hi, pretty!" loading="eager">
-          <div class="hp-media-badge">
-            <span class="hp-media-badge-txt">\u0421\u0442\u0443\u0434\u0438\u0439\u043d\u044b\u0439 \u0441\u043a\u043b\u0430\u0434 \u0432 \u041c\u043e\u0441\u043a\u0432\u0435</span>
-            <span class="hp-media-badge-tag">\u25cf \u0412 \u043d\u0430\u043b\u0438\u0447\u0438\u0438</span>
+        <div class="hp-hero-stats">
+          <div class="hp-stat-card">
+            <div class="hp-stat-val">>35 кг</div>
+            <div class="hp-stat-lbl">Волос всегда в наличии, любые цвета и структуры</div>
           </div>
-        </div>
-        <div class="hp-hero-side-cards">
-          <div class="hp-hero-card-sub">
-            <img src="https://static.tildacdn.com/tild3961-6562-4862-b139-646365613732/IMG_2471.jpg" alt="\u0428\u0435\u043b\u043a\u043e\u0432\u0438\u0441\u0442\u044b\u0439 \u0431\u043b\u043e\u043d\u0434" loading="eager">
-            <div class="hp-media-badge">
-              <span class="hp-media-badge-txt">\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0448\u0435\u043b\u043a</span>
-              <span class="hp-media-badge-tag">VIP</span>
-            </div>
+          <div class="hp-stat-card">
+            <div class="hp-stat-val">40–80 см</div>
+            <div class="hp-stat-lbl">Длины славянских и детских премиум-срезов</div>
           </div>
-          <div class="hp-hero-card-sub">
-            <img src="https://static.tildacdn.com/tild6636-3861-4461-b962-333665373032/IMG_6592.jpg" alt="\u041c\u043e\u0434\u0435\u043b\u044c \u0441 \u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u043c\u0438 \u0432\u043e\u043b\u043e\u0441\u0430\u043c\u0438" loading="eager">
-            <div class="hp-media-badge">
-              <span class="hp-media-badge-txt">\u0416\u0438\u0432\u043e\u0439 \u043e\u0431\u044a\u0435\u043c</span>
-              <span class="hp-media-badge-tag">100% Lux</span>
-            </div>
+          <div class="hp-stat-card">
+            <div class="hp-stat-val">100% Lux</div>
+            <div class="hp-stat-lbl">Срез в один срез, не путаются и служат годами</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- LEAD GENERATION BLOCK -->
-  <section id="lead-box" class="hp-lead-section">
-    <div class="hp-container">
-      <div class="hp-lead-box">
-        <span class="hp-lead-badge">\u042d\u043a\u0441\u043a\u043b\u044e\u0437\u0438\u0432\u043d\u044b\u0439 \u043f\u043e\u0434\u0431\u043e\u0440</span>
-        <h2 class="hp-lead-title">\u041c\u0435\u0447\u0442\u0430\u0435\u0442\u0435 \u043e \u0440\u043e\u0441\u043a\u043e\u0448\u043d\u044b\u0445 \u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0445 \u0432\u043e\u043b\u043e\u0441\u0430\u0445?</h2>
-        <p class="hp-lead-subtitle">\u0421\u0434\u0435\u043b\u0430\u0439\u0442\u0435 \u044d\u0442\u043e \u0441\u0435\u0439\u0447\u0430\u0441 \u043d\u0430 \u043b\u0443\u0447\u0448\u0438\u0445 \u0443\u0441\u043b\u043e\u0432\u0438\u044f\u0445. <br><span class="hp-lead-sub-accent">\u041e\u0441\u0442\u0430\u0432\u044c\u0442\u0435 \u043a\u043e\u043d\u0442\u0430\u043a\u0442\u044b, \u0438 \u0432\u0430\u0448 \u043b\u0438\u0447\u043d\u044b\u0439 \u043c\u0435\u043d\u0435\u0434\u0436\u0435\u0440 \u043f\u043e\u043c\u043e\u0436\u0435\u0442 \u0441 \u0432\u044b\u0431\u043e\u0440\u043e\u043c \u0438\u0434\u0435\u0430\u043b\u044c\u043d\u044b\u0445 \u0432\u043e\u043b\u043e\u0441.</span></p>
-
-        <form id="hp-lead-form">
-          <div class="hp-input-group">
-            <input type="text" id="hp-user-name" class="hp-input" placeholder="\u0418\u043c\u044f" required>
-          </div>
-
-          <div class="hp-method-label">\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0443\u0434\u043e\u0431\u043d\u044b\u0439 \u0441\u043f\u043e\u0441\u043e\u0431 \u0441\u0432\u044f\u0437\u0438:</div>
-          <div class="hp-method-selector">
-            <button type="button" class="hp-method-btn active max" data-m="max_messenger">
-              <span>\u25cf</span> MAX (\u0411\u0435\u0437 VPN)
-            </button>
-            <button type="button" class="hp-method-btn tg" data-m="telegram">
-              <span>\u25cf</span> Telegram
-            </button>
-            <button type="button" class="hp-method-btn wa" data-m="whatsapp">
-              <span>\u25cf</span> WhatsApp
-            </button>
-            <button type="button" class="hp-method-btn phone" data-m="phone">
-              <span>\u25cf</span> \u0422\u0435\u043b\u0435\u0444\u043e\u043d
-            </button>
-          </div>
-
-          <div class="hp-input-group">
-            <input type="text" id="hp-user-contact" class="hp-input" placeholder="\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0432 MAX \u0438\u043b\u0438 \u0442\u0435\u043b\u0435\u0444\u043e\u043d" required>
-            <div id="hp-contact-hint" class="hp-input-hint">
-              <strong>\u0412\u043d\u0438\u043c\u0430\u043d\u0438\u0435! \u041f\u0440\u0438 \u0432\u044b\u0431\u043e\u0440\u0435 MAX:</strong> \u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u0441\u0441\u044b\u043b\u043a\u0443 \u043d\u0430 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0432 MAX \u0438\u043b\u0438 \u0442\u0435\u043b\u0435\u0444\u043e\u043d.
-            </div>
-          </div>
-
-          <button type="submit" id="hp-submit-btn" class="hp-form-submit">\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u043f\u043e\u0434\u0431\u043e\u0440 \u0438 \u0431\u0440\u043e\u043d\u044c \u0441\u0440\u0435\u0437\u0430 \u2726</button>
-
-          <div class="hp-form-policy">
-            \u041d\u0430\u0436\u0438\u043c\u0430\u044f \u043a\u043d\u043e\u043f\u043a\u0443, \u0432\u044b \u0441\u043e\u0433\u043b\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044c \u0441 <a id="hp-open-policy">\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u043e\u043d \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438</a> (152-\u0424\u0417).
-          </div>
-          <div id="hp-form-success" style="display:none;margin-top:18px;color:#10B981;font-weight:700;font-size:15px;line-height:1.5;">
-            \u2713 \u0417\u0430\u044f\u0432\u043a\u0430 \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u043f\u0440\u0438\u043d\u044f\u0442\u0430! \u041c\u0435\u043d\u0435\u0434\u0436\u0435\u0440 \u0443\u0436\u0435 \u0433\u043e\u0442\u043e\u0432\u0438\u0442 \u0432\u0438\u0434\u0435\u043e\u043f\u043e\u0434\u0431\u043e\u0440\u043a\u0443 \u0441\u0440\u0435\u0437\u043e\u0432 \u0441 \u0432\u0435\u0441\u043e\u0432.
-          </div>
-        </form>
+      <!-- ФОТОГРАФИЯ ТРЕХ ДЕВОЧЕК С ЖИВЫМИ ВОЛОСАМИ -->
+      <div class="hp-hero-girls-showcase">
+        <img src="https://static.tildacdn.com/tild6662-3065-4338-a165-323261623835/169.svg" alt="Магазин натуральных волос привет, волосы! — детские и славянские срезы" class="hp-girls-img" loading="eager">
+        <div class="hp-hero-float-badge top-left">
+          <span class="hp-badge-icon">✨</span>
+          <span>100% Детские шелковые срезы</span>
+        </div>
+        <div class="hp-hero-float-badge bottom-right">
+          <span class="hp-badge-icon">💎</span>
+          <span>Оптовый прайс для мастеров</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- QUIZ SECTION -->
-  <section class="hp-container hp-quiz-section">
+  <!-- БЛОК ПРЕИМУЩЕСТВ (УТП) -->
+  <section class="hp-container" id="why-us" style="padding: 30px 0 60px;">
     <div class="hp-sec-head">
-      <h2 class="hp-sec-title">\u042d\u043a\u0441\u043f\u0440\u0435\u0441\u0441-\u043f\u043e\u0434\u0431\u043e\u0440 \u0441\u0440\u0435\u0437\u0430 \u043e\u043d\u043b\u0430\u0439\u043d</h2>
-      <p class="hp-sec-desc">\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u043d\u0443\u0436\u043d\u043e\u0433\u043e \u043f\u0443\u043b\u0430 \u0432\u043e\u043b\u043e\u0441 \u2014 \u043c\u0430\u0441\u0442\u0435\u0440 \u0441\u0440\u0430\u0437\u0443 \u043e\u0442\u0431\u0435\u0440\u0435\u0442 \u043f\u043e\u0434\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u044b \u0438\u0437 30+ \u043a\u0433.</p>
+      <span class="hp-sec-badge">Безупречное качество</span>
+      <h2 class="hp-sec-title">Почему выбирают <span>«привет, волосы!»</span></h2>
+      <p class="hp-sec-desc">Мы лично контролируем каждый этап — от бережного сбора детских и славянских кос до ручной подготовки срезов перед отправкой клиенту.</p>
+    </div>
+    <div class="hp-features-grid">
+      <div class="hp-feature-card">
+        <div class="hp-feature-icon">✨</div>
+        <h3 class="hp-feature-title">Один срез — один донор</h3>
+        <p class="hp-feature-desc">Волосы не смешиваются. Кутикула направлена строго в одну сторону, что гарантирует отсутствие спутывания после мытья.</p>
+      </div>
+      <div class="hp-feature-card">
+        <div class="hp-feature-icon">🌿</div>
+        <h3 class="hp-feature-title">Без силикона и химии</h3>
+        <p class="hp-feature-desc">Никакой технической маскировки. Волосы остаются мягкими, эластичными и живыми на протяжении многих коррекций.</p>
+      </div>
+      <div class="hp-feature-card">
+        <div class="hp-feature-icon">⚖</div>
+        <h3 class="hp-feature-title">Видео среза с весов</h3>
+        <p class="hp-feature-desc">Перед оплатой снимаем подробное видео выбранного среза при дневном свете и фиксируем точный вес до грамма.</p>
+      </div>
+      <div class="hp-feature-card">
+        <div class="hp-feature-icon">🏛</div>
+        <h3 class="hp-feature-title">Шоурум в центре Москвы</h3>
+        <p class="hp-feature-desc">Староконюшенный переулок (м. Арбатская). Можно приехать лично, потрогать волосы и выбрать идеальный оттенок.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАТАЛОГ СРЕЗОВ В НАЛИЧИИ -->
+  <section class="hp-container hp-catalog-section" id="catalog">
+    <div class="hp-sec-head">
+      <span class="hp-sec-badge">Собственный склад в Москве</span>
+      <h2 class="hp-sec-title">Свежие партии срезов <span>в наличии</span></h2>
+      <p class="hp-sec-desc">Более 35 кг отборных волос. Выберите категорию или закажите индивидуальный подбор по фото ваших волос.</p>
+    </div>
+
+    <div class="hp-catalog-filters">
+      <button type="button" class="hp-filter-btn active" data-filter="all">Все срезы (>35 кг)</button>
+      <button type="button" class="hp-filter-btn" data-filter="kids">Детские блонды (Extra Lux)</button>
+      <button type="button" class="hp-filter-btn" data-filter="slav">Светло-русые и пшеничные</button>
+      <button type="button" class="hp-filter-btn" data-filter="dark">Шоколад и брюнет</button>
+    </div>
+
+    <div class="hp-catalog-grid">
+      <div class="hp-cut-card" data-cat="kids">
+        <div class="hp-cut-img-wrap">
+          <img src="https://static.tildacdn.com/tild3137-6435-4061-b463-393264316465/IMG_2585.JPG" alt="Славянский детский блонд" class="hp-cut-img" loading="lazy">
+          <span class="hp-cut-badge">Детский шелк • Lux</span>
+        </div>
+        <div class="hp-cut-body">
+          <h3 class="hp-cut-title">Славянский детский блонд</h3>
+          <div class="hp-cut-meta"><span>60 см</span> • <span>115 г</span> • <span>Плотный срез</span></div>
+          <p class="hp-cut-desc">Неокрашенный детский волос редкого холодного оттенка. Тончайшая шелковистая структура, густые плотные концы.</p>
+          <a href="#popup:contact" class="hp-cut-btn">Запросить видео и цену ✦</a>
+        </div>
+      </div>
+
+      <div class="hp-cut-card" data-cat="slav">
+        <div class="hp-cut-img-wrap">
+          <img src="https://static.tildacdn.com/tild3530-6434-4333-b039-656266383061/IMG_2592.jpg" alt="Светло-русый натуральный срез" class="hp-cut-img" loading="lazy">
+          <span class="hp-cut-badge">Славянский шелк</span>
+        </div>
+        <div class="hp-cut-body">
+          <h3 class="hp-cut-title">Светло-русый пшеничный</h3>
+          <div class="hp-cut-meta"><span>65 см</span> • <span>130 г</span> • <span>Мягкая волна</span></div>
+          <p class="hp-cut-desc">Естественный благородный оттенок с природным живым блеском. Без вычеса и обработки, идеален для наращивания.</p>
+          <a href="#popup:contact" class="hp-cut-btn">Запросить видео и цену ✦</a>
+        </div>
+      </div>
+
+      <div class="hp-cut-card" data-cat="dark">
+        <div class="hp-cut-img-wrap">
+          <img src="https://static.tildacdn.com/tild3832-3930-4664-b236-666264653838/IMG_2594.jpg" alt="Шоколадный шелк" class="hp-cut-img" loading="lazy">
+          <span class="hp-cut-badge">Густой объем</span>
+        </div>
+        <div class="hp-cut-body">
+          <h3 class="hp-cut-title">Шоколадный шелк</h3>
+          <div class="hp-cut-meta"><span>70 см</span> • <span>145 г</span> • <span>Прямой срез</span></div>
+          <p class="hp-cut-desc">Глубокий натуральный цвет с переливом. Отборная славянка максимальной длины для создания роскошного объема.</p>
+          <a href="#popup:contact" class="hp-cut-btn">Запросить видео и цену ✦</a>
+        </div>
+      </div>
+
+      <div class="hp-cut-card" data-cat="kids">
+        <div class="hp-cut-img-wrap">
+          <img src="https://static.tildacdn.com/tild3931-6430-4537-a363-303233336237/IMG_0167.jpg" alt="Золотистый детский блонд" class="hp-cut-img" loading="lazy">
+          <span class="hp-cut-badge">Extra Virgin</span>
+        </div>
+        <div class="hp-cut-body">
+          <h3 class="hp-cut-title">Золотистый детский блонд</h3>
+          <div class="hp-cut-meta"><span>55 см</span> • <span>110 г</span> • <span>Нежный шелк</span></div>
+          <p class="hp-cut-desc">Уникальный детский срез с мягким медовым подтоном. Не требует осветления, струящийся и невесомый в носке.</p>
+          <a href="#popup:contact" class="hp-cut-btn">Запросить видео и цену ✦</a>
+        </div>
+      </div>
+
+      <div class="hp-cut-card" data-cat="slav">
+        <div class="hp-cut-img-wrap">
+          <img src="https://static.tildacdn.com/tild3462-6536-4133-b738-393237383563/IMG_4007.jpg" alt="Натуральная славянская волна" class="hp-cut-img" loading="lazy">
+          <span class="hp-cut-badge">Природная волна</span>
+        </div>
+        <div class="hp-cut-body">
+          <h3 class="hp-cut-title">Натуральная волна</h3>
+          <div class="hp-cut-meta"><span>65 см</span> • <span>120 г</span> • <span>Русый тон</span></div>
+          <p class="hp-cut-desc">Красивый завиток, который сохраняет форму после каждого мытья головы. Волосы мягкие, без пористости.</p>
+          <a href="#popup:contact" class="hp-cut-btn">Запросить видео и цену ✦</a>
+        </div>
+      </div>
+
+      <div class="hp-cut-card" data-cat="kids">
+        <div class="hp-cut-img-wrap">
+          <img src="https://static.tildacdn.com/tild6432-3836-4134-b430-656364333035/IMG_6521.PNG" alt="Платиновый славянский срез" class="hp-cut-img" loading="lazy">
+          <span class="hp-cut-badge">Ультра-блонд</span>
+        </div>
+        <div class="hp-cut-body">
+          <h3 class="hp-cut-title">Светлый платиновый блонд</h3>
+          <div class="hp-cut-meta"><span>50 см</span> • <span>105 г</span> • <span>Гладкий шелк</span></div>
+          <p class="hp-cut-desc">Редчайший светлый тон. Плотные упругие концы, сохраненный кутикулярный слой, роскошный салонный вид.</p>
+          <a href="#popup:contact" class="hp-cut-btn">Запросить видео и цену ✦</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЭКСПРЕСС-ПОДБОР (КВИЗ) -->
+  <section class="hp-container hp-quiz-section" id="quiz">
+    <div class="hp-sec-head">
+      <span class="hp-sec-badge">Индивидуальный расчет</span>
+      <h2 class="hp-sec-title">Экспресс-подбор среза <span>онлайн</span></h2>
+      <p class="hp-sec-desc">Укажите параметры — наш мастер подберет 3 лучших варианта из наличия и пришлет видео на весах.</p>
     </div>
     <div class="hp-quiz-card">
-      <div class="hp-quiz-step-title">1. \u0416\u0435\u043b\u0430\u0435\u043c\u0430\u044f \u0434\u043b\u0438\u043d\u0430 \u0432\u043e\u043b\u043e\u0441:</div>
+      <div class="hp-quiz-step-title">1. Желаемая длина волос:</div>
       <div class="hp-quiz-options" id="quiz-length">
-        <div class="hp-quiz-opt selected" data-val="40-50 \u0441\u043c">
-          <div class="hp-quiz-opt-val">40\u201350 \u0441\u043c</div>
-          <div class="hp-quiz-opt-desc">\u041a\u0430\u0440\u0435 \u0438 \u0434\u043e \u043b\u043e\u043f\u0430\u0442\u043e\u043a</div>
+        <div class="hp-quiz-opt selected" data-val="40-50 см">
+          <div class="hp-quiz-opt-val">40–50 см</div>
+          <div class="hp-quiz-opt-desc">Каре и длина до лопаток</div>
         </div>
-        <div class="hp-quiz-opt" data-val="55-65 \u0441\u043c">
-          <div class="hp-quiz-opt-val">55\u201365 \u0441\u043c</div>
-          <div class="hp-quiz-opt-desc">\u041a\u043b\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0434\u043b\u0438\u043d\u0430 \u0434\u043e \u0442\u0430\u043b\u0438\u0438</div>
+        <div class="hp-quiz-opt" data-val="55-65 см">
+          <div class="hp-quiz-opt-val">55–65 см</div>
+          <div class="hp-quiz-opt-desc">Классическая длина до талии</div>
         </div>
-        <div class="hp-quiz-opt" data-val="70-80 \u0441\u043c">
-          <div class="hp-quiz-opt-val">70\u201380 \u0441\u043c</div>
-          <div class="hp-quiz-opt-desc">\u042d\u043a\u0441\u043a\u043b\u044e\u0437\u0438\u0432\u043d\u044b\u0439 \u0434\u043b\u0438\u043d\u043d\u044b\u0439 \u0441\u0440\u0435\u0437</div>
+        <div class="hp-quiz-opt" data-val="70-80 см">
+          <div class="hp-quiz-opt-val">70–80 см</div>
+          <div class="hp-quiz-opt-desc">Эксклюзивный длинный срез</div>
         </div>
       </div>
 
-      <div class="hp-quiz-step-title">2. \u041e\u0442\u0442\u0435\u043d\u043e\u043a:</div>
+      <div class="hp-quiz-step-title">2. Оттенок волос:</div>
       <div class="hp-quiz-options" id="quiz-color">
-        <div class="hp-quiz-opt selected" data-val="\u0421\u0432\u0435\u0442\u043b\u044b\u0439 \u0431\u043b\u043e\u043d\u0434">
-          <div class="hp-quiz-opt-val">\u0421\u0432\u0435\u0442\u043b\u044b\u0439 \u0431\u043b\u043e\u043d\u0434</div>
-          <div class="hp-quiz-opt-desc">\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0439 \u0441\u0440\u0435\u0437</div>
+        <div class="hp-quiz-opt selected" data-val="Светлый блонд">
+          <div class="hp-quiz-opt-val">Светлый блонд</div>
+          <div class="hp-quiz-opt-desc">Детский натуральный тон</div>
         </div>
-        <div class="hp-quiz-opt" data-val="\u0420\u0443\u0441\u044b\u0439 / \u041f\u0448\u0435\u043d\u0438\u0447\u043d\u044b\u0439">
-          <div class="hp-quiz-opt-val">\u0420\u0443\u0441\u044b\u0439 / \u041f\u0448\u0435\u043d\u0438\u0447\u043d\u044b\u0439</div>
-          <div class="hp-quiz-opt-desc">\u0421\u043b\u0430\u0432\u044f\u043d\u0441\u043a\u0438\u0439 \u043c\u044f\u0433\u043a\u0438\u0439 \u0442\u043e\u043d</div>
+        <div class="hp-quiz-opt" data-val="Русый / Пшеничный">
+          <div class="hp-quiz-opt-val">Русый / Пшеничный</div>
+          <div class="hp-quiz-opt-desc">Мягкий славянский шелк</div>
         </div>
-        <div class="hp-quiz-opt" data-val="\u0428\u043e\u043a\u043e\u043b\u0430\u0434 / \u0422\u0435\u043c\u043d\u044b\u0439">
-          <div class="hp-quiz-opt-val">\u0428\u043e\u043a\u043e\u043b\u0430\u0434 / \u0422\u0435\u043c\u043d\u044b\u0439</div>
-          <div class="hp-quiz-opt-desc">\u0413\u043b\u0443\u0431\u043e\u043a\u0438\u0439 \u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0439 \u0431\u043b\u0435\u0441\u043a</div>
+        <div class="hp-quiz-opt" data-val="Шоколад / Темный">
+          <div class="hp-quiz-opt-val">Шоколад / Темный</div>
+          <div class="hp-quiz-opt-desc">Глубокий натуральный блеск</div>
         </div>
       </div>
 
       <div style="text-align:center;margin-top:20px;">
-        <a href="#lead-box" class="hp-btn-main">\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0441\u0440\u0435\u0437\u044b \u043f\u043e\u0434 \u043c\u043e\u0438 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u044b \u2726</a>
+        <a href="#lead-box" class="hp-btn-main">✦ Подобрать срез под мои параметры</a>
       </div>
     </div>
   </section>
 
-  <!-- POPULAR REAL CUTS -->
-  <section class="hp-container" style="padding: 40px 0 70px;">
-    <div class="hp-sec-head">
-      <h2 class="hp-sec-title">\u0421\u0432\u0435\u0436\u0438\u0435 \u043f\u0430\u0440\u0442\u0438\u0438 \u0432 \u043d\u0430\u043b\u0438\u0447\u0438\u0438</h2>
-      <p class="hp-sec-desc">\u041a\u0430\u0436\u0434\u044b\u0439 \u0441\u0440\u0435\u0437 \u0443\u043d\u0438\u043a\u0430\u043b\u0435\u043d \u2014 \u043e\u0434\u0438\u043d \u0434\u043e\u043d\u043e\u0440, \u043f\u043b\u043e\u0442\u043d\u044b\u0439 \u0440\u043e\u0432\u043d\u044b\u0439 \u0441\u0440\u0435\u0437, \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435 \u0441\u0438\u043b\u0438\u043a\u043e\u043d\u0430.</p>
-    </div>
-    <div class="hp-catalog-grid">
-      <div class="hp-cut-card">
-        <div class="hp-cut-img-wrap">
-          <img src="https://static.tildacdn.com/tild3137-6435-4061-b463-393264316465/IMG_2585.JPG" alt="\u0421\u043b\u0430\u0432\u044f\u043d\u0441\u043a\u0438\u0439 \u0441\u0440\u0435\u0437 \u0431\u043b\u043e\u043d\u0434" class="hp-cut-img" loading="lazy">
-          <span class="hp-cut-badge">\u0412 \u043d\u0430\u043b\u0438\u0447\u0438\u0438</span>
-        </div>
-        <div class="hp-cut-info">
-          <h3 class="hp-cut-title">\u0421\u043b\u0430\u0432\u044f\u043d\u0441\u043a\u0438\u0439 \u0434\u0435\u0442\u0441\u043a\u0438\u0439 \u0431\u043b\u043e\u043d\u0434</h3>
-          <p class="hp-cut-desc">\u0414\u043b\u0438\u043d\u0430 60 \u0441\u043c, 115 \u0433. \u0422\u043e\u043d\u043a\u0438\u0439 \u0448\u0435\u043b\u043a\u043e\u0432\u0438\u0441\u0442\u044b\u0439 \u0432\u043e\u043b\u043e\u0441, \u0438\u0434\u0435\u0430\u043b\u044c\u043d\u044b\u0439 \u0440\u043e\u0432\u043d\u044b\u0439 \u0441\u0440\u0435\u0437 \u0431\u0435\u0437 \u043e\u043a\u0440\u0430\u0448\u0438\u0432\u0430\u043d\u0438\u044f.</p>
-          <a href="#lead-box" class="hp-cut-btn">\u0417\u0430\u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437 \u2726</a>
-        </div>
-      </div>
-
-      <div class="hp-cut-card">
-        <div class="hp-cut-img-wrap">
-          <img src="https://static.tildacdn.com/tild3530-6434-4333-b039-656266383061/IMG_2592.jpg" alt="\u041f\u0448\u0435\u043d\u0438\u0447\u043d\u043e-\u0440\u0443\u0441\u044b\u0439 \u0441\u0440\u0435\u0437" class="hp-cut-img" loading="lazy">
-          <span class="hp-cut-badge">\u0412 \u043d\u0430\u043b\u0438\u0447\u0438\u0438</span>
-        </div>
-        <div class="hp-cut-info">
-          <h3 class="hp-cut-title">\u0421\u0432\u0435\u0442\u043b\u043e-\u0440\u0443\u0441\u044b\u0439 \u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0439</h3>
-          <p class="hp-cut-desc">\u0414\u043b\u0438\u043d\u0430 65 \u0441\u043c, 130 \u0433. \u041c\u044f\u0433\u043a\u0430\u044f \u0432\u043e\u043b\u043d\u0430, \u0436\u0438\u0432\u043e\u0439 \u0431\u043b\u0435\u0441\u043a, \u043f\u043b\u043e\u0442\u043d\u044b\u0435 \u0433\u0443\u0441\u0442\u044b\u0435 \u043a\u043e\u043d\u0446\u044b.</p>
-          <a href="#lead-box" class="hp-cut-btn">\u0417\u0430\u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437 \u2726</a>
-        </div>
-      </div>
-
-      <div class="hp-cut-card">
-        <div class="hp-cut-img-wrap">
-          <img src="https://static.tildacdn.com/tild3832-3930-4664-b236-666264653838/IMG_2594.jpg" alt="\u0422\u0435\u043c\u043d\u044b\u0439 \u0441\u043b\u0430\u0432\u044f\u043d\u0441\u043a\u0438\u0439 \u0441\u0440\u0435\u0437" class="hp-cut-img" loading="lazy">
-          <span class="hp-cut-badge">\u0412 \u043d\u0430\u043b\u0438\u0447\u0438\u0438</span>
-        </div>
-        <div class="hp-cut-info">
-          <h3 class="hp-cut-title">\u0428\u043e\u043a\u043e\u043b\u0430\u0434\u043d\u044b\u0439 \u0448\u0435\u043b\u043a</h3>
-          <p class="hp-cut-desc">\u0414\u043b\u0438\u043d\u0430 70 \u0441\u043c, 145 \u0433. \u0413\u0443\u0441\u0442\u043e\u0439 \u043e\u0431\u044a\u0435\u043c, \u0438\u0434\u0435\u0430\u043b\u0435\u043d \u0434\u043b\u044f \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u044f, \u043d\u0435 \u043f\u0443\u0442\u0430\u0435\u0442\u0441\u044f \u043f\u043e\u0441\u043b\u0435 \u043c\u044b\u0442\u044c\u044f.</p>
-          <a href="#lead-box" class="hp-cut-btn">\u0417\u0430\u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437 \u2726</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TELEGRAM CHANNEL LIVE FEED -->
+  <!-- ЖИВАЯ ЛЕНТА TELEGRAM КАНАЛА (@hi_pretty) -->
   <section class="hp-container hp-tg-feed-section" id="kanalTG">
     <div class="hp-sec-head">
-      <div class="hp-tg-badge"><span></span> \u041f\u0440\u044f\u043c\u043e\u0439 \u044d\u0444\u0438\u0440 \u0441\u043e \u0441\u0442\u0443\u0434\u0438\u0438 &bull; Telegram @hi_pretty</div>
-      <h2 class="hp-sec-title">\u0416\u0438\u0432\u044b\u0435 \u043f\u043e\u0441\u0442\u0443\u043f\u043b\u0435\u043d\u0438\u044f \u0438 \u0432\u0438\u0434\u0435\u043e \u0441\u0440\u0435\u0437\u043e\u0432</h2>
-      <p class="hp-sec-desc">\u0410\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0435\u043d\u0442\u0430 \u0438\u0437 \u043d\u0430\u0448\u0435\u0433\u043e \u0437\u0430\u043a\u0440\u044b\u0442\u043e\u0433\u043e \u043a\u0430\u043d\u0430\u043b\u0430. \u041a\u0430\u0436\u0434\u044b\u0439 \u0441\u0440\u0435\u0437 \u0441\u043d\u0438\u043c\u0430\u0435\u0442\u0441\u044f \u043d\u0430 \u0432\u0438\u0434\u0435\u043e \u0441 \u0432\u0435\u0441\u043e\u0432 \u043f\u0435\u0440\u0435\u0434 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u043e\u0439.</p>
+      <span class="hp-sec-badge">Прямой эфир со склада • @hi_pretty</span>
+      <h2 class="hp-sec-title">Живые поступления и видео <span>срезов</span></h2>
+      <p class="hp-sec-desc">Каждый день выкладываем новые срезы прямо со стола мастера с демонстрацией на весах.</p>
     </div>
     <div class="hp-feed-grid" id="hp-live-feed-grid">
       <div class="hp-feed-card" data-post-id="4258">
         <div class="hp-feed-media">
-          <img src="https://cdn4.telesco.pe/file/pxX-AoaIPci34Q7jpLRGMlDR5nIvOqRYXTITkYx2Xew-fd6JhcAovPvbQQzE1S1MecrjMltlvBWCaYCnFj_6cvn1U0qYnLy3SLp_cJQtHG5BpjgBRnjVt7rrC6U9nZv4R30uzwcwoB_N5_SXUra89kuqOA8PlmEWm-IuI-vuB_Hk7SEgYEZXzaTN-mvsdLwIvfv56cut7BE-KF55LoETEJGa45AfRpPJqLSb642SPTMA9azWcxmo0f_b3E3nfY_t4yRViJ-TGcc4SFscKRRUWcPZt0QREYWvMG4oAtdYdaXXci1FWCcJfiyIJKMK7BBLQjYeaN54iBnIElUcimtEnw" alt="\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422" class="hp-feed-thumb" loading="lazy">
-          <span class="hp-feed-video-badge">&#127916; \u0412\u0438\u0434\u0435\u043e \u0441\u0440\u0435\u0437\u0430</span>
+          <img src="https://cdn4.telesco.pe/file/pxX-AoaIPci34Q7jpLRGMlDR5nIvOqRYXTITkYx2Xew-fd6JhcAovPvbQQzE1S1MecrjMltlvBWCaYCnFj_6cvn1U0qYnLy3SLp_cJQtHG5BpjgBRnjVt7rrC6U9nZv4R30uzwcwoB_N5_SXUra89kuqOA8PlmEWm-IuI-vuB_Hk7SEgYEZXzaTN-mvsdLwIvfv56cut7BE-KF55LoETEJGa45AfRpPJqLSb642SPTMA9azWcxmo0f_b3E3nfY_t4yRViJ-TGcc4SFscKRRUWcPZt0QREYWvMG4oAtdYdaXXci1FWCcJfiyIJKMK7BBLQjYeaN54iBnIElUcimtEnw" alt="Детские шелковые срезы" class="hp-feed-thumb" loading="lazy">
+          <span class="hp-feed-video-badge">&#127916; Видео среза</span>
         </div>
         <div class="hp-feed-body">
-          <h3 class="hp-feed-title">\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422</h3>
-          <p class="hp-feed-desc">\u041a\u0430\u043d\u0430\u043b \u0441 \u0434\u0435\u0442\u0441\u043a\u0438\u043c\u0438 \u0432\u043e\u043b\u043e\u0441\u0430\u043c\u0438<br>\u0428\u0435\u043b\u043a\u043e\u0432\u044b\u0435,\u043c\u0430\u0441\u043b\u044f\u043d\u0438\u0441\u0442\u044b\u0435,\u043d\u0435\u0436\u043d\u0435\u0439\u0448\u0438\u0435,\u0433\u043b\u0430\u0434\u043a\u0438\u0435<br>\u0421\u043b\u0435\u0432\u0430 \u043d\u0430\u043f\u0440\u0430\u0432\u043e<br>#1247 65\u0441\u043c/181\u0433\u0440 - 113.750\u20bd<br>#1249 65\u0441\u043c/144\u0433\u0440 - 60.000\u20bd<br>#1243 65\u0441\u043c/149\u0433\u0440 - 68.400\u20bd<br>#1246 67\u0441\u043c/229\u0433\u0440 - 87.350\u20bd</p>
+          <h3 class="hp-feed-title">Детские шелковые хвостики</h3>
+          <p class="hp-feed-desc">Шелковые, маслянистые, нежнейшие. 65 см / 181 гр — отборный чистый срез без вычеса.</p>
           <div class="hp-feed-actions">
-            <a href="#lead-box" class="hp-feed-btn-book">&#10022; \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437</a>
-            <a href="https://t.me/hi_pretty/4258" target="_blank" rel="noopener" class="hp-feed-btn-tg" title="\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 Telegram">\u0412 \u043a\u0430\u043d\u0430\u043b &rarr;</a>
+            <a href="#lead-box" class="hp-feed-btn-book">Подобрать этот срез ✦</a>
+            <a href="https://t.me/hi_pretty/4258" target="_blank" rel="noopener" class="hp-feed-btn-tg">В Telegram &rarr;</a>
           </div>
         </div>
       </div>
 
       <div class="hp-feed-card" data-post-id="4263">
         <div class="hp-feed-media">
-          <img src="https://cdn4.telesco.pe/file/llxxfwBO56PKPL-1DrXV6K_OD8GgZ1VU3MJ4DprO0AiioJMPkTDfqaZOMW-a6Wv_NczWOL-Gwn3_I6iqFIS3MmliIWtCN36yz2bHiOSUSb5S8u2eR9z9P5zPj54y_9gRVPWqTdtru45dSet1WHqod6E-OdzlC-NPZpvm9iDruUjCOqrqsGkloV0AnSxC-FDLm2i_wOnMgrwq9Q8Bfjw5MWiDdas_9-bkf_raZfo4mwa1vwVp3YCnZrQaNRivPJ-AGJ8OypSr39OV-BFB-jfrRg-djiaHb7FY8IeZwx3adt5de5SWjmiZNWH6ZA4Nfw4fGLE3GyauYIOhfQwCoSxRcw" alt="\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422" class="hp-feed-thumb" loading="lazy">
-          <span class="hp-feed-video-badge">&#127916; \u0412\u0438\u0434\u0435\u043e \u0441\u0440\u0435\u0437\u0430</span>
+          <img src="https://cdn4.telesco.pe/file/llxxfwBO56PKPL-1DrXV6K_OD8GgZ1VU3MJ4DprO0AiioJMPkTDfqaZOMW-a6Wv_NczWOL-Gwn3_I6iqFIS3MmliIWtCN36yz2bHiOSUSb5S8u2eR9z9P5zPj54y_9gRVPWqTdtru45dSet1WHqod6E-OdzlC-NPZpvm9iDruUjCOqrqsGkloV0AnSxC-FDLm2i_wOnMgrwq9Q8Bfjw5MWiDdas_9-bkf_raZfo4mwa1vwVp3YCnZrQaNRivPJ-AGJ8OypSr39OV-BFB-jfrRg-djiaHb7FY8IeZwx3adt5de5SWjmiZNWH6ZA4Nfw4fGLE3GyauYIOhfQwCoSxRcw" alt="Природная волна" class="hp-feed-thumb" loading="lazy">
+          <span class="hp-feed-video-badge">&#127916; Видео среза</span>
         </div>
         <div class="hp-feed-body">
-          <h3 class="hp-feed-title">\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422</h3>
-          <p class="hp-feed-desc">\u041a\u0430\u043d\u0430\u043b \u0441 \u0434\u0435\u0442\u0441\u043a\u0438\u043c\u0438 \u0432\u043e\u043b\u043e\u0441\u0430\u043c\u0438<br>#1436<br>\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0448\u0435\u043b\u043a<br>\u041f\u0440\u0438\u0440\u043e\u0434\u043d\u0430\u044f \u0432\u043e\u043b\u043e\u043d\u0430,\u0432\u043e\u043b\u043e\u0441\u0438\u043d\u043a\u0430 \u043c\u0435\u0436\u0434\u0443 \u0442\u043e\u043d\u043a\u043e\u0439 \u0438 \u0441\u0440\u0435\u0434\u043d\u0435\u0439<br>50 \u0441\u043c<br>107 \u0433\u0440<br>41.000\u20bd</p>
+          <h3 class="hp-feed-title">Природная легкая волна</h3>
+          <p class="hp-feed-desc">Детский шелк. 50 см / 107 гр. Нежнейшая текстура, не путается после сушки феном.</p>
           <div class="hp-feed-actions">
-            <a href="#lead-box" class="hp-feed-btn-book">&#10022; \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437</a>
-            <a href="https://t.me/hi_pretty/4263" target="_blank" rel="noopener" class="hp-feed-btn-tg" title="\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 Telegram">\u0412 \u043a\u0430\u043d\u0430\u043b &rarr;</a>
+            <a href="#lead-box" class="hp-feed-btn-book">Подобрать этот срез ✦</a>
+            <a href="https://t.me/hi_pretty/4263" target="_blank" rel="noopener" class="hp-feed-btn-tg">В Telegram &rarr;</a>
           </div>
         </div>
       </div>
 
       <div class="hp-feed-card" data-post-id="4271">
         <div class="hp-feed-media">
-          <img src="https://cdn4.telesco.pe/file/kRd4TmRmXPv9Xi2H1y2hhov_lx3qUSrGzXuAp8IuzCVTBzVsUUfD2tC-E1PgK7Tu9rr7QrEyR3pnfW1tvysf05wTadCaC4EqzPQM3XPAIRvCbo5JBgQ3W6CNRmnQlKILFaae6KEQmdMxo3mMowpmKhLMvWfkDIh9x1uCaj1ykEEqmoGXKu6e3v95FtKQHCiI-FAJd8vXAPTR1lTamz1DyDbvUbzo_pIx8q1DO91z6VaD5zq3hvJY1e2Z9emhUbsj3hdxr_VVaH5GcGeg0CcYp5I_vXF-14-HOz73v0R83kwa421Lh5jn0S9fyZWevqr3twFHWSB4F0yNSkUe4D7LKw" alt="\u0414\u0435\u0442\u0441\u043a\u0438\u0435,\u0448\u0435\u043b\u043a\u043e\u0432\u044b\u0435,\u043d\u0435\u0436\u043d\u0435\u0439\u0448\u0438\u0435 \u0445\u0432\u043e\u0441\u0442\u0438\u043a\u0438" class="hp-feed-thumb" loading="lazy">
-          <span class="hp-feed-video-badge">&#127916; \u0412\u0438\u0434\u0435\u043e \u0441\u0440\u0435\u0437\u0430</span>
+          <img src="https://cdn4.telesco.pe/file/kRd4TmRmXPv9Xi2H1y2hhov_lx3qUSrGzXuAp8IuzCVTBzVsUUfD2tC-E1PgK7Tu9rr7QrEyR3pnfW1tvysf05wTadCaC4EqzPQM3XPAIRvCbo5JBgQ3W6CNRmnQlKILFaae6KEQmdMxo3mMowpmKhLMvWfkDIh9x1uCaj1ykEEqmoGXKu6e3v95FtKQHCiI-FAJd8vXAPTR1lTamz1DyDbvUbzo_pIx8q1DO91z6VaD5zq3hvJY1e2Z9emhUbsj3hdxr_VVaH5GcGeg0CcYp5I_vXF-14-HOz73v0R83kwa421Lh5jn0S9fyZWevqr3twFHWSB4F0yNSkUe4D7LKw" alt="Детский пшеничный блонд" class="hp-feed-thumb" loading="lazy">
+          <span class="hp-feed-video-badge">&#127916; Видео среза</span>
         </div>
         <div class="hp-feed-body">
-          <h3 class="hp-feed-title">\u0414\u0435\u0442\u0441\u043a\u0438\u0435,\u0448\u0435\u043b\u043a\u043e\u0432\u044b\u0435,\u043d\u0435\u0436\u043d\u0435\u0439\u0448\u0438\u0435 \u0445\u0432\u043e\u0441\u0442\u0438\u043a\u0438</h3>
-          <p class="hp-feed-desc">\u0421\u043b\u0435\u0432\u0430 \u043d\u0430\u043f\u0440\u0430\u0432\u043e<br>#1387 66\u0441\u043c/86\u0433\u0440 - 48.400\u20bd<br>#1555 68\u0441\u043c/140\u0433\u0440 - 190.000\u20bd<br>#1268 69\u0441\u043c/193\u0433\u0440 - 182.200\u20bd</p>
+          <h3 class="hp-feed-title">Детские золотистые хвостики</h3>
+          <p class="hp-feed-desc">68 см / 140 гр. Идеальный густой срез. Волосок к волоску, максимальное качество.</p>
           <div class="hp-feed-actions">
-            <a href="#lead-box" class="hp-feed-btn-book">&#10022; \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437</a>
-            <a href="https://t.me/hi_pretty/4271" target="_blank" rel="noopener" class="hp-feed-btn-tg" title="\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 Telegram">\u0412 \u043a\u0430\u043d\u0430\u043b &rarr;</a>
+            <a href="#lead-box" class="hp-feed-btn-book">Подобрать этот срез ✦</a>
+            <a href="https://t.me/hi_pretty/4271" target="_blank" rel="noopener" class="hp-feed-btn-tg">В Telegram &rarr;</a>
           </div>
         </div>
       </div>
 
       <div class="hp-feed-card" data-post-id="4276">
         <div class="hp-feed-media">
-          <img src="https://cdn4.telesco.pe/file/QFycXKhIz5xnOXlenR25iUo3ZA1SItsQZ1O36M2pzy3AhUX3-Go8kKTcK2QCtNF9XYE_UW1ENS6q6QdShZQN9QP3sguVfRYA8jkRhZgk6zJdiGsYWEkfkkB6LIvu584DDqLrcTkjF6u2HWWrfvcIs8ZbRFiLgqQL9EAfMRjxwUrmtTc2CGak7MyVo3vWk2ouB11NI5byl0_jmimAhvMIM-8ddcK9dFpawyW4nCaAthiu8peCnctCaY__JPbvimpiRyygINPWno5A_ZV7CDRLEUV9yxZJ1mT6eyZeNSuIRMcda9Ko8ggdc7hzhOXdHTXWh2qFhurGFnjtIUQD5QV4PQ" alt="\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422" class="hp-feed-thumb" loading="lazy">
-          <span class="hp-feed-video-badge">&#127916; \u0412\u0438\u0434\u0435\u043e \u0441\u0440\u0435\u0437\u0430</span>
+          <img src="https://cdn4.telesco.pe/file/QFycXKhIz5xnOXlenR25iUo3ZA1SItsQZ1O36M2pzy3AhUX3-Go8kKTcK2QCtNF9XYE_UW1ENS6q6QdShZQN9QP3sguVfRYA8jkRhZgk6zJdiGsYWEkfkkB6LIvu584DDqLrcTkjF6u2HWWrfvcIs8ZbRFiLgqQL9EAfMRjxwUrmtTc2CGak7MyVo3vWk2ouB11NI5byl0_jmimAhvMIM-8ddcK9dFpawyW4nCaAthiu8peCnctCaY__JPbvimpiRyygINPWno5A_ZV7CDRLEUV9yxZJ1mT6eyZeNSuIRMcda9Ko8ggdc7hzhOXdHTXWh2qFhurGFnjtIUQD5QV4PQ" alt="Русый славянский срез" class="hp-feed-thumb" loading="lazy">
+          <span class="hp-feed-video-badge">&#127916; Видео среза</span>
         </div>
         <div class="hp-feed-body">
-          <h3 class="hp-feed-title">\u041f\u043e\u0434\u0431\u043e\u0440 \u0432\u043e\u043b\u043e\u0441 \u0438 \u0437\u0430\u043f\u0438\u0441\u044c \u043d\u0430 \u043d\u0430\u0440\u0430\u0449\u0438\u0432\u0430\u043d\u0438\u0435 \u0422\u0423\u0422</h3>
-          <p class="hp-feed-desc">\u041a\u0430\u043d\u0430\u043b \u0441 \u0434\u0435\u0442\u0441\u043a\u0438\u043c\u0438 \u0432\u043e\u043b\u043e\u0441\u0430\u043c\u0438<br>#1378<br>\u0414\u0435\u0442\u0441\u043a\u0438\u0439 \u0440\u0443\u0441\u0441\u043a\u0438\u0439 \u0441\u0440\u0435\u0437<br>\u041e\u043a\u0440\u0430\u0448\u0435\u043d \u0432 \u0449\u0430\u0434\u044f\u0449\u0435\u0439 \u0442\u0435\u0445\u043d\u0438\u043a\u0435 \u0431\u0435\u0437 \u043f\u043e\u0442\u0435\u0440\u0438 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430 \u0432\u043e\u043b\u043e\u0441<br>\u0412\u044b\u0447\u0435\u0441\u0430\u043d \u043d\u0430 20 \u0441\u043c \u043e\u0442 \u043a\u043e\u0440\u043e\u0442\u043a\u0438\u0445 \u0432\u043e\u043b\u043e\u0441<br>\u0422\u043e\u043d\u0447\u0430\u0439\u0448\u0430\u044f,\u0448\u0435\u043b\u043a\u043e\u0432\u0430\u044f \u0432\u043e\u043b\u043e\u0441\u0438\u043d\u043a\u0430<br>50 \u0441\u043c<br>80 \u0433\u0440<br>47.200\u20bd</p>
+          <h3 class="hp-feed-title">Детский русский срез</h3>
+          <p class="hp-feed-desc">50 см / 80 гр. Тончайшая шелковая волосинка, вычесан на 20 см от коротких волосков.</p>
           <div class="hp-feed-actions">
-            <a href="#lead-box" class="hp-feed-btn-book">&#10022; \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u044d\u0442\u043e\u0442 \u0441\u0440\u0435\u0437</a>
-            <a href="https://t.me/hi_pretty/4276" target="_blank" rel="noopener" class="hp-feed-btn-tg" title="\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 Telegram">\u0412 \u043a\u0430\u043d\u0430\u043b &rarr;</a>
+            <a href="#lead-box" class="hp-feed-btn-book">Подобрать этот срез ✦</a>
+            <a href="https://t.me/hi_pretty/4276" target="_blank" rel="noopener" class="hp-feed-btn-tg">В Telegram &rarr;</a>
           </div>
         </div>
       </div>
     </div>
-
     <div style="text-align:center;margin-top:36px;">
-      <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" class="hp-btn-main" style="background:rgba(3,169,244,0.18);border:1px solid rgba(3,169,244,0.5);color:#81D4FA !important;box-shadow:none;">
-        <span>&#9992;</span> \u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043f\u043e\u043b\u043d\u044b\u0439 \u043a\u0430\u0442\u0430\u043b\u043e\u0433 \u0432 Telegram (@hi_pretty)
+      <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" class="hp-btn-tg-soft" style="font-size:15px;padding:16px 28px;">
+        <span>✈</span> Открыть полный каталог в Telegram (@hi_pretty)
       </a>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ОТЗЫВЫ КЛИЕНТОВ И МАСТЕРОВ -->
+  <section class="hp-container" id="reviews" style="padding: 30px 0 65px;">
+    <div class="hp-sec-head">
+      <span class="hp-sec-badge">Репутация и доверие</span>
+      <h2 class="hp-sec-title">Отзывы мастеров и <span>клиенток</span></h2>
+      <p class="hp-sec-desc">Более 500 мастеров по всей России и миру выбирают срезы студии «привет, волосы!» для своих клиенток.</p>
+    </div>
+    <div class="hp-reviews-grid">
+      <div class="hp-review-card">
+        <div>
+          <div class="hp-review-stars">★★★★★</div>
+          <p class="hp-review-text">«Работаю с "привет, волосы!" уже третий год. Девочки отбирают срезы идеально под тон! Концы всегда плотные, вычеса минимум. Мои клиентки носят по 4–5 коррекций без потери длины!»</p>
+        </div>
+        <div class="hp-review-author">
+          <div class="hp-review-avatar">АН</div>
+          <div>
+            <div class="hp-review-name">Анна Новикова</div>
+            <div class="hp-review-role">Мастер по наращиванию, Москва</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hp-review-card">
+        <div>
+          <div class="hp-review-stars">★★★★★</div>
+          <p class="hp-review-text">«Заказывала детский блонд 65 см. Качество — невероятный восторг! Волосы мягчайшие, легкие как паутинка, при этом кончик ровный. Доставили СДЭКом в Петербург на следующий день.»</p>
+        </div>
+        <div class="hp-review-author">
+          <div class="hp-review-avatar">ЕС</div>
+          <div>
+            <div class="hp-review-name">Елена Смирнова</div>
+            <div class="hp-review-role">Клиентка, Санкт-Петербург</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hp-review-card">
+        <div>
+          <div class="hp-review-stars">★★★★★</div>
+          <p class="hp-review-text">«Очень ценю, что перед отправкой всегда присылают видео на весах при дневном освещении. Сразу видно текстуру и цвет 1-в-1. Для нашего салона это надежный поставщик №1!»</p>
+        </div>
+        <div class="hp-review-author">
+          <div class="hp-review-avatar">МК</div>
+          <div>
+            <div class="hp-review-name">Марина Ковалева</div>
+            <div class="hp-review-role">Топ-стилист, Екатеринбург</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЦЕНТРАЛЬНЫЙ БЛОК ЗАХВАТА ЗАЯВКИ (LEAD GENERATION BLOCK) -->
+  <section id="lead-box" class="hp-lead-section">
+    <div class="hp-container">
+      <div class="hp-lead-box">
+        <span class="hp-lead-badge">Прямая связь с экспертом</span>
+        <h2 class="hp-lead-title">Мечтаете о роскошных натуральных волосах?</h2>
+        <p class="hp-lead-subtitle">
+          Сделайте это сейчас на лучших условиях. Оставьте контакты, и ваш личный менеджер поможет с выбором идеальных волос и пришлет видео с весов.
+        </p>
+
+        <form id="hp-lead-form">
+          <div class="hp-input-group">
+            <input type="text" id="hp-user-name" class="hp-input" placeholder="Ваше имя" required>
+          </div>
+
+          <div class="hp-method-label">Выберите удобный способ связи:</div>
+          <div class="hp-method-selector">
+            <button type="button" class="hp-method-btn active max" data-m="max_messenger">
+              <span>●</span> MAX (Без VPN)
+            </button>
+            <button type="button" class="hp-method-btn tg" data-m="telegram">
+              <span>●</span> Telegram
+            </button>
+            <button type="button" class="hp-method-btn wa" data-m="whatsapp">
+              <span>●</span> WhatsApp
+            </button>
+            <button type="button" class="hp-method-btn phone" data-m="phone">
+              <span>●</span> Телефон
+            </button>
+          </div>
+
+          <div class="hp-input-group">
+            <input type="text" id="hp-user-contact" class="hp-input" placeholder="Ссылка на профиль в MAX или телефон" required>
+            <div id="hp-contact-hint" class="hp-input-hint">
+              <strong>Внимание! При выборе MAX:</strong> Укажите ссылку на профиль в MAX или телефон.
+            </div>
+          </div>
+
+          <button type="submit" id="hp-submit-btn" class="hp-form-submit">Получить подбор и бронь среза ✦</button>
+
+          <div class="hp-form-policy">
+            Нажимая кнопку, вы соглашаетесь с <a id="hp-open-policy">Политикой конфиденциальности</a> (152-ФЗ РФ).
+          </div>
+          <div id="hp-form-success" style="display:none;margin-top:20px;color:#10B981;font-weight:700;font-size:15px;line-height:1.5;">
+            ✓ Заявка успешно отправлена! Менеджер студии уже готовит индивидуальную видеоподборку срезов с весов.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВОПРОС-ОТВЕТ (FAQ) -->
+  <section class="hp-container" id="faq" style="padding: 30px 0 65px;">
+    <div class="hp-sec-head">
+      <span class="hp-sec-badge">Часто задаваемые вопросы</span>
+      <h2 class="hp-sec-title">Ответы на <span>главные вопросы</span></h2>
+    </div>
+    <div class="hp-faq-list">
+      <div class="hp-faq-item active">
+        <div class="hp-faq-question">
+          <span>Как подобрать срез дистанционно без ошибки в оттенке?</span>
+          <span class="hp-faq-icon">+</span>
+        </div>
+        <div class="hp-faq-answer">
+          Вы присылаете фото или видео своих волос при дневном свете у окна. Эксперт сравнивает текстуру и подтон с наличием на складе и снимает для вас подробное видео выбранного среза рядом с эталонной палитрой и на весах.
+        </div>
+      </div>
+      <div class="hp-faq-item">
+        <div class="hp-faq-question">
+          <span>В чем разница между детскими и взрослыми славянскими срезами?</span>
+          <span class="hp-faq-icon">+</span>
+        </div>
+        <div class="hp-faq-answer">
+          Детские волосы — это 100% некрашеный шелк наивысшей категории (Virgin Hair). Они тоньше, легче, никогда не подвергались воздействию красителей или термоприборов, поэтому сохраняют мягкость и зеркальный блеск дольше любых других волос.
+        </div>
+      </div>
+      <div class="hp-faq-item">
+        <div class="hp-faq-question">
+          <span>Как осуществляется доставка по России и миру?</span>
+          <span class="hp-faq-icon">+</span>
+        </div>
+        <div class="hp-faq-answer">
+          По Москве доставляем курьером день в день или ждем вас в шоуруме на Арбате. По городам России отправляем экспресс-доставкой СДЭК (1–3 дня). Доступна надежная международная отправка в любую страну.
+        </div>
+      </div>
+      <div class="hp-faq-item">
+        <div class="hp-faq-question">
+          <span>Предоставляете ли вы оптовые скидки мастерам?</span>
+          <span class="hp-faq-icon">+</span>
+        </div>
+        <div class="hp-faq-answer">
+          Да! Для действующих мастеров по наращиванию и салонов красоты действует специальный оптовый прайс, накопительная система скидок и возможность оперативной брони редких срезов.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ И ШОУРУМ В МОСКВЕ -->
+  <section class="hp-container" id="contacts" style="padding: 20px 0 60px;">
+    <div class="hp-contacts-grid">
+      <div>
+        <h2 class="hp-contact-title">Контакты и Шоурум</h2>
+        <div class="hp-contact-item">
+          <div class="hp-ci-icon">📍</div>
+          <div>
+            <div class="hp-ci-label">Адрес шоурума в Москве</div>
+            <div class="hp-ci-val">г. Москва, м. Арбатская / Смоленская / Кропоткинская, Староконюшенный переулок 35с2, 1 этаж</div>
+          </div>
+        </div>
+        <div class="hp-contact-item">
+          <div class="hp-ci-icon">📞</div>
+          <div>
+            <div class="hp-ci-label">Телефон студии</div>
+            <div class="hp-ci-val"><a href="tel:+79933365357">+7 (993) 336-53-57</a></div>
+          </div>
+        </div>
+        <div class="hp-contact-item">
+          <div class="hp-ci-icon">🕒</div>
+          <div>
+            <div class="hp-ci-label">График работы</div>
+            <div class="hp-ci-val">Вт – Вск: с 11:00 до 20:00 (по предварительной записи). Онлайн-консультации: 24/7</div>
+          </div>
+        </div>
+        <div class="hp-contact-item">
+          <div class="hp-ci-icon">💬</div>
+          <div>
+            <div class="hp-ci-label">Мессенджеры для быстрой связи</div>
+            <div class="hp-ci-val">
+              <a href="https://max.ru/u/f9LHodD0cOKu_NdSA68R7JlIWv1dBiiK_yoA5ITTmEVHTmQdiijwgmxBvBc" target="_blank" rel="noopener" style="color:#90CAF9;margin-right:12px;">MAX (без VPN)</a>
+              <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" style="color:#81D4FA;margin-right:12px;">Telegram</a>
+              <a href="https://wa.me/79933365357" target="_blank" rel="noopener" style="color:#69F0AE;">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hp-showroom-img-box">
+        <img src="https://static.tildacdn.com/tild6532-6566-4133-b335-336432383935/IMG_0159.jpg" alt="Шоурум натуральных волос в Москве на Арбате" class="hp-showroom-img" loading="lazy">
+        <div class="hp-showroom-badge">🏛 Студия и шоурум в центре Москвы</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОДВАЛ (FOOTER) -->
   <footer class="hp-container hp-footer">
     <div class="hp-footer-links">
-      <span id="hp-footer-policy" class="hp-footer-link">\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438</span>
-      <span>\u2022</span>
-      <span id="hp-footer-consent" class="hp-footer-link">\u0421\u043e\u0433\u043b\u0430\u0441\u0438\u0435 \u043d\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0443 \u0434\u0430\u043d\u043d\u044b\u0445 (152-\u0424\u0417)</span>
+      <span id="hp-footer-policy" class="hp-footer-link">Политика конфиденциальности</span>
+      <span>•</span>
+      <span id="hp-footer-consent" class="hp-footer-link">Согласие на обработку данных (152-ФЗ)</span>
     </div>
     <div style="margin-bottom:8px;">
-      \u041f\u0440\u044f\u043c\u0430\u044f \u0441\u0432\u044f\u0437\u044c:
-      <a href="https://max.ru/u/f9LHodD0cOKu_NdSA68R7JlIWv1dBiiK_yoA5ITTmEVHTmQdiijwgmxBvBc" target="_blank" rel="noopener" style="color:#fbcfe8;margin:0 6px;">MAX</a> |
-      <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" style="color:#fbcfe8;margin:0 6px;">Telegram</a> |
-      <a href="https://wa.me/79933365357" target="_blank" rel="noopener" style="color:#fbcfe8;margin:0 6px;">WhatsApp</a> |
+      Прямая связь: 
+      <a href="https://max.ru/u/f9LHodD0cOKu_NdSA68R7JlIWv1dBiiK_yoA5ITTmEVHTmQdiijwgmxBvBc" target="_blank" rel="noopener" style="color:#fbcfe8;margin:0 6px;">MAX</a> | 
+      <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" style="color:#fbcfe8;margin:0 6px;">Telegram</a> | 
+      <a href="https://wa.me/79933365357" target="_blank" rel="noopener" style="color:#fbcfe8;margin:0 6px;">WhatsApp</a> | 
       <a href="tel:+79933365357" style="color:#fbcfe8;margin:0 6px;">8 (993) 336-53-57</a>
     </div>
-    <div>\u0418\u041f \u041a\u0430\u043c\u0435\u043d\u0435\u0432\u0430 \u2022 \u0418\u041d\u041d: 100201988457 \u2022 \u041e\u0413\u0420\u041d\u0418\u041f: 323774600090577</div>
-    <div style="margin-top:4px;">\u0421\u0442\u0443\u0434\u0438\u044f \u043d\u0430\u0442\u0443\u0440\u0430\u043b\u044c\u043d\u044b\u0445 \u0432\u043e\u043b\u043e\u0441 hi, pretty! \u041c\u043e\u0441\u043a\u0432\u0430 \u2022 \u0414\u043e\u0441\u0442\u0430\u0432\u043a\u0430 \u043f\u043e \u0432\u0441\u0435\u0439 \u0420\u043e\u0441\u0441\u0438\u0438</div>
+    <div>Магазин натуральных волос «привет, волосы!» • ИП Лесовая В. С. • ИНН: 100201988457 • ОГРНИП: 323774600090577</div>
+    <div style="margin-top:4px;">г. Москва, Староконюшенный переулок 35с2 • Доставка по всей России и миру</div>
   </footer>
 </div>
 
-<!-- 152-ФЗ ЮРИДИЧЕСКИЙ МОДАЛ -->
+<!-- МОДАЛ 152-ФЗ -->
 <div id="hp-legal-modal">
   <div class="hp-legal-box">
     <button type="button" class="hp-legal-close">&times;</button>
-    <h3 style="margin-top:0;color:#f472b6;">\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438 \u0438 \u0421\u043e\u0433\u043b\u0430\u0441\u0438\u0435 152-\u0424\u0417</h3>
-    <p>\u041d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u043c \u044f \u0434\u0430\u044e \u0441\u043e\u0433\u043b\u0430\u0441\u0438\u0435 \u0418\u041f \u041a\u0430\u043c\u0435\u043d\u0435\u0432\u0430 (\u0418\u041d\u041d 100201988457, \u041e\u0413\u0420\u041d\u0418\u041f 323774600090577) \u043d\u0430 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0443 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0445 \u0434\u0430\u043d\u043d\u044b\u0445 (\u0438\u043c\u044f, \u043d\u043e\u043c\u0435\u0440 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430, \u043d\u0438\u043a\u043d\u0435\u0439\u043c/\u0441\u0441\u044b\u043b\u043a\u0430 \u0432 \u043c\u0435\u0441\u0441\u0435\u043d\u0434\u0436\u0435\u0440\u0435 MAX, Telegram \u0438\u043b\u0438 WhatsApp) \u0432 \u0446\u0435\u043b\u044f\u0445 \u043f\u043e\u0434\u0431\u043e\u0440\u043a\u0438 \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u0438, \u043e\u0431\u0440\u0430\u0442\u043d\u043e\u0439 \u0441\u0432\u044f\u0437\u0438 \u0438 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0443 \u0437\u0430\u043a\u043e\u043d\u043e\u0434\u0430\u0442\u0435\u043b\u044c\u0441\u0442\u0432\u043e\u043c \u0420\u0424.</p>
+    <h3 style="margin-top:0;color:#f472b6;">Политика конфиденциальности и Согласие 152-ФЗ</h3>
+    <p>Настоящим я даю согласие ИП Лесовая В. С. (ИНН 100201988457, ОГРНИП 323774600090577) на обработку персональных данных (имя, номер телефона, никнейм/ссылка в мессенджере MAX, Telegram или WhatsApp) в целях подбора натуральных волос, обратной связи и оформления заказа в соответствии с законодательством РФ.</p>
   </div>
 </div>
 `;
@@ -1394,29 +1847,20 @@
   var currentMethod = 'max_messenger';
 
   function polishTildaPopup() {
-    // Рестайлинг нативного попапа Tilda #rec1915062531
     var popupRec = document.getElementById('rec1915062531');
     if (!popupRec) return;
 
-    // Сделать кнопку закрытия аккуратной
     var closeBtn = popupRec.querySelector('.t-popup__close-wrapper');
-    if (closeBtn) {
-      closeBtn.setAttribute('title', 'Закрыть');
-    }
+    if (closeBtn) closeBtn.setAttribute('title', 'Закрыть');
 
-    // Если в кнопке отправки текст дефолтный или пустой, обновляем на лакшери
     var subBtn = popupRec.querySelector('.t-btnflex__text, .t-submit');
     if (subBtn && (!subBtn.textContent || subBtn.textContent.trim() === '')) {
-      subBtn.textContent = 'Подобрать срез \u2726';
+      subBtn.textContent = 'Подобрать срез ✦';
     }
 
-    // Подставляем русские плейсхолдеры в поля Тильды
     var nameInp = popupRec.querySelector('input[name="Name"]');
-    if (nameInp && !nameInp.placeholder) {
-      nameInp.placeholder = 'Ваше имя';
-    }
+    if (nameInp && !nameInp.placeholder) nameInp.placeholder = 'Ваше имя';
 
-    // Слушатель отправки нативного попапа для Яндекс.Метрики
     var tildaForm = popupRec.querySelector('form');
     if (tildaForm && !tildaForm.dataset.hpBound) {
       tildaForm.dataset.hpBound = 'true';
@@ -1430,44 +1874,7 @@
   }
 
   function mount() {
-    // Dynamic feed sync from github feed.json
-    fetch('https://cdn.jsdelivr.net/gh/snesterov/hipretty-web@main/feed.json?v=' + Date.now())
-      .then(function(r) { return r.json(); })
-      .then(function(feed) {
-        if (!Array.isArray(feed) || feed.length === 0) return;
-        var grid = document.getElementById('hp-live-feed-grid');
-        if (!grid) return;
-        var existingIds = {};
-        grid.querySelectorAll('.hp-feed-card').forEach(function(c) {
-          var pid = c.getAttribute('data-post-id');
-          if (pid) existingIds[pid] = true;
-        });
-        feed.forEach(function(item) {
-          if (!existingIds[item.id] && item.photo) {
-            var newCard = document.createElement('div');
-            newCard.className = 'hp-feed-card';
-            newCard.setAttribute('data-post-id', item.id);
-            newCard.innerHTML = `
-              <div class="hp-feed-media">
-                <img src="${item.photo}" alt="${item.title || 'Срез волос'}" class="hp-feed-thumb" loading="lazy">
-                ${item.isVideo ? '<span class="hp-feed-video-badge">&#127916; Видео среза</span>' : ''}
-              </div>
-              <div class="hp-feed-body">
-                <h3 class="hp-feed-title">${item.title || 'Отборный срез волос'}</h3>
-                <p class="hp-feed-desc">${item.text || ''}</p>
-                <div class="hp-feed-actions">
-                  <a href="#lead-box" class="hp-feed-btn-book">&#10022; Подобрать этот срез</a>
-                  <a href="${item.link || 'https://t.me/hi_pretty'}" target="_blank" rel="noopener" class="hp-feed-btn-tg" title="Смотреть в Telegram">В канал &rarr;</a>
-                </div>
-              </div>
-            `;
-            grid.prepend(newCard);
-          }
-        });
-      })
-      .catch(function() {});
-
-    // Удаляем ненужные хвосты Tilda
+    // Удаляем устаревшие элементы Tilda
     var tildaCookie = document.getElementById('rec1930057121') || document.querySelector('.t972');
     if (tildaCookie) tildaCookie.remove();
     var tFooter = document.getElementById('t-footer');
@@ -1484,7 +1891,25 @@
     document.body.prepend(appNode);
     document.body.appendChild(modalNode);
 
-    // Управление выбором канала связи
+    // Фильтрация каталога
+    var filterBtns = document.querySelectorAll('.hp-filter-btn');
+    var cutCards = document.querySelectorAll('.hp-cut-card');
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        filterBtns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var f = btn.getAttribute('data-filter');
+        cutCards.forEach(function(card) {
+          if (f === 'all' || card.getAttribute('data-cat') === f) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Селектор мессенджеров
     var methodBtns = document.querySelectorAll('.hp-method-btn');
     var contactInput = document.getElementById('hp-user-contact');
     var contactHint = document.getElementById('hp-contact-hint');
@@ -1495,22 +1920,22 @@
         b.classList.add('active');
         currentMethod = b.getAttribute('data-m');
         if (currentMethod === 'max_messenger') {
-          contactInput.placeholder = '\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0432 MAX \u0438\u043b\u0438 \u0442\u0435\u043b\u0435\u0444\u043e\u043d';
-          contactHint.innerHTML = '<strong>\u0412\u043d\u0438\u043c\u0430\u043d\u0438\u0435! \u041f\u0440\u0438 \u0432\u044b\u0431\u043e\u0440\u0435 MAX:</strong> \u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u0441\u0441\u044b\u043b\u043a\u0443 \u043d\u0430 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0432 MAX \u0438\u043b\u0438 \u0442\u0435\u043b\u0435\u0444\u043e\u043d.';
+          contactInput.placeholder = 'Ссылка на профиль в MAX или телефон';
+          contactHint.innerHTML = '<strong>Внимание! При выборе MAX:</strong> Укажите ссылку на профиль в MAX или телефон.';
         } else if (currentMethod === 'telegram') {
-          contactInput.placeholder = '\u041d\u0438\u043a\u043d\u0435\u0439\u043c \u0432 Telegram (@username) \u0438\u043b\u0438 \u0442\u0435\u043b\u0435\u0444\u043e\u043d';
-          contactHint.innerHTML = '<strong>\u0412\u043d\u0438\u043c\u0430\u043d\u0438\u0435! \u041f\u0440\u0438 \u0432\u044b\u0431\u043e\u0440\u0435 Telegram:</strong> \u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u043d\u0438\u043a \u0432 Telegram \u0432 \u0444\u043e\u0440\u043c\u0430\u0442\u0435 @username \u0438\u043b\u0438 \u0442\u0435\u043b\u0435\u0444\u043e\u043d.';
+          contactInput.placeholder = 'Никнейм в Telegram (@username) или телефон';
+          contactHint.innerHTML = '<strong>Внимание! При выборе Telegram:</strong> Укажите ник в Telegram в формате @username или телефон.';
         } else if (currentMethod === 'whatsapp') {
           contactInput.placeholder = '+7 (999) 000-00-00 (WhatsApp)';
-          contactHint.innerHTML = '<strong>\u041f\u0440\u0438 \u0432\u044b\u0431\u043e\u0440\u0435 WhatsApp:</strong> \u0423\u043a\u0430\u0436\u0438\u0442\u0435 \u0432\u0430\u0448 \u043d\u043e\u043c\u0435\u0440 \u0432 WhatsApp.';
+          contactHint.innerHTML = '<strong>При выборе WhatsApp:</strong> Укажите ваш номер в WhatsApp.';
         } else {
           contactInput.placeholder = '+7 (999) 000-00-00';
-          contactHint.innerHTML = '<strong>\u041f\u0440\u0438 \u0432\u044b\u0431\u043e\u0440\u0435 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0430:</strong> \u041c\u044b \u043f\u0435\u0440\u0435\u0437\u0432\u043e\u043d\u0438\u043c \u0434\u043b\u044f \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u044f \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u043e\u0432.';
+          contactHint.innerHTML = '<strong>При выборе телефона:</strong> Мы перезвоним для подтверждения параметров среза.';
         }
       });
     });
 
-    // Quiz logic
+    // Квиз
     function setupQuiz(boxId) {
       var box = document.getElementById(boxId);
       if (!box) return;
@@ -1525,7 +1950,20 @@
     setupQuiz('quiz-length');
     setupQuiz('quiz-color');
 
-    // ПЕРЕДАЧА ЛИДА В НА ТИЛЬДУ (form1915062531) И МЕТРИКУ
+    // FAQ аккордеон
+    var faqItems = document.querySelectorAll('.hp-faq-item');
+    faqItems.forEach(function(item) {
+      var q = item.querySelector('.hp-faq-question');
+      if (q) {
+        q.addEventListener('click', function() {
+          var isActive = item.classList.contains('active');
+          faqItems.forEach(function(x) { x.classList.remove('active'); });
+          if (!isActive) item.classList.add('active');
+        });
+      }
+    });
+
+    // Отправка формы заявки
     var leadForm = document.getElementById('hp-lead-form');
     if (leadForm) {
       leadForm.addEventListener('submit', function(e) {
@@ -1539,34 +1977,26 @@
           window.ym(90792799, 'reachGoal', 'gamelead_send');
         }
 
-        // Синхронизация с формой Тильды #rec1915062531
+        // Синхронизация с формой Тильды
         var tildaForm = document.getElementById('form1915062531') || document.querySelector('form.t-form');
         if (tildaForm) {
           var tName = tildaForm.querySelector('input[name="Name"]');
           if (tName) tName.value = name;
 
-          // Переключаем тип контакта в Тильде
           var methodRadio = tildaForm.querySelector('[data-method-type="' + currentMethod + '"] label, [data-method-type="' + currentMethod + '"] input');
-          if (methodRadio) {
-            methodRadio.click();
-          }
+          if (methodRadio) methodRadio.click();
 
           var tContact = tildaForm.querySelector('input[name="messenger-id"], input[name="Phone"], input[type="tel"]');
-          if (tContact) {
-            tContact.value = contact;
-          }
+          if (tContact) tContact.value = contact;
 
-          // Нажатие submit в нативной форме Тильды для отправки в CRM / Telegram webhook Тильды
           var tSubmit = tildaForm.querySelector('button[type="submit"], .t-submit');
           if (tSubmit && typeof tSubmit.click === 'function') {
-            try {
-              tSubmit.click();
-            } catch(err) {}
+            try { tSubmit.click(); } catch(err) {}
           }
         }
 
         document.getElementById('hp-form-success').style.display = 'block';
-        document.getElementById('hp-submit-btn').textContent = '\u0417\u0430\u044f\u0432\u043a\u0430 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0430 \u2713';
+        document.getElementById('hp-submit-btn').textContent = 'Заявка отправлена ✓';
         document.getElementById('hp-submit-btn').disabled = true;
       });
     }
@@ -1576,7 +2006,7 @@
     setTimeout(polishTildaPopup, 1000);
     setTimeout(polishTildaPopup, 2500);
 
-    // Юридический модал
+    // Модалка 152-ФЗ
     var modal = document.getElementById('hp-legal-modal');
     var closeBtn = document.querySelector('.hp-legal-close');
     function openModal() { if (modal) modal.style.display = 'flex'; }
@@ -1596,11 +2026,11 @@
     }
   }
 
-  // Кнопка «Наверх» (Строго Mobile-first слева внизу: bottom 14px, left 14px, 40x40px)
+  // Кнопка «Наверх» (Слева внизу: bottom 14px, left 14px, 40x40px)
   if (!document.getElementById('hp-btn-top')) {
     var topBtn = document.createElement('button');
     topBtn.id = 'hp-btn-top';
-    topBtn.title = '\u041d\u0430\u0432\u0435\u0440\u0445';
+    topBtn.title = 'Наверх';
     topBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>';
     document.body.appendChild(topBtn);
     window.addEventListener('scroll', function() {
@@ -1611,31 +2041,29 @@
     });
   }
 
-  // Плавающий виджет подбора среза (Строго справа внизу: bottom 14px, right 14px)
+  // Плавающий виджет подбора среза (Справа внизу: bottom 14px, right 14px)
   if (!document.getElementById('hp-widget-lead')) {
     var leadWidget = document.createElement('div');
     leadWidget.id = 'hp-widget-lead';
-    leadWidget.innerHTML = '<a href="#lead-box" class="hp-widget-pulse-btn"><span>\u2726</span> \u041f\u043e\u0434\u043e\u0431\u0440\u0430\u0442\u044c \u0441\u0440\u0435\u0437</a>';
+    leadWidget.innerHTML = '<a href="#lead-box" class="hp-widget-pulse-btn"><span>✦</span> Подобрать срез</a>';
     document.body.appendChild(leadWidget);
   }
 
-  // Плашка Cookie по закону РФ
+  // Cookie плашка
   if (!localStorage.getItem('hp_cookie_accepted') && !document.getElementById('hp-cookie-banner')) {
     var cBanner = document.createElement('div');
     cBanner.id = 'hp-cookie-banner';
     cBanner.innerHTML = `
-      <div>\u041c\u044b \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c cookie \u0434\u043b\u044f \u0443\u0434\u043e\u0431\u0441\u0442\u0432\u0430 \u0438 \u0430\u043d\u0430\u043b\u0438\u0442\u0438\u043a\u0438 (\u042f\u043d\u0434\u0435\u043a\u0441.\u041c\u0435\u0442\u0440\u0438\u043a\u0430).</div>
-      <div class="hp-cookie-btns">
-        <button id="hp-cookie-accept" class="hp-cookie-btn-accept">\u041f\u0440\u0438\u043d\u044f\u0442\u044c</button>
-        <button id="hp-cookie-setup" class="hp-cookie-btn-opt">\u041d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c</button>
+      <div>Мы используем cookie для наилучшей работы сайта и веб-аналитики (Яндекс.Метрика).</div>
+      <div style="display:flex;gap:10px;margin-top:8px;">
+        <button id="hp-cookie-accept" style="background:var(--hp-pink-grad);color:#1a0815;border:none;padding:6px 16px;border-radius:14px;font-weight:700;cursor:pointer;">Принять</button>
       </div>
     `;
+    cBanner.style.cssText = 'position:fixed;bottom:14px;left:70px;background:#181423;border:1px solid rgba(244,114,182,0.3);padding:14px 20px;border-radius:18px;color:#eee;font-size:12.5px;z-index:9990;box-shadow:0 10px 30px rgba(0,0,0,0.6);';
     document.body.appendChild(cBanner);
     document.getElementById('hp-cookie-accept').addEventListener('click', function() {
-      localStorage.setItem('hp_cookie_accepted', 'true'); cBanner.remove();
-    });
-    document.getElementById('hp-cookie-setup').addEventListener('click', function() {
-      localStorage.setItem('hp_cookie_accepted', 'true'); cBanner.remove();
+      localStorage.setItem('hp_cookie_accepted', 'true');
+      cBanner.remove();
     });
   }
 
