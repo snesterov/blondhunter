@@ -31,5 +31,71 @@
     "tag": "50 см • 128 г",
     "desc": "50 cm/128 g New",
     "url": "https://t.me/blondhunter/4567"
+  },
+  {
+    "id": "4566",
+    "title": "Срез #4566",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4566.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "58 см • 100 г • 132 000 ₽ / 1320 €",
+    "desc": "58 cm/100 g New 132 т 💥💥💥 1320 euro",
+    "url": "https://t.me/blondhunter/4566"
+  },
+  {
+    "id": "4565",
+    "title": "Срез #89",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4565.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "57 см • 150 г",
+    "desc": "#89(1) 57 cm/150 g New",
+    "url": "https://t.me/blondhunter/4565"
+  },
+  {
+    "id": "4564",
+    "title": "Срез #100",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4564.jpg",
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
+    "tag": "70 см • 150 г • Тон 8/9 • 1860 €",
+    "desc": "#100 70 cm,150 g Silk/тончайший волосок Холод/cold 8/9 1860 euro💥💥 🫶hot offer🫠💥 Продан/sold💥",
+    "url": "https://t.me/blondhunter/4564"
+  },
+  {
+    "id": "4563",
+    "title": "Срез #100",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4563.jpg",
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
+    "tag": "70 см • 150 г • Тон 8/9 • 1860 €",
+    "desc": "New #100 70 cm,150 g Silk/тончайший волосок Холод/cold 8/9 1860 euro💥💥 🫶hot offer🫠💥 Sold/продан💥",
+    "url": "https://t.me/blondhunter/4563"
+  },
+  {
+    "id": "4561",
+    "title": "Срез #56",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4561.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Тон 9 • 177 000 ₽ / 1770 €",
+    "desc": "🩷 #56 61/157 177 т💥 1770 еuro Close to 9 tone💥",
+    "url": "https://t.me/blondhunter/4561"
+  },
+  {
+    "id": "4560",
+    "title": "Срез #37",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4560.jpg",
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
+    "tag": "56 см • 147 г • 195 000 ₽ / 1950 €",
+    "desc": "#37(right) справа 56 cm/147 g First haircut 👶 195 т 1950 euro💥💥💥 Hottest💎 (#75 second twins sold)",
+    "url": "https://t.me/blondhunter/4560"
   }
 ]
