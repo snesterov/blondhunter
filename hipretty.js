@@ -1748,7 +1748,7 @@
             <div class="hp-stat-lbl">Быстрая отправка СДЭК и курьером по всей стране</div>
           </div>
           <div class="hp-stat-card">
-            <div class="hp-stat-val">100% Lux</div>
+            <div class="hp-stat-val">100% Натур.</div>
             <div class="hp-stat-lbl">Один донор, без вычеса, служат много коррекций</div>
           </div>
         </div>
@@ -1816,7 +1816,7 @@
         <div class="hp-filter-label">Структура волос:</div>
         <div class="hp-filter-group" id="filter-type-group">
           <button type="button" class="hp-filter-pill active" data-type="all">Все примеры (28)</button>
-          <button type="button" class="hp-filter-pill" data-type="silk">Детский шелк (Люкс)</button>
+          <button type="button" class="hp-filter-pill" data-type="silk">Детский шелк</button>
           <button type="button" class="hp-filter-pill" data-type="wave">Природная волна</button>
           <button type="button" class="hp-filter-pill" data-type="straight">Прямые и гладкие</button>
         </div>
@@ -2163,7 +2163,7 @@
     }
 
     var htmlCards = filtered.map(function(item) {
-      var badgeText = item.cat === 'wave' ? 'Природная волна' : (item.cat === 'straight' ? 'Прямой шелк' : 'Детский шелк • Люкс');
+      var badgeText = item.cat === 'wave' ? 'Природная волна' : (item.cat === 'straight' ? 'Прямой шелк' : 'Детский шелк');
       return `
         <div class="hp-cut-card" data-id="${item.id}">
           <div class="hp-cut-img-wrap">
