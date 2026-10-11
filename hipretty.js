@@ -1663,8 +1663,8 @@
         </p>
         <div class="hp-hero-cta-box">
           <button type="button" class="hp-btn-main hp-open-form-btn">✦ Подобрать идеальный срез</button>
-          <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" class="hp-btn-tg-main">
-            <span>✈</span> Telegram (@hi_pretty)
+          <a href="https://t.me/hi_pretty_manager" target="_blank" rel="noopener" class="hp-btn-tg-main">
+            <span>✈</span> Написать менеджеру (@hi_pretty_manager)
           </a>
           <a href="https://wa.me/79933365357?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%81%D1%80%D0%B5%D0%B7%20%D0%B2%D0%BE%D0%BB%D0%BE%D1%81." target="_blank" rel="noopener" class="hp-btn-wa-soft">
             WhatsApp
@@ -1900,7 +1900,8 @@
         <div>
           <div class="hp-ci-label">Мессенджеры для связи</div>
           <div class="hp-ci-val">
-            <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" style="color:var(--hp-rose);margin-right:14px;">✈ Telegram: @hi_pretty</a>
+            <a href="https://t.me/hi_pretty_manager" target="_blank" rel="noopener" style="color:var(--hp-rose);margin-right:14px;">✈ Менеджер в TG: @hi_pretty_manager</a>
+            <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" style="color:#81D4FA;margin-right:14px;">📢 Канал: @hi_pretty</a>
             <a href="https://wa.me/79933365357" target="_blank" rel="noopener" style="color:#69F0AE;">● WhatsApp</a>
           </div>
         </div>
@@ -1937,7 +1938,8 @@
         <div>
           <div class="hp-footer-col-title">Связь и документы</div>
           <div class="hp-footer-menu">
-            <a href="https://t.me/hi_pretty" target="_blank" rel="noopener">✈ Telegram: @hi_pretty</a>
+            <a href="https://t.me/hi_pretty_manager" target="_blank" rel="noopener">✈ Менеджер в TG: @hi_pretty_manager</a>
+            <a href="https://t.me/hi_pretty" target="_blank" rel="noopener">📢 Наш канал: @hi_pretty</a>
             <a href="https://wa.me/79933365357" target="_blank" rel="noopener">● WhatsApp: +7 (993) 336-53-57</a>
             <a href="tel:+79933365357">📞 8 (993) 336-53-57</a>
             <button type="button" onclick="openPolicyModal('privacy')">Политика конфиденциальности (152-ФЗ)</button>
