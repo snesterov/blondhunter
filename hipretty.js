@@ -543,11 +543,12 @@
         border-color: var(--hp-border-active);
         box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(244, 114, 182, 0.15);
       }
+      
       .hp-cut-img-wrap {
         position: relative;
         width: 100%;
         height: 310px;
-        background: #180e22;
+        background: linear-gradient(135deg, #180e22 0%, #241133 100%);
         overflow: hidden;
       }
       .hp-cut-img {
@@ -557,6 +558,49 @@
         transition: transform 0.5s ease;
       }
       .hp-cut-card:hover .hp-cut-img { transform: scale(1.04); }
+      .hp-cut-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 24px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #1c0e25 0%, #2e123b 100%);
+        color: #fff;
+        gap: 10px;
+      }
+      .hp-cut-placeholder-icon {
+        font-size: 34px;
+        color: var(--hp-rose);
+      }
+      .hp-cut-placeholder-text {
+        font-size: 13.5px;
+        color: #d1c4e9;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+      .hp-cut-placeholder-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 4px;
+        padding: 8px 16px;
+        border-radius: 20px;
+        background: rgba(0, 136, 204, 0.2);
+        border: 1px solid rgba(0, 136, 204, 0.5);
+        color: #81D4FA;
+        font-size: 12.5px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      .hp-cut-placeholder-btn:hover {
+        background: rgba(0, 136, 204, 0.35);
+        color: #fff;
+        transform: translateY(-1px);
+      }
       .hp-cut-badge {
         position: absolute;
         top: 14px;
@@ -1417,7 +1461,7 @@
     "length": 66,
     "weight": "86 гр",
     "price": "48 400 ₽",
-    "img": "https://cdn4.telesco.pe/file/kRd4TmRmXPv9Xi2H1y2hhov_lx3qUSrGzXuAp8IuzCVTBzVsUUfD2tC-E1PgK7Tu9rr7QrEyR3pnfW1tvysf05wTadCaC4EqzPQM3XPAIRvCbo5JBgQ3W6CNRmnQlKILFaae6KEQmdMxo3mMowpmKhLMvWfkDIh9x1uCaj1ykEEqmoGXKu6e3v95FtKQHCiI-FAJd8vXAPTR1lTamz1DyDbvUbzo_pIx8q1DO91z6VaD5zq3hvJY1e2Z9emhUbsj3hdxr_VVaH5GcGeg0CcYp5I_vXF-14-HOz73v0R83kwa421Lh5jn0S9fyZWevqr3twFHWSB4F0yNSkUe4D7LKw",
+    "img": "https://cdn4.telesco.pe/file/b-DkgxHWkFaGbZKWGP1ZAXvz3ej8fKw-Q-Rak4hllLsfu3iPvIpjXHktuHC92acsewYoIXdyiaQDj_PTT1XhkaHZklmtlVmtSgxaP3iN-psSJcz-R4LwmkK2gdHfjV7PKxVPFKBozn7dVEp0wf0jamUxJKwI7FZ0hQeAXth0EX9yBF7kfWx5LuHkOtWQHEki-c5fBabYpQUfl-dX23G42qDq7_xQRADW9OQpuHsuVPbt2v7D7tk0ryfTgdXyyIrYzMCFnwYy_nNIaxuPcFQQGr1LSKkRugBelpgltvfGTZs9kAn8thGjVZ39Fp3eO1RXIfZ98e5_8dJ6IPuTdlMDRw.jpg",
     "tgUrl": "https://t.me/hi_pretty/4271",
     "desc": "Детские,шелковые,нежнейшие хвостики • #1387 66см/86гр - 48.400 • #1555 68см/140гр - 190.000"
   },
@@ -1441,7 +1485,7 @@
     "length": 65,
     "weight": "181 гр",
     "price": "113 750 ₽",
-    "img": "https://cdn4.telesco.pe/file/pxX-AoaIPci34Q7jpLRGMlDR5nIvOqRYXTITkYx2Xew-fd6JhcAovPvbQQzE1S1MecrjMltlvBWCaYCnFj_6cvn1U0qYnLy3SLp_cJQtHG5BpjgBRnjVt7rrC6U9nZv4R30uzwcwoB_N5_SXUra89kuqOA8PlmEWm-IuI-vuB_Hk7SEgYEZXzaTN-mvsdLwIvfv56cut7BE-KF55LoETEJGa45AfRpPJqLSb642SPTMA9azWcxmo0f_b3E3nfY_t4yRViJ-TGcc4SFscKRRUWcPZt0QREYWvMG4oAtdYdaXXci1FWCcJfiyIJKMK7BBLQjYeaN54iBnIElUcimtEnw",
+    "img": "https://cdn4.telesco.pe/file/sUke-jvyazfkJ0LGsvIHzIWVojQ2PWVwm2fFJ-fZpkt1Qd7HnVdJVXtiIQQkXpL4d3s9zO9t-5IWY1DVbDMxxrFEzhWylyx4ykiIrksAY4Aa0hPL9MaFTPF3-0W0YHAhMqcQj1SzobcY9KWB9_76VfRVUJSv-x0RYTHPVT5iXHb9AHzzkhAtja3v0rqW644G8f0EPJWK3SRpZPBBbzwsQ901MVgvz2CIxjJB4skLNbrTqWnqLBlPd9CTaVBsCMcItr1j_KMlmkS-BQypgwOmdEO2239MAY4A9_7x57HTv_fhllvV9NYJdM2t9BYevV9kheL1duyoD_sJ96SOBE16Fg.jpg",
     "tgUrl": "https://t.me/hi_pretty/4258",
     "desc": "Шелковые,маслянистые,нежнейшие,гладкие • #1247 65см/181гр - 113.750 • #1249 65см/144гр - 60.000"
   },
@@ -1717,7 +1761,7 @@
     "length": 68,
     "weight": "140 гр",
     "price": "190 000 ₽",
-    "img": "https://cdn4.telesco.pe/file/sD8i8RqjZHJOt_I21o45FDjONqQ2VdfGWIHyac4-uDMkF1buh2RacBDH-x6B572owWy44J8IVYXOknyWgvKnhxoFEcTc0aDWb5wly_v0lMyvIwA9LkOFt-LAps4dYcsRiQw6fpx3vSt4EBripdtTAwY1T78ssidacShJXmEZh2yAjGXwBxRiw2KM3i-4yiKjmufDlxx2nHPvNMOt0C1wWluzgWcdAYkQQkedcpnKc2V0xGNadlkfQP81H1kfPdMvz1pvFDFjT1nVdV-ZN36PAxq53gRXkQw6mT-0smEqx_72cO1orEOD13o_8cOaw4fWVNZ5iJ660rAQYLCo1g_QvQ",
+    "img": "https://cdn4.telesco.pe/file/iSX0cxRTSF10VfXdM_bhIeNdkFuo1d0hIVSwL4V7D6TBMvrjvc2ORh9HAOdzE_6Wg1gaWn3dy0qKIsjlmgZBeYxJcKCLvPQ_7V3XHB1Q78TY_6EJWwLRX9brVIlklG3ecsfPbgsnLvc6DSGkDqRw0ZcEOKU3zFt11JA1-5Pf9gV9cfPfjFRnS3qJ3KhxraH4fQOSfYqlfj68NnMrU2hFK0rtOACgk8TnwYrQBkk4XgLS7WjcEZpKBZb5Mnsfy9_41QioXADI54PWRiMBNwCTOB67Ro95263mvePO0upL-xsQJlcdPUw6XJSajkn8pyrnDUWsiNedQhUiF9O0XIN4DA.jpg",
     "tgUrl": "https://t.me/hi_pretty/4016",
     "desc": "#1555 • Детский блондик • Природная активная волна,волосинка тонкая как паутинка"
   },
@@ -2250,7 +2294,7 @@
       return `
         <div class="hp-cut-card" data-id="${item.id}">
           <div class="hp-cut-img-wrap">
-            <img src="${item.img}" alt="${item.title}" class="hp-cut-img" loading="lazy">
+            <img src="${item.img}" alt="${item.title}" class="hp-cut-img" loading="lazy" onerror="hpHandleImgError(this, '${item.tgUrl}', '${item.img}')">
             <span class="hp-cut-badge">${badgeText}</span>
             <span class="hp-cut-price-tag">${item.price}</span>
           </div>
@@ -2276,6 +2320,31 @@
   }
 
   var chosenCutParam = '';
+
+  
+  // Защита и умный авто-повтор загрузки картинок срезов (без задержки сайта)
+  window.hpHandleImgError = function(img, tgUrl, originalSrc) {
+    var retries = parseInt(img.getAttribute('data-retries') || '0', 10);
+    if (retries < 2) {
+      img.setAttribute('data-retries', retries + 1);
+      setTimeout(function() {
+        var baseSrc = originalSrc || img.src;
+        img.src = baseSrc.split('?')[0] + '?t=' + Date.now();
+      }, 1000);
+    } else {
+      var wrap = img.parentElement;
+      if (wrap) {
+        img.style.display = 'none';
+        var existingPh = wrap.querySelector('.hp-cut-placeholder');
+        if (!existingPh) {
+          var ph = document.createElement('div');
+          ph.className = 'hp-cut-placeholder';
+          ph.innerHTML = '<div class="hp-cut-placeholder-icon">✦</div><div class="hp-cut-placeholder-text">Фото среза в высоком качестве</div><a href="' + (tgUrl || 'https://t.me/hi_pretty') + '" target="_blank" rel="noopener" class="hp-cut-placeholder-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="#0088cc"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg> Смотреть в TG &rarr;</a>';
+          wrap.appendChild(ph);
+        }
+      }
+    }
+  };
 
   function setSelectedCutBadge(text, isQuiz) {
     chosenCutParam = text || '';
