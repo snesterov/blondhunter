@@ -743,52 +743,6 @@
         margin: 0 auto 30px;
         line-height: 1.55;
       }
-      .hp-selected-cut-box {
-        display: none;
-        align-items: center;
-        justify-content: space-between;
-        background: rgba(244, 114, 182, 0.12);
-        border: 1px solid var(--hp-border-active);
-        border-radius: 16px;
-        padding: 12px 18px;
-        margin-bottom: 16px;
-        text-align: left;
-      }
-      .hp-selected-cut-info {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 13.5px;
-        color: #fff;
-      }
-      .hp-selected-cut-tag {
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: var(--hp-rose);
-        background: rgba(244, 114, 182, 0.2);
-        padding: 3px 8px;
-        border-radius: 8px;
-        white-space: nowrap;
-      }
-      .hp-selected-cut-title {
-        font-weight: 600;
-        color: #fce7f3;
-      }
-      .hp-selected-cut-reset {
-        background: transparent;
-        border: none;
-        color: #aaa;
-        font-size: 18px;
-        cursor: pointer;
-        padding: 0 4px;
-        line-height: 1;
-        transition: color 0.2s;
-      }
-      .hp-selected-cut-reset:hover {
-        color: #fff;
-      }
       .hp-input-group {
         margin-bottom: 16px;
         text-align: left;
@@ -1738,7 +1692,6 @@
           <a href="https://wa.me/79933365357?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%81%D1%80%D0%B5%D0%B7%20%D0%B2%D0%BE%D0%BB%D0%BE%D1%81." target="_blank" rel="noopener" class="hp-btn-wa-soft">
             WhatsApp
           </a>
-            
           <a href="https://max.ru/u/f9LHodD0cOJDkOJa38G-aakmLO32B2FcARILKCnXhnJnzvKWD9r6yXfUCxE" target="_blank" rel="noopener" class="hp-btn-max">
             <span>💬</span> ЛС MAX
           </a>
@@ -1906,15 +1859,6 @@
         </p>
 
         <form id="hp-lead-form">
-          <!-- ПЛАШКА ВЫБРАННОГО СРЕЗА ИЛИ ПАРАМЕТРОВ КВИЗА -->
-          <div id="hp-selected-cut-box" class="hp-selected-cut-box">
-            <div class="hp-selected-cut-info">
-              <span class="hp-selected-cut-tag" id="hp-selected-cut-tag">Выбранный срез</span>
-              <span class="hp-selected-cut-title" id="hp-selected-cut-text"></span>
-            </div>
-            <button type="button" class="hp-selected-cut-reset" id="hp-selected-cut-reset" title="Очистить выбор">✕</button>
-          </div>
-
           <div class="hp-input-group">
             <input type="text" id="hp-user-name" class="hp-input" placeholder="Ваше имя" required>
           </div>
@@ -1927,7 +1871,6 @@
             <button type="button" class="hp-method-btn max" data-m="max">
               <span>💬</span> MAX
             </button>
-            
             <button type="button" class="hp-method-btn wa" data-m="whatsapp">
               <span>●</span> WhatsApp
             </button>
@@ -2202,24 +2145,6 @@
     setupActionButtons();
   }
 
-  var chosenCutParam = '';
-
-  function setSelectedCutBadge(text, isQuiz) {
-    chosenCutParam = text || '';
-    var box = document.getElementById('hp-selected-cut-box');
-    var tag = document.getElementById('hp-selected-cut-tag');
-    var title = document.getElementById('hp-selected-cut-text');
-    if (!box || !title) return;
-    if (text) {
-      tag.textContent = isQuiz ? 'Подбор под параметры' : 'Выбранный срез';
-      title.textContent = text;
-      box.style.display = 'flex';
-    } else {
-      box.style.display = 'none';
-      title.textContent = '';
-    }
-  }
-
   function setupActionButtons() {
     var btns = document.querySelectorAll('.hp-open-form-btn');
     btns.forEach(function(b) {
@@ -2229,19 +2154,14 @@
         e.preventDefault();
         var cutName = b.getAttribute('data-cut');
         if (cutName) {
-          setSelectedCutBadge(cutName, false);
+          var note = document.getElementById('hp-user-contact');
+          if (note && !note.value) {
+            note.placeholder = 'Для среза: ' + cutName;
+          }
         }
         scrollToSection('lead-box');
       });
     });
-
-    var resetBtn = document.getElementById('hp-selected-cut-reset');
-    if (resetBtn && !resetBtn.dataset.bound) {
-      resetBtn.dataset.bound = 'true';
-      resetBtn.addEventListener('click', function() {
-        setSelectedCutBadge('', false);
-      });
-    }
   }
 
   // ===================== COOKIE & 152-ФЗ СИСТЕМА =====================
@@ -2467,18 +2387,6 @@
     setupQuiz('quiz-length');
     setupQuiz('quiz-type');
 
-    var quizBtn = document.querySelector('#selection .hp-btn-main');
-    if (quizBtn) {
-      quizBtn.addEventListener('click', function() {
-        var lenEl = document.querySelector('#quiz-length .hp-quiz-opt.selected');
-        var typeEl = document.querySelector('#quiz-type .hp-quiz-opt.selected');
-        var lenVal = lenEl ? lenEl.getAttribute('data-val') : '55-65 см';
-        var typeVal = typeEl ? typeEl.getAttribute('data-val') : 'Детский шелк';
-        setSelectedCutBadge(lenVal + ' • ' + typeVal, true);
-        scrollToSection('lead-box');
-      });
-    }
-
     // Селектор мессенджеров
     var methodBtns = document.querySelectorAll('.hp-method-btn');
     var contactInput = document.getElementById('hp-user-contact');
@@ -2515,12 +2423,13 @@
         var errEl = document.getElementById('hp-form-error');
         if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
 
-        // Жесткая валидация для Telegram
+        // ЗАЩИТА ОТ ДУРАКА ДЛЯ ВСЕХ КАНАЛОВ
+        var cleanPhoneDigits = contact.replace(/[^0-9]/g, '');
+        var isValidPhone = cleanPhoneDigits.length >= 10 && cleanPhoneDigits.length <= 15;
+
         if (currentMethod === 'telegram') {
-          var isPhone = /^\+?[0-9\s\-\(\)]{10,18}$/.test(contact);
           var isTgUser = /^@[a-zA-Z0-9_]{3,32}$/.test(contact);
-          if (!isTgUser && !isPhone) {
-            // Если ввели ник латиницей без @, автоматически подставляем @
+          if (!isTgUser && !isValidPhone) {
             if (/^[a-zA-Z0-9_]{3,32}$/.test(contact)) {
               contact = '@' + contact;
               document.getElementById('hp-user-contact').value = contact;
@@ -2533,6 +2442,25 @@
               return;
             }
           }
+        } else if (currentMethod === 'max') {
+          var isMaxUrl = /^(https?:\/\/)?(www\.)?max\.ru\/u\/[a-zA-Z0-9_\-]+/i.test(contact);
+          if (!isMaxUrl && !isValidPhone) {
+            if (errEl) {
+              errEl.textContent = 'Для MAX укажите прямую ссылку на профиль (max.ru/u/...) или корректный номер телефона.';
+              errEl.style.display = 'block';
+            }
+            document.getElementById('hp-user-contact').focus();
+            return;
+          }
+        } else if (currentMethod === 'whatsapp' || currentMethod === 'phone') {
+          if (!isValidPhone) {
+            if (errEl) {
+              errEl.textContent = 'Укажите корректный номер телефона (не менее 10 цифр).';
+              errEl.style.display = 'block';
+            }
+            document.getElementById('hp-user-contact').focus();
+            return;
+          }
         }
 
         if (typeof window.ym === 'function') {
@@ -2541,12 +2469,12 @@
         }
 
         var tildaForm = document.getElementById('form4673146901') || document.querySelector('form.js-form-proccess') || document.querySelector('form.t-form');
+        var fullNameToSend = name;
+        if (chosenCutParam) {
+          fullNameToSend += ' (' + chosenCutParam + ')';
+        }
+
         if (tildaForm) {
-          // 1. Заполняем имя (с прикреплением выбранного среза/параметров квиза)
-          var fullNameToSend = name;
-          if (chosenCutParam) {
-            fullNameToSend += ' (' + chosenCutParam + ')';
-          }
           var tName = tildaForm.querySelector('input[name="Name"]');
           if (tName) {
             tName.value = fullNameToSend;
@@ -2554,7 +2482,6 @@
             tName.dispatchEvent(new Event('change', { bubbles: true }));
           }
 
-          // 2. Выбираем нужный способ связи
           var radioInput = tildaForm.querySelector('input[name="messenger-type"][value="' + currentMethod + '"]');
           var radioLabel = tildaForm.querySelector('[data-method-type="' + currentMethod + '"] label');
           if (radioLabel) {
@@ -2564,7 +2491,6 @@
             radioInput.dispatchEvent(new Event('change', { bubbles: true }));
           }
 
-          // 3. Заполняем контакт во все поля выбранного мессенджера
           var activeContainer = tildaForm.querySelector('.t-contact-method__' + currentMethod + '-value');
           if (activeContainer) {
             var activeInputs = activeContainer.querySelectorAll('input');
@@ -2583,64 +2509,56 @@
               inp.dispatchEvent(new Event('change', { bubbles: true }));
             }
           });
+        }
 
-          // Передаем параметр среза в комментарий, если форма имеет textarea или hidden
-          if (chosenCutParam) {
-            var tComment = tildaForm.querySelector('textarea[name="Textarea"], textarea, input[name="Comment"]');
-            if (tComment) {
-              tComment.value = 'Интересует: ' + chosenCutParam;
-              tComment.dispatchEvent(new Event('input', { bubbles: true }));
-              tComment.dispatchEvent(new Event('change', { bubbles: true }));
-            }
-            var hiddenParam = tildaForm.querySelector('input[name="chosen-cut"]');
-            if (!hiddenParam) {
-              tildaForm.insertAdjacentHTML('beforeend', '<input type="hidden" name="chosen-cut" value="">');
-              hiddenParam = tildaForm.querySelector('input[name="chosen-cut"]');
-            }
-            if (hiddenParam) hiddenParam.value = chosenCutParam;
-          }
+        // НАДЕЖНАЯ ПРЯМАЯ ОТПРАВКА В ОБРАБОТЧИК ТИЛЬДЫ
+        var allRecs = document.getElementById('allrecords');
+        var formKey = (allRecs && allRecs.getAttribute('data-tilda-formskey')) || 'a8a1a8151b151a0221d568e5a5500437';
+        var pageId = (allRecs && allRecs.getAttribute('data-tilda-page-id')) || '297318909';
+        var projectId = (allRecs && allRecs.getAttribute('data-tilda-project-id')) || '5500437';
+        var formId = (tildaForm && tildaForm.id) || 'form4673146901';
 
-          // 4. Отправляем форму напрямую в Tilda API и эмулируем сабмит
-          var allRecs = document.getElementById('allrecords');
-          var formKey = (allRecs && allRecs.getAttribute('data-tilda-formskey')) || 'a8a1a8151b151a0221d568e5a5500437';
-          var pageId = (allRecs && allRecs.getAttribute('data-tilda-page-id')) || '297318909';
-          var projectId = (allRecs && allRecs.getAttribute('data-tilda-project-id')) || '5500437';
-          var formId = tildaForm.id || 'form4673146901';
+        var services = [
+          'b50f30259e15e3d8d5212d867a1d4954',
+          'f84b098f0cddc52c587a2c2f5e0fadfc',
+          '9f2f90b847bfb45b6924b750bb155691',
+          '3de76a792e289629ff456561531ed0ca',
+          '079d3725ab062a821f281c7010b7677f'
+        ];
 
-          var params = new URLSearchParams();
-          var services = [
-            'b50f30259e15e3d8d5212d867a1d4954',
-            'f84b098f0cddc52c587a2c2f5e0fadfc',
-            '9f2f90b847bfb45b6924b750bb155691',
-            '3de76a792e289629ff456561531ed0ca',
-            '079d3725ab062a821f281c7010b7677f'
-          ];
-          services.forEach(function(s) { params.append('formservices[]', s); });
-          params.append('tildaspec-formname', 'Запись на подбор волос');
-          params.append('Name', fullNameToSend);
-          params.append('messenger-type', currentMethod);
-          params.append('messenger-id', contact);
-          if (currentMethod === 'phone' || /^\+?[0-9\s\-\(\)]{7,}$/.test(contact)) {
-            params.append('Phone', contact);
+        function sendToTilda(targetFormId, targetPageId) {
+          var p = new URLSearchParams();
+          services.forEach(function(s) { p.append('formservices[]', s); });
+          p.append('tildaspec-formname', 'Запись на подбор волос');
+          p.append('Name', fullNameToSend);
+          p.append('messenger-type', currentMethod);
+          p.append('messenger-id', contact);
+          if (isValidPhone) {
+            p.append('Phone', contact);
           }
           if (chosenCutParam) {
-            params.append('Comment', 'Параметры: ' + chosenCutParam);
-            params.append('Textarea', 'Параметры: ' + chosenCutParam);
+            p.append('Comment', 'Параметры: ' + chosenCutParam);
+            p.append('Textarea', 'Параметры: ' + chosenCutParam);
           }
-          params.append('Checkbox', 'yes');
-          params.append('tildaspec-formskey', formKey);
-          params.append('tildaspec-pageid', pageId);
-          params.append('tildaspec-projectid', projectId);
-          params.append('tildaspec-formid', formId);
+          p.append('Checkbox', 'yes');
+          p.append('tildaspec-formskey', formKey);
+          p.append('tildaspec-pageid', targetPageId);
+          p.append('tildaspec-projectid', projectId);
+          p.append('tildaspec-formid', targetFormId);
 
-          try {
-            fetch('https://forms.tildacdn.com/procces/', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-              body: params.toString()
-            }).catch(function(e) { console.error('Tilda direct post err:', e); });
-          } catch(e) { console.error('Fetch error:', e); }
+          return fetch('https://forms.tildacdn.com/procces/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+            body: p.toString()
+          }).catch(function(err) { console.error('Tilda post err:', err); });
+        }
 
+        // 1. Отправляем в текущую форму /sale
+        sendToTilda(formId, pageId);
+        // 2. Двойная страховка: отправляем также в форму работающей страницы /sale2 (form1915062531, page 118750256)
+        sendToTilda('form1915062531', '118750256');
+
+        if (tildaForm) {
           var tSubmit = tildaForm.querySelector('button[type="submit"], .t-submit');
           if (window.tildaForm && typeof window.tildaForm.send === 'function') {
             try { window.tildaForm.send(tildaForm, tSubmit, 2, formKey); } catch(err) {}
