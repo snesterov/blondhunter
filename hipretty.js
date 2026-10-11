@@ -3286,41 +3286,122 @@
 
 
 
-  // Cookie плашка
+  
+  // ===================== COOKIE & 152-ФЗ СИСТЕМА (GREYWOLF СТИЛЬ) =====================
+  var policyTexts = {
+    privacy: {
+      title: 'Политика конфиденциальности (152-ФЗ РФ)',
+      content: `
+        <h4>1. Общие положения</h4>
+        <p>Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности данных, предпринимаемые магазином натуральных волос «привет, волосы!» (ИП Лесовая В. С., ИНН: 100201988457, ОГРНИП: 323774600090577).</p>
+        <h4>2. Цели обработки персональных данных</h4>
+        <p>Персональные данные (имя, контактный телефон, никнейм/аккаунт в Telegram или WhatsApp) обрабатываются исключительно в целях консультации, подбора срезов натуральных волос, демонстрации фото/видео материалов и оформления доставки заказа по согласованию с клиентом.</p>
+        <h4>3. Правовые основания</h4>
+        <p>Оператор обрабатывает персональные данные только при их заполнении и отправке Пользователем через формы на сайте hipretty.ru. Отправляя свои данные, Пользователь выражает свое полное согласие с данной Политикой.</p>
+        <h4>4. Безопасность и конфиденциальность</h4>
+        <p>Оператор обеспечивает сохранность персональных данных и принимает все возможные меры, исключающие доступ неуполномоченных лиц. Данные не передаются третьим лицам, за исключением случаев выполнения доставки (служба курьерской доставки / СДЭК).</p>
+      `
+    },
+    consent: {
+      title: 'Согласие на обработку персональных данных (152-ФЗ)',
+      content: `
+        <h4>Согласие Пользователя</h4>
+        <p>Настоящим я, действуя свободно, своей волей и в своем интересе, даю согласие ИП Лесовая В. С. (ИНН 100201988457, ОГРНИП 323774600090577) на обработку моих персональных данных:</p>
+        <p>• Имя;<br>• Номер контактного телефона;<br>• Имя пользователя / никнейм в мессенджерах Telegram или WhatsApp.</p>
+        <h4>Цели предоставления данных</h4>
+        <p>Обработка осуществляется для обратной связи, консультации мастера, подбора натуральных срезов волос по моим параметрам, подтверждения бронирования и организации курьерской или почтовой доставки по всей территории РФ и за рубеж.</p>
+        <p>Настоящее согласие действует бессрочно с момента предоставления данных и может быть отозвано путем направления письменного уведомления Оператору.</p>
+      `
+    }
+  };
 
-  if (!localStorage.getItem('hp_cookie_accepted') && !document.getElementById('hp-cookie-banner')) {
+  window.openPolicyModal = function(type) {
+    type = type || 'privacy';
+    var modal = document.getElementById('hp-policy-modal');
+    var titleEl = document.getElementById('hp-policy-modal-title');
+    var bodyEl = document.getElementById('hp-policy-modal-body');
+    if (!modal) return;
+    var data = policyTexts[type] || policyTexts.privacy;
+    if (titleEl) titleEl.textContent = data.title;
+    if (bodyEl) bodyEl.innerHTML = data.content;
+    modal.classList.add('open');
+  };
 
-    var cBanner = document.createElement('div');
+  window.closePolicyModal = function() {
+    var modal = document.getElementById('hp-policy-modal');
+    if (modal) modal.classList.remove('open');
+  };
 
-    cBanner.id = 'hp-cookie-banner';
+  window.openCookieSettings = function() {
+    var banner = document.getElementById('hp-cookie-banner');
+    if (!banner) return;
+    var mainView = document.getElementById('hp-cookie-view-main');
+    var settingsView = document.getElementById('hp-cookie-view-settings');
+    if (mainView && settingsView) {
+      mainView.classList.add('hidden');
+      settingsView.classList.remove('hidden');
+    }
+    banner.classList.add('visible');
+  };
 
-    cBanner.innerHTML = `
+  window.closeCookieBanner = function() {
+    var banner = document.getElementById('hp-cookie-banner');
+    if (banner) banner.classList.remove('visible');
+  };
 
-      <div>Мы используем cookie для наилучшей работы сайта и аналитики (Яндекс.Метрика).</div>
+  window.showCookieSettings = function() {
+    var mainView = document.getElementById('hp-cookie-view-main');
+    var settingsView = document.getElementById('hp-cookie-view-settings');
+    if (mainView && settingsView) {
+      mainView.classList.add('hidden');
+      settingsView.classList.remove('hidden');
+    }
+  };
 
-      <div style="display:flex;gap:10px;margin-top:8px;">
+  window.hideCookieSettings = function() {
+    var mainView = document.getElementById('hp-cookie-view-main');
+    var settingsView = document.getElementById('hp-cookie-view-settings');
+    if (mainView && settingsView) {
+      settingsView.classList.add('hidden');
+      mainView.classList.remove('hidden');
+    }
+  };
 
-        <button id="hp-cookie-accept" style="background:var(--hp-grad-btn);color:#1a0818;border:none;padding:6px 16px;border-radius:14px;font-weight:700;cursor:pointer;">Принять</button>
+  window.acceptAllCookies = function() {
+    localStorage.setItem('hp_cookie_consent', JSON.stringify({ status: 'all', time: Date.now() }));
+    localStorage.setItem('hp_cookie_accepted', 'true');
+    closeCookieBanner();
+  };
 
-      </div>
+  window.acceptEssentialCookies = function() {
+    localStorage.setItem('hp_cookie_consent', JSON.stringify({ status: 'essential', time: Date.now() }));
+    localStorage.setItem('hp_cookie_accepted', 'true');
+    closeCookieBanner();
+  };
 
-    `;
+  window.saveCustomCookieSettings = function() {
+    var a = document.getElementById('hp-cookie-toggle-analytics');
+    var o = document.getElementById('hp-cookie-toggle-other');
+    localStorage.setItem('hp_cookie_consent', JSON.stringify({
+      status: 'custom',
+      analytics: a ? a.checked : true,
+      other: o ? o.checked : false,
+      time: Date.now()
+    }));
+    localStorage.setItem('hp_cookie_accepted', 'true');
+    closeCookieBanner();
+  };
 
-    cBanner.style.cssText = 'position:fixed;bottom:14px;left:70px;background:#180d28;border:1px solid rgba(244,114,182,0.35);padding:14px 20px;border-radius:18px;color:#eee;font-size:12.5px;z-index:9990;box-shadow:0 10px 30px rgba(0,0,0,0.6);';
-
-    document.body.appendChild(cBanner);
-
-    document.getElementById('hp-cookie-accept').addEventListener('click', function() {
-
-      localStorage.setItem('hp_cookie_accepted', 'true');
-
-      cBanner.remove();
-
-    });
-
+  function checkCookieBannerInit() {
+    if (!localStorage.getItem('hp_cookie_accepted')) {
+      setTimeout(function() {
+        var banner = document.getElementById('hp-cookie-banner');
+        if (banner) banner.classList.add('visible');
+      }, 900);
+    }
   }
 
-
+  checkCookieBannerInit();
 
   if (document.readyState === 'loading') {
 
