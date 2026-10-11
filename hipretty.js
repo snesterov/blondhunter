@@ -305,6 +305,24 @@
       .hp-btn-wa-soft:hover {
         background: rgba(37, 211, 102, 0.22);
       }
+      .hp-btn-max {
+        background: rgba(255, 140, 0, 0.14);
+        border: 1px solid rgba(255, 140, 0, 0.45);
+        color: #ffaa44 !important;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 16px 22px;
+        border-radius: 30px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+      }
+      .hp-btn-max:hover {
+        background: rgba(255, 140, 0, 0.25);
+        border-color: #ff8c00;
+      }
       .hp-hero-stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1715,6 +1733,10 @@
           <a href="https://wa.me/79933365357?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%81%D1%80%D0%B5%D0%B7%20%D0%B2%D0%BE%D0%BB%D0%BE%D1%81." target="_blank" rel="noopener" class="hp-btn-wa-soft">
             WhatsApp
           </a>
+            
+          <a href="https://max.ru/u/f9LHodD0cOJDkOJa38G-aakmLO32B2FcARILKCnXhnJnzvKWD9r6yXfUCxE" target="_blank" rel="noopener" class="hp-btn-max">
+            <span>💬</span> ЛС MAX
+          </a>
         </div>
         <div class="hp-hero-stats">
           <div class="hp-stat-card">
@@ -1958,6 +1980,7 @@
             <a href="https://t.me/hi_pretty_manager" target="_blank" rel="noopener" style="color:var(--hp-rose);margin-right:14px;">✈ Менеджер в TG: @hi_pretty_manager</a>
             <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" style="color:#81D4FA;margin-right:14px;">📢 Канал: @hi_pretty</a>
             <a href="https://wa.me/79933365357" target="_blank" rel="noopener" style="color:#69F0AE;">● WhatsApp</a>
+            <a href="https://max.ru/u/f9LHodD0cOJDkOJa38G-aakmLO32B2FcARILKCnXhnJnzvKWD9r6yXfUCxE" target="_blank" rel="noopener" style="color:#FFAA44;margin-left:14px;">💬 ЛС MAX</a>
           </div>
         </div>
       </div>
@@ -1996,6 +2019,7 @@
             <a href="https://t.me/hi_pretty_manager" target="_blank" rel="noopener">✈ Менеджер в TG: @hi_pretty_manager</a>
             <a href="https://t.me/hi_pretty" target="_blank" rel="noopener">📢 Наш канал: @hi_pretty</a>
             <a href="https://wa.me/79933365357" target="_blank" rel="noopener">● WhatsApp: +7 (993) 336-53-57</a>
+            <a href="https://max.ru/u/f9LHodD0cOJDkOJa38G-aakmLO32B2FcARILKCnXhnJnzvKWD9r6yXfUCxE" target="_blank" rel="noopener">💬 ЛС MAX</a>
             <a href="tel:+79933365357">📞 8 (993) 336-53-57</a>
             <button type="button" onclick="openPolicyModal('privacy')">Политика конфиденциальности (152-ФЗ)</button>
             <button type="button" onclick="openPolicyModal('consent')">Согласие на обработку данных</button>
