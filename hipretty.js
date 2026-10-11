@@ -1,4 +1,5 @@
 (function() {
+  // 1. Шрифт Cormorant Garamond и Montserrat
   if (!document.getElementById('hp-fonts')) {
     var f = document.createElement('link');
     f.id = 'hp-fonts';
@@ -7,16 +8,17 @@
     document.head.appendChild(f);
   }
 
+  // 2. Стили сайта
   if (!document.getElementById('hp-styles')) {
     var s = document.createElement('style');
     s.id = 'hp-styles';
     s.textContent = `
       #allrecords > .r:not(#rec4673156001):not(#rec1915062531):not(#rec1935129061),
       #allrecords > div.r:not(#rec4673156001):not(#rec1915062531):not(#rec1935129061),
-      #t-footer, .t972, #rec1930057121 {
+      .t-records > .r:not(#rec4673156001):not(#rec1915062531):not(#rec1935129061) {
         display: none !important;
-        opacity: 0 !important;
         visibility: hidden !important;
+        opacity: 0 !important;
         pointer-events: none !important;
         height: 0 !important;
         min-height: 0 !important;
@@ -26,8 +28,8 @@
 
       :root {
         --hp-bg: #0e0915;
-        --hp-bg-card: rgba(25, 17, 38, 0.82);
-        --hp-bg-card-hover: rgba(36, 24, 54, 0.95);
+        --hp-bg-card: rgba(25, 17, 38, 0.85);
+        --hp-bg-card-hover: rgba(38, 26, 56, 0.96);
         --hp-rose: #f472b6;
         --hp-rose-light: #fce7f3;
         --hp-champagne: #edd8be;
@@ -36,12 +38,16 @@
         --hp-text: #fdfafd;
         --hp-text-muted: #b8acc7;
         --hp-border: rgba(244, 114, 182, 0.25);
-        --hp-border-active: rgba(244, 114, 182, 0.55);
+        --hp-border-active: rgba(244, 114, 182, 0.6);
       }
 
       * { box-sizing: border-box !important; }
 
-      html, body {
+      html {
+        scroll-behavior: smooth !important;
+      }
+
+      body {
         margin: 0 !important; padding: 0 !important;
         background-color: var(--hp-bg) !important;
         color: var(--hp-text) !important;
@@ -50,7 +56,6 @@
         width: 100% !important;
         max-width: 100vw !important;
         -webkit-font-smoothing: antialiased;
-        scroll-behavior: smooth;
       }
 
       #hp-app {
@@ -66,7 +71,8 @@
         width: 100%;
         max-width: 1240px;
         margin: 0 auto;
-        padding: 0 24px;
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
       /* ХЕДЕР */
@@ -74,14 +80,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 18px 0;
+        padding: 16px 20px;
         border-bottom: 1px solid var(--hp-border);
         position: sticky;
         top: 0;
-        background: rgba(14, 9, 21, 0.94);
+        background: rgba(14, 9, 21, 0.95);
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
-        z-index: 100;
+        z-index: 1000;
       }
       .hp-logo-wrap { text-decoration: none; display: flex; flex-direction: column; }
       .hp-logo {
@@ -102,16 +108,17 @@
         margin-top: 5px;
         font-weight: 600;
       }
-      .hp-nav-links { display: flex; align-items: center; gap: 24px; }
+      .hp-nav-links { display: flex; align-items: center; gap: 22px; }
       .hp-nav-link {
         color: #dcd0ea;
         text-decoration: none;
         font-size: 13.5px;
         font-weight: 500;
         transition: color 0.2s ease;
+        cursor: pointer;
       }
       .hp-nav-link:hover { color: var(--hp-rose); }
-      .hp-header-actions { display: flex; align-items: center; gap: 16px; }
+      .hp-header-actions { display: flex; align-items: center; gap: 14px; }
       .hp-header-phone {
         color: #fff;
         text-decoration: none;
@@ -133,18 +140,20 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
+        cursor: pointer;
+        border: none;
       }
       .hp-btn-header-cta:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 26px rgba(244, 114, 182, 0.6);
       }
 
-      /* ГЛАВНЫЙ ЭКРАН (HERO) */
-      .hp-hero { padding: 46px 0 70px; position: relative; }
+      /* ГЛАВНЫЙ ЭКРАН */
+      .hp-hero { padding: 44px 20px 65px; position: relative; }
       .hp-hero-grid {
         display: grid;
         grid-template-columns: 1.05fr 1fr;
-        gap: 44px;
+        gap: 40px;
         align-items: center;
       }
       .hp-badge-geo {
@@ -160,7 +169,7 @@
         font-weight: 600;
         letter-spacing: 1px;
         text-transform: uppercase;
-        margin-bottom: 22px;
+        margin-bottom: 20px;
       }
       .hp-badge-geo span {
         width: 8px; height: 8px;
@@ -186,13 +195,13 @@
         font-size: 16px;
         line-height: 1.65;
         color: var(--hp-text-muted);
-        margin: 0 0 34px;
+        margin: 0 0 32px;
       }
       .hp-hero-cta-box {
         display: flex;
         flex-wrap: wrap;
         gap: 14px;
-        margin-bottom: 38px;
+        margin-bottom: 36px;
       }
       .hp-btn-main {
         background: var(--hp-grad-btn);
@@ -248,102 +257,89 @@
       }
       .hp-btn-wa-soft:hover {
         background: rgba(37, 211, 102, 0.22);
-        border-color: #25D366;
       }
-
-      /* ФОТО ТРЕХ ДЕВОЧЕК */
-      .hp-hero-girls-showcase {
-        position: relative;
-        background: radial-gradient(ellipse at 50% 25%, rgba(244, 114, 182, 0.22) 0%, rgba(20, 12, 32, 0.95) 75%);
-        border: 1px solid var(--hp-border-active);
-        border-radius: 32px;
-        padding: 16px;
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(244, 114, 182, 0.2);
-        overflow: hidden;
-      }
-      .hp-girls-img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 24px;
-        object-fit: cover;
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
-      }
-      .hp-hero-float-badge {
-        position: absolute;
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        background: rgba(22, 13, 34, 0.88);
-        border: 1px solid var(--hp-border-active);
-        border-radius: 18px;
-        padding: 11px 18px;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-        font-size: 13px;
-        font-weight: 600;
-      }
-      .hp-hero-float-badge.top-left { top: 30px; left: 30px; }
-      .hp-hero-float-badge.bottom-right { bottom: 30px; right: 30px; }
-
-      /* СТАТИСТИКА */
       .hp-hero-stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
       }
       .hp-stat-card {
-        background: var(--hp-bg-card);
+        background: rgba(24, 15, 36, 0.7);
         border: 1px solid var(--hp-border);
-        border-radius: 20px;
-        padding: 18px 20px;
-        backdrop-filter: blur(12px);
-        transition: transform 0.2s ease, border-color 0.2s ease;
-      }
-      .hp-stat-card:hover {
-        transform: translateY(-2px);
-        border-color: var(--hp-border-active);
+        padding: 16px;
+        border-radius: 16px;
       }
       .hp-stat-val {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 34px;
+        font-size: 30px;
         font-weight: 700;
+        color: var(--hp-rose-light);
         line-height: 1;
-        background: var(--hp-grad-text);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         margin-bottom: 6px;
       }
       .hp-stat-lbl {
-        font-size: 12.5px;
+        font-size: 12px;
         color: var(--hp-text-muted);
         line-height: 1.4;
       }
 
-      /* СЕКЦИИ: ЗАГОЛОВКИ */
+      /* ГЛАВНОЕ ФОТО ТРЕХ ДЕВОЧЕК */
+      .hp-hero-girls-showcase {
+        position: relative;
+        border-radius: 28px;
+        overflow: hidden;
+        border: 1px solid var(--hp-border-active);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 40px rgba(244, 114, 182, 0.22);
+        background: #190e24;
+      }
+      .hp-girls-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+      .hp-hero-girls-showcase:hover .hp-girls-img {
+        transform: scale(1.02);
+      }
+      .hp-hero-float-badge {
+        position: absolute;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background: rgba(20, 10, 30, 0.85);
+        border: 1px solid var(--hp-border-active);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #fff;
+        z-index: 2;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      }
+      .hp-hero-float-badge.top-left { top: 18px; left: 18px; }
+      .hp-hero-float-badge.bottom-right { bottom: 18px; right: 18px; }
+
+      /* БЛОК СЕКЦИЙ */
       .hp-sec-head {
         text-align: center;
         max-width: 820px;
-        margin: 0 auto 46px;
+        margin: 0 auto 38px;
       }
       .hp-sec-badge {
-        display: inline-block;
         font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 1.5px;
         text-transform: uppercase;
+        letter-spacing: 2px;
         color: var(--hp-rose);
+        font-weight: 700;
         margin-bottom: 12px;
+        display: inline-block;
       }
       .hp-sec-title {
         font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(32px, 4vw, 48px);
+        font-size: clamp(28px, 3.6vw, 44px);
         font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 14px;
         color: #fff;
-        line-height: 1.18;
-        margin: 0 0 16px;
       }
       .hp-sec-title span {
         background: var(--hp-grad-text);
@@ -351,24 +347,24 @@
         -webkit-text-fill-color: transparent;
       }
       .hp-sec-desc {
-        font-size: 16px;
+        font-size: 15px;
         color: var(--hp-text-muted);
-        line-height: 1.65;
+        line-height: 1.6;
         margin: 0;
       }
 
-      /* БЛОК ПРЕИМУЩЕСТВ */
+      /* ПРЕИМУЩЕСТВА */
       .hp-features-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
-        margin-bottom: 70px;
+        margin-bottom: 60px;
       }
       .hp-feature-card {
         background: var(--hp-bg-card);
         border: 1px solid var(--hp-border);
-        border-radius: 22px;
-        padding: 30px 24px;
+        border-radius: 20px;
+        padding: 26px 20px;
         transition: transform 0.25s ease, border-color 0.25s ease;
       }
       .hp-feature-card:hover {
@@ -376,226 +372,296 @@
         border-color: var(--hp-border-active);
         background: var(--hp-bg-card-hover);
       }
-      .hp-feat-icon { font-size: 30px; margin-bottom: 18px; }
+      .hp-feat-icon { font-size: 32px; margin-bottom: 16px; }
       .hp-feat-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 22px;
+        font-size: 17px;
         font-weight: 700;
         color: #fff;
         margin: 0 0 10px;
-        line-height: 1.25;
       }
       .hp-feat-desc {
         font-size: 13.5px;
         color: var(--hp-text-muted);
-        line-height: 1.6;
+        line-height: 1.55;
         margin: 0;
       }
 
-      /* ПРОСТОЙ И ПОНЯТНЫЙ ПОДБОР СРЕЗА */
-      .hp-quiz-section { padding: 35px 0 70px; }
-      .hp-quiz-card {
-        background: radial-gradient(ellipse at 50% 0%, #2f1342 0%, #150c22 75%);
-        border: 1px solid var(--hp-border-active);
-        border-radius: 30px;
-        padding: 42px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
-        max-width: 960px;
-        margin: 0 auto;
-      }
-      .hp-quiz-step-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 24px;
-        font-weight: 700;
-        color: #fff;
-        margin: 0 0 16px;
-      }
-      .hp-quiz-options {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-        margin-bottom: 28px;
-      }
-      .hp-quiz-opt {
-        background: rgba(255, 255, 255, 0.04);
+      /* КАТАЛОГ СРЕЗОВ И ФИЛЬТРЫ */
+      .hp-catalog-section { padding: 40px 20px 60px; }
+      
+      .hp-catalog-filter-bar {
+        background: rgba(22, 13, 34, 0.85);
         border: 1px solid var(--hp-border);
-        border-radius: 18px;
-        padding: 18px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        text-align: center;
+        border-radius: 24px;
+        padding: 20px 24px;
+        margin-bottom: 34px;
+        backdrop-filter: blur(14px);
       }
-      .hp-quiz-opt:hover {
-        border-color: var(--hp-rose);
-        background: rgba(244, 114, 182, 0.1);
-      }
-      .hp-quiz-opt.selected {
-        background: rgba(244, 114, 182, 0.2);
-        border-color: var(--hp-rose);
-        box-shadow: 0 0 20px rgba(244, 114, 182, 0.35);
-      }
-      .hp-quiz-opt-val {
-        font-weight: 700;
-        font-size: 16px;
-        color: #fff;
-        margin-bottom: 6px;
-      }
-      .hp-quiz-opt-desc {
-        font-size: 12.5px;
-        color: var(--hp-text-muted);
-        line-height: 1.4;
-      }
-
-      /* КАТАЛОГ СРЕЗОВ */
-      .hp-catalog-section { padding: 40px 0 75px; }
-      .hp-catalog-filters {
+      .hp-filter-row {
         display: flex;
-        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
         gap: 12px;
-        margin-bottom: 38px;
+        margin-bottom: 14px;
       }
-      .hp-filter-btn {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid var(--hp-border);
-        color: #d1c5e2;
-        padding: 11px 22px;
-        border-radius: 25px;
-        font-size: 13.5px;
+      .hp-filter-row:last-child { margin-bottom: 0; }
+      .hp-filter-label {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--hp-rose-light);
+        min-width: 140px;
+      }
+      .hp-filter-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        flex: 1;
+      }
+      .hp-filter-pill {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(244, 114, 182, 0.25);
+        color: #ddd;
+        padding: 7px 16px;
+        border-radius: 20px;
+        font-size: 13px;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.2s ease;
       }
-      .hp-filter-btn:hover { border-color: var(--hp-rose); color: #fff; }
-      .hp-filter-btn.active {
-        background: rgba(244, 114, 182, 0.22);
+      .hp-filter-pill:hover {
         border-color: var(--hp-rose);
         color: #fff;
-        box-shadow: 0 0 18px rgba(244, 114, 182, 0.35);
+        background: rgba(244, 114, 182, 0.15);
       }
+      .hp-filter-pill.active {
+        background: var(--hp-grad-btn);
+        color: #1a0818;
+        border-color: transparent;
+        font-weight: 700;
+        box-shadow: 0 4px 14px rgba(244, 114, 182, 0.4);
+      }
+
+      .hp-catalog-counter {
+        text-align: right;
+        font-size: 13px;
+        color: var(--hp-text-muted);
+        margin-bottom: 18px;
+      }
+      .hp-catalog-counter strong { color: var(--hp-rose-light); }
+
       .hp-catalog-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 26px;
+        gap: 24px;
       }
       .hp-cut-card {
         background: var(--hp-bg-card);
         border: 1px solid var(--hp-border);
-        border-radius: 24px;
+        border-radius: 22px;
         overflow: hidden;
-        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         display: flex;
         flex-direction: column;
-        backdrop-filter: blur(12px);
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
       }
       .hp-cut-card:hover {
         transform: translateY(-5px);
         border-color: var(--hp-border-active);
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 30px rgba(244, 114, 182, 0.2);
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(244, 114, 182, 0.15);
       }
       .hp-cut-img-wrap {
-        height: 320px;
         position: relative;
+        width: 100%;
+        height: 310px;
+        background: #180e22;
         overflow: hidden;
       }
       .hp-cut-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.4s ease;
+        transition: transform 0.5s ease;
       }
-      .hp-cut-card:hover .hp-cut-img { transform: scale(1.05); }
+      .hp-cut-card:hover .hp-cut-img { transform: scale(1.04); }
       .hp-cut-badge {
         position: absolute;
-        top: 14px; left: 14px;
-        background: rgba(18, 11, 28, 0.88);
-        backdrop-filter: blur(8px);
+        top: 14px;
+        left: 14px;
+        background: rgba(14, 9, 21, 0.85);
         border: 1px solid var(--hp-border-active);
-        color: #fce7f3;
         padding: 5px 12px;
         border-radius: 14px;
         font-size: 11.5px;
         font-weight: 700;
+        color: var(--hp-rose-light);
+        backdrop-filter: blur(8px);
+      }
+      .hp-cut-price-tag {
+        position: absolute;
+        bottom: 14px;
+        right: 14px;
+        background: var(--hp-grad-btn);
+        color: #1a0818;
+        padding: 6px 14px;
+        border-radius: 14px;
+        font-size: 13.5px;
+        font-weight: 700;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
       }
       .hp-cut-body {
-        padding: 24px;
+        padding: 22px;
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
+        flex: 1;
       }
       .hp-cut-title {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 700;
-        color: #fff;
         margin: 0 0 8px;
-        line-height: 1.2;
+        color: #fff;
       }
       .hp-cut-meta {
         display: flex;
-        gap: 12px;
+        flex-wrap: wrap;
+        gap: 8px;
         font-size: 12.5px;
-        color: var(--hp-rose);
-        font-weight: 600;
+        color: var(--hp-rose-light);
         margin-bottom: 12px;
+        font-weight: 600;
+      }
+      .hp-cut-meta span {
+        background: rgba(244, 114, 182, 0.12);
+        padding: 4px 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(244, 114, 182, 0.25);
       }
       .hp-cut-desc {
         font-size: 13.5px;
-        color: var(--hp-text-muted);
         line-height: 1.55;
+        color: var(--hp-text-muted);
         margin: 0 0 20px;
-        flex-grow: 1;
+        flex: 1;
+      }
+      .hp-cut-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: auto;
       }
       .hp-cut-btn {
-        background: rgba(244, 114, 182, 0.15);
-        border: 1px solid var(--hp-border);
-        color: #fdfafd !important;
-        text-align: center;
-        padding: 13px;
-        border-radius: 16px;
-        font-weight: 700;
-        font-size: 13.5px;
-        text-decoration: none;
-        transition: all 0.2s ease;
-        display: block;
-      }
-      .hp-cut-btn:hover {
+        flex: 1;
         background: var(--hp-grad-btn);
         color: #1a0818 !important;
-        box-shadow: 0 6px 22px rgba(244, 114, 182, 0.5);
+        text-align: center;
+        padding: 12px 14px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 13px;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 4px 14px rgba(244, 114, 182, 0.35);
+      }
+      .hp-cut-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(244, 114, 182, 0.55);
+      }
+      .hp-cut-btn-tg {
+        background: rgba(0, 136, 204, 0.15);
+        border: 1px solid rgba(0, 136, 204, 0.4);
+        color: #81D4FA !important;
+        padding: 12px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+      }
+      .hp-cut-btn-tg:hover {
+        background: rgba(0, 136, 204, 0.3);
       }
 
-      /* ЦЕНТРАЛЬНЫЙ БЛОК ЗАХВАТА ЗАЯВКИ */
-      .hp-lead-section { padding: 40px 0 75px; }
-      .hp-lead-box {
-        background: radial-gradient(ellipse at 50% -10%, #3a1550 0%, #170e26 70%);
+      /* КВИЗ ПОДБОРА */
+      .hp-quiz-section { padding: 30px 20px 60px; }
+      .hp-quiz-card {
+        background: var(--hp-bg-card);
         border: 1px solid var(--hp-border-active);
-        border-radius: 32px;
-        padding: 48px 40px;
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.75), 0 0 35px rgba(244, 114, 182, 0.2);
+        border-radius: 26px;
+        padding: 38px;
+        max-width: 900px;
+        margin: 0 auto;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+      }
+      .hp-quiz-step-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--hp-rose-light);
+        margin-bottom: 14px;
+      }
+      .hp-quiz-options {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+      .hp-quiz-opt {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--hp-border);
+        border-radius: 16px;
+        padding: 16px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .hp-quiz-opt:hover {
+        border-color: var(--hp-rose);
+        background: rgba(244, 114, 182, 0.08);
+      }
+      .hp-quiz-opt.selected {
+        border-color: var(--hp-rose);
+        background: rgba(244, 114, 182, 0.16);
+        box-shadow: 0 0 20px rgba(244, 114, 182, 0.3);
+      }
+      .hp-quiz-opt-val {
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+      .hp-quiz-opt-desc {
+        font-size: 12px;
+        color: var(--hp-text-muted);
+      }
+
+      /* ФОРМА ЗАХВАТА ЗАЯВКИ */
+      .hp-lead-section { padding: 40px 20px 70px; }
+      .hp-lead-box {
+        background: linear-gradient(135deg, rgba(38, 22, 54, 0.95) 0%, rgba(22, 12, 34, 0.98) 100%);
+        border: 1px solid var(--hp-border-active);
+        border-radius: 28px;
+        padding: 50px 40px;
         max-width: 820px;
         margin: 0 auto;
         text-align: center;
-        position: relative;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65), 0 0 45px rgba(244, 114, 182, 0.22);
       }
       .hp-lead-badge {
-        display: inline-block;
-        background: rgba(244, 114, 182, 0.18);
-        border: 1px solid var(--hp-border-active);
-        color: #fce7f3;
-        padding: 7px 18px;
-        border-radius: 20px;
         font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 1.5px;
         text-transform: uppercase;
-        margin-bottom: 16px;
+        letter-spacing: 2px;
+        color: var(--hp-rose);
+        font-weight: 700;
+        margin-bottom: 12px;
+        display: inline-block;
       }
       .hp-lead-title {
         font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(32px, 4.2vw, 46px);
+        font-size: clamp(28px, 3.6vw, 42px);
         font-weight: 700;
-        line-height: 1.15;
+        line-height: 1.2;
         margin: 0 0 14px;
         color: #fff;
       }
@@ -605,67 +671,23 @@
         -webkit-text-fill-color: transparent;
       }
       .hp-lead-subtitle {
-        font-size: 16px;
-        line-height: 1.6;
+        font-size: 15px;
         color: var(--hp-text-muted);
-        margin: 0 auto 34px;
-        max-width: 620px;
+        max-width: 600px;
+        margin: 0 auto 30px;
+        line-height: 1.55;
       }
-      .hp-method-label {
-        font-size: 13.5px;
-        color: #fce7f3;
-        font-weight: 600;
-        margin-bottom: 14px;
+      .hp-input-group {
+        margin-bottom: 16px;
         text-align: left;
       }
-      .hp-method-selector {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        margin-bottom: 22px;
-      }
-      .hp-method-btn {
-        background: #1e1130;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 14px;
-        padding: 14px 10px;
-        color: #ccc;
-        font-size: 13.5px;
-        font-weight: 600;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        transition: all 0.2s ease;
-      }
-      .hp-method-btn:hover { border-color: var(--hp-rose); }
-      .hp-method-btn.active.tg {
-        background: rgba(0, 136, 204, 0.25);
-        border-color: #0088cc;
-        color: #fff;
-        box-shadow: 0 0 18px rgba(0, 136, 204, 0.4);
-      }
-      .hp-method-btn.active.wa {
-        background: rgba(37, 211, 102, 0.25);
-        border-color: #25D366;
-        color: #fff;
-        box-shadow: 0 0 18px rgba(37, 211, 102, 0.4);
-      }
-      .hp-method-btn.active.phone {
-        background: rgba(244, 114, 182, 0.25);
-        border-color: var(--hp-rose);
-        color: #fff;
-        box-shadow: 0 0 18px rgba(244, 114, 182, 0.4);
-      }
-      .hp-input-group { margin-bottom: 16px; text-align: left; }
       .hp-input {
         width: 100%;
-        background: #1a0e2a;
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(14, 9, 21, 0.85);
+        border: 1px solid var(--hp-border);
         border-radius: 16px;
+        padding: 15px 20px;
         color: #fff;
-        padding: 16px 20px;
         font-size: 15px;
         font-family: 'Montserrat', sans-serif;
         outline: none;
@@ -673,292 +695,220 @@
       }
       .hp-input:focus {
         border-color: var(--hp-rose);
-        box-shadow: 0 0 18px rgba(244, 114, 182, 0.35);
+        box-shadow: 0 0 15px rgba(244, 114, 182, 0.3);
       }
       .hp-input-hint {
-        font-size: 12px;
-        color: var(--hp-text-muted);
+        font-size: 12.5px;
+        color: var(--hp-rose-light);
         margin-top: 8px;
-        line-height: 1.5;
+        line-height: 1.45;
       }
-      .hp-input-hint strong { color: #fce7f3; }
+      .hp-method-label {
+        font-size: 13.5px;
+        color: var(--hp-rose-light);
+        margin-bottom: 12px;
+        font-weight: 600;
+        text-align: left;
+      }
+      .hp-method-selector {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+      .hp-method-btn {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--hp-border);
+        border-radius: 14px;
+        padding: 12px;
+        color: #ddd;
+        font-size: 13.5px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+      }
+      .hp-method-btn:hover {
+        border-color: var(--hp-rose);
+        color: #fff;
+      }
+      .hp-method-btn.active.tg {
+        background: rgba(0, 136, 204, 0.25);
+        border-color: #0088cc;
+        color: #81D4FA;
+      }
+      .hp-method-btn.active.wa {
+        background: rgba(37, 211, 102, 0.25);
+        border-color: #25D366;
+        color: #69F0AE;
+      }
+      .hp-method-btn.active.phone {
+        background: rgba(244, 114, 182, 0.25);
+        border-color: var(--hp-rose);
+        color: #fff;
+      }
       .hp-form-submit {
         width: 100%;
         background: var(--hp-grad-btn);
         color: #1a0818;
         border: none;
-        border-radius: 18px;
-        padding: 18px;
+        border-radius: 20px;
+        padding: 16px;
         font-size: 16px;
         font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
         cursor: pointer;
-        box-shadow: 0 8px 32px rgba(244, 114, 182, 0.5);
+        box-shadow: 0 8px 25px rgba(244, 114, 182, 0.4);
         transition: transform 0.2s ease, box-shadow 0.2s ease;
-        margin-top: 10px;
       }
       .hp-form-submit:hover {
         transform: translateY(-2px);
-        box-shadow: 0 12px 40px rgba(244, 114, 182, 0.7);
+        box-shadow: 0 10px 32px rgba(244, 114, 182, 0.6);
       }
       .hp-form-policy {
         font-size: 12px;
-        color: #9283a8;
+        color: var(--hp-text-muted);
         margin-top: 14px;
-        line-height: 1.5;
       }
       .hp-form-policy a {
-        color: #fce7f3;
+        color: var(--hp-rose-light);
         text-decoration: underline;
         cursor: pointer;
       }
-
-      /* ТЕЛЕГРАМ ЛЕНТА */
-      .hp-tg-feed-section { padding: 40px 0 75px; }
-      .hp-feed-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-      }
-      .hp-feed-card {
-        background: var(--hp-bg-card);
-        border: 1px solid var(--hp-border);
-        border-radius: 20px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.25s ease, border-color 0.25s ease;
-      }
-      .hp-feed-card:hover {
-        transform: translateY(-4px);
-        border-color: var(--hp-border-active);
-      }
-      .hp-feed-media {
-        position: relative;
-        height: 230px;
-        background: #000;
-      }
-      .hp-feed-thumb { width: 100%; height: 100%; object-fit: cover; }
-      .hp-feed-video-badge {
-        position: absolute;
-        top: 10px; right: 10px;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(6px);
-        color: #fff;
-        padding: 4px 9px;
-        border-radius: 12px;
-        font-size: 11px;
-        font-weight: 600;
-      }
-      .hp-feed-body {
-        padding: 18px;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-      }
-      .hp-feed-title {
-        font-size: 15px;
-        font-weight: 700;
-        color: #fff;
-        margin: 0 0 8px;
-        line-height: 1.3;
-      }
-      .hp-feed-desc {
-        font-size: 12.5px;
-        color: var(--hp-text-muted);
-        line-height: 1.5;
-        margin: 0 0 16px;
-        flex-grow: 1;
-        max-height: 90px;
-        overflow: hidden;
-      }
-      .hp-feed-actions { display: flex; gap: 8px; }
-      .hp-feed-btn-book {
-        background: var(--hp-grad-btn);
-        color: #1a0818 !important;
-        font-weight: 700;
-        font-size: 12px;
-        padding: 9px 12px;
-        border-radius: 12px;
-        text-decoration: none;
-        flex-grow: 1;
-        text-align: center;
-      }
-      .hp-feed-btn-tg {
-        background: rgba(0, 136, 204, 0.16);
-        color: #81D4FA !important;
-        border: 1px solid rgba(0, 136, 204, 0.4);
-        padding: 9px 12px;
-        border-radius: 12px;
-        font-size: 12px;
-        font-weight: 600;
-        text-decoration: none;
-      }
-
-      /* ОТЗЫВЫ */
-      .hp-reviews-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-        margin-bottom: 75px;
-      }
-      .hp-review-card {
-        background: var(--hp-bg-card);
-        border: 1px solid var(--hp-border);
-        border-radius: 22px;
-        padding: 28px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .hp-review-stars { color: #facc15; font-size: 16px; margin-bottom: 12px; }
-      .hp-review-text {
-        font-size: 14px;
-        color: #ece5f5;
-        line-height: 1.6;
-        margin: 0 0 18px;
-        font-style: italic;
-      }
-      .hp-review-author { display: flex; align-items: center; gap: 12px; }
-      .hp-review-avatar {
-        width: 44px; height: 44px;
-        border-radius: 50%;
-        background: rgba(244, 114, 182, 0.22);
-        border: 1px solid var(--hp-border-active);
-        display: flex; align-items: center; justify-content: center;
-        font-weight: 700; color: #fff;
-      }
-      .hp-review-name { font-weight: 700; font-size: 14px; color: #fff; }
-      .hp-review-role { font-size: 12px; color: var(--hp-text-muted); }
 
       /* КОНТАКТЫ И ШОУРУМ */
       .hp-contacts-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 30px;
+        gap: 40px;
+        align-items: center;
         background: var(--hp-bg-card);
-        border: 1px solid var(--hp-border-active);
-        border-radius: 30px;
+        border: 1px solid var(--hp-border);
+        border-radius: 26px;
         padding: 40px;
-        margin-bottom: 70px;
       }
       .hp-contact-title {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 32px;
+        font-size: 34px;
         font-weight: 700;
+        margin: 0 0 24px;
         color: #fff;
-        margin: 0 0 16px;
       }
       .hp-contact-item {
         display: flex;
         align-items: flex-start;
-        gap: 14px;
-        margin-bottom: 18px;
+        gap: 16px;
+        margin-bottom: 20px;
       }
-      .hp-ci-icon { font-size: 20px; color: var(--hp-rose); line-height: 1.2; }
-      .hp-ci-label { font-size: 12px; color: var(--hp-text-muted); text-transform: uppercase; letter-spacing: 1px; }
-      .hp-ci-val { font-size: 15px; color: #fff; font-weight: 600; margin-top: 2px; }
-      .hp-ci-val a { color: #fce7f3; text-decoration: none; }
-      .hp-showroom-img-box {
-        border-radius: 20px;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        position: relative;
-        height: 100%;
-        min-height: 280px;
-      }
-      .hp-showroom-img { width: 100%; height: 100%; object-fit: cover; }
-      .hp-showroom-badge {
-        position: absolute;
-        bottom: 16px; left: 16px;
-        background: rgba(18, 11, 28, 0.88);
-        backdrop-filter: blur(8px);
-        border: 1px solid var(--hp-border-active);
-        color: #fff;
-        padding: 8px 14px;
-        border-radius: 12px;
+      .hp-ci-icon { font-size: 22px; color: var(--hp-rose); }
+      .hp-ci-label {
         font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--hp-rose-light);
+        margin-bottom: 4px;
         font-weight: 600;
       }
+      .hp-ci-val { font-size: 15px; color: #fff; line-height: 1.45; }
+      .hp-ci-val a { color: #fff; text-decoration: none; font-weight: 600; }
+      .hp-showroom-img-box {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid var(--hp-border-active);
+      }
+      .hp-showroom-img { width: 100%; height: auto; display: block; }
+      .hp-showroom-badge {
+        position: absolute;
+        bottom: 16px;
+        left: 16px;
+        background: rgba(14, 9, 21, 0.88);
+        border: 1px solid var(--hp-border-active);
+        padding: 8px 16px;
+        border-radius: 16px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #fff;
+      }
 
-      /* FOOTER */
+      /* ФУТЕР */
       .hp-footer {
-        padding: 40px 0 60px;
-        border-top: 1px solid var(--hp-border);
+        padding: 40px 20px;
         text-align: center;
+        border-top: 1px solid var(--hp-border);
+        color: var(--hp-text-muted);
         font-size: 13px;
-        color: #9d8ea8;
-        line-height: 1.65;
+        line-height: 1.7;
       }
       .hp-footer-links {
         display: flex;
         justify-content: center;
-        gap: 16px;
+        gap: 20px;
         margin-bottom: 14px;
       }
-      .hp-footer-link { color: #d8cde8; cursor: pointer; text-decoration: underline; }
-
-      /* ПОПАПЫ ТИЛЬДЫ */
-      .t-popup,
-      #rec1915062531 .t-popup,
-      #rec1935129061 .t-popup {
-        background-color: rgba(9, 5, 15, 0.9) !important;
-        backdrop-filter: blur(16px) !important;
-        -webkit-backdrop-filter: blur(16px) !important;
-      }
-      #rec1915062531 .t-popup__container,
-      #rec1935129061 .t-popup__container {
-        background: #180e28 !important;
-        border: 1px solid var(--hp-border-active) !important;
-        border-radius: 28px !important;
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.85), 0 0 40px rgba(244, 114, 182, 0.25) !important;
-        padding: 36px 32px !important;
-        color: #fdfafd !important;
-      }
-      #rec1915062531 .t702__title,
-      #rec1935129061 .t702__title {
-        font-family: 'Cormorant Garamond', serif !important;
-        font-size: clamp(26px, 3.4vw, 36px) !important;
-        font-weight: 700 !important;
-        color: #ffffff !important;
-      }
-      #rec1915062531 .t-input,
-      #rec1935129061 .t-input {
-        background: #1e1133 !important;
-        border: 1px solid rgba(255, 255, 255, 0.12) !important;
-        border-radius: 14px !important;
-        color: #ffffff !important;
-        padding: 14px 18px !important;
-      }
-      #rec1915062531 .t-btnflex.t-btnflex_type_submit,
-      #rec1915062531 .t-submit,
-      #rec1935129061 .t-btnflex.t-btnflex_type_submit,
-      #rec1935129061 .t-submit {
-        background: var(--hp-grad-btn) !important;
-        color: #1a0818 !important;
-        border: none !important;
-        border-radius: 16px !important;
-        font-weight: 700 !important;
-        padding: 16px 28px !important;
+      .hp-footer-link {
+        color: var(--hp-rose-light);
+        text-decoration: underline;
+        cursor: pointer;
       }
 
-      /* ПЛАВАЮЩИЕ КНОПКИ */
+      /* МОДАЛ 152-ФЗ */
+      #hp-legal-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(10px);
+        z-index: 99999;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .hp-legal-box {
+        background: #180d26;
+        border: 1px solid var(--hp-border-active);
+        border-radius: 24px;
+        padding: 34px;
+        max-width: 600px;
+        width: 100%;
+        color: #eee;
+        font-size: 14px;
+        line-height: 1.6;
+        position: relative;
+      }
+      .hp-legal-close {
+        position: absolute;
+        top: 16px; right: 18px;
+        background: none; border: none;
+        color: #aaa; font-size: 26px;
+        cursor: pointer;
+      }
+
+      /* КНОПКА «НАВЕРХ» И ВИДЖЕТ ЗАЯВКИ */
       #hp-btn-top {
         position: fixed;
         bottom: 14px;
         left: 14px;
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
         border-radius: 50%;
-        background: rgba(24, 14, 38, 0.92);
+        background: rgba(22, 13, 34, 0.9);
         border: 1px solid var(--hp-border-active);
-        color: var(--hp-rose);
+        color: var(--hp-rose-light);
         display: none;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        z-index: 9999;
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(8px);
+        z-index: 9990;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+      #hp-btn-top:hover {
+        transform: translateY(-2px);
+        background: rgba(244, 114, 182, 0.3);
       }
       #hp-btn-top svg { width: 20px; height: 20px; fill: currentColor; }
 
@@ -966,103 +916,196 @@
         position: fixed;
         bottom: 14px;
         right: 14px;
-        z-index: 9998;
+        z-index: 9990;
       }
       .hp-widget-pulse-btn {
         background: var(--hp-grad-btn);
         color: #1a0818 !important;
+        padding: 12px 20px;
+        border-radius: 25px;
         font-weight: 700;
         font-size: 13.5px;
-        padding: 13px 22px;
-        border-radius: 30px;
-        text-decoration: none;
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        box-shadow: 0 6px 25px rgba(244, 114, 182, 0.55);
-        animation: hpPulse 2.8s infinite;
+        gap: 6px;
+        text-decoration: none;
+        box-shadow: 0 6px 20px rgba(244, 114, 182, 0.5);
+        cursor: pointer;
+        border: none;
+        transition: transform 0.2s ease;
       }
-      @keyframes hpPulse {
-        0% { box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.7); }
-        70% { box-shadow: 0 0 0 16px rgba(244, 114, 182, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(244, 114, 182, 0); }
-      }
+      .hp-widget-pulse-btn:hover { transform: scale(1.04); }
 
-      #hp-legal-modal {
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: rgba(0, 0, 0, 0.85);
-        backdrop-filter: blur(10px);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 100000;
-        padding: 16px;
-      }
-      .hp-legal-box {
-        background: #1c102f;
-        border: 1px solid var(--hp-border-active);
-        color: #ddd;
-        max-width: 650px;
-        max-height: 85vh;
-        overflow-y: auto;
-        padding: 30px;
-        border-radius: 22px;
-        font-size: 13px;
-        line-height: 1.6;
-        position: relative;
-      }
-      .hp-legal-close {
-        position: absolute;
-        top: 14px; right: 14px;
-        background: none; border: none; color: #fff; font-size: 24px; cursor: pointer;
-      }
-
-      @media (max-width: 1024px) {
+      /* МОБИЛЬНАЯ АДАПТАЦИЯ */
+      @media (max-width: 992px) {
+        .hp-hero-grid { grid-template-columns: 1fr; }
         .hp-features-grid { grid-template-columns: repeat(2, 1fr); }
         .hp-catalog-grid { grid-template-columns: repeat(2, 1fr); }
-        .hp-feed-grid { grid-template-columns: repeat(2, 1fr); }
-        .hp-reviews-grid { grid-template-columns: 1fr; }
         .hp-contacts-grid { grid-template-columns: 1fr; }
-      }
-
-      @media (max-width: 860px) {
         .hp-nav-links { display: none; }
-        .hp-hero-grid { display: flex; flex-direction: column; text-align: center; gap: 32px; }
-        .hp-hero-cta-box { justify-content: center; }
-        .hp-hero-stats { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 640px) {
         .hp-features-grid { grid-template-columns: 1fr; }
         .hp-catalog-grid { grid-template-columns: 1fr; }
-        .hp-feed-grid { grid-template-columns: 1fr; }
-        .hp-quiz-card { padding: 26px 20px; }
         .hp-quiz-options { grid-template-columns: 1fr; }
+        .hp-hero-stats { grid-template-columns: 1fr; }
         .hp-method-selector { grid-template-columns: 1fr; }
-        .hp-hero-float-badge.top-left { top: 12px; left: 12px; font-size: 11.5px; padding: 6px 12px; }
-        .hp-hero-float-badge.bottom-right { bottom: 12px; right: 12px; font-size: 11.5px; padding: 6px 12px; }
+        .hp-filter-row { flex-direction: column; align-items: flex-start; }
       }
     `;
     document.head.appendChild(s);
   }
 
+  // 3. База реальных срезов (включая свежие данные Telegram @hi_pretty, Славянку, Детские и Узбекские)
+  var cutsDatabase = [
+    {
+      id: "1247",
+      title: "Детский шелковый срез #1247",
+      type: "kids",
+      length: "65 см",
+      lengthNum: 65,
+      weight: "181 гр",
+      shade: "light",
+      shadeName: "Светлый блонд",
+      price: "113 750 ₽",
+      desc: "Шелковый, маслянистый, нежнейший срез. Один донор, густые концы без вычеса.",
+      img: "https://cdn4.telesco.pe/file/pxX-AoaIPci34Q7jpLRGMlDR5nIvOqRYXTITkYx2Xew-fd6JhcAovPvbQQzE1S1MecrjMltlvBWCaYCnFj_6cvn1U0qYnLy3SLp_cJQtHG5BpjgBRnjVt7rrC6U9nZv4R30uzwcwoB_N5_SXUra89kuqOA8PlmEWm-IuI-vuB_Hk7SEgYEZXzaTN-mvsdLwIvfv56cut7BE-KF55LoETEJGa45AfRpPJqLSb642SPTMA9azWcxmo0f_b3E3nfY_t4yRViJ-TGcc4SFscKRRUWcPZt0QREYWvMG4oAtdYdaXXci1FWCcJfiyIJKMK7BBLQjYeaN54iBnIElUcimtEnw",
+      tgUrl: "https://t.me/hi_pretty/4258"
+    },
+    {
+      id: "1436",
+      title: "Детский шелк #1436",
+      type: "wave",
+      length: "50 см",
+      lengthNum: 50,
+      weight: "107 гр",
+      shade: "medium",
+      shadeName: "Русый с выгоревшими прядками",
+      price: "41 000 ₽",
+      desc: "Природная легкая волна, волосинка между тонкой и средней, мягкий струящийся блеск.",
+      img: "https://cdn4.telesco.pe/file/llxxfwBO56PKPL-1DrXV6K_OD8GgZ1VU3MJ4DprO0AiioJMPkTDfqaZOMW-a6Wv_NczWOL-Gwn3_I6iqFIS3MmliIWtCN36yz2bHiOSUSb5S8u2eR9z9P5zPj54y_9gRVPWqTdtru45dSet1WHqod6E-OdzlC-NPZpvm9iDruUjCOqrqsGkloV0AnSxC-FDLm2i_wOnMgrwq9Q8Bfjw5MWiDdas_9-bkf_raZfo4mwa1vwVp3YCnZrQaNRivPJ-AGJ8OypSr39OV-BFB-jfrRg-djiaHb7FY8IeZwx3adt5de5SWjmiZNWH6ZA4Nfw4fGLE3GyauYIOhfQwCoSxRcw",
+      tgUrl: "https://t.me/hi_pretty/4263"
+    },
+    {
+      id: "1378",
+      title: "Детский русский срез #1378",
+      type: "slav",
+      length: "50 см",
+      lengthNum: 50,
+      weight: "80 гр",
+      shade: "medium",
+      shadeName: "Пшенично-русый",
+      price: "47 200 ₽",
+      desc: "Тончайшая шелковая волосинка, вычесан на 20 см от коротких волосков до идеальной густоты.",
+      img: "https://cdn4.telesco.pe/file/QFycXKhIz5xnOXlenR25iUo3ZA1SItsQZ1O36M2pzy3AhUX3-Go8kKTcK2QCtNF9XYE_UW1ENS6q6QdShZQN9QP3sguVfRYA8jkRhZgk6zJdiGsYWEkfkkB6LIvu584DDqLrcTkjF6u2HWWrfvcIs8ZbRFiLgqQL9EAfMRjxwUrmtTc2CGak7MyVo3vWk2ouB11NI5byl0_jmimAhvMIM-8ddcK9dFpawyW4nCaAthiu8peCnctCaY__JPbvimpiRyygINPWno5A_ZV7CDRLEUV9yxZJ1mT6eyZeNSuIRMcda9Ko8ggdc7hzhOXdHTXWh2qFhurGFnjtIUQD5QV4PQ",
+      tgUrl: "https://t.me/hi_pretty/4276"
+    },
+    {
+      id: "1562",
+      title: "Эксклюзивный блонд #1562",
+      type: "kids",
+      length: "50 см",
+      lengthNum: 50,
+      weight: "115 гр",
+      shade: "light",
+      shadeName: "Натуральный блонд",
+      price: "115 000 ₽",
+      desc: "Шелковый нежный срез, редкий природный блонд без осветления, легкая волна.",
+      img: "https://cdn4.telesco.pe/file/SDNlV0t-8MZWR8wtQcehFLghQbnJZTqWxdIbeQfP6X5vI7KO7u0URn9Du_OppBLte4w3KK1km0HOh2E4gZp_jxZ36PHh6iJvUXz0mhqs7jsMbvJm6XAmhgTMcJ5LfsnBUa5IfUKEvg5un8VMlsIpz58mNmC0fhiNl8KpNOOkuzNfRxPrMzlGPUzIhwsvNF8o0o9rY0QgRVrmDz1c7kMk0gfKYdwM7l8tGHW89prdLJHKfoQ9hlAVR_zFcBlY_wE1-LGBQ_IaR35tr5PMNT-wRjXoh9c197xiadxdsOlZKEYzFAGwjfhMMPSclDg2FW947Y8hecIaRhx7OulxgHwpeA",
+      tgUrl: "https://t.me/hi_pretty/4211"
+    },
+    {
+      id: "1255",
+      title: "Детский воздушный хвостик #1255",
+      type: "kids",
+      length: "62 см",
+      lengthNum: 62,
+      weight: "211 гр",
+      shade: "medium",
+      shadeName: "Светло-русый",
+      price: "131 643 ₽",
+      desc: "Очень мягкий, слегка пористый воздушный волос для создания роскошного объема.",
+      img: "https://cdn4.telesco.pe/file/uhOcG_U8Baxa3DOVtSTSE_Eyvh8kvQ7DlKEtPMiR3bPpwcXgG_KRw8xchsuz2BiL4SGGRDjDK_hc-FjCnxzsBFs87JewOIwyLOpwflU2BttaQADqTGeEO-A0M_VZzLpIup0iCUPsImRvOImATblK3Kh1w5b9znYLeq0bDoSVtggOCbJCcz0UnDfHi-BYGRHZLXo7mk_EcEdjW2CT4FPK5VqsQGke3WkIjMLdHb4PRCgmElXvFfUAh9uJdLcSyQ-0w2lFgv8n5NwbT40ycXiqPR28_Ki0Uuu4-tyiviW5zFGMsrtAdvxtxm3Lfa90qsxYnMBotG8VK1BD661pflTx5w",
+      tgUrl: "https://t.me/hi_pretty/4221"
+    },
+    {
+      id: "uzb-70",
+      title: "Узбекский натуральный срез (Люкс)",
+      type: "uzb",
+      length: "70 см",
+      lengthNum: 70,
+      weight: "160 гр",
+      shade: "dark",
+      shadeName: "Глубокий шоколад",
+      price: "56 000 ₽",
+      desc: "Плотный, гладкий, блестящий волос. Идеально держит укладку, долговечен в носке, максимальная густота концов.",
+      img: "https://static.tildacdn.com/tild3832-3930-4664-b236-666264653838/IMG_2594.jpg",
+      tgUrl: "https://t.me/hi_pretty"
+    },
+    {
+      id: "uzb-60",
+      title: "Узбекские волосы натуральные 60 см",
+      type: "uzb",
+      length: "60 см",
+      lengthNum: 60,
+      weight: "140 гр",
+      shade: "dark",
+      shadeName: "Темно-каштановый",
+      price: "48 500 ₽",
+      desc: "Натуральная текстура без силикона, естественный прямой волос для максимального объема без спутывания.",
+      img: "https://static.tildacdn.com/tild3530-6434-4333-b039-656266383061/IMG_2592.jpg",
+      tgUrl: "https://t.me/hi_pretty"
+    },
+    {
+      id: "1386",
+      title: "Славянский срез русый #1386",
+      type: "slav",
+      length: "60 см",
+      lengthNum: 60,
+      weight: "100 гр",
+      shade: "medium",
+      shadeName: "Русый натуральный",
+      price: "84 750 ₽",
+      desc: "Вычесан от коротких волос, подрезан до густых плотных концов. Нежнейшая шелковистая структура.",
+      img: "https://cdn4.telesco.pe/file/HpA7ZU7IbcbxLDU0gEsXw_APlBcDWFhJCz6hZBNfHvk408Zc-Bs3goK0MmVTvjUATPvmOOyP1gXcWd4IO55DbDbcIZaeNvyYuB29Osw25i9jDXEiwWk9BUbZgzZoNHh0WH4USqiYrkvX2tIr8yWKr-EfS-IDABMgjIFhsVohuSgVlAkcKz8IIlSDm2haZHZkJ9oJ_qkJtr0hkNvBtGk6-0H2Ns1Qm9uTcr6INm4r6hrusE1YsdZSbG54QKoIabfR7KwxzQImb6vrV_zMnf7xO3iEtvSXrcj8ZCDUVjmOyP2vO0I7kd2FwPc3ohn0_WS1qpIOWkGkz2AuNxn6C4WcbQ",
+      tgUrl: "https://t.me/hi_pretty/4249"
+    },
+    {
+      id: "1555",
+      title: "Детский эксклюзивный хвостик #1555",
+      type: "kids",
+      length: "68 см",
+      lengthNum: 68,
+      weight: "140 гр",
+      shade: "light",
+      shadeName: "Пшеничный блонд",
+      price: "190 000 ₽",
+      desc: "Шелковый детский срез высочайшего класса. Природный живой блеск, единичный донор.",
+      img: "https://cdn4.telesco.pe/file/kRd4TmRmXPv9Xi2H1y2hhov_lx3qUSrGzXuAp8IuzCVTBzVsUUfD2tC-E1PgK7Tu9rr7QrEyR3pnfW1tvysf05wTadCaC4EqzPQM3XPAIRvCbo5JBgQ3W6CNRmnQlKILFaae6KEQmdMxo3mMowpmKhLMvWfkDIh9x1uCaj1ykEEqmoGXKu6e3v95FtKQHCiI-FAJd8vXAPTR1lTamz1DyDbvUbzo_pIx8q1DO91z6VaD5zq3hvJY1e2Z9emhUbsj3hdxr_VVaH5GcGeg0CcYp5I_vXF-14-HOz73v0R83kwa421Lh5jn0S9fyZWevqr3twFHWSB4F0yNSkUe4D7LKw",
+      tgUrl: "https://t.me/hi_pretty/4271"
+    }
+  ];
+
+  // 4. HTML разметка страницы
   var html = `
 <div id="hp-app">
   <!-- ХЕДЕР -->
-  <header class="hp-container hp-header">
-    <a href="https://hipretty.ru" class="hp-logo-wrap">
-      <div class="hp-logo">привет, волосы!</div>
-      <div class="hp-logo-sub">магазин натуральных волос • москва</div>
-    </a>
-    <nav class="hp-nav-links">
-      <a href="#catalog" class="hp-nav-link">Срезы в наличии</a>
-      <a href="#why-us" class="hp-nav-link">Преимущества</a>
-      <a href="#selection" class="hp-nav-link">Подбор среза</a>
-      <a href="#kanalTG" class="hp-nav-link">Telegram-канал</a>
-      <a href="#contacts" class="hp-nav-link">Шоурум и доставка</a>
-    </nav>
-    <div class="hp-header-actions">
-      <a href="tel:+79933365357" class="hp-header-phone">8 (993) 336-53-57</a>
-      <a href="#popup:contact" class="hp-btn-header-cta">Консультация ✦</a>
+  <header class="hp-header">
+    <div class="hp-container" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+      <a href="https://hipretty.ru" class="hp-logo-wrap">
+        <div class="hp-logo">привет, волосы!</div>
+        <div class="hp-logo-sub">магазин натуральных волос • москва</div>
+      </a>
+      <nav class="hp-nav-links">
+        <a href="#catalog" class="hp-nav-link">Срезы в наличии</a>
+        <a href="#why-us" class="hp-nav-link">Преимущества</a>
+        <a href="#selection" class="hp-nav-link">Подбор среза</a>
+        <a href="#contacts" class="hp-nav-link">Шоурум и доставка</a>
+      </nav>
+      <div class="hp-header-actions">
+        <a href="tel:+79933365357" class="hp-header-phone">8 (993) 336-53-57</a>
+        <button type="button" class="hp-btn-header-cta hp-open-form-btn">Консультация ✦</button>
+      </div>
     </div>
   </header>
 
@@ -1071,14 +1114,14 @@
     <div class="hp-hero-grid">
       <div class="hp-hero-info">
         <div class="hp-badge-geo"><span></span> Доставка по всей России и миру • Склад в Москве</div>
-        <h1 class="hp-hero-title">Натуральные детские и славянские срезы <span>высшего качества</span></h1>
+        <h1 class="hp-hero-title">Натуральные детские, славянские и узбекские срезы <span>высшего качества</span></h1>
         <p class="hp-hero-desc">
-          Большой выбор отборных некрашеных волос в наличии в шоуруме в Москве. 
-          100% живой срез от одного донора без силикона и химии: плотные ровные концы, мягкая шелковистая структура. 
+          Большой выбор отборных некрашеных волос в наличии в шоуруме в Москве (>35 кг). 
+          100% живой волос от одного донора без силикона и химии: ровные концы, шелковистая структура. 
           Быстрая отправка в любой город России и за рубеж. Видео каждого среза на весах перед покупкой.
         </p>
         <div class="hp-hero-cta-box">
-          <a href="#lead-box" class="hp-btn-main">✦ Подобрать идеальный срез</a>
+          <button type="button" class="hp-btn-main hp-open-form-btn">✦ Подобрать идеальный срез</button>
           <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" class="hp-btn-tg-main">
             <span>✈</span> Telegram (@hi_pretty)
           </a>
@@ -1115,11 +1158,11 @@
     </div>
   </section>
 
-  <!-- ПОЧЕМУ ВЫБИРАЮТ «ПРИВЕТ, ВОЛОСЫ!» -->
-  <section class="hp-container" id="why-us" style="padding: 20px 0 65px;">
+  <!-- ПРЕИМУЩЕСТВА -->
+  <section class="hp-container" id="why-us" style="padding: 20px 20px 40px;">
     <div class="hp-sec-head">
       <span class="hp-sec-badge">Честное качество</span>
-      <h2 class="hp-sec-title">Почему наши волосы <span>выбирают по всей России</span></h2>
+      <h2 class="hp-sec-title">Почему наши волосы выбирают <span>по всей России</span></h2>
       <p class="hp-sec-desc">Мы лично отбираем каждый хвостик и гарантируем качество срезов от первой примерки до многократных коррекций.</p>
     </div>
     <div class="hp-features-grid">
@@ -1130,11 +1173,11 @@
       </div>
       <div class="hp-feature-card">
         <div class="hp-feat-icon">🌿</div>
-        <h3 class="hp-feat-title">Без силикона и обработки</h3>
+        <h3 class="hp-feat-title">Без силикона и химии</h3>
         <p class="hp-feat-desc">Природный живой волос. Сохраняет естественную шелковистость и блеск даже после окрашивания и термоукладок.</p>
       </div>
       <div class="hp-feature-card">
-        <div class="hp-feat-icon">⚖</div>
+        <div class="hp-feat-icon">⚖️</div>
         <h3 class="hp-feat-title">Видео среза с весов</h3>
         <p class="hp-feat-desc">Перед оплатой снимаем подробное видео выбранного среза при дневном свете и фиксируем точный вес до грамма.</p>
       </div>
@@ -1146,12 +1189,67 @@
     </div>
   </section>
 
-  <!-- ОНЛАЙН-ПОДБОР СРЕЗА -->
+  <!-- ИНТЕРАКТИВНЫЙ КАТАЛОГ С ФИЛЬТРАМИ -->
+  <section class="hp-container hp-catalog-section" id="catalog">
+    <div class="hp-sec-head">
+      <span class="hp-sec-badge">Каталог со склада в Москве (>35 кг)</span>
+      <h2 class="hp-sec-title">Свежие партии срезов <span>в наличии</span></h2>
+      <p class="hp-sec-desc">Выберите категорию, длину или оттенок — каталог автоматически покажет подходящие хвостики с ценами и фото.</p>
+    </div>
+
+    <!-- ПАНЕЛЬ УМНЫХ ФИЛЬТРОВ -->
+    <div class="hp-catalog-filter-bar">
+      <!-- 1. ТИП ВОЛОС -->
+      <div class="hp-filter-row">
+        <div class="hp-filter-label">Тип волос:</div>
+        <div class="hp-filter-group" id="filter-type-group">
+          <button type="button" class="hp-filter-pill active" data-type="all">Все срезы</button>
+          <button type="button" class="hp-filter-pill" data-type="kids">Детские шелковые (Люкс)</button>
+          <button type="button" class="hp-filter-pill" data-type="slav">Славянские некрашеные</button>
+          <button type="button" class="hp-filter-pill" data-type="uzb">Узбекские натуральные</button>
+          <button type="button" class="hp-filter-pill" data-type="wave">Природная волна</button>
+        </div>
+      </div>
+
+      <!-- 2. ДЛИНА -->
+      <div class="hp-filter-row">
+        <div class="hp-filter-label">Длина волос:</div>
+        <div class="hp-filter-group" id="filter-length-group">
+          <button type="button" class="hp-filter-pill active" data-len="all">Любая длина</button>
+          <button type="button" class="hp-filter-pill" data-len="50">50 см</button>
+          <button type="button" class="hp-filter-pill" data-len="60">55–65 см</button>
+          <button type="button" class="hp-filter-pill" data-len="70">68–70+ см</button>
+        </div>
+      </div>
+
+      <!-- 3. ОТТЕНОК -->
+      <div class="hp-filter-row">
+        <div class="hp-filter-label">Оттенок:</div>
+        <div class="hp-filter-group" id="filter-shade-group">
+          <button type="button" class="hp-filter-pill active" data-shade="all">Все оттенки</button>
+          <button type="button" class="hp-filter-pill" data-shade="light">Светлый блонд</button>
+          <button type="button" class="hp-filter-pill" data-shade="medium">Русый / Пшеничный</button>
+          <button type="button" class="hp-filter-pill" data-shade="dark">Темный / Шоколад</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hp-catalog-counter">
+      Показано срезов: <strong id="hp-cuts-shown-count">9</strong> из <strong id="hp-cuts-total-count">9</strong>
+    </div>
+
+    <!-- СЕТКА КАРТОЧЕК КАТАЛОГА -->
+    <div class="hp-catalog-grid" id="hp-catalog-cards">
+      <!-- Генерируется динамически через JS -->
+    </div>
+  </section>
+
+  <!-- ОНЛАЙН-ПОДБОР СРЕЗА (КВИЗ) -->
   <section class="hp-container hp-quiz-section" id="selection">
     <div class="hp-sec-head">
-      <span class="hp-sec-badge">Быстрый подбор</span>
+      <span class="hp-sec-badge">Индивидуальный подбор</span>
       <h2 class="hp-sec-title">Подберите срез <span>под свои параметры</span></h2>
-      <p class="hp-sec-desc">Укажите желаемую длину и оттенок — наш мастер сразу отберет 3 подходящих варианта из наличия со склада.</p>
+      <p class="hp-sec-desc">Укажите желаемую длину и оттенок — мастер отберет 3 подходящих среза из наличия и снимет видео на весах.</p>
     </div>
     <div class="hp-quiz-card">
       <div class="hp-quiz-step-title">1. Желаемая длина волос:</div>
@@ -1170,241 +1268,24 @@
         </div>
       </div>
 
-      <div class="hp-quiz-step-title">2. Оттенок волос:</div>
-      <div class="hp-quiz-options" id="quiz-shade">
-        <div class="hp-quiz-opt selected" data-val="Светлый блонд">
-          <div class="hp-quiz-opt-val">Светлый блонд</div>
-          <div class="hp-quiz-opt-desc">Натуральный детский срез</div>
+      <div class="hp-quiz-step-title">2. Тип структуры:</div>
+      <div class="hp-quiz-options" id="quiz-type">
+        <div class="hp-quiz-opt selected" data-val="Детский шелк">
+          <div class="hp-quiz-opt-val">Детский шелк</div>
+          <div class="hp-quiz-opt-desc">Тончайшая нежная волосинка</div>
         </div>
-        <div class="hp-quiz-opt" data-val="Русый / Пшеничный">
-          <div class="hp-quiz-opt-val">Русый / Пшеничный</div>
-          <div class="hp-quiz-opt-desc">Славянский мягкий шелк</div>
+        <div class="hp-quiz-opt" data-val="Славянский стандарт">
+          <div class="hp-quiz-opt-val">Славянский волос</div>
+          <div class="hp-quiz-opt-desc">Универсальный мягкий шелк</div>
         </div>
-        <div class="hp-quiz-opt" data-val="Шоколад / Темный">
-          <div class="hp-quiz-opt-val">Шоколад / Темный</div>
-          <div class="hp-quiz-opt-desc">Глубокий благородный блеск</div>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:16px;">
-        <a href="#lead-box" class="hp-btn-main">Показать подходящие срезы из наличия ✦</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- КАТАЛОГ СРЕЗОВ В НАЛИЧИИ -->
-  <section class="hp-container hp-catalog-section" id="catalog">
-    <div class="hp-sec-head">
-      <span class="hp-sec-badge">Склад в Москве (>35 кг)</span>
-      <h2 class="hp-sec-title">Свежие партии срезов <span>в наличии</span></h2>
-      <p class="hp-sec-desc">Каждый срез уникален — один донор, плотный ровный срез, без силикона. Бронь среза за 1 минуту.</p>
-    </div>
-
-    <div class="hp-catalog-filters">
-      <button type="button" class="hp-filter-btn active" data-filter="all">Все срезы (>35 кг)</button>
-      <button type="button" class="hp-filter-btn" data-filter="kids">Детские блонды (Люкс)</button>
-      <button type="button" class="hp-filter-btn" data-filter="slav">Светло-русые и пшеничные</button>
-      <button type="button" class="hp-filter-btn" data-filter="dark">Шоколадные и темные</button>
-    </div>
-
-    <div class="hp-catalog-grid">
-      <div class="hp-cut-card" data-cat="kids">
-        <div class="hp-cut-img-wrap">
-          <img src="https://static.tildacdn.com/tild3137-6435-4061-b463-393264316465/IMG_2585.JPG" alt="Славянский детский блонд" class="hp-cut-img" loading="lazy">
-          <span class="hp-cut-badge">Детский шелк • В наличии</span>
-        </div>
-        <div class="hp-cut-body">
-          <h3 class="hp-cut-title">Славянский детский блонд</h3>
-          <div class="hp-cut-meta"><span>60 см</span> • <span>115 г</span> • <span>Плотный срез</span></div>
-          <p class="hp-cut-desc">Неокрашенный детский волос редкого холодного оттенка. Тончайшая шелковистая структура, густые плотные концы.</p>
-          <a href="#popup:contact" class="hp-cut-btn">Запросить видео с весов ✦</a>
+        <div class="hp-quiz-opt" data-val="Узбекский волос">
+          <div class="hp-quiz-opt-val">Узбекский волос</div>
+          <div class="hp-quiz-opt-desc">Плотная текстура и объем</div>
         </div>
       </div>
 
-      <div class="hp-cut-card" data-cat="slav">
-        <div class="hp-cut-img-wrap">
-          <img src="https://static.tildacdn.com/tild3530-6434-4333-b039-656266383061/IMG_2592.jpg" alt="Светло-русый натуральный срез" class="hp-cut-img" loading="lazy">
-          <span class="hp-cut-badge">Славянский шелк</span>
-        </div>
-        <div class="hp-cut-body">
-          <h3 class="hp-cut-title">Светло-русый пшеничный</h3>
-          <div class="hp-cut-meta"><span>65 см</span> • <span>130 г</span> • <span>Мягкая волна</span></div>
-          <p class="hp-cut-desc">Естественный благородный оттенок с природным живым блеском. Без вычеса и обработки, идеален для наращивания.</p>
-          <a href="#popup:contact" class="hp-cut-btn">Запросить видео с весов ✦</a>
-        </div>
-      </div>
-
-      <div class="hp-cut-card" data-cat="dark">
-        <div class="hp-cut-img-wrap">
-          <img src="https://static.tildacdn.com/tild3832-3930-4664-b236-666264653838/IMG_2594.jpg" alt="Шоколадный шелк" class="hp-cut-img" loading="lazy">
-          <span class="hp-cut-badge">Густой объем</span>
-        </div>
-        <div class="hp-cut-body">
-          <h3 class="hp-cut-title">Шоколадный шелк</h3>
-          <div class="hp-cut-meta"><span>70 см</span> • <span>145 г</span> • <span>Прямой срез</span></div>
-          <p class="hp-cut-desc">Глубокий натуральный цвет с переливом. Отборная славянка максимальной длины для создания роскошного объема.</p>
-          <a href="#popup:contact" class="hp-cut-btn">Запросить видео с весов ✦</a>
-        </div>
-      </div>
-
-      <div class="hp-cut-card" data-cat="kids">
-        <div class="hp-cut-img-wrap">
-          <img src="https://static.tildacdn.com/tild3931-6430-4537-a363-303233336237/IMG_0167.jpg" alt="Золотистый детский блонд" class="hp-cut-img" loading="lazy">
-          <span class="hp-cut-badge">Детский люкс</span>
-        </div>
-        <div class="hp-cut-body">
-          <h3 class="hp-cut-title">Золотистый детский блонд</h3>
-          <div class="hp-cut-meta"><span>55 см</span> • <span>110 г</span> • <span>Нежный шелк</span></div>
-          <p class="hp-cut-desc">Уникальный детский срез с мягким медовым подтоном. Не требует осветления, струящийся и невесомый в носке.</p>
-          <a href="#popup:contact" class="hp-cut-btn">Запросить видео с весов ✦</a>
-        </div>
-      </div>
-
-      <div class="hp-cut-card" data-cat="slav">
-        <div class="hp-cut-img-wrap">
-          <img src="https://static.tildacdn.com/tild3462-6536-4133-b738-393237383563/IMG_4007.jpg" alt="Натуральная славянская волна" class="hp-cut-img" loading="lazy">
-          <span class="hp-cut-badge">Природная волна</span>
-        </div>
-        <div class="hp-cut-body">
-          <h3 class="hp-cut-title">Натуральная славянская волна</h3>
-          <div class="hp-cut-meta"><span>65 см</span> • <span>120 г</span> • <span>Русый тон</span></div>
-          <p class="hp-cut-desc">Красивый завиток, который сохраняет форму после каждого мытья головы. Волосы мягкие, без пористости.</p>
-          <a href="#popup:contact" class="hp-cut-btn">Запросить видео с весов ✦</a>
-        </div>
-      </div>
-
-      <div class="hp-cut-card" data-cat="kids">
-        <div class="hp-cut-img-wrap">
-          <img src="https://static.tildacdn.com/tild6432-3836-4134-b430-656364333035/IMG_6521.PNG" alt="Платиновый славянский срез" class="hp-cut-img" loading="lazy">
-          <span class="hp-cut-badge">Светлый тон</span>
-        </div>
-        <div class="hp-cut-body">
-          <h3 class="hp-cut-title">Светлый платиновый блонд</h3>
-          <div class="hp-cut-meta"><span>50 см</span> • <span>105 г</span> • <span>Гладкий шелк</span></div>
-          <p class="hp-cut-desc">Редчайший светлый тон. Плотные упругие концы, сохраненный кутикулярный слой, роскошный салонный вид.</p>
-          <a href="#popup:contact" class="hp-cut-btn">Запросить видео с весов ✦</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ЖИВАЯ ЛЕНТА TELEGRAM КАНАЛА (@hi_pretty) -->
-  <section class="hp-container hp-tg-feed-section" id="kanalTG">
-    <div class="hp-sec-head">
-      <span class="hp-sec-badge">Прямой эфир со склада • @hi_pretty</span>
-      <h2 class="hp-sec-title">Свежие поступления срезов <span>каждый день</span></h2>
-      <p class="hp-sec-desc">Каждый день показываем новые хвостики прямо со стола мастера с демонстрацией на весах.</p>
-    </div>
-    <div class="hp-feed-grid" id="hp-live-feed-grid">
-      <div class="hp-feed-card" data-post-id="4258">
-        <div class="hp-feed-media">
-          <img src="https://cdn4.telesco.pe/file/pxX-AoaIPci34Q7jpLRGMlDR5nIvOqRYXTITkYx2Xew-fd6JhcAovPvbQQzE1S1MecrjMltlvBWCaYCnFj_6cvn1U0qYnLy3SLp_cJQtHG5BpjgBRnjVt7rrC6U9nZv4R30uzwcwoB_N5_SXUra89kuqOA8PlmEWm-IuI-vuB_Hk7SEgYEZXzaTN-mvsdLwIvfv56cut7BE-KF55LoETEJGa45AfRpPJqLSb642SPTMA9azWcxmo0f_b3E3nfY_t4yRViJ-TGcc4SFscKRRUWcPZt0QREYWvMG4oAtdYdaXXci1FWCcJfiyIJKMK7BBLQjYeaN54iBnIElUcimtEnw" alt="Детские шелковые срезы" class="hp-feed-thumb" loading="lazy">
-          <span class="hp-feed-video-badge">&#127916; Видео среза</span>
-        </div>
-        <div class="hp-feed-body">
-          <h3 class="hp-feed-title">Детские шелковые хвостики</h3>
-          <p class="hp-feed-desc">Шелковые, маслянистые, нежнейшие. 65 см / 181 гр — отборный чистый срез без вычеса.</p>
-          <div class="hp-feed-actions">
-            <a href="#lead-box" class="hp-feed-btn-book">Подобрать этот срез ✦</a>
-            <a href="https://t.me/hi_pretty/4258" target="_blank" rel="noopener" class="hp-feed-btn-tg">В Telegram &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hp-feed-card" data-post-id="4263">
-        <div class="hp-feed-media">
-          <img src="https://cdn4.telesco.pe/file/llxxfwBO56PKPL-1DrXV6K_OD8GgZ1VU3MJ4DprO0AiioJMPkTDfqaZOMW-a6Wv_NczWOL-Gwn3_I6iqFIS3MmliIWtCN36yz2bHiOSUSb5S8u2eR9z9P5zPj54y_9gRVPWqTdtru45dSet1WHqod6E-OdzlC-NPZpvm9iDruUjCOqrqsGkloV0AnSxC-FDLm2i_wOnMgrwq9Q8Bfjw5MWiDdas_9-bkf_raZfo4mwa1vwVp3YCnZrQaNRivPJ-AGJ8OypSr39OV-BFB-jfrRg-djiaHb7FY8IeZwx3adt5de5SWjmiZNWH6ZA4Nfw4fGLE3GyauYIOhfQwCoSxRcw" alt="Природная волна" class="hp-feed-thumb" loading="lazy">
-          <span class="hp-feed-video-badge">&#127916; Видео среза</span>
-        </div>
-        <div class="hp-feed-body">
-          <h3 class="hp-feed-title">Природная легкая волна</h3>
-          <p class="hp-feed-desc">Детский шелк. 50 см / 107 гр. Нежнейшая текстура, не путается после сушки феном.</p>
-          <div class="hp-feed-actions">
-            <a href="#lead-box" class="hp-feed-btn-book">Подобрать этот срез ✦</a>
-            <a href="https://t.me/hi_pretty/4263" target="_blank" rel="noopener" class="hp-feed-btn-tg">В Telegram &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hp-feed-card" data-post-id="4271">
-        <div class="hp-feed-media">
-          <img src="https://cdn4.telesco.pe/file/kRd4TmRmXPv9Xi2H1y2hhov_lx3qUSrGzXuAp8IuzCVTBzVsUUfD2tC-E1PgK7Tu9rr7QrEyR3pnfW1tvysf05wTadCaC4EqzPQM3XPAIRvCbo5JBgQ3W6CNRmnQlKILFaae6KEQmdMxo3mMowpmKhLMvWfkDIh9x1uCaj1ykEEqmoGXKu6e3v95FtKQHCiI-FAJd8vXAPTR1lTamz1DyDbvUbzo_pIx8q1DO91z6VaD5zq3hvJY1e2Z9emhUbsj3hdxr_VVaH5GcGeg0CcYp5I_vXF-14-HOz73v0R83kwa421Lh5jn0S9fyZWevqr3twFHWSB4F0yNSkUe4D7LKw" alt="Детский пшеничный блонд" class="hp-feed-thumb" loading="lazy">
-          <span class="hp-feed-video-badge">&#127916; Видео среза</span>
-        </div>
-        <div class="hp-feed-body">
-          <h3 class="hp-feed-title">Детские золотистые хвостики</h3>
-          <p class="hp-feed-desc">68 см / 140 гр. Идеальный густой срез. Волосок к волоску, максимальное качество.</p>
-          <div class="hp-feed-actions">
-            <a href="#lead-box" class="hp-feed-btn-book">Подобрать этот срез ✦</a>
-            <a href="https://t.me/hi_pretty/4271" target="_blank" rel="noopener" class="hp-feed-btn-tg">В Telegram &rarr;</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hp-feed-card" data-post-id="4276">
-        <div class="hp-feed-media">
-          <img src="https://cdn4.telesco.pe/file/QFycXKhIz5xnOXlenR25iUo3ZA1SItsQZ1O36M2pzy3AhUX3-Go8kKTcK2QCtNF9XYE_UW1ENS6q6QdShZQN9QP3sguVfRYA8jkRhZgk6zJdiGsYWEkfkkB6LIvu584DDqLrcTkjF6u2HWWrfvcIs8ZbRFiLgqQL9EAfMRjxwUrmtTc2CGak7MyVo3vWk2ouB11NI5byl0_jmimAhvMIM-8ddcK9dFpawyW4nCaAthiu8peCnctCaY__JPbvimpiRyygINPWno5A_ZV7CDRLEUV9yxZJ1mT6eyZeNSuIRMcda9Ko8ggdc7hzhOXdHTXWh2qFhurGFnjtIUQD5QV4PQ" alt="Русый славянский срез" class="hp-feed-thumb" loading="lazy">
-          <span class="hp-feed-video-badge">&#127916; Видео среза</span>
-        </div>
-        <div class="hp-feed-body">
-          <h3 class="hp-feed-title">Детский русский срез</h3>
-          <p class="hp-feed-desc">50 см / 80 гр. Тончайшая шелковая волосинка, вычесан на 20 см от коротких волосков.</p>
-          <div class="hp-feed-actions">
-            <a href="#lead-box" class="hp-feed-btn-book">Подобрать этот срез ✦</a>
-            <a href="https://t.me/hi_pretty/4276" target="_blank" rel="noopener" class="hp-feed-btn-tg">В Telegram &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ОТЗЫВЫ -->
-  <section class="hp-container" style="padding: 30px 0 65px;">
-    <div class="hp-sec-head">
-      <span class="hp-sec-badge">Реальные отзывы</span>
-      <h2 class="hp-sec-title">Отзывы клиенток и <span>мастеров со всей России</span></h2>
-    </div>
-    <div class="hp-reviews-grid">
-      <div class="hp-review-card">
-        <div>
-          <div class="hp-review-stars">★★★★★</div>
-          <p class="hp-review-text">«Заказывала детский срез 65 см. Качество — восторг! Волосы мягкие, плотные концы, без химии. Ношу уже 4 месяца — волосы как новые!»</p>
-        </div>
-        <div class="hp-review-author">
-          <div class="hp-review-avatar">ВК</div>
-          <div>
-            <div class="hp-review-name">Виктория Ковалевская</div>
-            <div class="hp-review-role">Клиентка, Москва</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hp-review-card">
-        <div>
-          <div class="hp-review-stars">★★★★★</div>
-          <p class="hp-review-text">«Заказывала доставку в Сочи. Мне показали видео 3 срезов на весах, подобрали цвет точь-в-точь по фото! Пришли СДЭКом за 2 дня. Рекомендую всем!»</p>
-        </div>
-        <div class="hp-review-author">
-          <div class="hp-review-avatar">АС</div>
-          <div>
-            <div class="hp-review-name">Алиса Соловьева</div>
-            <div class="hp-review-role">Клиентка, Сочи</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hp-review-card">
-        <div>
-          <div class="hp-review-stars">★★★★★</div>
-          <p class="hp-review-text">«Работаю мастером по наращиванию. Постоянно заказываю здесь срезы для клиенток. Отличное качество, честный вес до грамма и быстрая отправка.»</p>
-        </div>
-        <div class="hp-review-author">
-          <div class="hp-review-avatar">МН</div>
-          <div>
-            <div class="hp-review-name">Мария Нестерова</div>
-            <div class="hp-review-role">Мастер по наращиванию, Казань</div>
-          </div>
-        </div>
+      <div style="text-align:center;margin-top:20px;">
+        <button type="button" class="hp-btn-main hp-open-form-btn">Показать подходящие срезы из наличия ✦</button>
       </div>
     </div>
   </section>
@@ -1416,7 +1297,7 @@
         <span class="hp-lead-badge">Онлайн-подбор среза</span>
         <h2 class="hp-lead-title">Мечтаете о роскошных <span>натуральных волосах?</span></h2>
         <p class="hp-lead-subtitle">
-          Оставьте контакты, и менеджер поможет с выбором идеальных волос по фото и пришлет видео нескольких срезов с весов.
+          Оставьте контакты, и наш мастер бесплатно подберет идеальный срез по вашему фото и пришлет видео с весов.
         </p>
 
         <form id="hp-lead-form">
@@ -1440,7 +1321,7 @@
           <div class="hp-input-group">
             <input type="text" id="hp-user-contact" class="hp-input" placeholder="Ник в Telegram (@username) или телефон" required>
             <div id="hp-contact-hint" class="hp-input-hint">
-              <strong>Внимание! При выборе Telegram:</strong> Укажите ник в Telegram (@username) или телефон.
+              <strong>Внимание! При выборе Telegram:</strong> Укажите ник в Telegram (@username) или номер телефона.
             </div>
           </div>
 
@@ -1458,7 +1339,7 @@
   </section>
 
   <!-- КОНТАКТЫ И ШОУРУМ В МОСКВЕ -->
-  <section class="hp-container" id="contacts" style="padding: 20px 0 60px;">
+  <section class="hp-container" id="contacts" style="padding: 20px 20px 60px;">
     <div class="hp-contacts-grid">
       <div>
         <h2 class="hp-contact-title">Контакты и шоурум</h2>
@@ -1530,6 +1411,103 @@
 `;
 
   var currentMethod = 'telegram';
+  var selectedType = 'all';
+  var selectedLen = 'all';
+  var selectedShade = 'all';
+
+  function scrollToSection(targetId) {
+    var el = document.getElementById(targetId);
+    if (!el) return;
+    var headerOffset = 80;
+    var elementPosition = el.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
+  function renderCatalogCards() {
+    var container = document.getElementById('hp-catalog-cards');
+    if (!container) return;
+
+    var filtered = cutsDatabase.filter(function(item) {
+      if (selectedType !== 'all' && item.type !== selectedType) return false;
+      if (selectedLen !== 'all') {
+        if (selectedLen === '50' && (item.lengthNum > 54)) return false;
+        if (selectedLen === '60' && (item.lengthNum < 55 || item.lengthNum > 66)) return false;
+        if (selectedLen === '70' && (item.lengthNum < 67)) return false;
+      }
+      if (selectedShade !== 'all' && item.shade !== selectedShade) return false;
+      return true;
+    });
+
+    var countEl = document.getElementById('hp-cuts-shown-count');
+    if (countEl) countEl.textContent = filtered.length;
+    var totalEl = document.getElementById('hp-cuts-total-count');
+    if (totalEl) totalEl.textContent = cutsDatabase.length;
+
+    if (filtered.length === 0) {
+      container.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px; background: var(--hp-bg-card); border-radius: 20px; border: 1px dashed var(--hp-border);">
+          <div style="font-size: 32px; margin-bottom: 12px;">🔎</div>
+          <h3 style="font-size: 20px; color: #fff; margin: 0 0 10px;">Срезов с такими параметрами сейчас нет на витрине</h3>
+          <p style="color: var(--hp-text-muted); font-size: 14px; margin: 0 0 20px;">На складе более 35 кг волос! Оставьте заявку — мастер подберет идеальный хвостик индивидуально.</p>
+          <button type="button" class="hp-btn-main hp-open-form-btn">Запросить индивидуальный подбор ✦</button>
+        </div>
+      `;
+      setupActionButtons();
+      return;
+    }
+
+    var htmlCards = filtered.map(function(item) {
+      var typeBadge = item.type === 'kids' ? 'Детский шелк' : (item.type === 'uzb' ? 'Узбекские (Люкс)' : (item.type === 'wave' ? 'Природная волна' : 'Славянский срез'));
+      return `
+        <div class="hp-cut-card" data-id="${item.id}">
+          <div class="hp-cut-img-wrap">
+            <img src="${item.img}" alt="${item.title}" class="hp-cut-img" loading="lazy">
+            <span class="hp-cut-badge">${typeBadge} • В наличии</span>
+            <span class="hp-cut-price-tag">${item.price}</span>
+          </div>
+          <div class="hp-cut-body">
+            <h3 class="hp-cut-title">${item.title}</h3>
+            <div class="hp-cut-meta">
+              <span>${item.length}</span>
+              <span>${item.weight}</span>
+              <span>${item.shadeName}</span>
+            </div>
+            <p class="hp-cut-desc">${item.desc}</p>
+            <div class="hp-cut-actions">
+              <button type="button" class="hp-cut-btn hp-open-form-btn" data-cut="${item.title}">Запросить видео с весов ✦</button>
+              <a href="${item.tgUrl}" target="_blank" rel="noopener" class="hp-cut-btn-tg" title="Посмотреть в Telegram">В TG &rarr;</a>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = htmlCards;
+    setupActionButtons();
+  }
+
+  function setupActionButtons() {
+    var btns = document.querySelectorAll('.hp-open-form-btn');
+    btns.forEach(function(b) {
+      if (b.dataset.bound) return;
+      b.dataset.bound = 'true';
+      b.addEventListener('click', function(e) {
+        e.preventDefault();
+        var cutName = b.getAttribute('data-cut');
+        if (cutName) {
+          var note = document.getElementById('hp-user-contact');
+          if (note && !note.value) {
+            note.placeholder = 'Для среза: ' + cutName;
+          }
+        }
+        scrollToSection('lead-box');
+      });
+    });
+  }
 
   function polishTildaPopup() {
     var popupRec = document.getElementById('rec1915062531');
@@ -1575,23 +1553,53 @@
     document.body.prepend(appNode);
     document.body.appendChild(modalNode);
 
-    // Фильтрация каталога
-    var filterBtns = document.querySelectorAll('.hp-filter-btn');
-    var cutCards = document.querySelectorAll('.hp-cut-card');
-    filterBtns.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        filterBtns.forEach(function(b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        var f = btn.getAttribute('data-filter');
-        cutCards.forEach(function(card) {
-          if (f === 'all' || card.getAttribute('data-cat') === f) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+    // Обработка кликов по навигации (плавный скролл с отступом)
+    document.querySelectorAll('.hp-nav-link').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          var targetId = href.substring(1);
+          scrollToSection(targetId);
+        }
       });
     });
+
+    // Фильтрация: Тип волос
+    var typeBtns = document.querySelectorAll('#filter-type-group .hp-filter-pill');
+    typeBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        typeBtns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        selectedType = btn.getAttribute('data-type');
+        renderCatalogCards();
+      });
+    });
+
+    // Фильтрация: Длина
+    var lenBtns = document.querySelectorAll('#filter-length-group .hp-filter-pill');
+    lenBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        lenBtns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        selectedLen = btn.getAttribute('data-len');
+        renderCatalogCards();
+      });
+    });
+
+    // Фильтрация: Оттенок
+    var shadeBtns = document.querySelectorAll('#filter-shade-group .hp-filter-pill');
+    shadeBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        shadeBtns.forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        selectedShade = btn.getAttribute('data-shade');
+        renderCatalogCards();
+      });
+    });
+
+    // Инициализация карточек
+    renderCatalogCards();
 
     // Квиз подбора
     function setupQuiz(boxId) {
@@ -1606,7 +1614,7 @@
       });
     }
     setupQuiz('quiz-length');
-    setupQuiz('quiz-shade');
+    setupQuiz('quiz-type');
 
     // Селектор мессенджеров
     var methodBtns = document.querySelectorAll('.hp-method-btn');
@@ -1710,7 +1718,7 @@
   if (!document.getElementById('hp-widget-lead')) {
     var leadWidget = document.createElement('div');
     leadWidget.id = 'hp-widget-lead';
-    leadWidget.innerHTML = '<a href="#lead-box" class="hp-widget-pulse-btn"><span>✦</span> Подобрать срез</a>';
+    leadWidget.innerHTML = '<button type="button" class="hp-widget-pulse-btn hp-open-form-btn"><span>✦</span> Подобрать срез</button>';
     document.body.appendChild(leadWidget);
   }
 
