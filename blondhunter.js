@@ -594,6 +594,112 @@ html, body {
   transform: translateY(-3px);
 }
 
+
+/* ПЛАВАЮЩИЙ ЛЮКСОВЫЙ ВИДЖЕТ СВЯЗИ (HUD CAPSULE) */
+.bh-float-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9990;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  background: rgba(14, 14, 17, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 168, 83, 0.35);
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(212, 168, 83, 0.15);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.bh-float-widget:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 168, 83, 0.65);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.75), 0 0 24px rgba(212, 168, 83, 0.3);
+}
+.bh-float-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  line-height: 1;
+}
+.bh-float-tg {
+  background: linear-gradient(135deg, #E5C378 0%, #C49746 100%);
+  color: #0A0A0C !important;
+  box-shadow: 0 3px 10px rgba(212, 168, 83, 0.25);
+}
+.bh-float-tg:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+.bh-float-max {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 168, 83, 0.4);
+  color: #F5E5C9 !important;
+}
+.bh-float-max:hover {
+  background: rgba(212, 168, 83, 0.18);
+  border-color: #E5C378;
+  color: #FFFFFF !important;
+}
+.bh-float-wa {
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.5);
+  color: #25D366 !important;
+}
+.bh-float-wa:hover {
+  background: #25D366;
+  color: #0A0A0C !important;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+}
+.bh-max-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 4px;
+  background: #E5C378;
+  color: #0A0A0C;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* СКРЫВАЕМ СТАРУЮ НЕКРАСИВУЮ ПРИЛИПАЮЩУЮ ПОЛОСУ */
+.bh-mobile-sticky {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 600px) {
+  .bh-float-widget {
+    bottom: 16px;
+    right: 12px;
+    padding: 5px;
+    gap: 6px;
+  }
+  .bh-float-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    gap: 5px;
+  }
+}
+
 /* COOKIE BANNER (YANDEX / HUD LUXURY STYLE) */
 .bh-cookie-banner {
   position: fixed;
@@ -906,12 +1012,13 @@ html, body {
   }
   .bh-scroll-top-btn {
     bottom: 75px !important;
-    right: 14px !important;
+    left: 14px !important;
+    bottom: 18px !important;
     width: 38px;
     height: 38px;
   }
-  .bh-mobile-sticky { display: flex !important; }
-  #blondhunter-wrapper { padding-bottom: 70px; }
+  
+  
 }
 `;
     document.head.appendChild(style);
@@ -1020,10 +1127,16 @@ html, body {
     </div>
   </footer>
 
-  <!-- MOBILE STICKY BAR -->
-  <div class="bh-mobile-sticky">
-    <a href="https://t.me/OlgaKryukova777" target="_blank" rel="noopener" class="bh-btn bh-btn-gold" style="flex:1; padding: 12px 10px; font-size: 13px;">Личка в Telegram</a>
-    <a href="https://max.ru/u/f9LHodD0cOKu_NdSA68R7JlIWv1dBiiK_yoA5ITTmEVHTmQdiijwgmxBvBc" target="_blank" rel="noopener" class="bh-btn bh-btn-outline" style="flex:1; padding: 12px 10px; font-size: 13px; color: var(--bh-gold-light) !important; border-color: var(--bh-gold);">В MAX (без VPN)</a>
+  <!-- ПЛАВАЮЩИЙ ЛЮКСОВЫЙ ВИДЖЕТ СВЯЗИ (RU: TELEGRAM + MAX) -->
+  <div class="bh-float-widget" id="bh-float-widget">
+    <a href="https://t.me/OlgaKryukova777" target="_blank" rel="noopener" class="bh-float-btn bh-float-tg" title="Личка в Telegram">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.37.75-.56 2.94-1.28 4.91-2.12 5.89-2.54 2.81-1.17 3.39-1.37 3.77-1.38.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.23 0 .38z"/></svg>
+      <span>Telegram</span>
+    </a>
+    <a href="https://max.ru/u/f9LHodD0cOKu_NdSA68R7JlIWv1dBiiK_yoA5ITTmEVHTmQdiijwgmxBvBc" target="_blank" rel="noopener" class="bh-float-btn bh-float-max" title="В MAX (без VPN)">
+      <span class="bh-max-icon">M</span>
+      <span>MAX</span>
+    </a>
   </div>
 </div>`;
 
@@ -1128,10 +1241,16 @@ html, body {
     </div>
   </footer>
 
-  <!-- MOBILE STICKY BAR -->
-  <div class="bh-mobile-sticky">
-    <a href="https://wa.me/79266721978?text=Hello%20Olga!%20I%20would%20like%20to%20order%20virgin%20Slavic%20hair." target="_blank" rel="noopener" class="bh-btn bh-btn-wa" style="flex:1; padding: 12px 10px; font-size: 13px;">WhatsApp Direct ↗</a>
-    <a href="https://t.me/OlgaKryukova777" target="_blank" rel="noopener" class="bh-btn bh-btn-gold" style="flex:1; padding: 12px 10px; font-size: 13px;">Telegram DM ↗</a>
+  <!-- ПЛАВАЮЩИЙ ЛЮКСОВЫЙ ВИДЖЕТ СВЯЗИ (EN: WHATSAPP + TELEGRAM) -->
+  <div class="bh-float-widget" id="bh-float-widget">
+    <a href="https://t.me/OlgaKryukova777" target="_blank" rel="noopener" class="bh-float-btn bh-float-tg" title="Direct Telegram chat with Olga">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.37.75-.56 2.94-1.28 4.91-2.12 5.89-2.54 2.81-1.17 3.39-1.37 3.77-1.38.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.23 0 .38z"/></svg>
+      <span>Telegram</span>
+    </a>
+    <a href="https://wa.me/79266721978?text=Hello%20Olga,%20I%20would%20like%20to%20order%20virgin%20Slavic%20hair." target="_blank" rel="noopener" class="bh-float-btn bh-float-wa" title="WhatsApp Direct">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.53 1.37 5.07L2 22l5.17-1.36c1.48.81 3.14 1.23 4.87 1.23 5.46 0 9.91-4.45 9.91-9.91A9.87 9.87 0 0 0 12.04 2zm0 18.11c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.08 8.08 0 0 1-1.24-4.24c0-4.47 3.64-8.11 8.11-8.11 2.17 0 4.2.85 5.73 2.38a8.06 8.06 0 0 1 2.38 5.73c0 4.47-3.64 8.11-8.11 8.11zm4.44-6.07c-.24-.12-1.44-.71-1.66-.79-.23-.08-.39-.12-.56.12-.16.24-.64.79-.79.95-.14.16-.29.18-.53.06-.24-.12-1.02-.38-1.95-1.21-.72-.64-1.21-1.44-1.35-1.68-.14-.24-.02-.37.1-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.34 1 2.51c.12.16 1.72 2.63 4.17 3.68.58.25 1.04.4 1.39.51.59.19 1.12.16 1.54.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28z"/></svg>
+      <span>WhatsApp</span>
+    </a>
   </div>
 </div>`;
 
