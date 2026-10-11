@@ -2205,6 +2205,14 @@
         color: rgba(255, 255, 255, 0.45) !important;
         opacity: 1 !important;
       }
+      #hp-tilda-form-slot .hp-field-error-msg {
+        color: #fca5a5 !important;
+        font-size: 12.5px !important;
+        font-weight: 600 !important;
+        margin-top: 6px !important;
+        text-align: left !important;
+        display: none;
+      }
       #hp-tilda-form-slot .t-input-group_tx .t-text {
         color: var(--hp-rose-light, #fce7f3) !important;
         font-size: 12.5px !important;
@@ -5463,6 +5471,42 @@
       subBtn.textContent = 'Получить подбор и фото среза ✦';
     }
 
+    function showCustomError(inputEl, msg) {
+      if (!inputEl) return;
+      inputEl.focus();
+      var wrap = inputEl.closest('.t-input-block') || inputEl.parentElement;
+      if (!wrap) return;
+
+      inputEl.style.setProperty('border-color', '#f87171', 'important');
+      inputEl.style.setProperty('box-shadow', '0 0 18px rgba(239, 68, 68, 0.45)', 'important');
+
+      var existingErr = wrap.querySelector('.hp-field-error-msg');
+      if (!existingErr) {
+        existingErr = document.createElement('div');
+        existingErr.className = 'hp-field-error-msg';
+        wrap.appendChild(existingErr);
+      }
+      existingErr.textContent = msg;
+      existingErr.style.display = 'block';
+
+      inputEl.addEventListener('input', function onInp() {
+        inputEl.style.removeProperty('border-color');
+        inputEl.style.removeProperty('box-shadow');
+        if (existingErr) existingErr.style.display = 'none';
+        inputEl.removeEventListener('input', onInp);
+      });
+    }
+
+    function clearCustomErrors(formEl) {
+      formEl.querySelectorAll('.hp-field-error-msg').forEach(function(el) {
+        el.style.display = 'none';
+      });
+      formEl.querySelectorAll('input').forEach(function(inp) {
+        inp.style.removeProperty('border-color');
+        inp.style.removeProperty('box-shadow');
+      });
+    }
+
     var submitBtnEl = form.querySelector('button[type="submit"], .t-submit');
     if (submitBtnEl) {
       submitBtnEl.style.setProperty('pointer-events', 'auto', 'important');
@@ -5475,10 +5519,61 @@
           submitBtnEl.classList.remove('t-btn_sending');
         }
 
-        var activeGroup = form.querySelector('.t-contact-method__value-container > div.hp-method-active');
-        if (activeGroup) {
-          var telInp = activeGroup.querySelector('input[type="tel"]');
-          var resInp = activeGroup.querySelector('.js-phonemask-result');
+        clearCustomErrors(form);
+
+        // 1. Валидация имени
+        var nameVal = (nameInp ? nameInp.value : '').trim();
+        if (!nameVal || nameVal.length < 2) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          showCustomError(nameInp, 'Пожалуйста, укажите ваше имя (минимум 2 буквы)');
+          return false;
+        }
+
+        // 2. Валидация выбранного способа связи
+        var activeRadio = form.querySelector('.t-contact-method__types-container input[type="radio"]:checked');
+        var method = activeRadio ? activeRadio.value : 'phone';
+        var valBox = form.querySelector('.t-contact-method__' + method + '-value');
+
+        if (method === 'telegram') {
+          var tgInput = valBox ? valBox.querySelector('.js-username-input') : null;
+          var tgVal = (tgInput ? tgInput.value : '').trim();
+          var tgDigits = tgVal.replace(/\D/g, '');
+          var isTgPhone = tgDigits.length >= 10;
+          var isTgUser = /^@?[a-zA-Z0-9_]{5,32}$/.test(tgVal);
+
+          if (!tgVal || (!isTgPhone && !isTgUser)) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            showCustomError(tgInput, 'Укажите ник в Telegram (от 5 символов, например @username) или номер телефона');
+            return false;
+          }
+        } else if (method === 'max_messenger') {
+          var maxInput = valBox ? valBox.querySelector('.js-username-input') : null;
+          var maxVal = (maxInput ? maxInput.value : '').trim();
+          var maxDigits = maxVal.replace(/\D/g, '');
+          var isMaxPhone = maxDigits.length >= 10;
+          var isMaxLink = /^(https?:\/\/)?(www\.)?(max\.ru\/u\/|max\.me\/|max\.im\/|max\.link\/|max\.)[a-zA-Z0-9_\-\.\/]+/i.test(maxVal);
+
+          if (!maxVal || (!isMaxPhone && !isMaxLink)) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            showCustomError(maxInput, 'Укажите ссылку на профиль в MAX (например max.ru/u/...) или номер телефона');
+            return false;
+          }
+        } else if (method === 'phone' || method === 'whatsapp') {
+          var telInp = valBox ? valBox.querySelector('input[type="tel"]') : null;
+          var resInp = valBox ? valBox.querySelector('.js-phonemask-result') : null;
+          var rawTel = telInp ? telInp.value : '';
+          var digits = rawTel.replace(/\D/g, '');
+
+          if (!digits || digits.length < 10) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            showCustomError(telInp, 'Укажите корректный номер телефона (не менее 10 цифр)');
+            return false;
+          }
+
           if (telInp && resInp && telInp.value && !resInp.value) {
             resInp.value = telInp.value;
           }
