@@ -471,6 +471,15 @@ html, body {
   color: var(--bh-gold-light) !important;
 }
 
+/* АВТОМАТИЧЕСКИ СКРЫВАЕМ СТАРЫЙ ПОДВАЛ ТИЛЬДЫ */
+#rec812427328, [data-record-type="345"], .t345, footer#footer_812427328 {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
 /* FOOTER (LUXURY STYLE) */
 .bh-footer {
   background: #08080A;
@@ -1223,6 +1232,10 @@ html, body {
     var temp = document.createElement('div');
     temp.innerHTML = isEn ? enHtml : ruHtml;
     var node = temp.firstElementChild;
+
+    // Скрываем старый подвал Тильды (T345)
+    var oldFooter = document.getElementById('rec812427328') || document.querySelector('[data-record-type="345"]') || document.querySelector('.t345');
+    if (oldFooter) oldFooter.style.display = 'none';
 
     var existing = document.getElementById('blondhunter-wrapper');
     if (existing) existing.remove();
