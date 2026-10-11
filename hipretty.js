@@ -289,6 +289,11 @@
         border-color: #0088cc;
       }
       .hp-btn-wa-soft {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        white-space: nowrap;
         background: rgba(37, 211, 102, 0.12);
         border: 1px solid rgba(37, 211, 102, 0.4);
         color: #69F0AE !important;
@@ -306,6 +311,11 @@
         background: rgba(37, 211, 102, 0.22);
       }
       .hp-btn-max {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        white-space: nowrap;
         background: rgba(255, 140, 0, 0.14);
         border: 1px solid rgba(255, 140, 0, 0.45);
         color: #ffaa44 !important;
@@ -933,20 +943,24 @@
       .hp-contacts-messengers {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px 18px;
+        gap: 12px 20px;
         align-items: center;
+        margin-top: 6px;
       }
       .hp-m-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 14.5px;
-        white-space: nowrap;
-        transition: opacity 0.2s;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 7px !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        font-size: 14.5px !important;
+        white-space: nowrap !important;
+        transition: opacity 0.2s, transform 0.2s;
       }
-      .hp-m-link:hover { opacity: 0.85; }
+      .hp-m-link:hover {
+        opacity: 0.85;
+        transform: translateY(-1px);
+      }
       .hp-m-link svg, .hp-method-btn svg {
         width: 17px;
         height: 17px;
@@ -1003,6 +1017,10 @@
         gap: 10px;
       }
       .hp-footer-menu a, .hp-footer-menu button {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        white-space: nowrap;
         color: #b8acc7;
         text-decoration: none;
         font-size: 13.5px;
@@ -1760,10 +1778,12 @@
             <span>✈</span> Написать менеджеру (@hi_pretty_manager)
           </a>
           <a href="https://wa.me/79933365357?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D1%81%D1%80%D0%B5%D0%B7%20%D0%B2%D0%BE%D0%BB%D0%BE%D1%81." target="_blank" rel="noopener" class="hp-btn-wa-soft">
-            WhatsApp
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="#25D366" style="flex-shrink:0;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2M12.05 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C16.6 3.67 20.3 7.37 20.3 11.92C20.29 16.46 16.59 20.15 12.05 20.15M16.57 14.33C16.32 14.21 15.1 13.61 14.87 13.53C14.65 13.44 14.48 13.4 14.32 13.65C14.15 13.9 13.68 14.45 13.54 14.62C13.39 14.78 13.25 14.8 13 14.68C12.75 14.55 11.95 14.29 11 13.45C10.26 12.79 9.76 11.97 9.61 11.72C9.47 11.47 9.6 11.34 9.72 11.22C9.83 11.11 9.97 10.93 10.1 10.78C10.22 10.64 10.27 10.53 10.35 10.37C10.43 10.2 10.39 10.06 10.33 9.94C10.27 9.81 9.77 8.58 9.57 8.08C9.37 7.6 9.17 7.66 9.02 7.65C8.88 7.65 8.71 7.65 8.55 7.65C8.38 7.65 8.11 7.71 7.88 7.96C7.65 8.21 7 8.82 7 10.06C7 11.31 7.91 12.51 8.03 12.68C8.16 12.84 9.82 15.4 12.35 16.5C12.95 16.76 13.42 16.91 13.78 17.03C14.38 17.22 14.93 17.19 15.36 17.13C15.84 17.06 16.84 16.52 17.05 15.94C17.26 15.36 17.26 14.86 17.2 14.76C17.14 14.65 16.82 14.46 16.57 14.33Z"/></svg>
+            <span>WhatsApp</span>
           </a>
           <a href="https://max.ru/u/f9LHodD0cOJDkOJa38G-aakmLO32B2FcARILKCnXhnJnzvKWD9r6yXfUCxE" target="_blank" rel="noopener" class="hp-btn-max">
-            <span>💬</span> ЛС MAX
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="#FFAA44" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.03 2 11C2 13.88 3.5 16.42 5.86 17.96L5 22L9.29 20.35C10.16 20.77 11.06 21 12 21C17.52 21 22 16.97 22 12C22 7.03 17.52 2 12 2M7.5 13.5C6.67 13.5 6 12.83 6 12C6 11.17 6.67 10.5 7.5 10.5C8.33 10.5 9 11.17 9 12C9 12.83 8.33 13.5 7.5 13.5M12 13.5C11.17 13.5 10.5 12.83 10.5 12C10.5 11.17 11.17 10.5 12 10.5C12.83 10.5 13.5 11.17 13.5 12C13.5 12.83 12.83 13.5 12 13.5M16.5 13.5C15.67 13.5 15 12.83 15 12C15 11.17 15.67 10.5 16.5 10.5C17.33 10.5 18 11.17 18 12C18 12.83 17.33 13.5 16.5 13.5Z"/></svg>
+            <span>ЛС MAX</span>
           </a>
         </div>
         <div class="hp-hero-stats">
@@ -1945,16 +1965,20 @@
           <div class="hp-method-label">Выберите удобный способ связи:</div>
           <div class="hp-method-selector">
             <button type="button" class="hp-method-btn active tg" data-m="telegram">
-              <svg viewBox="0 0 24 24" fill="#0088cc"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg> Telegram
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#0088cc" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span>Telegram</span>
             </button>
             <button type="button" class="hp-method-btn max" data-m="max">
-              <svg viewBox="0 0 24 24" fill="#FFAA44"><path d="M12 2C6.48 2 2 6.03 2 11C2 13.88 3.5 16.42 5.86 17.96L5 22L9.29 20.35C10.16 20.77 11.06 21 12 21C17.52 21 22 16.97 22 12C22 7.03 17.52 2 12 2M7.5 13.5C6.67 13.5 6 12.83 6 12C6 11.17 6.67 10.5 7.5 10.5C8.33 10.5 9 11.17 9 12C9 12.83 8.33 13.5 7.5 13.5M12 13.5C11.17 13.5 10.5 12.83 10.5 12C10.5 11.17 11.17 10.5 12 10.5C12.83 10.5 13.5 11.17 13.5 12C13.5 12.83 12.83 13.5 12 13.5M16.5 13.5C15.67 13.5 15 12.83 15 12C15 11.17 15.67 10.5 16.5 10.5C17.33 10.5 18 11.17 18 12C18 12.83 17.33 13.5 16.5 13.5Z"/></svg> MAX
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#FFAA44" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.03 2 11C2 13.88 3.5 16.42 5.86 17.96L5 22L9.29 20.35C10.16 20.77 11.06 21 12 21C17.52 21 22 16.97 22 12C22 7.03 17.52 2 12 2M7.5 13.5C6.67 13.5 6 12.83 6 12C6 11.17 6.67 10.5 7.5 10.5C8.33 10.5 9 11.17 9 12C9 12.83 8.33 13.5 7.5 13.5M12 13.5C11.17 13.5 10.5 12.83 10.5 12C10.5 11.17 11.17 10.5 12 10.5C12.83 10.5 13.5 11.17 13.5 12C13.5 12.83 12.83 13.5 12 13.5M16.5 13.5C15.67 13.5 15 12.83 15 12C15 11.17 15.67 10.5 16.5 10.5C17.33 10.5 18 11.17 18 12C18 12.83 17.33 13.5 16.5 13.5Z"/></svg>
+              <span>MAX</span>
             </button>
             <button type="button" class="hp-method-btn wa" data-m="whatsapp">
-              <span>●</span> WhatsApp
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#25D366" style="flex-shrink:0;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2M12.05 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C16.6 3.67 20.3 7.37 20.3 11.92C20.29 16.46 16.59 20.15 12.05 20.15M16.57 14.33C16.32 14.21 15.1 13.61 14.87 13.53C14.65 13.44 14.48 13.4 14.32 13.65C14.15 13.9 13.68 14.45 13.54 14.62C13.39 14.78 13.25 14.8 13 14.68C12.75 14.55 11.95 14.29 11 13.45C10.26 12.79 9.76 11.97 9.61 11.72C9.47 11.47 9.6 11.34 9.72 11.22C9.83 11.11 9.97 10.93 10.1 10.78C10.22 10.64 10.27 10.53 10.35 10.37C10.43 10.2 10.39 10.06 10.33 9.94C10.27 9.81 9.77 8.58 9.57 8.08C9.37 7.6 9.17 7.66 9.02 7.65C8.88 7.65 8.71 7.65 8.55 7.65C8.38 7.65 8.11 7.71 7.88 7.96C7.65 8.21 7 8.82 7 10.06C7 11.31 7.91 12.51 8.03 12.68C8.16 12.84 9.82 15.4 12.35 16.5C12.95 16.76 13.42 16.91 13.78 17.03C14.38 17.22 14.93 17.19 15.36 17.13C15.84 17.06 16.84 16.52 17.05 15.94C17.26 15.36 17.26 14.86 17.2 14.76C17.14 14.65 16.82 14.46 16.57 14.33Z"/></svg>
+              <span>WhatsApp</span>
             </button>
             <button type="button" class="hp-method-btn phone" data-m="phone">
-              <span>●</span> Телефон
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#E8A598" style="flex-shrink:0;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>Телефон</span>
             </button>
           </div>
 
@@ -2008,11 +2032,23 @@
         <div class="hp-ci-icon">💬</div>
         <div>
           <div class="hp-ci-label">Мессенджеры для связи</div>
-          <div class="hp-ci-val">
-            <a href="https://t.me/hi_pretty_manager" target="_blank" rel="noopener" style="color:var(--hp-rose);margin-right:14px;">✈ Менеджер в TG: @hi_pretty_manager</a>
-            <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" style="color:#81D4FA;margin-right:14px;">📢 Канал: @hi_pretty</a>
-            <a href="https://wa.me/79933365357" target="_blank" rel="noopener" style="color:#69F0AE;">● WhatsApp</a>
-            <a href="https://max.ru/u/f9LHodD0cOJDkOJa38G-aakmLO32B2FcARILKCnXhnJnzvKWD9r6yXfUCxE" target="_blank" rel="noopener" style="color:#FFAA44;margin-left:14px;">💬 ЛС MAX</a>
+          <div class="hp-contacts-messengers">
+            <a href="https://t.me/hi_pretty_manager" target="_blank" rel="noopener" class="hp-m-link" style="color:var(--hp-rose);">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#0088cc" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span>Менеджер в TG: @hi_pretty_manager</span>
+            </a>
+            <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" class="hp-m-link" style="color:#81D4FA;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#0088cc" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span>Канал: @hi_pretty</span>
+            </a>
+            <a href="https://wa.me/79933365357" target="_blank" rel="noopener" class="hp-m-link" style="color:#25D366;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#25D366" style="flex-shrink:0;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2M12.05 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C16.6 3.67 20.3 7.37 20.3 11.92C20.29 16.46 16.59 20.15 12.05 20.15M16.57 14.33C16.32 14.21 15.1 13.61 14.87 13.53C14.65 13.44 14.48 13.4 14.32 13.65C14.15 13.9 13.68 14.45 13.54 14.62C13.39 14.78 13.25 14.8 13 14.68C12.75 14.55 11.95 14.29 11 13.45C10.26 12.79 9.76 11.97 9.61 11.72C9.47 11.47 9.6 11.34 9.72 11.22C9.83 11.11 9.97 10.93 10.1 10.78C10.22 10.64 10.27 10.53 10.35 10.37C10.43 10.2 10.39 10.06 10.33 9.94C10.27 9.81 9.77 8.58 9.57 8.08C9.37 7.6 9.17 7.66 9.02 7.65C8.88 7.65 8.71 7.65 8.55 7.65C8.38 7.65 8.11 7.71 7.88 7.96C7.65 8.21 7 8.82 7 10.06C7 11.31 7.91 12.51 8.03 12.68C8.16 12.84 9.82 15.4 12.35 16.5C12.95 16.76 13.42 16.91 13.78 17.03C14.38 17.22 14.93 17.19 15.36 17.13C15.84 17.06 16.84 16.52 17.05 15.94C17.26 15.36 17.26 14.86 17.2 14.76C17.14 14.65 16.82 14.46 16.57 14.33Z"/></svg>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://max.ru/u/f9LHodD0cOJDkOJa38G-aakmLO32B2FcARILKCnXhnJnzvKWD9r6yXfUCxE" target="_blank" rel="noopener" class="hp-m-link" style="color:#FFAA44;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#FFAA44" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.03 2 11C2 13.88 3.5 16.42 5.86 17.96L5 22L9.29 20.35C10.16 20.77 11.06 21 12 21C17.52 21 22 16.97 22 12C22 7.03 17.52 2 12 2M7.5 13.5C6.67 13.5 6 12.83 6 12C6 11.17 6.67 10.5 7.5 10.5C8.33 10.5 9 11.17 9 12C9 12.83 8.33 13.5 7.5 13.5M12 13.5C11.17 13.5 10.5 12.83 10.5 12C10.5 11.17 11.17 10.5 12 10.5C12.83 10.5 13.5 11.17 13.5 12C13.5 12.83 12.83 13.5 12 13.5M16.5 13.5C15.67 13.5 15 12.83 15 12C15 11.17 15.67 10.5 16.5 10.5C17.33 10.5 18 11.17 18 12C18 12.83 17.33 13.5 16.5 13.5Z"/></svg>
+              <span>ЛС MAX</span>
+            </a>
           </div>
         </div>
       </div>
@@ -2048,11 +2084,26 @@
         <div>
           <div class="hp-footer-col-title">Связь и документы</div>
           <div class="hp-footer-menu">
-            <a href="https://t.me/hi_pretty_manager" target="_blank" rel="noopener">✈ Менеджер в TG: @hi_pretty_manager</a>
-            <a href="https://t.me/hi_pretty" target="_blank" rel="noopener">📢 Наш канал: @hi_pretty</a>
-            <a href="https://wa.me/79933365357" target="_blank" rel="noopener">● WhatsApp: +7 (993) 336-53-57</a>
-            <a href="https://max.ru/u/f9LHodD0cOJDkOJa38G-aakmLO32B2FcARILKCnXhnJnzvKWD9r6yXfUCxE" target="_blank" rel="noopener">💬 ЛС MAX</a>
-            <a href="tel:+79933365357">📞 8 (993) 336-53-57</a>
+            <a href="https://t.me/hi_pretty_manager" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;white-space:nowrap;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#0088cc" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span>Менеджер в TG: @hi_pretty_manager</span>
+            </a>
+            <a href="https://t.me/hi_pretty" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;white-space:nowrap;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#0088cc" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span>Наш канал: @hi_pretty</span>
+            </a>
+            <a href="https://wa.me/79933365357" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;white-space:nowrap;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#25D366" style="flex-shrink:0;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2M12.05 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C16.6 3.67 20.3 7.37 20.3 11.92C20.29 16.46 16.59 20.15 12.05 20.15M16.57 14.33C16.32 14.21 15.1 13.61 14.87 13.53C14.65 13.44 14.48 13.4 14.32 13.65C14.15 13.9 13.68 14.45 13.54 14.62C13.39 14.78 13.25 14.8 13 14.68C12.75 14.55 11.95 14.29 11 13.45C10.26 12.79 9.76 11.97 9.61 11.72C9.47 11.47 9.6 11.34 9.72 11.22C9.83 11.11 9.97 10.93 10.1 10.78C10.22 10.64 10.27 10.53 10.35 10.37C10.43 10.2 10.39 10.06 10.33 9.94C10.27 9.81 9.77 8.58 9.57 8.08C9.37 7.6 9.17 7.66 9.02 7.65C8.88 7.65 8.71 7.65 8.55 7.65C8.38 7.65 8.11 7.71 7.88 7.96C7.65 8.21 7 8.82 7 10.06C7 11.31 7.91 12.51 8.03 12.68C8.16 12.84 9.82 15.4 12.35 16.5C12.95 16.76 13.42 16.91 13.78 17.03C14.38 17.22 14.93 17.19 15.36 17.13C15.84 17.06 16.84 16.52 17.05 15.94C17.26 15.36 17.26 14.86 17.2 14.76C17.14 14.65 16.82 14.46 16.57 14.33Z"/></svg>
+              <span>WhatsApp: +7 (993) 336-53-57</span>
+            </a>
+            <a href="https://max.ru/u/f9LHodD0cOJDkOJa38G-aakmLO32B2FcARILKCnXhnJnzvKWD9r6yXfUCxE" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;white-space:nowrap;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#FFAA44" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.03 2 11C2 13.88 3.5 16.42 5.86 17.96L5 22L9.29 20.35C10.16 20.77 11.06 21 12 21C17.52 21 22 16.97 22 12C22 7.03 17.52 2 12 2M7.5 13.5C6.67 13.5 6 12.83 6 12C6 11.17 6.67 10.5 7.5 10.5C8.33 10.5 9 11.17 9 12C9 12.83 8.33 13.5 7.5 13.5M12 13.5C11.17 13.5 10.5 12.83 10.5 12C10.5 11.17 11.17 10.5 12 10.5C12.83 10.5 13.5 11.17 13.5 12C13.5 12.83 12.83 13.5 12 13.5M16.5 13.5C15.67 13.5 15 12.83 15 12C15 11.17 15.67 10.5 16.5 10.5C17.33 10.5 18 11.17 18 12C18 12.83 17.33 13.5 16.5 13.5Z"/></svg>
+              <span>ЛС MAX</span>
+            </a>
+            <a href="tel:+79933365357" style="display:inline-flex;align-items:center;gap:7px;white-space:nowrap;">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#E8A598" style="flex-shrink:0;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span>+7 (993) 336-53-57</span>
+            </a>
             <button type="button" onclick="openPolicyModal('privacy')">Политика конфиденциальности (152-ФЗ)</button>
             <button type="button" onclick="openPolicyModal('consent')">Согласие на обработку данных</button>
             <button type="button" onclick="openCookieSettings()">Настройки файлов Cookie</button>
@@ -2533,12 +2584,23 @@
       leadForm.addEventListener('submit', function(e) {
         e.preventDefault();
         var submitBtn = document.getElementById('hp-submit-btn');
-        var name = document.getElementById('hp-user-name').value;
-        var contact = document.getElementById('hp-user-contact').value.trim();
+        var nameInput = document.getElementById('hp-user-name');
+        var contactInput = document.getElementById('hp-user-contact');
+        var name = (nameInput ? nameInput.value : '').trim();
+        var contact = (contactInput ? contactInput.value : '').trim();
         var errEl = document.getElementById('hp-form-error');
         if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
 
-        // Защита от дурака
+        if (!name) {
+          if (errEl) {
+            errEl.textContent = 'Пожалуйста, укажите ваше имя.';
+            errEl.style.display = 'block';
+          }
+          if (nameInput) nameInput.focus();
+          return;
+        }
+
+        // Защита от дурака / валидация
         var cleanDigits = contact.replace(/[^0-9]/g, '');
         var isGoodPhone = cleanDigits.length >= 10 && cleanDigits.length <= 15;
 
@@ -2547,13 +2609,13 @@
           if (!isTgUser && !isGoodPhone) {
             if (/^[a-zA-Z0-9_]{5,32}$/.test(contact)) {
               contact = '@' + contact;
-              document.getElementById('hp-user-contact').value = contact;
+              if (contactInput) contactInput.value = contact;
             } else {
               if (errEl) {
                 errEl.textContent = 'Для Telegram укажите ник от 5 символов латиницей (например, @username) или номер телефона.';
                 errEl.style.display = 'block';
               }
-              document.getElementById('hp-user-contact').focus();
+              if (contactInput) contactInput.focus();
               return;
             }
           }
@@ -2564,7 +2626,7 @@
               errEl.textContent = 'Для MAX укажите прямую ссылку на профиль (max.ru/u/...) или корректный номер телефона.';
               errEl.style.display = 'block';
             }
-            document.getElementById('hp-user-contact').focus();
+            if (contactInput) contactInput.focus();
             return;
           }
         } else if (currentMethod === 'whatsapp' || currentMethod === 'phone') {
@@ -2573,7 +2635,7 @@
               errEl.textContent = 'Укажите корректный номер телефона (не менее 10 цифр).';
               errEl.style.display = 'block';
             }
-            document.getElementById('hp-user-contact').focus();
+            if (contactInput) contactInput.focus();
             return;
           }
         }
@@ -2610,7 +2672,75 @@
 
         var tildaMethod = currentMethod === 'max' ? 'max_messenger' : currentMethod;
 
-        // 1. Прямая отправка на endpoint Тильды
+        function showSuccessState() {
+          var succEl = document.getElementById('hp-form-success');
+          if (succEl) succEl.style.display = 'block';
+          if (submitBtn) {
+            submitBtn.textContent = 'Заявка отправлена ✓';
+            submitBtn.disabled = true;
+          }
+        }
+
+        // 1. Синхронизируем инпуты скрытой формы Тильды и отправляем через Tilda engine
+        if (tildaForm) {
+          var tName = tildaForm.querySelector('input[name="Name"]');
+          if (tName) {
+            tName.value = fullNameToSend;
+            tName.dispatchEvent(new Event('input', { bubbles: true }));
+            tName.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+
+          var radioInput = tildaForm.querySelector('input[name="messenger-type"][value="' + tildaMethod + '"]');
+          var radioWrap = tildaForm.querySelector('[data-method-type="' + tildaMethod + '"]');
+          if (radioWrap) {
+            radioWrap.click();
+          } else if (radioInput) {
+            radioInput.checked = true;
+            radioInput.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+
+          var allContactInputs = tildaForm.querySelectorAll('input[name="messenger-id"]');
+          allContactInputs.forEach(function(inp) {
+            var mAttr = inp.getAttribute('data-contact-method');
+            if (mAttr === tildaMethod || (!mAttr && inp.classList.contains('js-phonemask-input') && (currentMethod === 'phone' || isGoodPhone))) {
+              inp.disabled = false;
+              inp.value = contact;
+              inp.dispatchEvent(new Event('input', { bubbles: true }));
+              inp.dispatchEvent(new Event('change', { bubbles: true }));
+            } else {
+              inp.disabled = true;
+              inp.removeAttribute('data-tilda-req');
+            }
+          });
+
+          var phoneInps = tildaForm.querySelectorAll('input[name="Phone"]');
+          phoneInps.forEach(function(inp) {
+            if (isGoodPhone) {
+              inp.disabled = false;
+              inp.value = contact;
+              inp.dispatchEvent(new Event('input', { bubbles: true }));
+              inp.dispatchEvent(new Event('change', { bubbles: true }));
+            } else {
+              inp.disabled = true;
+              inp.removeAttribute('data-tilda-req');
+            }
+          });
+
+          var chk = tildaForm.querySelector('input[name="Checkbox"]');
+          if (chk) chk.checked = true;
+
+          var specComments = tildaForm.querySelector('input[name="form-spec-comments"]');
+          if (specComments) specComments.value = '';
+
+          var tSubmit = tildaForm.querySelector('button[type="submit"], .t-submit');
+          if (window.tildaForm && typeof window.tildaForm.send === 'function') {
+            try { window.tildaForm.send(tildaForm, tSubmit, 2, formKey); } catch(err) { console.error('tildaForm.send err:', err); }
+          } else if (tSubmit && typeof tSubmit.click === 'function') {
+            try { tSubmit.click(); } catch(err) { console.error('tSubmit.click err:', err); }
+          }
+        }
+
+        // 2. Прямой POST запрос через fetch для гарантированной доставки во все 5 сервисов приема данных
         var params = new URLSearchParams();
         services.forEach(function(s) { params.append('formservices[]', s); });
         params.append('tildaspec-formname', 'Запись на подбор волос');
@@ -2625,10 +2755,20 @@
           params.append('Textarea', 'Параметры: ' + chosenCutParam);
         }
         params.append('Checkbox', 'yes');
+        params.append('form-spec-comments', '');
         params.append('tildaspec-formskey', formKey);
         params.append('tildaspec-pageid', pageId);
         params.append('tildaspec-projectid', projectId);
         params.append('tildaspec-formid', formId);
+        params.append('tildaspec-referer', window.location.href);
+
+        var requestFinished = false;
+        var safetyTimer = setTimeout(function() {
+          if (!requestFinished) {
+            requestFinished = true;
+            showSuccessState();
+          }
+        }, 2500);
 
         fetch('https://forms.tildacdn.com/procces/', {
           method: 'POST',
@@ -2638,58 +2778,19 @@
           return res.json().catch(function() { return { message: 'OK' }; });
         }).then(function(data) {
           console.log('Tilda direct response:', data);
+          if (!requestFinished) {
+            requestFinished = true;
+            clearTimeout(safetyTimer);
+            showSuccessState();
+          }
         }).catch(function(err) {
           console.error('Tilda direct post err:', err);
+          if (!requestFinished) {
+            requestFinished = true;
+            clearTimeout(safetyTimer);
+            showSuccessState();
+          }
         });
-
-        // 2. Синхронизируем инпуты скрытой формы Тильды
-        if (tildaForm) {
-          var tName = tildaForm.querySelector('input[name="Name"]');
-          if (tName) {
-            tName.value = fullNameToSend;
-            tName.dispatchEvent(new Event('input', { bubbles: true }));
-            tName.dispatchEvent(new Event('change', { bubbles: true }));
-          }
-
-          var radioInput = tildaForm.querySelector('input[name="messenger-type"][value="' + tildaMethod + '"]');
-          var radioLabel = tildaForm.querySelector('[data-method-type="' + tildaMethod + '"] label') || tildaForm.querySelector('[data-method-type="' + currentMethod + '"] label');
-          if (radioLabel) {
-            radioLabel.click();
-          } else if (radioInput) {
-            radioInput.checked = true;
-            radioInput.dispatchEvent(new Event('change', { bubbles: true }));
-          }
-
-          var allContactInputs = tildaForm.querySelectorAll('input[name="messenger-id"]');
-          allContactInputs.forEach(function(inp) {
-            var mAttr = inp.getAttribute('data-contact-method');
-            if (mAttr === tildaMethod || (!mAttr && inp.classList.contains('js-phonemask-input') && (currentMethod === 'phone' || isGoodPhone))) {
-              inp.disabled = false;
-              inp.value = contact;
-              inp.dispatchEvent(new Event('input', { bubbles: true }));
-              inp.dispatchEvent(new Event('change', { bubbles: true }));
-            }
-          });
-          var phoneInps = tildaForm.querySelectorAll('input[name="Phone"]');
-          phoneInps.forEach(function(inp) {
-            if (isGoodPhone) {
-              inp.value = contact;
-              inp.dispatchEvent(new Event('input', { bubbles: true }));
-              inp.dispatchEvent(new Event('change', { bubbles: true }));
-            }
-          });
-
-          var tSubmit = tildaForm.querySelector('button[type="submit"], .t-submit');
-          if (window.tildaForm && typeof window.tildaForm.send === 'function') {
-            try { window.tildaForm.send(tildaForm, tSubmit, 2, formKey); } catch(err) {}
-          } else if (tSubmit && typeof tSubmit.click === 'function') {
-            try { tSubmit.click(); } catch(err) {}
-          }
-        }
-
-        document.getElementById('hp-form-success').style.display = 'block';
-        document.getElementById('hp-submit-btn').textContent = 'Заявка отправлена ✓';
-        document.getElementById('hp-submit-btn').disabled = true;
       });
     }
 
