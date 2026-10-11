@@ -955,8 +955,8 @@
       #hp-selected-cut-box {
         position: relative !important;
         z-index: 10 !important;
-        margin-top: 10px !important;
-        margin-bottom: 24px !important;
+        margin: 0 auto 24px auto !important;
+        max-width: 680px !important;
         display: none;
         align-items: center;
         justify-content: space-between;
@@ -969,74 +969,53 @@
       }
       #hp-tilda-form-slot {
         width: 100% !important;
-        margin: 0 !important;
+        max-width: 680px !important;
+        margin: 0 auto !important;
         position: relative !important;
         z-index: 5 !important;
       }
+      /* Скрываем всплывающее окно rec4673146901, чтобы не летало по экрану */
       #rec4673146901,
-      #hp-tilda-form-slot #rec4673146901 {
-        display: block !important;
-        position: static !important;
-        background: transparent !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-      }
-      #rec4673146901 .t-popup,
-      #hp-tilda-form-slot .t-popup,
-      #hp-tilda-form-slot .t702 {
-        position: static !important;
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        background: transparent !important;
-        padding: 0 !important;
-        height: auto !important;
-        min-height: auto !important;
-        width: 100% !important;
-        overflow: visible !important;
-      }
-      #rec4673146901 .t-popup__close,
-      #rec4673146901 .t-popup__block-close,
-      #rec4673146901 .t702__title,
-      #rec4673146901 .t702__descr,
-      #rec4673146901 .t702__text-wrapper {
+      .t702 .t-popup {
         display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        top: -9999px !important;
+        left: -9999px !important;
       }
-      #rec4673146901 .t-popup__container,
-      #hp-tilda-form-slot .t-popup__container {
-        position: static !important;
+      /* Перенесенная форма внутри слота */
+      #hp-tilda-form-slot form.t-form,
+      #hp-tilda-form-slot #form4673146901 {
         display: block !important;
+        position: static !important;
         width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-      }
-      #rec4673146901 .t702__wrapper {
-        padding: 0 !important;
-        background: transparent !important;
-      }
-      #rec4673146901 form.t-form {
         max-width: 100% !important;
         margin: 0 auto !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        transform: none !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
       }
-      #rec4673146901 .t-form__inputsbox {
+      #hp-tilda-form-slot .t-form__inputsbox {
         display: flex !important;
         flex-direction: column !important;
         gap: 16px !important;
+        width: 100% !important;
       }
-      #rec4673146901 .t-input-group {
+      #hp-tilda-form-slot .t-input-group {
         margin: 0 !important;
         padding: 0 !important;
         text-align: left !important;
         width: 100% !important;
       }
-      #rec4673146901 .t-input-title {
+      #hp-tilda-form-slot .t-input-title {
         color: var(--hp-rose-light, #fce7f3) !important;
         font-family: 'Montserrat', sans-serif !important;
         font-size: 14px !important;
@@ -1045,7 +1024,7 @@
         text-align: left !important;
         display: block !important;
       }
-      #rec4673146901 .t-contact-method__types-container {
+      #hp-tilda-form-slot .t-contact-method__types-container {
         display: grid !important;
         grid-template-columns: repeat(4, 1fr) !important;
         gap: 12px !important;
@@ -1058,12 +1037,12 @@
         width: 100% !important;
       }
       @media (max-width: 580px) {
-        #rec4673146901 .t-contact-method__types-container {
+        #hp-tilda-form-slot .t-contact-method__types-container {
           grid-template-columns: repeat(2, 1fr) !important;
           gap: 10px !important;
         }
       }
-      #rec4673146901 .t-contact-method__type {
+      #hp-tilda-form-slot .t-contact-method__type {
         background: rgba(255, 255, 255, 0.05) !important;
         border: 1px solid var(--hp-border, rgba(244, 114, 182, 0.25)) !important;
         border-radius: 14px !important;
@@ -1074,16 +1053,16 @@
         align-items: center !important;
         justify-content: center !important;
       }
-      #rec4673146901 .t-contact-method__type:hover {
+      #hp-tilda-form-slot .t-contact-method__type:hover {
         border-color: var(--hp-rose, #f472b6) !important;
         background: rgba(244, 114, 182, 0.1) !important;
       }
-      #rec4673146901 .t-contact-method__type:has(>.t-radio:checked) {
+      #hp-tilda-form-slot .t-contact-method__type:has(>.t-radio:checked) {
         background: rgba(244, 114, 182, 0.22) !important;
         border-color: var(--hp-rose, #f472b6) !important;
         box-shadow: 0 0 16px rgba(244, 114, 182, 0.35) !important;
       }
-      #rec4673146901 .t-contact-method__type-label {
+      #hp-tilda-form-slot .t-contact-method__type-label {
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -1094,14 +1073,14 @@
         margin: 0 !important;
         width: 100% !important;
       }
-      #rec4673146901 .t-contact-method__title {
+      #hp-tilda-form-slot .t-contact-method__title {
         color: #fdfafd !important;
         font-family: 'Montserrat', sans-serif !important;
         font-size: 13.5px !important;
         font-weight: 600 !important;
       }
-      #rec4673146901 input.t-input,
-      #rec4673146901 textarea.t-input {
+      #hp-tilda-form-slot input.t-input,
+      #hp-tilda-form-slot textarea.t-input {
         width: 100% !important;
         background: rgba(14, 9, 21, 0.9) !important;
         border: 1px solid var(--hp-border, rgba(244, 114, 182, 0.25)) !important;
@@ -1114,30 +1093,30 @@
         box-sizing: border-box !important;
         transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
       }
-      #rec4673146901 input.t-input:focus,
-      #rec4673146901 textarea.t-input:focus {
+      #hp-tilda-form-slot input.t-input:focus,
+      #hp-tilda-form-slot textarea.t-input:focus {
         border-color: var(--hp-rose, #f472b6) !important;
         box-shadow: 0 0 16px rgba(244, 114, 182, 0.3) !important;
       }
-      #rec4673146901 input::-webkit-input-placeholder,
-      #rec4673146901 textarea::-webkit-input-placeholder {
+      #hp-tilda-form-slot input::-webkit-input-placeholder,
+      #hp-tilda-form-slot textarea::-webkit-input-placeholder {
         color: rgba(255, 255, 255, 0.45) !important;
         opacity: 1 !important;
       }
-      #rec4673146901 input::-moz-placeholder,
-      #rec4673146901 textarea::-moz-placeholder {
+      #hp-tilda-form-slot input::-moz-placeholder,
+      #hp-tilda-form-slot textarea::-moz-placeholder {
         color: rgba(255, 255, 255, 0.45) !important;
         opacity: 1 !important;
       }
-      #rec4673146901 input:-ms-input-placeholder,
-      #rec4673146901 textarea:-ms-input-placeholder {
+      #hp-tilda-form-slot input:-ms-input-placeholder,
+      #hp-tilda-form-slot textarea:-ms-input-placeholder {
         color: rgba(255, 255, 255, 0.45) !important;
         opacity: 1 !important;
       }
-      #rec4673146901 .t-input-phonemask__select {
+      #hp-tilda-form-slot .t-input-phonemask__select {
         color: #fff !important;
       }
-      #rec4673146901 .t-input-group_tx .t-text {
+      #hp-tilda-form-slot .t-input-group_tx .t-text {
         color: var(--hp-rose-light, #fce7f3) !important;
         font-size: 12.5px !important;
         line-height: 1.55 !important;
@@ -1147,7 +1126,7 @@
         padding: 12px 16px !important;
         border-radius: 0 12px 12px 0 !important;
       }
-      #rec4673146901 .t-checkbox__control {
+      #hp-tilda-form-slot .t-checkbox__control {
         color: var(--hp-text-muted, #b8acc7) !important;
         font-size: 12.5px !important;
         text-align: left !important;
@@ -1155,11 +1134,11 @@
         align-items: center !important;
         gap: 10px !important;
       }
-      #rec4673146901 .t-checkbox__indicator {
+      #hp-tilda-form-slot .t-checkbox__indicator {
         border-color: var(--hp-rose, #f472b6) !important;
       }
-      #rec4673146901 .t-submit,
-      #rec4673146901 button[type="submit"] {
+      #hp-tilda-form-slot .t-submit,
+      #hp-tilda-form-slot button[type="submit"] {
         width: 100% !important;
         background: var(--hp-grad-btn, linear-gradient(135deg, #fbcfe8 0%, #f472b6 50%, #db2777 100%)) !important;
         color: #1a0818 !important;
@@ -1176,13 +1155,13 @@
         letter-spacing: 0.5px !important;
         margin-top: 8px !important;
       }
-      #rec4673146901 .t-submit:hover,
-      #rec4673146901 button[type="submit"]:hover {
+      #hp-tilda-form-slot .t-submit:hover,
+      #hp-tilda-form-slot button[type="submit"]:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 12px 35px rgba(244, 114, 182, 0.6) !important;
       }
-      #rec4673146901 .t-btn_wrap-effects { display: none !important; }
-      #rec4673146901 .js-successbox {
+      #hp-tilda-form-slot .t-btn_wrap-effects { display: none !important; }
+      #hp-tilda-form-slot .js-successbox {
         background: rgba(16, 185, 129, 0.15) !important;
         border: 1px solid #10B981 !important;
         color: #6ee7b7 !important;
@@ -2709,51 +2688,56 @@
     var rec = document.getElementById('rec4673146901');
     if (!rec) return;
 
-    if (rec.parentElement !== slot) {
-      slot.appendChild(rec);
-    }
-    rec.style.display = 'block';
-    rec.style.visibility = 'visible';
-    rec.style.opacity = '1';
+    var form = rec.querySelector('form#form4673146901') || rec.querySelector('form');
+    if (!form) return;
 
-    var popup = rec.querySelector('.t-popup');
-    if (popup) {
-      popup.classList.add('t-popup_show');
-      popup.style.display = 'block';
-      popup.style.opacity = '1';
+    // Переносим саму форму Tilda напрямую внутрь нашего слота #hp-tilda-form-slot!
+    if (form.parentElement !== slot) {
+      slot.appendChild(form);
     }
+
+    // Блок popup rec4673146901 гарантированно скрываем, чтобы он не висел в воздухе поверх экрана
+    rec.style.display = 'none';
+    rec.style.visibility = 'hidden';
+    rec.style.opacity = '0';
+    rec.style.pointerEvents = 'none';
+
+    // Форма внутри слота — полностью встроена в нормальный поток страницы
+    form.style.display = 'block';
+    form.style.visibility = 'visible';
+    form.style.opacity = '1';
+    form.style.position = 'static';
+    form.style.transform = 'none';
 
     // Заголовки и плашки
-    var titleGroup = rec.querySelector('.t-input-title');
+    var titleGroup = form.querySelector('.t-input-title');
     if (titleGroup) {
       titleGroup.textContent = 'Выберите удобный способ связи:';
     }
 
-    var subBtn = rec.querySelector('.t-btnflex__text, .t-submit');
+    var subBtn = form.querySelector('.t-btnflex__text, .t-submit');
     if (subBtn) {
       subBtn.textContent = 'Получить подбор и фото среза ✦';
     }
 
-    var nameInp = rec.querySelector('input[name="Name"]');
+    var nameInp = form.querySelector('input[name="Name"]');
     if (nameInp) {
       nameInp.placeholder = 'Ваше имя';
     }
 
-    // Улучшаем плейсхолдеры для Telegram и MAX в полях ввода
-    var tgInp = rec.querySelector('input[data-contact-method="telegram"]');
+    var tgInp = form.querySelector('input[data-contact-method="telegram"]');
     if (tgInp) {
       tgInp.placeholder = 'Ник @username или номер телефона';
     }
-    var maxInp = rec.querySelector('input[data-contact-method="max_messenger"]');
+    var maxInp = form.querySelector('input[data-contact-method="max_messenger"]');
     if (maxInp) {
       maxInp.placeholder = 'Ссылка на профиль MAX или телефон';
     }
 
-    var tildaForm = rec.querySelector('form');
-    if (tildaForm && !tildaForm.dataset.hpMounted) {
-      tildaForm.dataset.hpMounted = 'true';
+    if (!form.dataset.hpMounted) {
+      form.dataset.hpMounted = 'true';
 
-      tildaForm.addEventListener('submit', function() {
+      form.addEventListener('submit', function() {
         if (chosenCutParam) {
           if (nameInp && nameInp.value && nameInp.value.indexOf(chosenCutParam) === -1) {
             nameInp.value = nameInp.value + ' (' + chosenCutParam + ')';
