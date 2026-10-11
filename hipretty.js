@@ -952,13 +952,41 @@
 
       /* КОНТАКТЫ */
       /* СТИЛИЗАЦИЯ НАСТОЯЩЕЙ TILDA-ФОРМЫ ВНУТРИ LEAD-BOX */
-      #hp-tilda-form-slot {
-        width: 100%;
-        margin-top: 20px;
+      #hp-selected-cut-box {
+        position: relative !important;
+        z-index: 10 !important;
+        margin-top: 10px !important;
+        margin-bottom: 24px !important;
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(244, 114, 182, 0.15) !important;
+        border: 1px solid var(--hp-border-active, rgba(244, 114, 182, 0.6)) !important;
+        border-radius: 16px !important;
+        padding: 14px 20px !important;
+        text-align: left;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
       }
+      #hp-tilda-form-slot {
+        width: 100% !important;
+        margin: 0 !important;
+        position: relative !important;
+        z-index: 5 !important;
+      }
+      #rec4673146901,
+      #hp-tilda-form-slot #rec4673146901 {
+        display: block !important;
+        position: static !important;
+        background: transparent !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      #rec4673146901 .t-popup,
       #hp-tilda-form-slot .t-popup,
-      #hp-tilda-form-slot .t702,
-      #hp-tilda-form-slot .t700 {
+      #hp-tilda-form-slot .t702 {
         position: static !important;
         display: block !important;
         opacity: 1 !important;
@@ -970,17 +998,15 @@
         width: 100% !important;
         overflow: visible !important;
       }
-      #hp-tilda-form-slot .t-popup__close,
-      #hp-tilda-form-slot .t-popup__block-close,
-      #hp-tilda-form-slot .t702__title,
-      #hp-tilda-form-slot .t702__descr,
-      #hp-tilda-form-slot .t702__text-wrapper,
-      #hp-tilda-form-slot .t-section__container,
-      #hp-tilda-form-slot .t700__content {
+      #rec4673146901 .t-popup__close,
+      #rec4673146901 .t-popup__block-close,
+      #rec4673146901 .t702__title,
+      #rec4673146901 .t702__descr,
+      #rec4673146901 .t702__text-wrapper {
         display: none !important;
       }
-      #hp-tilda-form-slot .t-popup__container,
-      #hp-tilda-form-slot .t-col {
+      #rec4673146901 .t-popup__container,
+      #hp-tilda-form-slot .t-popup__container {
         position: static !important;
         display: block !important;
         width: 100% !important;
@@ -991,114 +1017,156 @@
         border: none !important;
         box-shadow: none !important;
       }
-      #hp-tilda-form-slot .t702__wrapper {
+      #rec4673146901 .t702__wrapper {
         padding: 0 !important;
         background: transparent !important;
       }
-      #hp-tilda-form-slot form.t-form {
+      #rec4673146901 form.t-form {
         max-width: 100% !important;
         margin: 0 auto !important;
       }
-      #hp-tilda-form-slot .t-input-group {
-        margin-bottom: 18px !important;
+      #rec4673146901 .t-form__inputsbox {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
       }
-      #hp-tilda-form-slot .t-input-title {
+      #rec4673146901 .t-input-group {
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+        width: 100% !important;
+      }
+      #rec4673146901 .t-input-title {
         color: var(--hp-rose-light, #fce7f3) !important;
         font-family: 'Montserrat', sans-serif !important;
-        font-size: 13.5px !important;
+        font-size: 14px !important;
         font-weight: 600 !important;
         margin-bottom: 10px !important;
         text-align: left !important;
+        display: block !important;
       }
-      #hp-tilda-form-slot .t-contact-method__types-container {
+      #rec4673146901 .t-contact-method__types-container {
         display: grid !important;
         grid-template-columns: repeat(4, 1fr) !important;
-        gap: 10px !important;
-        margin-bottom: 14px !important;
+        gap: 12px !important;
+        margin: 0 0 16px 0 !important;
+        padding: 0 !important;
+        mask: none !important;
+        -webkit-mask: none !important;
+        overflow: visible !important;
+        max-width: 100% !important;
+        width: 100% !important;
       }
-      @media (max-width: 600px) {
-        #hp-tilda-form-slot .t-contact-method__types-container {
+      @media (max-width: 580px) {
+        #rec4673146901 .t-contact-method__types-container {
           grid-template-columns: repeat(2, 1fr) !important;
+          gap: 10px !important;
         }
       }
-      #hp-tilda-form-slot .t-contact-method__type {
-        background: rgba(255, 255, 255, 0.04) !important;
+      #rec4673146901 .t-contact-method__type {
+        background: rgba(255, 255, 255, 0.05) !important;
         border: 1px solid var(--hp-border, rgba(244, 114, 182, 0.25)) !important;
         border-radius: 14px !important;
-        padding: 10px !important;
+        padding: 12px 14px !important;
         cursor: pointer !important;
         transition: all 0.2s ease !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
       }
-      #hp-tilda-form-slot .t-contact-method__type:hover {
+      #rec4673146901 .t-contact-method__type:hover {
         border-color: var(--hp-rose, #f472b6) !important;
+        background: rgba(244, 114, 182, 0.1) !important;
       }
-      #hp-tilda-form-slot .t-contact-method__type:has(>.t-radio:checked) {
-        background: rgba(244, 114, 182, 0.2) !important;
+      #rec4673146901 .t-contact-method__type:has(>.t-radio:checked) {
+        background: rgba(244, 114, 182, 0.22) !important;
         border-color: var(--hp-rose, #f472b6) !important;
-        box-shadow: 0 0 16px rgba(244, 114, 182, 0.3) !important;
+        box-shadow: 0 0 16px rgba(244, 114, 182, 0.35) !important;
       }
-      #hp-tilda-form-slot .t-contact-method__type-label {
-        display: flex !important;
+      #rec4673146901 .t-contact-method__type-label {
+        display: inline-flex !important;
         align-items: center !important;
-        gap: 7px !important;
+        justify-content: center !important;
+        gap: 8px !important;
         cursor: pointer !important;
         white-space: nowrap !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
       }
-      #hp-tilda-form-slot .t-contact-method__title {
+      #rec4673146901 .t-contact-method__title {
         color: #fdfafd !important;
         font-family: 'Montserrat', sans-serif !important;
-        font-size: 13px !important;
+        font-size: 13.5px !important;
         font-weight: 600 !important;
       }
-      #hp-tilda-form-slot input.t-input,
-      #hp-tilda-form-slot textarea.t-input {
+      #rec4673146901 input.t-input,
+      #rec4673146901 textarea.t-input {
         width: 100% !important;
-        background: rgba(14, 9, 21, 0.85) !important;
+        background: rgba(14, 9, 21, 0.9) !important;
         border: 1px solid var(--hp-border, rgba(244, 114, 182, 0.25)) !important;
         border-radius: 16px !important;
-        padding: 15px 20px !important;
-        color: #fff !important;
-        font-size: 15px !important;
+        padding: 16px 22px !important;
+        color: #ffffff !important;
+        font-size: 15.5px !important;
         font-family: 'Montserrat', sans-serif !important;
         outline: none !important;
         box-sizing: border-box !important;
         transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
       }
-      #hp-tilda-form-slot input.t-input:focus,
-      #hp-tilda-form-slot textarea.t-input:focus {
+      #rec4673146901 input.t-input:focus,
+      #rec4673146901 textarea.t-input:focus {
         border-color: var(--hp-rose, #f472b6) !important;
-        box-shadow: 0 0 15px rgba(244, 114, 182, 0.3) !important;
+        box-shadow: 0 0 16px rgba(244, 114, 182, 0.3) !important;
       }
-      #hp-tilda-form-slot .t-input-group_tx .t-text {
+      #rec4673146901 input::-webkit-input-placeholder,
+      #rec4673146901 textarea::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.45) !important;
+        opacity: 1 !important;
+      }
+      #rec4673146901 input::-moz-placeholder,
+      #rec4673146901 textarea::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.45) !important;
+        opacity: 1 !important;
+      }
+      #rec4673146901 input:-ms-input-placeholder,
+      #rec4673146901 textarea:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.45) !important;
+        opacity: 1 !important;
+      }
+      #rec4673146901 .t-input-phonemask__select {
+        color: #fff !important;
+      }
+      #rec4673146901 .t-input-group_tx .t-text {
         color: var(--hp-rose-light, #fce7f3) !important;
         font-size: 12.5px !important;
-        line-height: 1.5 !important;
+        line-height: 1.55 !important;
         text-align: left !important;
         background: rgba(244, 114, 182, 0.08) !important;
         border-left: 3px solid var(--hp-rose, #f472b6) !important;
-        padding: 10px 14px !important;
-        border-radius: 0 10px 10px 0 !important;
+        padding: 12px 16px !important;
+        border-radius: 0 12px 12px 0 !important;
       }
-      #hp-tilda-form-slot .t-checkbox__control {
+      #rec4673146901 .t-checkbox__control {
         color: var(--hp-text-muted, #b8acc7) !important;
-        font-size: 12px !important;
+        font-size: 12.5px !important;
         text-align: left !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
       }
-      #hp-tilda-form-slot .t-checkbox__indicator {
+      #rec4673146901 .t-checkbox__indicator {
         border-color: var(--hp-rose, #f472b6) !important;
       }
-      #hp-tilda-form-slot .t-submit,
-      #hp-tilda-form-slot button[type="submit"] {
+      #rec4673146901 .t-submit,
+      #rec4673146901 button[type="submit"] {
         width: 100% !important;
         background: var(--hp-grad-btn, linear-gradient(135deg, #fbcfe8 0%, #f472b6 50%, #db2777 100%)) !important;
         color: #1a0818 !important;
         border: none !important;
         border-radius: 20px !important;
-        padding: 16px 24px !important;
-        font-size: 16px !important;
+        padding: 18px 26px !important;
+        font-size: 16.5px !important;
         font-weight: 700 !important;
         font-family: 'Montserrat', sans-serif !important;
         cursor: pointer !important;
@@ -1106,14 +1174,15 @@
         transition: transform 0.2s ease, box-shadow 0.2s ease !important;
         text-transform: none !important;
         letter-spacing: 0.5px !important;
+        margin-top: 8px !important;
       }
-      #hp-tilda-form-slot .t-submit:hover,
-      #hp-tilda-form-slot button[type="submit"]:hover {
+      #rec4673146901 .t-submit:hover,
+      #rec4673146901 button[type="submit"]:hover {
         transform: translateY(-2px) !important;
-        box-shadow: 0 10px 32px rgba(244, 114, 182, 0.6) !important;
+        box-shadow: 0 12px 35px rgba(244, 114, 182, 0.6) !important;
       }
-      #hp-tilda-form-slot .t-btn_wrap-effects { display: none !important; }
-      #hp-tilda-form-slot .js-successbox {
+      #rec4673146901 .t-btn_wrap-effects { display: none !important; }
+      #rec4673146901 .js-successbox {
         background: rgba(16, 185, 129, 0.15) !important;
         border: 1px solid #10B981 !important;
         color: #6ee7b7 !important;
@@ -2637,11 +2706,9 @@
     var slot = document.getElementById('hp-tilda-form-slot');
     if (!slot) return;
 
-    // Ищем оригинальный Tilda-блок формы rec4673146901
     var rec = document.getElementById('rec4673146901');
     if (!rec) return;
 
-    // Встраиваем блок прямо в структуру секции захвата #lead-box
     if (rec.parentElement !== slot) {
       slot.appendChild(rec);
     }
@@ -2649,7 +2716,6 @@
     rec.style.visibility = 'visible';
     rec.style.opacity = '1';
 
-    // Снимаем скрывающие классы popup, чтобы блок жил как стандартная форма
     var popup = rec.querySelector('.t-popup');
     if (popup) {
       popup.classList.add('t-popup_show');
@@ -2657,9 +2723,14 @@
       popup.style.opacity = '1';
     }
 
-    // Брендируем кнопку отправки и поля
+    // Заголовки и плашки
+    var titleGroup = rec.querySelector('.t-input-title');
+    if (titleGroup) {
+      titleGroup.textContent = 'Выберите удобный способ связи:';
+    }
+
     var subBtn = rec.querySelector('.t-btnflex__text, .t-submit');
-    if (subBtn && (!subBtn.textContent || subBtn.textContent.trim() === '' || subBtn.textContent.indexOf('?') !== -1)) {
+    if (subBtn) {
       subBtn.textContent = 'Получить подбор и фото среза ✦';
     }
 
@@ -2668,11 +2739,20 @@
       nameInp.placeholder = 'Ваше имя';
     }
 
+    // Улучшаем плейсхолдеры для Telegram и MAX в полях ввода
+    var tgInp = rec.querySelector('input[data-contact-method="telegram"]');
+    if (tgInp) {
+      tgInp.placeholder = 'Ник @username или номер телефона';
+    }
+    var maxInp = rec.querySelector('input[data-contact-method="max_messenger"]');
+    if (maxInp) {
+      maxInp.placeholder = 'Ссылка на профиль MAX или телефон';
+    }
+
     var tildaForm = rec.querySelector('form');
     if (tildaForm && !tildaForm.dataset.hpMounted) {
       tildaForm.dataset.hpMounted = 'true';
 
-      // При отправке формы подмешиваем выбранный срез в Name или скрытое поле
       tildaForm.addEventListener('submit', function() {
         if (chosenCutParam) {
           if (nameInp && nameInp.value && nameInp.value.indexOf(chosenCutParam) === -1) {
