@@ -862,6 +862,11 @@
         border-color: var(--hp-rose);
         color: #fff;
       }
+      .hp-method-btn.active.max {
+        background: rgba(255, 140, 0, 0.25);
+        border-color: #ff8c00;
+        color: #ffaa44;
+      }
       .hp-form-submit {
         width: 100%;
         background: var(--hp-grad-btn);
@@ -1919,6 +1924,10 @@
             <button type="button" class="hp-method-btn active tg" data-m="telegram">
               <span>✈</span> Telegram
             </button>
+            <button type="button" class="hp-method-btn max" data-m="max">
+              <span>💬</span> MAX
+            </button>
+            
             <button type="button" class="hp-method-btn wa" data-m="whatsapp">
               <span>●</span> WhatsApp
             </button>
@@ -2479,7 +2488,10 @@
         methodBtns.forEach(function(x) { x.classList.remove('active'); });
         b.classList.add('active');
         currentMethod = b.getAttribute('data-m');
-        if (currentMethod === 'telegram') {
+        if (currentMethod === 'max') {
+          contactInput.placeholder = 'Ссылка на профиль MAX или телефон';
+          contactHint.innerHTML = '<strong>MAX:</strong> укажите ссылку на профиль MAX или номер телефона.';
+        } else if (currentMethod === 'telegram') {
           contactInput.placeholder = 'Ник @username или телефон';
           contactHint.innerHTML = '<strong>Telegram:</strong> можно указать ник (@username) или номер телефона.';
         } else if (currentMethod === 'whatsapp') {
