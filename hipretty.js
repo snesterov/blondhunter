@@ -2518,14 +2518,17 @@
         var isGoodPhone = cleanDigits.length >= 10 && cleanDigits.length <= 15;
 
         if (currentMethod === 'telegram') {
-          var isTgUser = /^@[a-zA-Z0-9_]{3,32}$/.test(contact);
+          var isTgUser = /^@[a-zA-Z0-9_]{5,32}$/.test(contact);
           if (!isTgUser && !isGoodPhone) {
-            if (/^[a-zA-Z0-9_]{3,32}$/.test(contact)) {
+            if (/^[a-zA-Z0-9_]{5,32}$/.test(contact)) {
               contact = '@' + contact;
               document.getElementById('hp-user-contact').value = contact;
             } else {
               if (errEl) {
-                errEl.textContent = 'Для Telegram укажите ник латиницей (например, @username) или номер телефона.';
+                errEl.textContent = 'Для Telegram укажите ник от 5 символов латиницей (например, @username) или номер телефона.';
+              errEl.style.display = 'block';
+              document.getElementById('hp-user-contact').focus();
+              return;
                 errEl.style.display = 'block';
               }
               document.getElementById('hp-user-contact').focus();
@@ -2572,8 +2575,9 @@
             tName.dispatchEvent(new Event('change', { bubbles: true }));
           }
 
-          var radioInput = tildaForm.querySelector('input[name="messenger-type"][value="' + currentMethod + '"]');
-          var radioLabel = tildaForm.querySelector('[data-method-type="' + currentMethod + '"] label');
+          var tildaMethod = currentMethod === 'max' ? 'max_messenger' : currentMethod;
+          var radioInput = tildaForm.querySelector('input[name="messenger-type"][value="' + tildaMethod + '"]');
+          var radioLabel = tildaForm.querySelector('[data-method-type="' + tildaMethod + '"] label') || tildaForm.querySelector('[data-method-type="' + currentMethod + '"] label');
           if (radioLabel) {
             radioLabel.click();
           } else if (radioInput) {
@@ -2591,9 +2595,19 @@
               inp.dispatchEvent(new Event('change', { bubbles: true }));
             });
           }
-          var allContactInputs = tildaForm.querySelectorAll('input[name="messenger-id"], input[name="Phone"]');
+          var allContactInputs = tildaForm.querySelectorAll('input[name="messenger-id"]');
           allContactInputs.forEach(function(inp) {
-            if (!inp.disabled) {
+            var mAttr = inp.getAttribute('data-contact-method');
+            if (mAttr === tildaMethod || (!mAttr && inp.classList.contains('js-phonemask-input') && (currentMethod === 'phone' || isGoodPhone))) {
+              inp.disabled = false;
+              inp.value = contact;
+              inp.dispatchEvent(new Event('input', { bubbles: true }));
+              inp.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          });
+          var phoneInps = tildaForm.querySelectorAll('input[name="Phone"]');
+          phoneInps.forEach(function(inp) {
+            if (isGoodPhone) {
               inp.value = contact;
               inp.dispatchEvent(new Event('input', { bubbles: true }));
               inp.dispatchEvent(new Event('change', { bubbles: true }));
@@ -2620,7 +2634,8 @@
         services.forEach(function(s) { params.append('formservices[]', s); });
         params.append('tildaspec-formname', 'Запись на подбор волос');
         params.append('Name', fullNameToSend);
-        params.append('messenger-type', currentMethod);
+        var tildaMethod = currentMethod === 'max' ? 'max_messenger' : currentMethod;
+        params.append('messenger-type', tildaMethod);
         params.append('messenger-id', contact);
         if (isGoodPhone) {
           params.append('Phone', contact);
