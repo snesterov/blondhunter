@@ -145,6 +145,55 @@
         transform: translateY(-2px);
         box-shadow: 0 6px 26px rgba(244, 114, 182, 0.6);
       }
+      /* ХЕДЕР ВНУТРЕННИЙ */
+      .hp-header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 12px;
+      }
+      .hp-header-phone {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+      }
+      .hp-phone-icon {
+        font-size: 13px;
+        display: none;
+      }
+
+      /* МОБИЛЬНАЯ АДАПТАЦИЯ ШАПКИ */
+      @media (max-width: 992px) {
+        .hp-header { padding: 12px 16px; }
+        .hp-logo { font-size: 26px; }
+        .hp-logo-sub { font-size: 10px; letter-spacing: 1.5px; }
+        .hp-btn-header-cta { padding: 9px 16px; font-size: 12px; }
+      }
+      @media (max-width: 768px) {
+        .hp-header { padding: 10px 14px; }
+        .hp-logo { font-size: 22px; }
+        .hp-logo-sub { font-size: 9px; letter-spacing: 1px; }
+        .hp-header-actions { gap: 8px; }
+        .hp-header-phone {
+          padding: 7px 10px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid var(--hp-border);
+          border-radius: 18px;
+          font-size: 12px;
+        }
+        .hp-phone-icon { display: inline-block; font-size: 12px; }
+        .hp-phone-text { display: none; }
+        .hp-btn-header-cta { padding: 8px 14px; font-size: 12px; border-radius: 20px; white-space: nowrap; }
+      }
+      @media (max-width: 420px) {
+        .hp-header { padding: 8px 10px; }
+        .hp-logo { font-size: 19px; }
+        .hp-logo-sub { font-size: 8px; letter-spacing: 0.5px; margin-top: 2px; }
+        .hp-btn-header-cta { padding: 7px 11px; font-size: 11px; }
+      }
+
 
       /* ГЛАВНЫЙ ЭКРАН */
       .hp-hero { padding: 44px 20px 65px; position: relative; }
@@ -1571,19 +1620,22 @@
 <div id="hp-app">
   <!-- ХЕДЕР -->
   <header class="hp-header">
-    <div class="hp-container" style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+    <div class="hp-container hp-header-inner">
       <a href="https://hipretty.ru" class="hp-logo-wrap">
         <div class="hp-logo">привет, волосы!</div>
-        <div class="hp-logo-sub">магазин натуральных волос • москва</div>
+        <div class="hp-logo-sub">магазин волос • москва</div>
       </a>
       <nav class="hp-nav-links">
         <a href="#catalog" class="hp-nav-link">Срезы в наличии</a>
         <a href="#why-us" class="hp-nav-link">Преимущества</a>
         <a href="#selection" class="hp-nav-link">Подбор среза</a>
-        <a href="#contacts" class="hp-nav-link">Контакты студии</a>
+        <a href="#contacts" class="hp-nav-link">Контакты</a>
       </nav>
       <div class="hp-header-actions">
-        <a href="tel:+79933365357" class="hp-header-phone">8 (993) 336-53-57</a>
+        <a href="tel:+79933365357" class="hp-header-phone" title="Позвонить нам">
+          <span class="hp-phone-icon">📞</span>
+          <span class="hp-phone-text">8 (993) 336-53-57</span>
+        </a>
         <button type="button" class="hp-btn-header-cta hp-open-form-btn">Консультация ✦</button>
       </div>
     </div>
