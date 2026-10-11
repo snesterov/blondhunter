@@ -5442,37 +5442,41 @@
 
     function showCustomError(inputEl, msg) {
       if (!inputEl) return;
+      var targetBox = inputEl.classList.contains('t-input-phonemask') ? inputEl.closest('.t-input-phonemask__wrap') : inputEl;
+      if (!targetBox) targetBox = inputEl;
+
+      targetBox.style.setProperty('border-color', '#f87171', 'important');
+      targetBox.style.setProperty('box-shadow', '0 0 18px rgba(239, 68, 68, 0.45)', 'important');
       inputEl.focus();
-      var wrap = inputEl.closest('.t-input-block') || inputEl.parentElement;
-      if (!wrap) return;
 
-      inputEl.style.setProperty('border-color', '#f87171', 'important');
-      inputEl.style.setProperty('box-shadow', '0 0 18px rgba(239, 68, 68, 0.45)', 'important');
+      var block = inputEl.closest('.t-input-block') || targetBox.parentElement;
+      if (!block) return;
 
-      var existingErr = wrap.querySelector('.hp-field-error-msg');
+      var existingErr = block.querySelector('.hp-field-error-msg');
       if (!existingErr) {
         existingErr = document.createElement('div');
         existingErr.className = 'hp-field-error-msg';
-        wrap.appendChild(existingErr);
+        block.appendChild(existingErr);
       }
       existingErr.textContent = msg;
       existingErr.style.display = 'block';
 
-      inputEl.addEventListener('input', function onInp() {
-        inputEl.style.removeProperty('border-color');
-        inputEl.style.removeProperty('box-shadow');
-        if (existingErr) existingErr.style.display = 'none';
+      function onInp() {
+        targetBox.style.removeProperty('border-color');
+        targetBox.style.removeProperty('box-shadow');
+        existingErr.style.display = 'none';
         inputEl.removeEventListener('input', onInp);
-      });
+      }
+      inputEl.addEventListener('input', onInp);
     }
 
     function clearCustomErrors(formEl) {
       formEl.querySelectorAll('.hp-field-error-msg').forEach(function(el) {
         el.style.display = 'none';
       });
-      formEl.querySelectorAll('input').forEach(function(inp) {
-        inp.style.removeProperty('border-color');
-        inp.style.removeProperty('box-shadow');
+      formEl.querySelectorAll('input, .t-input-phonemask__wrap').forEach(function(el) {
+        el.style.removeProperty('border-color');
+        el.style.removeProperty('box-shadow');
       });
     }
 
@@ -5490,12 +5494,12 @@
 
         clearCustomErrors(form);
 
-        // 1. Валидация имени
+        // 1. Валидация имени (только проверка заполненности)
         var nameVal = (nameInp ? nameInp.value : '').trim();
-        if (!nameVal || nameVal.length < 2) {
+        if (!nameVal) {
           e.preventDefault();
           e.stopImmediatePropagation();
-          showCustomError(nameInp, 'Пожалуйста, укажите ваше имя (минимум 2 буквы)');
+          showCustomError(nameInp, 'Пожалуйста, укажите имя');
           return false;
         }
 
@@ -5505,10 +5509,10 @@
         var rawTel = (telInp ? telInp.value : '') || (resInp ? resInp.value : '');
         var digits = rawTel.replace(/\D/g, '');
 
-        if (!digits || digits.length < 10) {
+        if (!digits || digits.length < 5) {
           e.preventDefault();
           e.stopImmediatePropagation();
-          showCustomError(telInp, 'Укажите корректный номер телефона (не менее 10 цифр)');
+          showCustomError(telInp, 'Пожалуйста, укажите номер телефона');
           return false;
         }
 
@@ -5816,6 +5820,20 @@
     leadWidget.innerHTML = '<button type="button" class="hp-widget-pulse-btn hp-open-form-btn"><span>✦</span> Подобрать срез</button>';
 
     document.body.appendChild(leadWidget);
+
+    window.addEventListener('scroll', function() {
+      var leadSec = document.getElementById('lead-box');
+      if (leadSec && leadWidget) {
+        var rect = leadSec.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 100) {
+          leadWidget.style.opacity = '0';
+          leadWidget.style.pointerEvents = 'none';
+        } else {
+          leadWidget.style.opacity = '1';
+          leadWidget.style.pointerEvents = 'auto';
+        }
+      }
+    });
 
   }
 
