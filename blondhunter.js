@@ -2,6 +2,7 @@
  * BLONDHUNTER LUXURY LANDING - UNIFIED UNIVERSAL SCRIPT (RU & EN)
  * Auto-detects /eng or query parameter ?lang=en
  * Synced automatically via GitHub (snesterov/blondhunter)
+ * Features: 12 Live Lots, Kinescope 9:16 Video, Luxury Footer, HUD Cookie Banner, Policy Modal
  */
 (function() {
   var isEn = window.location.pathname.indexOf('/eng') !== -1 || 
@@ -470,22 +471,399 @@ html, body {
   color: var(--bh-gold-light) !important;
 }
 
-/* MOBILE STICKY */
-.bh-mobile-sticky {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(11, 11, 13, 0.96);
-  backdrop-filter: blur(12px);
+/* FOOTER (LUXURY STYLE) */
+.bh-footer {
+  background: #08080A;
   border-top: 1px solid var(--bh-border);
-  padding: 10px 14px;
-  z-index: 999;
-  justify-content: space-between;
+  padding: 60px 0 35px;
+  margin-top: 40px;
+  width: 100%;
+}
+.bh-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.bh-footer-brand { display: flex; flex-direction: column; gap: 14px; }
+.bh-footer-tagline {
+  font-size: 13px;
+  color: var(--bh-text-muted);
+  line-height: 1.6;
+  max-width: 380px;
+}
+.bh-footer-col-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--bh-gold-light);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.bh-footer-links-list {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.bh-footer-link {
+  color: #A1A1AA;
+  text-decoration: none;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+.bh-footer-link:hover { color: var(--bh-gold-light); transform: translateX(3px); }
+.bh-footer-bottom {
+  padding-top: 25px;
+  border-top: 1px solid var(--bh-border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 12px;
+  color: #71717A;
+}
+.bh-footer-bottom-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.bh-footer-bottom-link {
+  color: #71717A;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+.bh-footer-bottom-link:hover { color: var(--bh-gold-light); }
+
+/* SCROLL TO TOP BUTTON */
+.bh-scroll-top-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(18, 18, 22, 0.9);
+  border: 1px solid var(--bh-border);
+  color: var(--bh-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+  z-index: 998;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+.bh-scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.bh-scroll-top-btn:hover {
+  background: var(--bh-gold-gradient);
+  color: #0B0B0D;
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+  transform: translateY(-3px);
 }
 
+/* COOKIE BANNER (YANDEX / HUD LUXURY STYLE) */
+.bh-cookie-banner {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  max-width: 420px;
+  width: calc(100% - 48px);
+  background: rgba(18, 18, 22, 0.96);
+  backdrop-filter: blur(16px);
+  border: 1.5px solid var(--bh-border);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85), 0 0 25px rgba(212, 175, 55, 0.15);
+  border-radius: 18px;
+  padding: 22px;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+  box-sizing: border-box;
+  color: var(--bh-text-light);
+}
+.bh-cookie-banner.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.bh-cookie-close-corner {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #A1A1AA;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+  transition: all 0.2s;
+}
+.bh-cookie-close-corner:hover {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--bh-gold-light);
+  border-color: var(--bh-gold);
+}
+.bh-cookie-view { display: flex; flex-direction: column; gap: 12px; }
+.bh-cookie-view.hidden { display: none !important; }
+.bh-cookie-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--bh-gold-light);
+  margin-right: 28px;
+  line-height: 1.2;
+}
+.bh-cookie-text {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--bh-text-muted);
+}
+.bh-cookie-text a {
+  color: var(--bh-gold);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.bh-cookie-btn-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+.bh-cookie-btn-primary {
+  background: var(--bh-gold-gradient);
+  color: #0B0B0D;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+.bh-cookie-btn-primary:hover {
+  background: var(--bh-gold-hover);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+  transform: translateY(-1px);
+}
+.bh-cookie-btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--bh-text-light);
+  border: 1px solid var(--bh-border);
+  padding: 9px 18px;
+  border-radius: 25px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+.bh-cookie-btn-secondary:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--bh-gold);
+  color: var(--bh-gold-light);
+}
+.bh-cookie-btn-dark {
+  background: transparent;
+  color: #A1A1AA;
+  border: none;
+  font-size: 11.5px;
+  cursor: pointer;
+  text-align: center;
+  padding: 4px;
+  transition: color 0.2s;
+  text-decoration: underline;
+}
+.bh-cookie-btn-dark:hover { color: var(--bh-gold-light); }
+
+/* COOKIE SETTINGS VIEW */
+.bh-cookie-top-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.bh-cookie-back-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--bh-border);
+  color: var(--bh-gold);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.bh-cookie-back-btn:hover { background: rgba(212, 175, 55, 0.2); }
+.bh-cookie-toggles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 6px 0;
+}
+.bh-cookie-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--bh-border-subtle);
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+.bh-cookie-item-label {
+  font-size: 12px;
+  color: var(--bh-text-light);
+  font-weight: 500;
+}
+.bh-switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+.bh-switch input { opacity: 0; width: 0; height: 0; }
+.bh-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.15);
+  transition: .3s;
+  border-radius: 20px;
+}
+.bh-slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff;
+  transition: .3s;
+  border-radius: 50%;
+}
+.bh-switch input:checked + .bh-slider { background: var(--bh-gold-gradient); }
+.bh-switch input:checked + .bh-slider:before { transform: translateX(16px); background-color: #0B0B0D; }
+
+/* POLICY MODAL */
+.bh-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.bh-modal-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.bh-modal-box {
+  background: #111115;
+  border: 1.5px solid var(--bh-border);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.2);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  color: var(--bh-text-light);
+}
+.bh-modal-header {
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--bh-border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bh-modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--bh-gold-light);
+  font-weight: 700;
+  margin: 0;
+}
+.bh-modal-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #A1A1AA;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+.bh-modal-close-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--bh-gold-light);
+  border-color: var(--bh-gold);
+}
+.bh-modal-body {
+  padding: 26px;
+  overflow-y: auto;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #D1D1D6;
+}
+.bh-modal-body h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--bh-gold-light);
+  margin: 18px 0 8px;
+}
+.bh-modal-body p { margin: 0 0 12px; }
+
+/* RESPONSIVE */
 @media (max-width: 820px) {
   .bh-header-nav { display: none; }
   .bh-btn-desktop-only { display: none !important; }
@@ -506,6 +884,23 @@ html, body {
   .bh-hero-btns .bh-btn { width: 100%; padding: 14px 20px; font-size: 14px; }
   .bh-stats-grid { width: 100%; gap: 8px; }
   .bh-video-side-wrap { max-width: 280px; width: 100%; }
+  
+  .bh-footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .bh-footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .bh-footer-bottom-links { flex-direction: column; align-items: flex-start; gap: 8px; }
+  
+  .bh-cookie-banner {
+    bottom: 74px !important;
+    left: 12px !important;
+    width: calc(100% - 24px) !important;
+    padding: 16px;
+  }
+  .bh-scroll-top-btn {
+    bottom: 75px !important;
+    right: 14px !important;
+    width: 38px;
+    height: 38px;
+  }
   .bh-mobile-sticky { display: flex !important; }
   #blondhunter-wrapper { padding-bottom: 70px; }
 }
@@ -516,6 +911,7 @@ html, body {
   // 3. Формирование HTML разметки
   var ruHtml = `
 <div id="blondhunter-wrapper">
+  <!-- HEADER -->
   <header class="bh-container bh-header">
     <a href="https://blondhunter.com" class="bh-logo">BLOND<span>HUNTER</span></a>
     <div class="bh-header-right">
@@ -531,6 +927,7 @@ html, body {
     </div>
   </header>
 
+  <!-- HERO SECTION -->
   <section class="bh-container bh-hero">
     <div class="bh-hero-grid">
       <div class="bh-hero-content">
@@ -562,6 +959,7 @@ html, body {
     </div>
   </section>
 
+  <!-- CATALOG (12 LOTS) -->
   <section class="bh-container bh-catalog-section">
     <div class="bh-section-head">
       <span class="bh-tg-badge" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);">● ПРЯМОЙ ЭФИР ИЗ КАНАЛА</span>
@@ -571,6 +969,49 @@ html, body {
     <div class="bh-tg-grid" id="bh-feed-container"></div>
   </section>
 
+  <!-- LUXURY FOOTER (RU) -->
+  <footer class="bh-footer">
+    <div class="bh-container">
+      <div class="bh-footer-grid">
+        <div class="bh-footer-brand">
+          <a href="https://blondhunter.com" class="bh-logo">BLOND<span>HUNTER</span></a>
+          <p class="bh-footer-tagline">
+            Эксклюзивный детский славянский блонд высшей категории. Единственные доноры, сохраненная кутикула, ручной отбор без силиконов и химии.
+          </p>
+          <div style="font-size:12px;color:#A1A1AA;">
+            Студия в Москве • Экспресс-доставка по всей России и миру
+          </div>
+        </div>
+        <div>
+          <div class="bh-footer-col-title">Контакты и заказы</div>
+          <ul class="bh-footer-links-list">
+            <li><a href="https://t.me/OlgaKryukova777" target="_blank" rel="noopener" class="bh-footer-link">Личка Ольги: @OlgaKryukova777 ↗</a></li>
+            <li><a href="https://t.me/blondhunter" target="_blank" rel="noopener" class="bh-footer-link">Telegram-канал: @blondhunter ↗</a></li>
+            <li><a href="https://max.ru/u/f9LHodD0cOKu_NdSA68R7JlIWv1dBiiK_yoA5ITTmEVHTmQdiijwgmxBvBc" target="_blank" rel="noopener" class="bh-footer-link">Мессенджер MAX (без VPN) ↗</a></li>
+            <li><a href="https://wa.me/79266721978" target="_blank" rel="noopener" class="bh-footer-link">WhatsApp: +7 (926) 672-19-78 ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="bh-footer-col-title">Информация</div>
+          <ul class="bh-footer-links-list">
+            <li><button type="button" class="bh-footer-link" onclick="window.openBhPolicyModal()">Политика конфиденциальности</button></li>
+            <li><button type="button" class="bh-footer-link" onclick="window.openBhCookieSettings()">Настройки файлов Cookie</button></li>
+            <li><a href="https://blondhunter.com/eng" class="bh-footer-link">English Version (Worldwide) →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bh-footer-bottom">
+        <div>© 2024–2026 BLONDHUNTER • Все права защищены • blondhunter.com</div>
+        <div class="bh-footer-bottom-links">
+          <button type="button" class="bh-footer-bottom-link" onclick="window.openBhPolicyModal()">Конфиденциальность</button>
+          <span>•</span>
+          <button type="button" class="bh-footer-bottom-link" onclick="window.openBhCookieSettings()">Управление Cookie</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY BAR -->
   <div class="bh-mobile-sticky">
     <a href="https://t.me/OlgaKryukova777" target="_blank" rel="noopener" class="bh-btn bh-btn-gold" style="flex:1; padding: 12px 10px; font-size: 13px;">Личка в Telegram</a>
     <a href="https://max.ru/u/f9LHodD0cOKu_NdSA68R7JlIWv1dBiiK_yoA5ITTmEVHTmQdiijwgmxBvBc" target="_blank" rel="noopener" class="bh-btn bh-btn-outline" style="flex:1; padding: 12px 10px; font-size: 13px; color: var(--bh-gold-light) !important; border-color: var(--bh-gold);">В MAX (без VPN)</a>
@@ -579,6 +1020,7 @@ html, body {
 
   var enHtml = `
 <div id="blondhunter-wrapper">
+  <!-- HEADER -->
   <header class="bh-container bh-header">
     <a href="https://blondhunter.com/eng" class="bh-logo">BLOND<span>HUNTER</span></a>
     <div class="bh-header-right">
@@ -594,6 +1036,7 @@ html, body {
     </div>
   </header>
 
+  <!-- HERO SECTION -->
   <section class="bh-container bh-hero">
     <div class="bh-hero-grid">
       <div class="bh-hero-content">
@@ -625,6 +1068,7 @@ html, body {
     </div>
   </section>
 
+  <!-- CATALOG (12 LOTS) -->
   <section class="bh-container bh-catalog-section">
     <div class="bh-section-head">
       <span class="bh-tg-badge" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);">● LIVE FROM TELEGRAM FEED</span>
@@ -634,13 +1078,142 @@ html, body {
     <div class="bh-tg-grid" id="bh-feed-container"></div>
   </section>
 
+  <!-- LUXURY FOOTER (EN) -->
+  <footer class="bh-footer">
+    <div class="bh-container">
+      <div class="bh-footer-grid">
+        <div class="bh-footer-brand">
+          <a href="https://blondhunter.com/eng" class="bh-logo">BLOND<span>HUNTER</span></a>
+          <p class="bh-footer-tagline">
+            Exclusive virgin child Slavic blonde of the highest grade. Single-donor ethical ponytails, intact cuticle, hand-selected without chemicals or silicones.
+          </p>
+          <div style="font-size:12px;color:#A1A1AA;">
+            Studio in Moscow • Worldwide Express Door-to-Door Delivery
+          </div>
+        </div>
+        <div>
+          <div class="bh-footer-col-title">Inquiries & Orders</div>
+          <ul class="bh-footer-links-list">
+            <li><a href="https://wa.me/79266721978" target="_blank" rel="noopener" class="bh-footer-link">WhatsApp Direct: +7 (926) 672-19-78 ↗</a></li>
+            <li><a href="https://t.me/OlgaKryukova777" target="_blank" rel="noopener" class="bh-footer-link">Telegram DM: @OlgaKryukova777 ↗</a></li>
+            <li><a href="https://t.me/blondhunter" target="_blank" rel="noopener" class="bh-footer-link">Official Channel: @blondhunter ↗</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="bh-footer-col-title">Legal & Information</div>
+          <ul class="bh-footer-links-list">
+            <li><button type="button" class="bh-footer-link" onclick="window.openBhPolicyModal()">Privacy Policy</button></li>
+            <li><button type="button" class="bh-footer-link" onclick="window.openBhCookieSettings()">Cookie Preferences</button></li>
+            <li><a href="https://blondhunter.com/" class="bh-footer-link">Russian Version (RU) →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bh-footer-bottom">
+        <div>© 2024–2026 BLONDHUNTER • All rights reserved • blondhunter.com/eng</div>
+        <div class="bh-footer-bottom-links">
+          <button type="button" class="bh-footer-bottom-link" onclick="window.openBhPolicyModal()">Privacy</button>
+          <span>•</span>
+          <button type="button" class="bh-footer-bottom-link" onclick="window.openBhCookieSettings()">Manage Cookies</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY BAR -->
   <div class="bh-mobile-sticky">
     <a href="https://wa.me/79266721978?text=Hello%20Olga!%20I%20would%20like%20to%20order%20virgin%20Slavic%20hair." target="_blank" rel="noopener" class="bh-btn bh-btn-wa" style="flex:1; padding: 12px 10px; font-size: 13px;">WhatsApp Direct ↗</a>
     <a href="https://t.me/OlgaKryukova777" target="_blank" rel="noopener" class="bh-btn bh-btn-gold" style="flex:1; padding: 12px 10px; font-size: 13px;">Telegram DM ↗</a>
   </div>
 </div>`;
 
-  // 4. Монтирование
+  // 4. Виджеты (Cookie, Modal, ScrollTop)
+  var widgetsHtml = `
+  <!-- КНОПКА «НАВЕРХ» -->
+  <button id="bh-scroll-top-btn" class="bh-scroll-top-btn" onclick="window.bhScrollToTop()" aria-label="Наверх" title="Наверх">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- COOKIE BANNER (HUD LUXURY STYLE) -->
+  <div id="bh-cookie-banner" class="bh-cookie-banner">
+    <button type="button" class="bh-cookie-close-corner" onclick="window.closeBhCookieBanner()" title="Закрыть" aria-label="Закрыть">✕</button>
+    
+    <!-- Главный экран -->
+    <div id="bh-cookie-view-main" class="bh-cookie-view">
+      <div class="bh-cookie-title">` + (isEn ? 'BLONDHUNTER uses cookies' : 'BLONDHUNTER использует файлы cookie') + `</div>
+      <div class="bh-cookie-text">
+        ` + (isEn ? 
+          'Cookies are essential for website security, saving your preferences, and connecting orders seamlessly. Learn more in our <a onclick="window.openBhPolicyModal()">Privacy Policy</a>.' : 
+          'Они необходимы для правильной работы сайта, сохранения языка и быстрого оформления заказов на срезы волос. Подробнее в <a onclick="window.openBhPolicyModal()">Политике конфиденциальности</a>.') + `
+      </div>
+      <div class="bh-cookie-btn-col">
+        <button type="button" class="bh-cookie-btn-primary" onclick="window.acceptAllBhCookies()">` + (isEn ? 'Accept All' : 'Разрешить все') + `</button>
+        <button type="button" class="bh-cookie-btn-secondary" onclick="window.acceptEssentialBhCookies()">` + (isEn ? 'Essential Only' : 'Только обязательные') + `</button>
+        <button type="button" class="bh-cookie-btn-dark" onclick="window.showBhCookieSettings()">` + (isEn ? 'Preferences' : 'Настроить') + `</button>
+      </div>
+    </div>
+
+    <!-- Экран настроек -->
+    <div id="bh-cookie-view-settings" class="bh-cookie-view hidden">
+      <div class="bh-cookie-top-nav">
+        <button type="button" class="bh-cookie-back-btn" onclick="window.hideBhCookieSettings()" title="Назад" aria-label="Назад">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <div class="bh-cookie-title">` + (isEn ? 'Cookie Preferences' : 'Настройки Cookie') + `</div>
+      </div>
+      <div class="bh-cookie-text">
+        ` + (isEn ? 
+          'Technical cookies are required for site operation. Analytical cookies help optimize your browsing experience.' : 
+          'Технические файлы cookie обеспечивают базовое функционирование витрины. Аналитические помогают ускорить отклик.') + `
+      </div>
+      <div class="bh-cookie-toggles-list">
+        <div class="bh-cookie-item">
+          <div class="bh-cookie-item-label">` + (isEn ? '● Technical (Always Active)' : '● Технические (Обязательные)') + `</div>
+          <label class="bh-switch">
+            <input type="checkbox" checked disabled>
+            <span class="bh-slider"></span>
+          </label>
+        </div>
+        <div class="bh-cookie-item">
+          <div class="bh-cookie-item-label">` + (isEn ? '● Analytical & Marketing' : '● Аналитика и предпочтения') + `</div>
+          <label class="bh-switch">
+            <input type="checkbox" id="bh-cookie-toggle-analytics" checked>
+            <span class="bh-slider"></span>
+          </label>
+        </div>
+      </div>
+      <button type="button" class="bh-cookie-btn-primary" onclick="window.saveBhCookiePreferences()">` + (isEn ? 'Save Preferences' : 'Сохранить выбор') + `</button>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY MODAL -->
+  <div id="bh-policy-modal" class="bh-modal-overlay" onclick="window.closeBhPolicyModalOnBackdrop(event)">
+    <div class="bh-modal-box">
+      <div class="bh-modal-header">
+        <h3 class="bh-modal-title">` + (isEn ? 'Privacy & Cookie Policy' : 'Политика конфиденциальности') + `</h3>
+        <button type="button" class="bh-modal-close-btn" onclick="window.closeBhPolicyModal()">✕</button>
+      </div>
+      <div class="bh-modal-body">
+        <h4>` + (isEn ? '1. General Provisions' : '1. Общие положения') + `</h4>
+        <p>` + (isEn ? 
+          'This policy describes how Blondhunter (blondhunter.com) handles data. We process only minimal technical data necessary for customer communication and order placement.' : 
+          'Настоящая политика регулирует порядок обработки информации на сайте blondhunter.com. Мы бережно относимся к безопасности ваших данных и обрабатываем только минимально необходимый объем информации для связи и оформления бронирования срезов волос.') + `</p>
+
+        <h4>` + (isEn ? '2. Direct Messaging & Orders' : '2. Оформление заказов и связь') + `</h4>
+        <p>` + (isEn ? 
+          'All communication regarding ponytail lots is performed directly through official channels: WhatsApp (+7 926 672-19-78), Telegram (@OlgaKryukova777), and MAX. We never sell or transfer personal data to third parties.' : 
+          'Все заказы и консультации осуществляются напрямую через защищенные каналы связи: Telegram (@OlgaKryukova777), WhatsApp (+7 926 672-19-78) и мессенджер MAX. Ваши контакты не передаются сторонним организациям.') + `</p>
+
+        <h4>` + (isEn ? '3. Cookie Usage' : '3. Использование файлов Cookie') + `</h4>
+        <p>` + (isEn ? 
+          'We use functional cookies to store interface preferences (such as selected language) and ensure high delivery performance via GitHub CDN. You can customize cookie settings at any time.' : 
+          'Сайт использует файлы cookie для корректного отображения витрины, сохранения выбранного языка интерфейса и ускоренной загрузки актуального каталога через сеть доставки контента.') + `</p>
+      </div>
+    </div>
+  </div>`;
+
+  // 5. Монтирование
   function mount() {
     var mountTarget = document.getElementById('blondhunter-root') || 
                       (document.currentScript && (document.currentScript.closest('.t123') || document.currentScript.parentNode)) || 
@@ -661,7 +1234,19 @@ html, body {
       mountTarget.prepend(node);
     }
 
-    // 5. Загрузка 12 лотов
+    // Добавление виджетов в body (один раз)
+    if (!document.getElementById('bh-cookie-banner')) {
+      var wWrap = document.createElement('div');
+      wWrap.id = 'bh-global-widgets';
+      wWrap.innerHTML = widgetsHtml;
+      document.body.appendChild(wWrap);
+    }
+
+    // 6. Инициализация Cookie баннера и скролла
+    initCookieBanner();
+    initScrollTop();
+
+    // 7. Загрузка 12 лотов
     var jsonFile = isEn ? 'posts_en.json' : 'posts.json';
     var feedUrl = 'https://raw.githubusercontent.com/snesterov/blondhunter/main/' + jsonFile + '?v=' + Date.now();
 
@@ -718,6 +1303,102 @@ html, body {
         console.log('GitHub sync ready');
       });
   }
+
+  // Функции Cookie баннера
+  function initCookieBanner() {
+    var consent = localStorage.getItem('bh_cookie_consent');
+    if (!consent) {
+      setTimeout(function() {
+        var banner = document.getElementById('bh-cookie-banner');
+        if (banner) banner.classList.add('visible');
+      }, 1000);
+    }
+  }
+
+  window.closeBhCookieBanner = function() {
+    var banner = document.getElementById('bh-cookie-banner');
+    if (banner) banner.classList.remove('visible');
+    localStorage.setItem('bh_cookie_consent', 'dismissed');
+  };
+
+  window.acceptAllBhCookies = function() {
+    var banner = document.getElementById('bh-cookie-banner');
+    if (banner) banner.classList.remove('visible');
+    localStorage.setItem('bh_cookie_consent', 'all');
+  };
+
+  window.acceptEssentialBhCookies = function() {
+    var banner = document.getElementById('bh-cookie-banner');
+    if (banner) banner.classList.remove('visible');
+    localStorage.setItem('bh_cookie_consent', 'essential');
+  };
+
+  window.showBhCookieSettings = function() {
+    var main = document.getElementById('bh-cookie-view-main');
+    var settings = document.getElementById('bh-cookie-view-settings');
+    if (main && settings) {
+      main.classList.add('hidden');
+      settings.classList.remove('hidden');
+    }
+  };
+
+  window.hideBhCookieSettings = function() {
+    var main = document.getElementById('bh-cookie-view-main');
+    var settings = document.getElementById('bh-cookie-view-settings');
+    if (main && settings) {
+      settings.classList.add('hidden');
+      main.classList.remove('hidden');
+    }
+  };
+
+  window.saveBhCookiePreferences = function() {
+    var toggle = document.getElementById('bh-cookie-toggle-analytics');
+    var val = toggle && toggle.checked ? 'all' : 'essential';
+    localStorage.setItem('bh_cookie_consent', val);
+    var banner = document.getElementById('bh-cookie-banner');
+    if (banner) banner.classList.remove('visible');
+  };
+
+  window.openBhCookieSettings = function() {
+    var banner = document.getElementById('bh-cookie-banner');
+    if (!banner) return;
+    window.showBhCookieSettings();
+    banner.classList.add('visible');
+  };
+
+  // Функции модального окна Политики
+  window.openBhPolicyModal = function() {
+    var modal = document.getElementById('bh-policy-modal');
+    if (modal) modal.classList.add('visible');
+  };
+
+  window.closeBhPolicyModal = function() {
+    var modal = document.getElementById('bh-policy-modal');
+    if (modal) modal.classList.remove('visible');
+  };
+
+  window.closeBhPolicyModalOnBackdrop = function(e) {
+    if (e.target && e.target.id === 'bh-policy-modal') {
+      window.closeBhPolicyModal();
+    }
+  };
+
+  // Кнопка скролла наверх
+  function initScrollTop() {
+    window.addEventListener('scroll', function() {
+      var btn = document.getElementById('bh-scroll-top-btn');
+      if (!btn) return;
+      if (window.pageYOffset > 350) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    });
+  }
+
+  window.bhScrollToTop = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', mount);
