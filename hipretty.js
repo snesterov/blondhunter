@@ -13,9 +13,9 @@
     var s = document.createElement('style');
     s.id = 'hp-styles';
     s.textContent = `
-      #allrecords > .r:not(#rec4673156001):not(#rec1915062531):not(#rec1935129061),
-      #allrecords > div.r:not(#rec4673156001):not(#rec1915062531):not(#rec1935129061),
-      .t-records > .r:not(#rec4673156001):not(#rec1915062531):not(#rec1935129061) {
+      #allrecords > .r:not(#rec4673156001):not(#rec4673146901):not(#rec1935129061),
+      #allrecords > div.r:not(#rec4673156001):not(#rec4673146901):not(#rec1935129061),
+      .t-records > .r:not(#rec4673156001):not(#rec4673146901):not(#rec1935129061) {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
@@ -2245,7 +2245,7 @@
   }
 
   function polishTildaPopup() {
-    var popupRec = document.getElementById('rec1915062531');
+    var popupRec = document.getElementById('rec4673146901');
     if (!popupRec) return;
 
     var closeBtn = popupRec.querySelector('.t-popup__close-wrapper');
@@ -2389,20 +2389,59 @@
           window.ym(90792799, 'reachGoal', 'gamelead_send');
         }
 
-        var tildaForm = document.getElementById('form1915062531') || document.querySelector('form.t-form');
+        var tildaForm = document.getElementById('form4673146901') || document.querySelector('form.js-form-proccess') || document.querySelector('form.t-form');
         if (tildaForm) {
+          // 1. Заполняем имя
           var tName = tildaForm.querySelector('input[name="Name"]');
-          if (tName) tName.value = name;
+          if (tName) {
+            tName.value = name;
+            tName.dispatchEvent(new Event('input', { bubbles: true }));
+            tName.dispatchEvent(new Event('change', { bubbles: true }));
+          }
 
-          var methodRadio = tildaForm.querySelector('[data-method-type="' + currentMethod + '"] label, [data-method-type="' + currentMethod + '"] input');
-          if (methodRadio) methodRadio.click();
+          // 2. Выбираем нужный способ связи
+          var radioInput = tildaForm.querySelector('input[name="messenger-type"][value="' + currentMethod + '"]');
+          var radioLabel = tildaForm.querySelector('[data-method-type="' + currentMethod + '"] label');
+          if (radioLabel) {
+            radioLabel.click();
+          } else if (radioInput) {
+            radioInput.checked = true;
+            radioInput.dispatchEvent(new Event('change', { bubbles: true }));
+          }
 
-          var tContact = tildaForm.querySelector('input[name="messenger-id"], input[name="Phone"], input[type="tel"]');
-          if (tContact) tContact.value = contact;
+          // 3. Заполняем контакт во все поля выбранного мессенджера
+          var activeContainer = tildaForm.querySelector('.t-contact-method__' + currentMethod + '-value');
+          if (activeContainer) {
+            var activeInputs = activeContainer.querySelectorAll('input');
+            activeInputs.forEach(function(inp) {
+              inp.disabled = false;
+              inp.value = contact;
+              inp.dispatchEvent(new Event('input', { bubbles: true }));
+              inp.dispatchEvent(new Event('change', { bubbles: true }));
+            });
+          }
+          var allContactInputs = tildaForm.querySelectorAll('input[name="messenger-id"], input[name="Phone"]');
+          allContactInputs.forEach(function(inp) {
+            if (!inp.disabled) {
+              inp.value = contact;
+              inp.dispatchEvent(new Event('input', { bubbles: true }));
+              inp.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+          });
 
+          // 4. Отправляем форму напрямую в Tilda API и эмулируем сабмит
           var tSubmit = tildaForm.querySelector('button[type="submit"], .t-submit');
-          if (tSubmit && typeof tSubmit.click === 'function') {
-            try { tSubmit.click(); } catch(err) {}
+          var allRecs = document.getElementById('allrecords');
+          var formKey = (allRecs && allRecs.getAttribute('data-tilda-formskey')) || 'a8a1a8151b151a0221d568e5a5500437';
+
+          if (window.tildaForm && typeof window.tildaForm.send === 'function') {
+            try {
+              window.tildaForm.send(tildaForm, tSubmit, 2, formKey);
+            } catch(err) {
+              if (tSubmit && typeof tSubmit.click === 'function') tSubmit.click();
+            }
+          } else if (tSubmit && typeof tSubmit.click === 'function') {
+            tSubmit.click();
           }
         }
 
