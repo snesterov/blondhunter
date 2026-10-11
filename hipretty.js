@@ -743,6 +743,52 @@
         margin: 0 auto 30px;
         line-height: 1.55;
       }
+      .hp-selected-cut-box {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(244, 114, 182, 0.12);
+        border: 1px solid var(--hp-border-active);
+        border-radius: 16px;
+        padding: 12px 18px;
+        margin-bottom: 16px;
+        text-align: left;
+      }
+      .hp-selected-cut-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13.5px;
+        color: #fff;
+      }
+      .hp-selected-cut-tag {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--hp-rose);
+        background: rgba(244, 114, 182, 0.2);
+        padding: 3px 8px;
+        border-radius: 8px;
+        white-space: nowrap;
+      }
+      .hp-selected-cut-title {
+        font-weight: 600;
+        color: #fce7f3;
+      }
+      .hp-selected-cut-reset {
+        background: transparent;
+        border: none;
+        color: #aaa;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 0 4px;
+        line-height: 1;
+        transition: color 0.2s;
+      }
+      .hp-selected-cut-reset:hover {
+        color: #fff;
+      }
       .hp-input-group {
         margin-bottom: 16px;
         text-align: left;
@@ -1859,6 +1905,15 @@
         </p>
 
         <form id="hp-lead-form">
+          <!-- ПЛАШКА ВЫБРАННОГО СРЕЗА ИЛИ ПАРАМЕТРОВ КВИЗА -->
+          <div id="hp-selected-cut-box" class="hp-selected-cut-box">
+            <div class="hp-selected-cut-info">
+              <span class="hp-selected-cut-tag" id="hp-selected-cut-tag">Выбранный срез</span>
+              <span class="hp-selected-cut-title" id="hp-selected-cut-text"></span>
+            </div>
+            <button type="button" class="hp-selected-cut-reset" id="hp-selected-cut-reset" title="Очистить выбор">✕</button>
+          </div>
+
           <div class="hp-input-group">
             <input type="text" id="hp-user-name" class="hp-input" placeholder="Ваше имя" required>
           </div>
@@ -2145,6 +2200,24 @@
     setupActionButtons();
   }
 
+  var chosenCutParam = '';
+
+  function setSelectedCutBadge(text, isQuiz) {
+    chosenCutParam = text || '';
+    var box = document.getElementById('hp-selected-cut-box');
+    var tag = document.getElementById('hp-selected-cut-tag');
+    var title = document.getElementById('hp-selected-cut-text');
+    if (!box || !title) return;
+    if (text) {
+      tag.textContent = isQuiz ? 'Подбор под параметры' : 'Выбранный срез';
+      title.textContent = text;
+      box.style.display = 'flex';
+    } else {
+      box.style.display = 'none';
+      title.textContent = '';
+    }
+  }
+
   function setupActionButtons() {
     var btns = document.querySelectorAll('.hp-open-form-btn');
     btns.forEach(function(b) {
@@ -2154,14 +2227,19 @@
         e.preventDefault();
         var cutName = b.getAttribute('data-cut');
         if (cutName) {
-          var note = document.getElementById('hp-user-contact');
-          if (note && !note.value) {
-            note.placeholder = 'Для среза: ' + cutName;
-          }
+          setSelectedCutBadge(cutName, false);
         }
         scrollToSection('lead-box');
       });
     });
+
+    var resetBtn = document.getElementById('hp-selected-cut-reset');
+    if (resetBtn && !resetBtn.dataset.bound) {
+      resetBtn.dataset.bound = 'true';
+      resetBtn.addEventListener('click', function() {
+        setSelectedCutBadge('', false);
+      });
+    }
   }
 
   // ===================== COOKIE & 152-ФЗ СИСТЕМА =====================
@@ -2387,6 +2465,18 @@
     setupQuiz('quiz-length');
     setupQuiz('quiz-type');
 
+    var quizBtn = document.querySelector('#selection .hp-btn-main');
+    if (quizBtn) {
+      quizBtn.addEventListener('click', function() {
+        var lenEl = document.querySelector('#quiz-length .hp-quiz-opt.selected');
+        var typeEl = document.querySelector('#quiz-type .hp-quiz-opt.selected');
+        var lenVal = lenEl ? lenEl.getAttribute('data-val') : '55-65 см';
+        var typeVal = typeEl ? typeEl.getAttribute('data-val') : 'Детский шелк';
+        setSelectedCutBadge(lenVal + ' • ' + typeVal, true);
+        scrollToSection('lead-box');
+      });
+    }
+
     // Селектор мессенджеров
     var methodBtns = document.querySelectorAll('.hp-method-btn');
     var contactInput = document.getElementById('hp-user-contact');
@@ -2423,13 +2513,13 @@
         var errEl = document.getElementById('hp-form-error');
         if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
 
-        // ЗАЩИТА ОТ ДУРАКА ДЛЯ ВСЕХ КАНАЛОВ
-        var cleanPhoneDigits = contact.replace(/[^0-9]/g, '');
-        var isValidPhone = cleanPhoneDigits.length >= 10 && cleanPhoneDigits.length <= 15;
+        // Защита от дурака
+        var cleanDigits = contact.replace(/[^0-9]/g, '');
+        var isGoodPhone = cleanDigits.length >= 10 && cleanDigits.length <= 15;
 
         if (currentMethod === 'telegram') {
           var isTgUser = /^@[a-zA-Z0-9_]{3,32}$/.test(contact);
-          if (!isTgUser && !isValidPhone) {
+          if (!isTgUser && !isGoodPhone) {
             if (/^[a-zA-Z0-9_]{3,32}$/.test(contact)) {
               contact = '@' + contact;
               document.getElementById('hp-user-contact').value = contact;
@@ -2443,8 +2533,8 @@
             }
           }
         } else if (currentMethod === 'max') {
-          var isMaxUrl = /^(https?:\/\/)?(www\.)?max\.ru\/u\/[a-zA-Z0-9_\-]+/i.test(contact);
-          if (!isMaxUrl && !isValidPhone) {
+          var isMaxProfile = /^(https?:\/\/)?(www\.)?max\.ru\/u\/[a-zA-Z0-9_\-]+/i.test(contact);
+          if (!isMaxProfile && !isGoodPhone) {
             if (errEl) {
               errEl.textContent = 'Для MAX укажите прямую ссылку на профиль (max.ru/u/...) или корректный номер телефона.';
               errEl.style.display = 'block';
@@ -2453,7 +2543,7 @@
             return;
           }
         } else if (currentMethod === 'whatsapp' || currentMethod === 'phone') {
-          if (!isValidPhone) {
+          if (!isGoodPhone) {
             if (errEl) {
               errEl.textContent = 'Укажите корректный номер телефона (не менее 10 цифр).';
               errEl.style.display = 'block';
@@ -2511,7 +2601,7 @@
           });
         }
 
-        // НАДЕЖНАЯ ПРЯМАЯ ОТПРАВКА В ОБРАБОТЧИК ТИЛЬДЫ
+        // Отправка лида строго на сервер Tilda текущей страницы
         var allRecs = document.getElementById('allrecords');
         var formKey = (allRecs && allRecs.getAttribute('data-tilda-formskey')) || 'a8a1a8151b151a0221d568e5a5500437';
         var pageId = (allRecs && allRecs.getAttribute('data-tilda-page-id')) || '297318909';
@@ -2526,37 +2616,32 @@
           '079d3725ab062a821f281c7010b7677f'
         ];
 
-        function sendToTilda(targetFormId, targetPageId) {
-          var p = new URLSearchParams();
-          services.forEach(function(s) { p.append('formservices[]', s); });
-          p.append('tildaspec-formname', 'Запись на подбор волос');
-          p.append('Name', fullNameToSend);
-          p.append('messenger-type', currentMethod);
-          p.append('messenger-id', contact);
-          if (isValidPhone) {
-            p.append('Phone', contact);
-          }
-          if (chosenCutParam) {
-            p.append('Comment', 'Параметры: ' + chosenCutParam);
-            p.append('Textarea', 'Параметры: ' + chosenCutParam);
-          }
-          p.append('Checkbox', 'yes');
-          p.append('tildaspec-formskey', formKey);
-          p.append('tildaspec-pageid', targetPageId);
-          p.append('tildaspec-projectid', projectId);
-          p.append('tildaspec-formid', targetFormId);
+        var params = new URLSearchParams();
+        services.forEach(function(s) { params.append('formservices[]', s); });
+        params.append('tildaspec-formname', 'Запись на подбор волос');
+        params.append('Name', fullNameToSend);
+        params.append('messenger-type', currentMethod);
+        params.append('messenger-id', contact);
+        if (isGoodPhone) {
+          params.append('Phone', contact);
+        }
+        if (chosenCutParam) {
+          params.append('Comment', 'Параметры: ' + chosenCutParam);
+          params.append('Textarea', 'Параметры: ' + chosenCutParam);
+        }
+        params.append('Checkbox', 'yes');
+        params.append('tildaspec-formskey', formKey);
+        params.append('tildaspec-pageid', pageId);
+        params.append('tildaspec-projectid', projectId);
+        params.append('tildaspec-formid', formId);
 
-          return fetch('https://forms.tildacdn.com/procces/', {
+        try {
+          fetch('https://forms.tildacdn.com/procces/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-            body: p.toString()
+            body: params.toString()
           }).catch(function(err) { console.error('Tilda post err:', err); });
-        }
-
-        // 1. Отправляем в текущую форму /sale
-        sendToTilda(formId, pageId);
-        // 2. Двойная страховка: отправляем также в форму работающей страницы /sale2 (form1915062531, page 118750256)
-        sendToTilda('form1915062531', '118750256');
+        } catch(e) {}
 
         if (tildaForm) {
           var tSubmit = tildaForm.querySelector('button[type="submit"], .t-submit');
