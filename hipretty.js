@@ -1232,365 +1232,337 @@
     "id": "4258",
     "cutNum": "#1247",
     "title": "Срез #1247 (65 см / 181 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "straight",
     "length": 65,
     "weight": "181 гр",
-    "price": "По запросу",
+    "price": "113 750 ₽",
     "img": "https://cdn4.telesco.pe/file/pxX-AoaIPci34Q7jpLRGMlDR5nIvOqRYXTITkYx2Xew-fd6JhcAovPvbQQzE1S1MecrjMltlvBWCaYCnFj_6cvn1U0qYnLy3SLp_cJQtHG5BpjgBRnjVt7rrC6U9nZv4R30uzwcwoB_N5_SXUra89kuqOA8PlmEWm-IuI-vuB_Hk7SEgYEZXzaTN-mvsdLwIvfv56cut7BE-KF55LoETEJGa45AfRpPJqLSb642SPTMA9azWcxmo0f_b3E3nfY_t4yRViJ-TGcc4SFscKRRUWcPZt0QREYWvMG4oAtdYdaXXci1FWCcJfiyIJKMK7BBLQjYeaN54iBnIElUcimtEnw",
     "tgUrl": "https://t.me/hi_pretty/4258",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами Шелковые,маслянистые,нежнейшие,гладкие Слева направо #1247 65см/181гр - 1"
+    "desc": "Шелковые,маслянистые,нежнейшие,гладкие • #1247 65см/181гр - 113.750 • #1249 65см/144гр - 60.000"
   },
   {
     "id": "4263",
     "cutNum": "#1436",
     "title": "Срез #1436 (50 см / 107 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "wave",
     "length": 50,
     "weight": "107 гр",
-    "price": "По запросу",
+    "price": "41 000 ₽",
     "img": "https://cdn4.telesco.pe/file/llxxfwBO56PKPL-1DrXV6K_OD8GgZ1VU3MJ4DprO0AiioJMPkTDfqaZOMW-a6Wv_NczWOL-Gwn3_I6iqFIS3MmliIWtCN36yz2bHiOSUSb5S8u2eR9z9P5zPj54y_9gRVPWqTdtru45dSet1WHqod6E-OdzlC-NPZpvm9iDruUjCOqrqsGkloV0AnSxC-FDLm2i_wOnMgrwq9Q8Bfjw5MWiDdas_9-bkf_raZfo4mwa1vwVp3YCnZrQaNRivPJ-AGJ8OypSr39OV-BFB-jfrRg-djiaHb7FY8IeZwx3adt5de5SWjmiZNWH6ZA4Nfw4fGLE3GyauYIOhfQwCoSxRcw",
     "tgUrl": "https://t.me/hi_pretty/4263",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1436 Детский шелк Природная волна,волосинка между тонкой и средней,есть"
+    "desc": "#1436 • Детский шелк • Природная волна,волосинка между тонкой и средней,есть выгоревшие прядки"
   },
   {
     "id": "4271",
     "cutNum": "#1387",
     "title": "Срез #1387 (66 см / 86 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "silk",
     "length": 66,
     "weight": "86 гр",
-    "price": "По запросу",
+    "price": "48 400 ₽",
     "img": "https://cdn4.telesco.pe/file/kRd4TmRmXPv9Xi2H1y2hhov_lx3qUSrGzXuAp8IuzCVTBzVsUUfD2tC-E1PgK7Tu9rr7QrEyR3pnfW1tvysf05wTadCaC4EqzPQM3XPAIRvCbo5JBgQ3W6CNRmnQlKILFaae6KEQmdMxo3mMowpmKhLMvWfkDIh9x1uCaj1ykEEqmoGXKu6e3v95FtKQHCiI-FAJd8vXAPTR1lTamz1DyDbvUbzo_pIx8q1DO91z6VaD5zq3hvJY1e2Z9emhUbsj3hdxr_VVaH5GcGeg0CcYp5I_vXF-14-HOz73v0R83kwa421Lh5jn0S9fyZWevqr3twFHWSB4F0yNSkUe4D7LKw",
     "tgUrl": "https://t.me/hi_pretty/4271",
-    "desc": "Детские,шелковые,нежнейшие хвостики Слева направо #1387 66см/86гр - 48.400 #1555 68см/140гр - 190.000 #1268 69см/193гр - 182.200"
+    "desc": "Детские,шелковые,нежнейшие хвостики • #1387 66см/86гр - 48.400 • #1555 68см/140гр - 190.000"
   },
   {
     "id": "4276",
     "cutNum": "#1378",
-    "title": "Срез #1378 (20 см / 80 гр)",
-    "cat": "kids",
-    "shade": "medium",
-    "length": 20,
+    "title": "Срез #1378 (50 см / 80 гр)",
+    "cat": "silk",
+    "length": 50,
     "weight": "80 гр",
-    "price": "По запросу",
+    "price": "47 200 ₽",
     "img": "https://cdn4.telesco.pe/file/QFycXKhIz5xnOXlenR25iUo3ZA1SItsQZ1O36M2pzy3AhUX3-Go8kKTcK2QCtNF9XYE_UW1ENS6q6QdShZQN9QP3sguVfRYA8jkRhZgk6zJdiGsYWEkfkkB6LIvu584DDqLrcTkjF6u2HWWrfvcIs8ZbRFiLgqQL9EAfMRjxwUrmtTc2CGak7MyVo3vWk2ouB11NI5byl0_jmimAhvMIM-8ddcK9dFpawyW4nCaAthiu8peCnctCaY__JPbvimpiRyygINPWno5A_ZV7CDRLEUV9yxZJ1mT6eyZeNSuIRMcda9Ko8ggdc7hzhOXdHTXWh2qFhurGFnjtIUQD5QV4PQ",
     "tgUrl": "https://t.me/hi_pretty/4276",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1378 Детский русский срез Окрашен в щадящей технике без потери качества"
+    "desc": "#1378 • Детский русский срез • Окрашен в щадящей технике без потери качества волос"
   },
   {
     "id": "4221",
     "cutNum": "#1255",
     "title": "Срез #1255 (62 см / 211 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "silk",
     "length": 62,
     "weight": "211 гр",
-    "price": "По запросу",
+    "price": "131 643 ₽",
     "img": "https://cdn4.telesco.pe/file/uhOcG_U8Baxa3DOVtSTSE_Eyvh8kvQ7DlKEtPMiR3bPpwcXgG_KRw8xchsuz2BiL4SGGRDjDK_hc-FjCnxzsBFs87JewOIwyLOpwflU2BttaQADqTGeEO-A0M_VZzLpIup0iCUPsImRvOImATblK3Kh1w5b9znYLeq0bDoSVtggOCbJCcz0UnDfHi-BYGRHZLXo7mk_EcEdjW2CT4FPK5VqsQGke3WkIjMLdHb4PRCgmElXvFfUAh9uJdLcSyQ-0w2lFgv8n5NwbT40ycXiqPR28_Ki0Uuu4-tyiviW5zFGMsrtAdvxtxm3Lfa90qsxYnMBotG8VK1BD661pflTx5w",
     "tgUrl": "https://t.me/hi_pretty/4221",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1255 Детский воздушный хвостик Слегка пористый,не жесткий Очень мягкий 6"
+    "desc": "#1255 • Детский воздушный хвостик • Слегка пористый,не жесткий"
   },
   {
     "id": "4231",
     "cutNum": "#770",
     "title": "Срез #770 (50 см / 140 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "silk",
     "length": 50,
     "weight": "140 гр",
-    "price": "По запросу",
+    "price": "48 240 ₽",
     "img": "https://cdn4.telesco.pe/file/qzxLzFiGKyPcknORSgbSofZq_497AkVPW53vxwz1LWEpMGZ1O9iZkhZdee_PsmZAhbIba5cV7l1A-7UEi93EfiJ10QXBfMUXEUynHms-h7brx2OmDILU_YFIFOw3xLG1da0RipWpSKZ-25OfBBnuxuvaY8Zz4HgH2qpZ-PGDbfdImr-sCe0V-kg0XuxlWSUfdf8xMNwWvuEGB3n7CnDUhmsWufLbc7EsjdCX2Dme6BVTJC0rcUcWHrWLYWVePfJwTxl3ROhEwALL1dl5v0G4lv7gPX00P7xBW1XmSBEakQAHCb85EORo5Z81od__5UpxBYa3IFn2_pSCFUnEhQ5z5w",
     "tgUrl": "https://t.me/hi_pretty/4231",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами Пористые,воздушные детские хвостики Не жесткие,мягкие,волосинка между тон"
+    "desc": "Пористые,воздушные детские хвостики • Не жесткие,мягкие,волосинка между тонкой и средней • Идеально придадут желаемый обьем,маленьким количеством грамм в наращивании"
   },
   {
     "id": "4249",
     "cutNum": "#1386",
     "title": "Срез #1386 (60 см / 100 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "wave",
     "length": 60,
     "weight": "100 гр",
-    "price": "По запросу",
+    "price": "84 750 ₽",
     "img": "https://cdn4.telesco.pe/file/HpA7ZU7IbcbxLDU0gEsXw_APlBcDWFhJCz6hZBNfHvk408Zc-Bs3goK0MmVTvjUATPvmOOyP1gXcWd4IO55DbDbcIZaeNvyYuB29Osw25i9jDXEiwWk9BUbZgzZoNHh0WH4USqiYrkvX2tIr8yWKr-EfS-IDABMgjIFhsVohuSgVlAkcKz8IIlSDm2haZHZkJ9oJ_qkJtr0hkNvBtGk6-0H2Ns1Qm9uTcr6INm4r6hrusE1YsdZSbG54QKoIabfR7KwxzQImb6vrV_zMnf7xO3iEtvSXrcj8ZCDUVjmOyP2vO0I7kd2FwPc3ohn0_WS1qpIOWkGkz2AuNxn6C4WcbQ",
     "tgUrl": "https://t.me/hi_pretty/4249",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами Детские срезы,выкрашены из славянских,русых хвостиков Вычесаны от коротыш"
+    "desc": "Детские срезы,выкрашены из славянских,русых хвостиков • Вычесаны от коротышей,подрезаны до густых концов • Волосинка нежная,мягкая,есть легкая волна"
   },
   {
     "id": "4201",
     "cutNum": "#1561",
     "title": "Срез #1561 (55 см / 106 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "wave",
     "length": 55,
     "weight": "106 гр",
-    "price": "По запросу",
+    "price": "Уточняйте в TG",
     "img": "https://cdn4.telesco.pe/file/m6svvUcI-64ZHBzswuJq1DuPq1tzMgdbhimc06P7sE8G2VmcD6prYYoms1pQ9Ri0ONM21uVZBOTiwpVKwJ4Wh7i6iSasM0yMUYBbU988BkRvuJtsaC3wVhJCKcohZS_9b4HVwEsRsW7oKr73R6l4YO6GgL7Wyd8C4z1ad0WGKJHliPShxzhpXSg5PLe0s05iPz8jnfxF0tahWhHxzAcIH7OVS3GjbDNdZ1i_9AAJNdII4iY_UTZa7SRC2siqjD3seFa9ScrgwEaZNfTc5fPU67xVkMXryibH-3E4YmJ3xCrKwlZ3KCwXVJhtEhWz7WGGVikjajL9OIoKkuRRcpGBaw",
     "tgUrl": "https://t.me/hi_pretty/4201",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1561 Детский эксклюзив Природная детская активная волнушка,нежнейший,вол"
+    "desc": "#1561 • Детский эксклюзив • Природная детская активная волнушка,нежнейший,волосинка тоненькая,легкая пористость"
   },
   {
     "id": "4211",
     "cutNum": "#1562",
     "title": "Срез #1562 (50 см / 115 гр)",
     "cat": "wave",
-    "shade": "light",
     "length": 50,
     "weight": "115 гр",
-    "price": "По запросу",
+    "price": "115 000 ₽",
     "img": "https://cdn4.telesco.pe/file/SDNlV0t-8MZWR8wtQcehFLghQbnJZTqWxdIbeQfP6X5vI7KO7u0URn9Du_OppBLte4w3KK1km0HOh2E4gZp_jxZ36PHh6iJvUXz0mhqs7jsMbvJm6XAmhgTMcJ5LfsnBUa5IfUKEvg5un8VMlsIpz58mNmC0fhiNl8KpNOOkuzNfRxPrMzlGPUzIhwsvNF8o0o9rY0QgRVrmDz1c7kMk0gfKYdwM7l8tGHW89prdLJHKfoQ9hlAVR_zFcBlY_wE1-LGBQ_IaR35tr5PMNT-wRjXoh9c197xiadxdsOlZKEYzFAGwjfhMMPSclDg2FW947Y8hecIaRhx7OulxgHwpeA",
     "tgUrl": "https://t.me/hi_pretty/4211",
-    "desc": "#1562 Эксклюзив 🤍 Шелковый,нежный,натуральный блонд Волосинка тончайшая,есть природная легка волна 50 см 115 гр 115.000"
+    "desc": "#1562 • Эксклюзив   🤍 • Шелковый,нежный,натуральный блонд"
   },
   {
     "id": "4177",
     "cutNum": "#1246",
     "title": "Срез #1246 (67 см / 229 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "silk",
     "length": 67,
     "weight": "229 гр",
-    "price": "По запросу",
+    "price": "87 350 ₽",
     "img": "https://cdn4.telesco.pe/file/HBMtVPS_KVzOhZgvKCy0QXhXImG08Kcg1XwQeayXErFPvMGpCCF2RcMTD5Y--d5UpsVcFIirhR32uB8Z3C6mskYDMPl9SzF0MVTbLMgP6YK1KCj8Rt-arfhOWXDBl2hP5ODKaZe385M34LXJETxNAa00AWEsMnYiT4WBsprwuvD4l46_E4AqWcNTBFx1uzkKXeQRCJBWX_LBYVpofFjLf19A_zQ9cbnAHZmTqwsr30qqkqUZyhkTREb_mp6zoKyf6ttVlrXoVqec2zYWSOePTQO4l9s2TsY_zw58f6jcdX9TP-k0Bl1EbBKIH3tDgMdYFC1NPpI6OIZu0XF2kQ9k3A",
     "tgUrl": "https://t.me/hi_pretty/4177",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1246 Детский,глянцевый срез Шелковый,мягкий,волосинка ближе к средней 67"
+    "desc": "#1246 • Детский,глянцевый срез • Шелковый,мягкий,волосинка ближе к средней"
   },
   {
     "id": "4187",
     "cutNum": "#1555",
     "title": "Срез #1555 (55 см / 106 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "wave",
     "length": 55,
     "weight": "106 гр",
-    "price": "По запросу",
+    "price": "Уточняйте в TG",
     "img": "https://cdn4.telesco.pe/file/UPG2OUjtEsYr-BNZymzoMim4MgYo5MtscYHs9u7Byka9QfV4i5H2RlVIr2-fOYUqpML1w55_3zNtLVudjxyUN-HaZN35FJfij2Ir4yuo4bte-P0O1ipIths5gMYIHV4cmLSREh5ZzwrV3y6EpX-FD7afNs2gHY8wHUltrDAbWq01gwCuZfhJcvPbeq_38bq6k65iY8rGbdsw4lxxu8hrMsM5DLpeokwzPyKvnsi7EJptOh4BukEResPPSxVoZhKV182WGvLr7lGwe8L70-INXo27EWX2d_fqfaQGna2AvCmdqHuNXthjZCc5yJBLxja0UpnHksUk6xIolj78Zqvsvw",
     "tgUrl": "https://t.me/hi_pretty/4187",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1555 Детский эксклюзив Природная детская активная волнушка,нежнейший,вол"
+    "desc": "#1555 • Детский эксклюзив • Природная детская активная волнушка,нежнейший,волосинка тоненькая,легкая пористость"
   },
   {
     "id": "4194",
     "cutNum": "#1373",
     "title": "Срез #1373 (53 см / 117 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "silk",
     "length": 53,
     "weight": "117 гр",
-    "price": "По запросу",
+    "price": "68 300 ₽",
     "img": "https://cdn4.telesco.pe/file/vB4CsD9EBOW160_2QMWhdM5e2lg0PrT3_6iTjoNqhKcECfK65iuK75r9NjiOXLb_LNZorNhfA6r9j-ceIDlFLGjfakGsC44bfR9wInznqWNJ62fgvuV8PQMusZW0Hr8Slq0JN7a1lAjqltlHrTvsKjAQNJ6GMe6udaDvpWiFKcPWAm2uzDTf8-xBUuN2RJmAIdMhAQjXQ0xdQ0N8P6z9LyY8jMe5Ox_JRVEQTU8XxDXsZQtJYt--EaIY8ZVozsS-xN5nEx_3vcgmaE_iboaOzwy_0gx6gQ9RnC06MTN28NOX_nA4IfCWnBf9SCdfu1ZFEYkYuEmDnhXFu46fCrwSUg",
     "tgUrl": "https://t.me/hi_pretty/4194",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1373 Детский,воздушный хвостик Окрашен в щадящей технике,качество остало"
+    "desc": "#1373 • Детский,воздушный хвостик • Окрашен в щадящей технике,качество осталось прежним,срез мягкий,нежный"
   },
   {
     "id": "4157",
     "cutNum": "#1263",
     "title": "Срез #1263 (55 см / 156 гр)",
-    "cat": "kids",
-    "shade": "light",
+    "cat": "silk",
     "length": 55,
     "weight": "156 гр",
-    "price": "По запросу",
+    "price": "Уточняйте в TG",
     "img": "https://cdn4.telesco.pe/file/I4qTE5Xysh4WnMw0jSFZ23bMzXNm1UjHpF4qiVAaDomDpvAd3AW7Chg8gIbBguIPQLN7U6tixyaxFdyCv4C-_T_AHphh9Q41IDq4fif3i8_Bkt7aA9dlWtIwhoNKOY4E79_RCh09kOa4Tje_8XTpJIkWLWFB5CzjsnGtrFwkg8_0QtJXyhjUTSfG0sZsvHYmSXOwXFke86VkbCnkzZwOIacr7YdFs54YxfKy_SS-3alyz26E8mq60RNmwF5k5zY1Pmvbhe85M0dRBU60o9NMGCPwb6axW9NNEzymNnb0uvBMr_WXASpVbDMofHweN83Eg8fJ7W2pxuXToAeajsDt8A",
     "tgUrl": "https://t.me/hi_pretty/4157",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами Детские 💎 Природный блонд Корень холодный 8-9 Концы в тепло ближе к 9 Воз"
+    "desc": "Детские  💎 • Природный блонд • Корень холодный 8-9"
   },
   {
     "id": "4167",
     "cutNum": "#1560",
     "title": "Срез #1560 (54 см / 96 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "silk",
     "length": 54,
     "weight": "96 гр",
-    "price": "По запросу",
+    "price": "Уточняйте в TG",
     "img": "https://cdn4.telesco.pe/file/UmP_fe3ATt-yNQwlrsiSYqSuCQ3c6f2GHhRFM6zaE5vZYIHufbWMugBpCE1huI51hi_CehPEfaCTMEL_d8GLToGQItGzAeHER_DYyFGKICm4mvU0JBa7rdsNJkwZfTvL3uDuKOQlnCTzlfPEDUT8C2232lE-g2ICIRVdW-_EZxUPb3Om7RdQsGP_t4HQKQpHPyX-n9rse1hrtIK9fHPple-gR-L94iKjwdoqgC0-cr1sa6xg8jA4JbrsxJEkcWF7ujDqy_JljOEFPS0eGOW4o4wLEfS38KmjWRPXle-tzOJqwBHbOIxpMHUUCnX322ew5TNtnloTleHVrA_abrzBJg",
     "tgUrl": "https://t.me/hi_pretty/4167",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1560 Самый настоящий шелк Нежнейший детский хвостик с тончайшей волосинк"
+    "desc": "#1560 • Самый настоящий шелк • Нежнейший детский хвостик с тончайшей волосинкой"
   },
   {
     "id": "4137",
     "cutNum": "#993",
     "title": "Срез #993 (53 см / 168 гр)",
-    "cat": "kids",
-    "shade": "light",
+    "cat": "wave",
     "length": 53,
     "weight": "168 гр",
-    "price": "По запросу",
+    "price": "171 000 ₽",
     "img": "https://cdn4.telesco.pe/file/n-z29KSDncx1gl2UIVZiQMx4aDKi9ulZcKFw5Uiyzk25bva0c684i6U9fmS0-UAh9H7rlLZY-dekMJht8uFgeV4ySskbWF4SK-Ac9yOeGJEiNvNjMtrC8O37nAt4RzAgN4qjBXYmU4raWTgmJHbm3oZFcNARBpTglIv16qsxVZnQ38d_yMwVM3tTCIMEEVeCj-aZnpIap4dUqZ8IPEAjcsup46aY_5tLeIvsQy6z38T9rtkx9BUthpO1ecDxB6_8w65s08IGgExNmf_FFUCu6q1sOddgnq3iuTZwKfgfzhEfLZNMZajtYYmqeBrkAlS_S69ruYD1e875hTvu73yRww",
     "tgUrl": "https://t.me/hi_pretty/4137",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #993 Детский,натуральный блонд,шелк Волосинка между тонкой и средней Прир"
+    "desc": "#993 • Детский,натуральный блонд,шелк • Волосинка между тонкой и средней"
   },
   {
     "id": "4147",
     "cutNum": "#1434",
     "title": "Срез #1434 (72 см / 153 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "straight",
     "length": 72,
     "weight": "153 гр",
-    "price": "По запросу",
+    "price": "73 000 ₽",
     "img": "https://cdn4.telesco.pe/file/rgmu5-4Vqc5eP54jngZ9G0jcmagbK6FnZVyWQ7GWMqTQFjhQtJm8ZtW4AgxNWf_zOox-gKDmeRBZdorFCFiozAydZEj3zZF5o1uFxiSiJr8Oz4DUwJIjy5t9Cw7AEkTjpZO6VlE9bLFzB4MZuNeVFztq03C_QOD3sHLz2wnUHBjPtszlDl9CyJi1ljXSFsrCO3kGrN4mdqjpuyVZadCKgRF6zbqtzYzeYrAqgBxH_JqUYddCLiAO7gOwC7BWZTpGH1ss-02jbYxS6d76JFdS6d8rdQ93sYSh3wj511-5y1w4sv9id3-P0-PvswgatqKbhM0xNY7LrAt8458fGFMsbQ",
     "tgUrl": "https://t.me/hi_pretty/4147",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1434 Детский струящийся шелк Идеально прямой,блестящий Волосинка между т"
+    "desc": "#1434 • Детский струящийся шелк • Идеально прямой,блестящий"
   },
   {
     "id": "4117",
     "cutNum": "#1261",
     "title": "Срез #1261 (55 см / 117 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "wave",
     "length": 55,
     "weight": "117 гр",
-    "price": "По запросу",
+    "price": "90 000 ₽",
     "img": "https://cdn4.telesco.pe/file/hQxexMqYzU4Dp7rLShlmbacjm9VyaQ1V2SGDVpjs5T8E_RriA9P60FFkf6_Mh_LM9W5-rlY30fZ4q_GcbY0qoKwfYWuak55H865v-YQA2e-xuSJcujou8py_ZkH9aFhHQcUoaDMkkrbhibDEutJ3OZFcBxfS8iTP34063R-sMVnpulu1F8TwxAmr9cWqzHjP93zA0KMet4u9cNKbAB5DlMBRdjJ_GeGFuW4wQG3z3tNkrxjmUdcZpUbUyQCXCC4LIyMbPhTI5TMLp_NGq9RxubOWmLF_b5aBR5z-0bweSGZsDjI66R7CVLO0JJqJShWFssNOFKzHMWak7nyYPdxKug",
     "tgUrl": "https://t.me/hi_pretty/4117",
-    "desc": "Подбор волос и запись на консультацию ТУТ Канал с детскими волосами #1261 Детский шелковый срез с красивой природной,активной волной Выгорев"
+    "desc": "#1261 • Детский шелковый срез с красивой природной,активной волной • Выгоревшие концы"
   },
   {
     "id": "4127",
     "cutNum": "#1218",
     "title": "Срез #1218 (58 см / 188 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "straight",
     "length": 58,
     "weight": "188 гр",
-    "price": "По запросу",
+    "price": "Уточняйте в TG",
     "img": "https://cdn4.telesco.pe/file/Uxm2cKFFuCLNFHpdsNo83UGBuiu2VNSZhc706RJjiV1oiwweF_UdKq5snkqOSwWSgUeW45JySVWxaBJo_iaYG826-0-gZHXoeXjE8LU5Y39HDI2a8TMPpVPk8u_8kkNLBVh93_IvjZhUCI4mtTtE1-Sm4bONnKjJOHrYWZn7kkHB-ccrygW0GhHd-Ua_xzIoX16xH99az5_lbfEMT9c9q5O_AoFgXGRiuRXeKwIQOU4KoqNO9NeeBy21PbmCfkmR_h2wIvq8HsVXtySL-X9p3H8KW9a5ou1GlMta1G7jTaIdb95mbNV-xUp1rsNlE-DXIP-n3rrckiwb3tcSh5jZmQ",
     "tgUrl": "https://t.me/hi_pretty/4127",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1218 Детский,идеально прямой срез Волосинка между тонкой и средней Шелко"
+    "desc": "#1218 • Детский,идеально прямой срез • Волосинка между тонкой и средней"
   },
   {
     "id": "4096",
     "cutNum": "#1247",
     "title": "Срез #1247 (65 см / 181 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "wave",
     "length": 65,
     "weight": "181 гр",
-    "price": "По запросу",
+    "price": "113 750 ₽",
     "img": "https://cdn4.telesco.pe/file/vC0zBA-A6_YQMdk8EU7klT2P5h3RmVox-uljtT9tgQ-aXwAWyrJtVTfw8svIBsn1jiELDJ9XEN7mGHS2Wsfte-8cb6dRGsuapv4D1NX3V_MvcyU20GLh-XUqJ1_3w9y4yEN6O_CIzLzlUZn1mQLsxeV3j37asrlf7R2qXEtzXs5DfcLIxKnV1ughPK2BKGLKFxpQyGvAxh2NNRqTFEdj_KcX_7umAeohAuaFVz5UuxLpsrPAKmQYF8m68Tk3t_UNmc1oV9B6-dp2uh7i6wMCQaYPaukeOgvXXu09smx63XPpXj4GWqncsJoI4PWW4I0DED1ZT0lfsfz8iGGgDfhg1w",
     "tgUrl": "https://t.me/hi_pretty/4096",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1247 Детский шелк Легкая природная волна,блестящий,мягкий,волосинка ближ"
+    "desc": "#1247 • Детский шелк • Легкая природная волна,блестящий,мягкий,волосинка ближе к тонкой"
   },
   {
     "id": "4106",
     "cutNum": "#1221",
     "title": "Срез #1221 (75 см / 197 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "wave",
     "length": 75,
     "weight": "197 гр",
-    "price": "По запросу",
+    "price": "149 000 ₽",
     "img": "https://cdn4.telesco.pe/file/RHWVWPUc7KvG4rVuvD56SrlAj7G2GDAPhe9dBalR-zMyYy4cfwY3-blVqSaSvgKOoDXfa9Cprq3sSlrou2zIM3QVgvqGikYI0iTNDlohGQfkxJZX1kV5971zUzG0b2A9a8bxd1DDwPJgdJMlEzWGOwCZfzosQUwAl6kEEqWLsnaJn2gjh0ISDc9IJiJNkEKHgE40tH1Hd9yj_SylaD-ICGtfTkYVVNPHe-fn6aUFkqNskkYY9KgCUOIJowXSN4NviAUcD_EbNy4OsgfoDWjb1YF637RCwLOk2OLZ0pSEMHI5-VbOrtghiTCih3GQV7PGIpCvL7ZfRCpOv2ihynjZHA",
     "tgUrl": "https://t.me/hi_pretty/4106",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1221 Детский срез с легкой волной Волосинка между тонкой и средней,шелк"
+    "desc": "#1221 • Детский срез с легкой волной • Волосинка между тонкой и средней,шелк"
   },
   {
     "id": "4076",
     "cutNum": "#1387",
     "title": "Срез #1387 (66 см / 86 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "wave",
     "length": 66,
     "weight": "86 гр",
-    "price": "По запросу",
+    "price": "Уточняйте в TG",
     "img": "https://cdn4.telesco.pe/file/hyZLHFYPPNSAYje201VuCm3H_ZrHk2iZOoFNcBQXmHJOgw0eRe9XJcCprsycMRcO6xZX2sL_KZTLnFTF8kr99aBuKgcyU7xUp2ZkWdSV9uwXtuV0m45bWezL27SXxxOHxPM0acjRT_3iNbw3N8b_wL4xaHkIcHupf7DHkXdjX0MW-vYmIQqIFKj33AdMukhOAaEC5EkM_rXY5fveeG3xySB_89gx4hwq88kYHQ2c2D6BQhLK8JpFREd5YYWHTC9TtEnMuyK7ZdvN9EmsR2j8EFpvB2iqrP_CfD20v30Ozf9esOT7VRcG0lbOhGiWz47pqzVRDXCqwjYUFSShPBfp9g",
     "tgUrl": "https://t.me/hi_pretty/4076",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1387 Детский срез с волной Волосинка между тонкой и средней,мягкий,возду"
+    "desc": "#1387 • Детский срез с волной • Волосинка между тонкой и средней,мягкий,воздушный"
   },
   {
     "id": "4086",
     "cutNum": "#1557",
     "title": "Срез #1557 (55 см / 125 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "straight",
     "length": 55,
     "weight": "125 гр",
-    "price": "По запросу",
+    "price": "160 000 ₽",
     "img": "https://cdn4.telesco.pe/file/SwZFQkotJ7y9nyqLp7gAO10EEWHjsvN7sYgVv1NhtOTURpksUbpgy4WY_8S0-6MM4mWB9QzlW5iQWuV8TwfXXKWLnWOW1lmN7QTHw93LP_qpX7M65vuCYGdfjBD1divykufceZt4Os20o2JESgCr9GqMc6NeYU9u2ynK3Nz4gKM-Ft-m9lBrtSUK9Su1h5xMC5-XxEf445sH8LdTGRRzLO5aS6taA6blW7QNqEub4LDJNM-B8oGcZfwOX7zd5EAahGA77YZDdO-bXqA2YW-TJGx4B9iFGGz2vKbDopY9fhfKElPxLmu9FThR8VTy_03euVVl5BC8wTqr8aQfhMy-qg",
     "tgUrl": "https://t.me/hi_pretty/4086",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1557 Детский нежнейший срез Гладкий,как маслянистый Тончайший волоск 55"
+    "desc": "#1557 • Детский нежнейший срез • Гладкий,как маслянистый"
   },
   {
     "id": "4056",
     "cutNum": "#1272",
     "title": "Срез #1272 (76 см / 162 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "straight",
     "length": 76,
     "weight": "162 гр",
-    "price": "По запросу",
+    "price": "132 678 ₽",
     "img": "https://cdn4.telesco.pe/file/EKX7qmPD8IGwxJlVc6rwmOG4oB0eKn3VN1UzMLwo-FJZ5nuDG8vEzKVK8XEJphnQe0tAy707zE2KDny93HvR-2wBLyHUOsGmv7kSqOz1uMnvX0fynchs7AT2hV_sUFJCTDdCPNWmHc4dV4T4LFigfvGymA7jbGh7ftraoqUwpmtL4oBUJ8JUPWtpDqworWknLj5I2LTnUkLXzqjKN_kDlh1D8zR-p_IO2k9QCT8znEMbBrAruWatAX6gkLdmxo9KfqDexjxhPKRal_9OBVgMdk9nNnzYjoWfHv2ZRjjtif5vTpkXQN0tdi2Aftpg16v8HYB4HBvybQhw9RMSCLBAMA",
     "tgUrl": "https://t.me/hi_pretty/4056",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1272 Детский,прямой,блестящий срез Есть выгоревшие пряди Волосинка средн"
+    "desc": "#1272 • Детский,прямой,блестящий срез • Есть выгоревшие пряди"
   },
   {
     "id": "4066",
     "cutNum": "#1557",
     "title": "Срез #1557 (48 см / 157 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "silk",
     "length": 48,
     "weight": "157 гр",
-    "price": "По запросу",
+    "price": "152 000 ₽",
     "img": "https://cdn4.telesco.pe/file/q8dcCu5CO4orhLY0GVteSeg1FM7iNc1VBLkUNV7OjzZZ1iC1C_FAL9ssJGoPL32HUOM2P6VpYossoRVyTrjIUyp-HG9Q_Q-_wXXyx8A4w1_xclCSEn3rT1aJF2MT4dl6hAA0HiwjXQliiio-9aJ11O1YwzIS-il9s0b0a6u3xgaP7VOEYGnQEKjZwRha6L_SqJXKQNyPQ9ZBXQxJPeY9D-QaCnCZDvZjh0W6QQCjB3o-fQnePZ1TOvck1O70GPrjQSdZc9QUWf3ku1_T34RxFbM6J8pjdhcXCXUd0mCpXOBtsg57_TexKViF2cscPmgIVlfw2jwmWl17yN2SvQjvkA",
     "tgUrl": "https://t.me/hi_pretty/4066",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1557 Детская кудряшка Эффектный хвостик с природной кудрей Тончайшая,неж"
+    "desc": "#1557 • Детская кудряшка • Эффектный хвостик с природной кудрей"
   },
   {
     "id": "4036",
     "cutNum": "#1162",
     "title": "Срез #1162 (81 см / 252 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "wave",
     "length": 81,
     "weight": "252 гр",
-    "price": "По запросу",
+    "price": "85 500 ₽",
     "img": "https://cdn4.telesco.pe/file/Ghq6xe0vQc8obzDrDwpXveWWdYY9AravPPreBmejAYcGNu2lZpSMkYCV1nwPGJQQamoYQh3XxIid41rjMODb_btZrQpXATUY8QphXwLX33cSnmo1961CnH-xzZVos1unwcjlkQEJS4V-bYOGZ_S6W7rm-GTxRYHIvQgb5SzMVhp-2wHvKy44359Iuk8wF_To34nDi3cjLU4ooWn4O-bTwf85bbA_WQ8lHg1dLKad7DLnFE594Janii5LpcWWgV6t2mgM_Tz1sTxSM5saZGz15svd9YifxFOa3zKZFrcm8GzhMvL5KQwa0OJmo8WQEx8lBTl2igGxTTAzZVPgregs7w",
     "tgUrl": "https://t.me/hi_pretty/4036",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1162 Детский хвостик,волосинка ближе к средней,легкая волна 5 тон у корн"
+    "desc": "#1162 • Детский хвостик,волосинка ближе к средней,легкая волна • 5 тон у корней,выгоревшие концы 6 тон"
   },
   {
     "id": "4046",
     "cutNum": "#990",
     "title": "Срез #990 (50 см / 117 гр)",
-    "cat": "kids",
-    "shade": "medium",
+    "cat": "silk",
     "length": 50,
     "weight": "117 гр",
-    "price": "По запросу",
+    "price": "52 650 ₽",
     "img": "https://cdn4.telesco.pe/file/Ytl0w8AKKgXzLeyMmGUnQmI-eid9RLVJJ4o7oLZxge-kEe_yVcXAKfOdLEC5TxVUCRBzdQnFKrtyH0rSnJmB-8DVewlC4dogiDmcqRDQZ74WSuOjJy3ZrVIGnw0k463MxNOl0Ooig9La8N8789H3sIt2wAmorsEtNDmmd9qIem1I-RTHjWbF6oJMCd43HkmER29FQ_a2yusxK4G25nY4QWFwL7OAQIL7suT2ZstUgZMtVVP8VUBZ5NE7f-ymJeb16niiMErtDLpVEpJuPz97309Qo9wG_-WGXsSLJUUcujVMlt_MPshoHAbMyj6AgdMaRkxMhUn35iZInsyqJi41XA",
     "tgUrl": "https://t.me/hi_pretty/4046",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами Детские,шелковые 🤍 #990 50см/117гр - 52.650₽ продан #1429 50см/112гр - 49"
+    "desc": "Детские,шелковые   🤍 • #990 50см/117гр - 52.650₽ продан • #1429 50см/112гр - 49.000₽"
   },
   {
     "id": "4006",
     "cutNum": "#1559",
     "title": "Срез #1559 (67 см / 140 гр)",
-    "cat": "kids",
-    "shade": "light",
+    "cat": "wave",
     "length": 67,
     "weight": "140 гр",
-    "price": "По запросу",
+    "price": "Уточняйте в TG",
     "img": "https://cdn4.telesco.pe/file/lApn70SRsj9x6Q_Bti49shCyJjwmFeJmkO1eDwAS5hYzIv_fO7HDQNLhdWY2D-3M9bBCiYlI7msO6PefHncyl55-e5mLEWnCgReId3R8eIDguqrDgO6veoTbFckswehs3ynj9MCvKzAwWRaddOojxPgJZqjPmSaCUwuQqD5b7cPb3Ptspt_TlTX9leCeMMNEBGTRzT6Q2n1KicJdmjwTPkiOhSUnZV5eZMI4jbpRPyBdNbyGIgjvySPOILkikU4SGCECws4AcTKfr9RnSAXLL3KBKO1xhnC6QgwIewUvlwS-bmeZxoJIr5pjsHPfoTJv2h0enEznJJwu5tMOso7ang",
     "tgUrl": "https://t.me/hi_pretty/4006",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1559 Платиновый блонд 🤍 Детский срез(Азия),окрашен в щадящей технике,без"
+    "desc": "#1559 • Платиновый блонд   🤍 • Детский срез(Азия),окрашен в щадящей технике,без потери качества волос"
   },
   {
     "id": "4016",
     "cutNum": "#1555",
     "title": "Срез #1555 (68 см / 140 гр)",
-    "cat": "kids",
-    "shade": "light",
+    "cat": "wave",
     "length": 68,
     "weight": "140 гр",
-    "price": "По запросу",
+    "price": "190 000 ₽",
     "img": "https://cdn4.telesco.pe/file/sD8i8RqjZHJOt_I21o45FDjONqQ2VdfGWIHyac4-uDMkF1buh2RacBDH-x6B572owWy44J8IVYXOknyWgvKnhxoFEcTc0aDWb5wly_v0lMyvIwA9LkOFt-LAps4dYcsRiQw6fpx3vSt4EBripdtTAwY1T78ssidacShJXmEZh2yAjGXwBxRiw2KM3i-4yiKjmufDlxx2nHPvNMOt0C1wWluzgWcdAYkQQkedcpnKc2V0xGNadlkfQP81H1kfPdMvz1pvFDFjT1nVdV-ZN36PAxq53gRXkQw6mT-0smEqx_72cO1orEOD13o_8cOaw4fWVNZ5iJ660rAQYLCo1g_QvQ",
     "tgUrl": "https://t.me/hi_pretty/4016",
-    "desc": "Подбор волос и запись на наращивание ТУТ Канал с детскими волосами #1555 Детский блондик Природная активная волна,волосинка тонкая как паути"
+    "desc": "#1555 • Детский блондик • Природная активная волна,волосинка тонкая как паутинка"
   }
 ];
 
@@ -1700,21 +1672,24 @@
   <!-- ИНТЕРАКТИВНЫЙ КАТАЛОГ СРЕЗОВ (ПРЯМОЙ ЭФИР TELEGRAM @hi_pretty) -->
   <section class="hp-container hp-catalog-section" id="catalog">
     <div class="hp-sec-head">
-      <span class="hp-sec-badge">Свежие поступления с Telegram-канала @hi_pretty</span>
-      <h2 class="hp-sec-title">Срезы в наличии <span>(со склада в Москве)</span></h2>
-      <p class="hp-sec-desc">Каждый срез реален и привязан к конкретному посту в нашем канале с фото и точными параметрами.</p>
+      <span class="hp-sec-badge">Прямой эфир с Telegram-канала @hi_pretty</span>
+      <h2 class="hp-sec-title">Примеры срезов <span>из нашего канала</span></h2>
+      <p class="hp-sec-desc">
+        Публикуем реальные хвостики из ленты Telegram с ценами, фото и точными параметрами. 
+        Поскольку срезы быстро разбирают, нажмите «Уточнить наличие» — мастер сразу проверит выбранный хвостик или подберет точно такой же из >35 кг со склада.
+      </p>
     </div>
 
     <!-- ПАНЕЛЬ УМНЫХ ФИЛЬТРОВ -->
     <div class="hp-catalog-filter-bar">
-      <!-- 1. ТИП ВОЛОС -->
+      <!-- 1. ТИП СТРУКТУРЫ -->
       <div class="hp-filter-row">
-        <div class="hp-filter-label">Тип волос:</div>
+        <div class="hp-filter-label">Структура волос:</div>
         <div class="hp-filter-group" id="filter-type-group">
-          <button type="button" class="hp-filter-pill active" data-type="all">Все срезы</button>
-          <button type="button" class="hp-filter-pill" data-type="kids">Детские шелковые (Люкс)</button>
-          <button type="button" class="hp-filter-pill" data-type="slav">Славянские некрашеные</button>
+          <button type="button" class="hp-filter-pill active" data-type="all">Все примеры (28)</button>
+          <button type="button" class="hp-filter-pill" data-type="silk">Детский шелк (Люкс)</button>
           <button type="button" class="hp-filter-pill" data-type="wave">Природная волна</button>
+          <button type="button" class="hp-filter-pill" data-type="straight">Прямые и гладкие</button>
         </div>
       </div>
 
@@ -1724,19 +1699,8 @@
         <div class="hp-filter-group" id="filter-length-group">
           <button type="button" class="hp-filter-pill active" data-len="all">Любая длина</button>
           <button type="button" class="hp-filter-pill" data-len="50">До 50 см</button>
-          <button type="button" class="hp-filter-pill" data-len="60">55–65 см</button>
-          <button type="button" class="hp-filter-pill" data-len="70">68–70+ см</button>
-        </div>
-      </div>
-
-      <!-- 3. ОТТЕНОК -->
-      <div class="hp-filter-row">
-        <div class="hp-filter-label">Оттенок:</div>
-        <div class="hp-filter-group" id="filter-shade-group">
-          <button type="button" class="hp-filter-pill active" data-shade="all">Все оттенки</button>
-          <button type="button" class="hp-filter-pill" data-shade="light">Светлый блонд</button>
-          <button type="button" class="hp-filter-pill" data-shade="medium">Русый / Пшеничный</button>
-          <button type="button" class="hp-filter-pill" data-shade="dark">Темный / Шоколад</button>
+          <button type="button" class="hp-filter-pill" data-len="60">53–65 см</button>
+          <button type="button" class="hp-filter-pill" data-len="70">66–80+ см</button>
         </div>
       </div>
     </div>
@@ -2028,14 +1992,13 @@
     var container = document.getElementById('hp-catalog-cards');
     if (!container) return;
 
-    var filtered = cutsDatabase.filter(function(item) {
+        var filtered = cutsDatabase.filter(function(item) {
       if (selectedType !== 'all' && item.cat !== selectedType) return false;
       if (selectedLen !== 'all') {
-        if (selectedLen === '50' && (item.length > 54)) return false;
-        if (selectedLen === '60' && (item.length < 55 || item.length > 66)) return false;
-        if (selectedLen === '70' && (item.length < 67)) return false;
+        if (selectedLen === '50' && (item.length > 50)) return false;
+        if (selectedLen === '60' && (item.length < 51 || item.length > 65)) return false;
+        if (selectedLen === '70' && (item.length < 66)) return false;
       }
-      if (selectedShade !== 'all' && item.shade !== selectedShade) return false;
       return true;
     });
 
@@ -2058,12 +2021,12 @@
     }
 
     var htmlCards = filtered.map(function(item) {
-      var typeBadge = item.cat === 'kids' ? 'Детский шелк • Люкс' : (item.cat === 'wave' ? 'Природная волна' : 'Славянский срез');
+      var badgeText = item.cat === 'wave' ? 'Природная волна' : (item.cat === 'straight' ? 'Прямой шелк' : 'Детский шелк • Люкс');
       return `
         <div class="hp-cut-card" data-id="${item.id}">
           <div class="hp-cut-img-wrap">
             <img src="${item.img}" alt="${item.title}" class="hp-cut-img" loading="lazy">
-            <span class="hp-cut-badge">${typeBadge} • В наличии</span>
+            <span class="hp-cut-badge">${badgeText}</span>
             <span class="hp-cut-price-tag">${item.price}</span>
           </div>
           <div class="hp-cut-body">
@@ -2075,8 +2038,8 @@
             </div>
             <p class="hp-cut-desc">${item.desc}</p>
             <div class="hp-cut-actions">
-              <button type="button" class="hp-cut-btn hp-open-form-btn" data-cut="${item.title}">Подобрать этот срез ✦</button>
-              <a href="${item.tgUrl}" target="_blank" rel="noopener" class="hp-cut-btn-tg" title="Посмотреть этот срез в Telegram канале @hi_pretty">В TG &rarr;</a>
+              <button type="button" class="hp-cut-btn hp-open-form-btn" data-cut="${item.title}">Уточнить наличие ✦</button>
+              <a href="${item.tgUrl}" target="_blank" rel="noopener" class="hp-cut-btn-tg" title="Открыть этот пост в Telegram @hi_pretty">В TG &rarr;</a>
             </div>
           </div>
         </div>
