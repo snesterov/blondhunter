@@ -725,6 +725,52 @@
         margin: 0 auto 30px;
         line-height: 1.55;
       }
+      .hp-selected-cut-box {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(244, 114, 182, 0.12);
+        border: 1px solid var(--hp-border-active);
+        border-radius: 16px;
+        padding: 12px 18px;
+        margin-bottom: 16px;
+        text-align: left;
+      }
+      .hp-selected-cut-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13.5px;
+        color: #fff;
+      }
+      .hp-selected-cut-tag {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--hp-rose);
+        background: rgba(244, 114, 182, 0.2);
+        padding: 3px 8px;
+        border-radius: 8px;
+        white-space: nowrap;
+      }
+      .hp-selected-cut-title {
+        font-weight: 600;
+        color: #fce7f3;
+      }
+      .hp-selected-cut-reset {
+        background: transparent;
+        border: none;
+        color: #aaa;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 0 4px;
+        line-height: 1;
+        transition: color 0.2s;
+      }
+      .hp-selected-cut-reset:hover {
+        color: #fff;
+      }
       .hp-input-group {
         margin-bottom: 16px;
         text-align: left;
@@ -1833,6 +1879,15 @@
         </p>
 
         <form id="hp-lead-form">
+          <!-- ПЛАШКА ВЫБРАННОГО СРЕЗА ИЛИ ПАРАМЕТРОВ КВИЗА -->
+          <div id="hp-selected-cut-box" class="hp-selected-cut-box">
+            <div class="hp-selected-cut-info">
+              <span class="hp-selected-cut-tag" id="hp-selected-cut-tag">Выбранный срез</span>
+              <span class="hp-selected-cut-title" id="hp-selected-cut-text"></span>
+            </div>
+            <button type="button" class="hp-selected-cut-reset" id="hp-selected-cut-reset" title="Очистить выбор">✕</button>
+          </div>
+
           <div class="hp-input-group">
             <input type="text" id="hp-user-name" class="hp-input" placeholder="Ваше имя" required>
           </div>
@@ -2113,6 +2168,24 @@
     setupActionButtons();
   }
 
+  var chosenCutParam = '';
+
+  function setSelectedCutBadge(text, isQuiz) {
+    chosenCutParam = text || '';
+    var box = document.getElementById('hp-selected-cut-box');
+    var tag = document.getElementById('hp-selected-cut-tag');
+    var title = document.getElementById('hp-selected-cut-text');
+    if (!box || !title) return;
+    if (text) {
+      tag.textContent = isQuiz ? 'Подбор под параметры' : 'Выбранный срез';
+      title.textContent = text;
+      box.style.display = 'flex';
+    } else {
+      box.style.display = 'none';
+      title.textContent = '';
+    }
+  }
+
   function setupActionButtons() {
     var btns = document.querySelectorAll('.hp-open-form-btn');
     btns.forEach(function(b) {
@@ -2122,14 +2195,19 @@
         e.preventDefault();
         var cutName = b.getAttribute('data-cut');
         if (cutName) {
-          var note = document.getElementById('hp-user-contact');
-          if (note && !note.value) {
-            note.placeholder = 'Для среза: ' + cutName;
-          }
+          setSelectedCutBadge(cutName, false);
         }
         scrollToSection('lead-box');
       });
     });
+
+    var resetBtn = document.getElementById('hp-selected-cut-reset');
+    if (resetBtn && !resetBtn.dataset.bound) {
+      resetBtn.dataset.bound = 'true';
+      resetBtn.addEventListener('click', function() {
+        setSelectedCutBadge('', false);
+      });
+    }
   }
 
   // ===================== COOKIE & 152-ФЗ СИСТЕМА =====================
@@ -2355,6 +2433,18 @@
     setupQuiz('quiz-length');
     setupQuiz('quiz-type');
 
+    var quizBtn = document.querySelector('#selection .hp-btn-main');
+    if (quizBtn) {
+      quizBtn.addEventListener('click', function() {
+        var lenEl = document.querySelector('#quiz-length .hp-quiz-opt.selected');
+        var typeEl = document.querySelector('#quiz-type .hp-quiz-opt.selected');
+        var lenVal = lenEl ? lenEl.getAttribute('data-val') : '55-65 см';
+        var typeVal = typeEl ? typeEl.getAttribute('data-val') : 'Детский шелк';
+        setSelectedCutBadge(lenVal + ' • ' + typeVal, true);
+        scrollToSection('lead-box');
+      });
+    }
+
     // Селектор мессенджеров
     var methodBtns = document.querySelectorAll('.hp-method-btn');
     var contactInput = document.getElementById('hp-user-contact');
@@ -2393,10 +2483,14 @@
 
         var tildaForm = document.getElementById('form4673146901') || document.querySelector('form.js-form-proccess') || document.querySelector('form.t-form');
         if (tildaForm) {
-          // 1. Заполняем имя
+          // 1. Заполняем имя (с прикреплением выбранного среза/параметров квиза)
+          var fullNameToSend = name;
+          if (chosenCutParam) {
+            fullNameToSend += ' (' + chosenCutParam + ')';
+          }
           var tName = tildaForm.querySelector('input[name="Name"]');
           if (tName) {
-            tName.value = name;
+            tName.value = fullNameToSend;
             tName.dispatchEvent(new Event('input', { bubbles: true }));
             tName.dispatchEvent(new Event('change', { bubbles: true }));
           }
@@ -2430,6 +2524,22 @@
               inp.dispatchEvent(new Event('change', { bubbles: true }));
             }
           });
+
+          // Передаем параметр среза в комментарий, если форма имеет textarea или hidden
+          if (chosenCutParam) {
+            var tComment = tildaForm.querySelector('textarea[name="Textarea"], textarea, input[name="Comment"]');
+            if (tComment) {
+              tComment.value = 'Интересует: ' + chosenCutParam;
+              tComment.dispatchEvent(new Event('input', { bubbles: true }));
+              tComment.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+            var hiddenParam = tildaForm.querySelector('input[name="chosen-cut"]');
+            if (!hiddenParam) {
+              tildaForm.insertAdjacentHTML('beforeend', '<input type="hidden" name="chosen-cut" value="">');
+              hiddenParam = tildaForm.querySelector('input[name="chosen-cut"]');
+            }
+            if (hiddenParam) hiddenParam.value = chosenCutParam;
+          }
 
           // 4. Отправляем форму напрямую в Tilda API и эмулируем сабмит
           var tSubmit = tildaForm.querySelector('button[type="submit"], .t-submit');
