@@ -2213,15 +2213,8 @@
         text-align: left !important;
         display: none;
       }
-      #hp-tilda-form-slot .t-input-group_tx .t-text {
-        color: var(--hp-rose-light, #fce7f3) !important;
-        font-size: 12.5px !important;
-        line-height: 1.55 !important;
-        text-align: left !important;
-        background: rgba(244, 114, 182, 0.08) !important;
-        border-left: 3px solid var(--hp-rose, #f472b6) !important;
-        padding: 12px 16px !important;
-        border-radius: 0 12px 12px 0 !important;
+      #hp-tilda-form-slot .t-input-group_tx {
+        display: none !important;
       }
       #hp-tilda-form-slot .t-checkbox__control {
         color: var(--hp-text-muted, #b8acc7) !important;
@@ -5339,66 +5332,42 @@
         }
       });
 
-      Object.keys(valMap).forEach(function(m) {
-        var block = valMap[m];
-        if (!block) return;
-        var inputs = block.querySelectorAll('input');
+      // Всегда отображаем единое, надежное поле телефона с маской (+7, флаг)!
+      // Клиент выбирает предпочтительный канал связи (Telegram, MAX, WhatsApp, Телефон),
+      // а вводит свой номер, чтобы исключить любые ошибки в никах и ссылках.
+      if (phoneVal) {
+        phoneVal.style.setProperty('display', 'block', 'important');
+        phoneVal.classList.remove('t-contact-method__hidden');
+        phoneVal.classList.add('hp-method-active');
 
-        if (m === methodType) {
-          block.style.setProperty('display', 'block', 'important');
-          block.classList.remove('t-contact-method__hidden');
-          block.classList.add('hp-method-active');
-
-          if (m === 'telegram' || m === 'max_messenger') {
-            var userInp = block.querySelector('.js-username-input');
-            var phoneInp = block.querySelector('input[type="tel"]');
-            var phoneWrap = phoneInp ? phoneInp.closest('.t-input-block') : null;
-            var userWrap = userInp ? userInp.closest('.t-input-block') : null;
-
-            if (phoneWrap) {
-              phoneWrap.style.setProperty('display', 'none', 'important');
-              phoneWrap.classList.add('hp-block-hidden');
-            }
-            if (phoneInp) {
-              phoneInp.disabled = true;
-              phoneInp.classList.remove('js-tilda-rule');
-            }
-
-            if (userWrap) {
-              userWrap.style.setProperty('display', 'block', 'important');
-              userWrap.classList.remove('hp-block-hidden');
-            }
-            if (userInp) {
-              userInp.disabled = false;
-              userInp.classList.add('js-tilda-rule');
-              userInp.style.setProperty('display', 'block', 'important');
-              userInp.placeholder = m === 'telegram' ? 'Ник @username или номер телефона' : 'Ссылка на профиль MAX или телефон';
-            }
-          } else {
-            inputs.forEach(function(inp) {
-              inp.disabled = false;
-              inp.classList.add('js-tilda-rule');
-              var wrap = inp.closest('.t-input-block');
-              if (wrap) {
-                wrap.style.setProperty('display', 'block', 'important');
-                wrap.classList.remove('hp-block-hidden');
-              }
-            });
+        var phoneInputs = phoneVal.querySelectorAll('input');
+        phoneInputs.forEach(function(inp) {
+          inp.disabled = false;
+          inp.classList.add('js-tilda-rule');
+          var wrap = inp.closest('.t-input-block');
+          if (wrap) {
+            wrap.style.setProperty('display', 'block', 'important');
+            wrap.classList.remove('hp-block-hidden');
           }
-        } else {
-          block.style.setProperty('display', 'none', 'important');
-          block.classList.add('t-contact-method__hidden');
-          block.classList.remove('hp-method-active');
-          inputs.forEach(function(inp) {
-            inp.disabled = true;
-            inp.classList.remove('js-tilda-rule');
-            var wrap = inp.closest('.t-input-block');
-            if (wrap) {
-              wrap.style.setProperty('display', 'none', 'important');
-              wrap.classList.add('hp-block-hidden');
-            }
-          });
-        }
+        });
+      }
+
+      // Остальные блоки скрываем и отключаем
+      [tgVal, waVal, maxVal].forEach(function(block) {
+        if (!block) return;
+        block.style.setProperty('display', 'none', 'important');
+        block.classList.add('t-contact-method__hidden');
+        block.classList.remove('hp-method-active');
+        var inps = block.querySelectorAll('input');
+        inps.forEach(function(inp) {
+          inp.disabled = true;
+          inp.classList.remove('js-tilda-rule');
+          var wrap = inp.closest('.t-input-block');
+          if (wrap) {
+            wrap.style.setProperty('display', 'none', 'important');
+            wrap.classList.add('hp-block-hidden');
+          }
+        });
       });
     }
 
@@ -5530,53 +5499,21 @@
           return false;
         }
 
-        // 2. Валидация выбранного способа связи
-        var activeRadio = form.querySelector('.t-contact-method__types-container input[type="radio"]:checked');
-        var method = activeRadio ? activeRadio.value : 'phone';
-        var valBox = form.querySelector('.t-contact-method__' + method + '-value');
+        // 2. Валидация телефона (единое поле для всех каналов связи)
+        var telInp = form.querySelector('.t-contact-method__phone-value input[type="tel"]');
+        var resInp = form.querySelector('.t-contact-method__phone-value .js-phonemask-result');
+        var rawTel = (telInp ? telInp.value : '') || (resInp ? resInp.value : '');
+        var digits = rawTel.replace(/\D/g, '');
 
-        if (method === 'telegram') {
-          var tgInput = valBox ? valBox.querySelector('.js-username-input') : null;
-          var tgVal = (tgInput ? tgInput.value : '').trim();
-          var tgDigits = tgVal.replace(/\D/g, '');
-          var isTgPhone = tgDigits.length >= 10;
-          var isTgUser = /^@?[a-zA-Z0-9_]{5,32}$/.test(tgVal);
+        if (!digits || digits.length < 10) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          showCustomError(telInp, 'Укажите корректный номер телефона (не менее 10 цифр)');
+          return false;
+        }
 
-          if (!tgVal || (!isTgPhone && !isTgUser)) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            showCustomError(tgInput, 'Укажите ник в Telegram (от 5 символов, например @username) или номер телефона');
-            return false;
-          }
-        } else if (method === 'max_messenger') {
-          var maxInput = valBox ? valBox.querySelector('.js-username-input') : null;
-          var maxVal = (maxInput ? maxInput.value : '').trim();
-          var maxDigits = maxVal.replace(/\D/g, '');
-          var isMaxPhone = maxDigits.length >= 10;
-          var isMaxLink = /^(https?:\/\/)?(www\.)?(max\.ru\/u\/|max\.me\/|max\.im\/|max\.link\/|max\.)[a-zA-Z0-9_\-\.\/]+/i.test(maxVal);
-
-          if (!maxVal || (!isMaxPhone && !isMaxLink)) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            showCustomError(maxInput, 'Укажите ссылку на профиль в MAX (например max.ru/u/...) или номер телефона');
-            return false;
-          }
-        } else if (method === 'phone' || method === 'whatsapp') {
-          var telInp = valBox ? valBox.querySelector('input[type="tel"]') : null;
-          var resInp = valBox ? valBox.querySelector('.js-phonemask-result') : null;
-          var rawTel = telInp ? telInp.value : '';
-          var digits = rawTel.replace(/\D/g, '');
-
-          if (!digits || digits.length < 10) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            showCustomError(telInp, 'Укажите корректный номер телефона (не менее 10 цифр)');
-            return false;
-          }
-
-          if (telInp && resInp && telInp.value && !resInp.value) {
-            resInp.value = telInp.value;
-          }
+        if (telInp && resInp && telInp.value && !resInp.value) {
+          resInp.value = telInp.value;
         }
       });
     }
