@@ -1270,6 +1270,15 @@
         .hp-method-selector { grid-template-columns: 1fr; }
         .hp-filter-row { flex-direction: column; align-items: flex-start; }
         .hp-footer-bottom { flex-direction: column; align-items: flex-start; }
+        .hp-lead-section { padding: 30px 10px 100px; }
+        .hp-lead-box { padding: 32px 16px; border-radius: 20px; }
+        .hp-input { font-size: 14px; padding: 14px; }
+      }
+      @media (max-width: 420px) {
+        .hp-lead-section { padding: 25px 6px 110px; }
+        .hp-lead-box { padding: 26px 12px; border-radius: 18px; }
+        .hp-input { font-size: 13.5px; padding: 12px 10px; }
+        .hp-method-btn { padding: 10px 8px; font-size: 13px; }
       }
     `;
     document.head.appendChild(s);
@@ -1842,9 +1851,9 @@
           </div>
 
           <div class="hp-input-group">
-            <input type="text" id="hp-user-contact" class="hp-input" placeholder="Ник в Telegram (@username) или телефон" required>
+            <input type="text" id="hp-user-contact" class="hp-input" placeholder="Ник @username или телефон" required>
             <div id="hp-contact-hint" class="hp-input-hint">
-              <strong>Внимание! При выборе Telegram:</strong> Укажите ник в Telegram (@username) или номер телефона.
+              <strong>Telegram:</strong> можно указать ник (@username) или номер телефона.
             </div>
           </div>
 
@@ -2355,8 +2364,8 @@
         b.classList.add('active');
         currentMethod = b.getAttribute('data-m');
         if (currentMethod === 'telegram') {
-          contactInput.placeholder = 'Ник в Telegram (@username) или телефон';
-          contactHint.innerHTML = '<strong>Внимание! При выборе Telegram:</strong> Укажите ник в Telegram (@username) или телефон.';
+          contactInput.placeholder = 'Ник @username или телефон';
+          contactHint.innerHTML = '<strong>Telegram:</strong> можно указать ник (@username) или номер телефона.';
         } else if (currentMethod === 'whatsapp') {
           contactInput.placeholder = '+7 (999) 000-00-00 (WhatsApp)';
           contactHint.innerHTML = '<strong>При выборе WhatsApp:</strong> Укажите ваш номер в WhatsApp.';
