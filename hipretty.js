@@ -1626,7 +1626,7 @@
         <div class="hp-logo-sub">магазин волос • москва</div>
       </a>
       <nav class="hp-nav-links">
-        <a href="#catalog" class="hp-nav-link">Срезы в наличии</a>
+        <a href="#catalog" class="hp-nav-link">Каталог срезов</a>
         <a href="#why-us" class="hp-nav-link">Преимущества</a>
         <a href="#selection" class="hp-nav-link">Подбор среза</a>
         <a href="#contacts" class="hp-nav-link">Контакты</a>
@@ -1648,7 +1648,7 @@
         <div class="hp-badge-geo"><span></span> Доставка по всей России и миру • Склад в Москве</div>
         <h1 class="hp-hero-title">Натуральные детские<br>славянские срезы <span>высшего качества</span></h1>
         <p class="hp-hero-desc">
-          Большой выбор отборных натуральных волос в наличии в Москве (>35 кг). 
+          Коллекция отборных натуральных волос со склада в Москве (>35 кг). 
           100% живой волос от одного донора без силикона и химии: ровные плотные концы, шелковистая структура. 
           Быстрая отправка в любой город России и за рубеж.
         </p>
@@ -1664,7 +1664,7 @@
         <div class="hp-hero-stats">
           <div class="hp-stat-card">
             <div class="hp-stat-val">>35 кг</div>
-            <div class="hp-stat-lbl">Волос всегда в наличии на складе в Москве</div>
+            <div class="hp-stat-lbl">Собственный склад волос в Москве</div>
           </div>
           <div class="hp-stat-card">
             <div class="hp-stat-val">РФ и Мир</div>
@@ -1728,7 +1728,7 @@
       <h2 class="hp-sec-title">Примеры срезов <span>из нашего канала</span></h2>
       <p class="hp-sec-desc">
         Публикуем реальные хвостики из ленты Telegram с ценами, фото и точными параметрами. 
-        Поскольку срезы быстро разбирают, нажмите «Уточнить наличие» — мастер сразу проверит выбранный хвостик или подберет точно такой же из >35 кг со склада.
+        Поскольку срезы быстро разбирают, нажмите «Подобрать такой срез» — мастер проверит выбранный хвостик или подберет аналогичный из >35 кг со склада.
       </p>
     </div>
 
@@ -1772,7 +1772,7 @@
     <div class="hp-sec-head">
       <span class="hp-sec-badge">Индивидуальный подбор</span>
       <h2 class="hp-sec-title">Подберите срез <span>под свои параметры</span></h2>
-      <p class="hp-sec-desc">Укажите желаемую длину и тип волос — мастер отберет 3 подходящих варианта из наличия.</p>
+      <p class="hp-sec-desc">Укажите желаемую длину и тип волос — мастер отберет 3 подходящих варианта со склада.</p>
     </div>
     <div class="hp-quiz-card">
       <div class="hp-quiz-step-title">1. Желаемая длина волос:</div>
@@ -1808,7 +1808,7 @@
       </div>
 
       <div style="text-align:center;margin-top:20px;">
-        <button type="button" class="hp-btn-main hp-open-form-btn">Показать подходящие срезы из наличия ✦</button>
+        <button type="button" class="hp-btn-main hp-open-form-btn">Подобрать подходящие срезы ✦</button>
       </div>
     </div>
   </section>
@@ -1917,7 +1917,7 @@
         <div>
           <div class="hp-footer-col-title">Навигация</div>
           <div class="hp-footer-menu">
-            <a href="#catalog" class="hp-nav-link">Срезы в наличии (>35 кг)</a>
+            <a href="#catalog" class="hp-nav-link">Каталог срезов (>35 кг)</a>
             <a href="#selection" class="hp-nav-link">Подбор под ваши параметры</a>
             <a href="#why-us" class="hp-nav-link">Почему наши волосы</a>
             <a href="#contacts" class="hp-nav-link">Контакты студии</a>
@@ -2064,7 +2064,7 @@
         <div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px; background: var(--hp-bg-card); border-radius: 20px; border: 1px dashed var(--hp-border);">
           <div style="font-size: 32px; margin-bottom: 12px;">🔎</div>
           <h3 style="font-size: 20px; color: #fff; margin: 0 0 10px;">Срезов с такими параметрами сейчас нет в витрине</h3>
-          <p style="color: var(--hp-text-muted); font-size: 14px; margin: 0 0 20px;">В наличии на складе более 35 кг волос! Оставьте заявку — мастер подберет идеальный срез индивидуально.</p>
+          <p style="color: var(--hp-text-muted); font-size: 14px; margin: 0 0 20px;">На складе более 35 кг отборных волос! Оставьте заявку — мастер подберет нужный срез индивидуально.</p>
           <button type="button" class="hp-btn-main hp-open-form-btn">Запросить индивидуальный подбор ✦</button>
         </div>
       `;
@@ -2090,7 +2090,7 @@
             </div>
             <p class="hp-cut-desc">${item.desc}</p>
             <div class="hp-cut-actions">
-              <button type="button" class="hp-cut-btn hp-open-form-btn" data-cut="${item.title}">Уточнить наличие ✦</button>
+              <button type="button" class="hp-cut-btn hp-open-form-btn" data-cut="${item.title}">Подобрать срез ✦</button>
               <a href="${item.tgUrl}" target="_blank" rel="noopener" class="hp-cut-btn-tg" title="Открыть этот пост в Telegram @hi_pretty">В TG &rarr;</a>
             </div>
           </div>
