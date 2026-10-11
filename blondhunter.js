@@ -5,8 +5,17 @@
  * Features: 12 Live Lots, Kinescope 9:16 Video, Luxury Footer, HUD Cookie Banner, Policy Modal
  */
 (function() {
-  var isEn = window.location.pathname.indexOf('/eng') !== -1 || 
-             (document.currentScript && document.currentScript.src.indexOf('lang=en') !== -1);
+  var path = window.location.pathname.toLowerCase();
+  var scriptSrc = (document.currentScript && document.currentScript.src) ? document.currentScript.src.toLowerCase() : '';
+  var rootEl = document.getElementById('blondhunter-root');
+  var explicitLang = (rootEl && rootEl.getAttribute('data-lang')) || '';
+
+  var isEn = path.indexOf('/eng') !== -1 || 
+             path.indexOf('/google') !== -1 || 
+             path.indexOf('/en') !== -1 ||
+             explicitLang.toLowerCase() === 'en' ||
+             scriptSrc.indexOf('lang=en') !== -1 ||
+             window.location.search.toLowerCase().indexOf('lang=en') !== -1;
 
   // 1. Подключение шрифтов
   if (!document.getElementById('bh-fonts')) {
