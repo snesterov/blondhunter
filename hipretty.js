@@ -1927,18 +1927,45 @@
         position: relative !important;
         z-index: 5 !important;
       }
-      /* Скрываем всплывающее окно rec4673146901, чтобы не летало по экрану */
-      #rec4673146901,
-      .t702 .t-popup {
+      /* rec4673146901 внутри слота: статичный блок в потоке страницы */
+      #hp-tilda-form-slot #rec4673146901,
+      #hp-tilda-form-slot .t702,
+      #hp-tilda-form-slot .t-popup,
+      #hp-tilda-form-slot .t-popup__container,
+      #hp-tilda-form-slot .t702__wrapper {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: static !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        transform: none !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        height: auto !important;
+        min-height: 0 !important;
+        z-index: 1 !important;
+      }
+      #hp-tilda-form-slot .t-popup__close,
+      #hp-tilda-form-slot .t702__text-wrapper,
+      #hp-tilda-form-slot .t702__title,
+      #hp-tilda-form-slot .t702__descr {
+        display: none !important;
+      }
+      body > #rec4673146901,
+      #allrecords > #rec4673146901 {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
-        pointer-events: none !important;
-        position: absolute !important;
-        top: -9999px !important;
-        left: -9999px !important;
       }
-      /* Перенесенная форма внутри слота */
       #hp-tilda-form-slot form.t-form,
       #hp-tilda-form-slot #form4673146901 {
         display: block !important;
@@ -2072,7 +2099,79 @@
         margin: 0 !important;
         width: 100% !important;
       }
-      #hp-tilda-form-slot input.t-input,
+      /* Контейнер телефонной маски Тильды */
+      #hp-tilda-form-slot .t-input-phonemask__wrap {
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+        background: rgba(14, 9, 21, 0.9) !important;
+        border: 1px solid var(--hp-border, rgba(244, 114, 182, 0.25)) !important;
+        border-radius: 16px !important;
+        padding: 0 18px !important;
+        height: 56px !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+      }
+      #hp-tilda-form-slot .t-input-phonemask__wrap:focus-within {
+        border-color: var(--hp-rose, #f472b6) !important;
+        box-shadow: 0 0 16px rgba(244, 114, 182, 0.3) !important;
+      }
+      #hp-tilda-form-slot .t-input-phonemask__select {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        margin-right: 12px !important;
+        padding-right: 12px !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+        cursor: pointer !important;
+        color: #ffffff !important;
+        height: 100% !important;
+        flex-shrink: 0 !important;
+      }
+      #hp-tilda-form-slot .t-input-phonemask__select-code {
+        color: #ffffff !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+      }
+      #hp-tilda-form-slot .t-input-phonemask__select-triangle {
+        border-top-color: var(--hp-rose, #f472b6) !important;
+      }
+      #hp-tilda-form-slot input.t-input.t-input-phonemask {
+        background: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        height: 100% !important;
+        width: 100% !important;
+        flex: 1 !important;
+        box-shadow: none !important;
+        color: #ffffff !important;
+        font-size: 15.5px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        outline: none !important;
+      }
+      #hp-tilda-form-slot .t-input-phonemask__options-wrap {
+        background: #1d0f28 !important;
+        border: 1px solid rgba(244, 114, 182, 0.4) !important;
+        border-radius: 14px !important;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8) !important;
+        color: #fff !important;
+        z-index: 99999999 !important;
+      }
+      #hp-tilda-form-slot .t-input-phonemask__options-item {
+        color: #ffffff !important;
+        font-family: 'Montserrat', sans-serif !important;
+        padding: 8px 14px !important;
+      }
+      #hp-tilda-form-slot .t-input-phonemask__options-item:hover,
+      #hp-tilda-form-slot .t-input-phonemask__options-item_chosen {
+        background: rgba(244, 114, 182, 0.2) !important;
+        color: #fff !important;
+      }
+      /* Обычные текстовые инпуты (Имя, Telegram ник, MAX ссылка) */
+      #hp-tilda-form-slot input.t-input:not(.t-input-phonemask):not(.t-input-phonemask__wrap),
       #hp-tilda-form-slot textarea.t-input {
         width: 100% !important;
         background: rgba(14, 9, 21, 0.9) !important;
@@ -2086,7 +2185,7 @@
         box-sizing: border-box !important;
         transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
       }
-      #hp-tilda-form-slot input.t-input:focus,
+      #hp-tilda-form-slot input.t-input:not(.t-input-phonemask):focus,
       #hp-tilda-form-slot textarea.t-input:focus {
         border-color: var(--hp-rose, #f472b6) !important;
         box-shadow: 0 0 16px rgba(244, 114, 182, 0.3) !important;
@@ -2105,9 +2204,6 @@
       #hp-tilda-form-slot textarea:-ms-input-placeholder {
         color: rgba(255, 255, 255, 0.45) !important;
         opacity: 1 !important;
-      }
-      #hp-tilda-form-slot .t-input-phonemask__select {
-        color: #fff !important;
       }
       #hp-tilda-form-slot .t-input-group_tx .t-text {
         color: var(--hp-rose-light, #fce7f3) !important;
@@ -5319,26 +5415,42 @@
     var rec = document.getElementById('rec4673146901');
     if (!rec) return;
 
+    // ВАЖНО: Переносим ВЕСЬ блок #rec4673146901 внутрь слота!
+    // Не вырываем форму, чтобы все функции Тильды (телефонная маска с флагом и кодом +7, валидация и отправка) работали штатно!
+    if (rec.parentElement !== slot) {
+      slot.appendChild(rec);
+    }
+
+    rec.style.setProperty('display', 'block', 'important');
+    rec.style.setProperty('visibility', 'visible', 'important');
+    rec.style.setProperty('opacity', '1', 'important');
+    rec.style.setProperty('pointer-events', 'auto', 'important');
+    rec.style.setProperty('position', 'static', 'important');
+
+    var popup = rec.querySelector('.t-popup');
+    if (popup) {
+      popup.style.setProperty('display', 'block', 'important');
+      popup.style.setProperty('visibility', 'visible', 'important');
+      popup.style.setProperty('opacity', '1', 'important');
+      popup.style.setProperty('position', 'static', 'important');
+      popup.classList.add('t-popup_show');
+    }
+
+    var popupContainer = rec.querySelector('.t-popup__container');
+    if (popupContainer) {
+      popupContainer.style.setProperty('display', 'block', 'important');
+      popupContainer.style.setProperty('position', 'static', 'important');
+      popupContainer.style.setProperty('background', 'transparent', 'important');
+    }
+
     var form = rec.querySelector('form#form4673146901') || rec.querySelector('form');
     if (!form) return;
 
-    // Переносим саму форму Tilda напрямую внутрь нашего слота #hp-tilda-form-slot!
-    if (form.parentElement !== slot) {
-      slot.appendChild(form);
-    }
-
-    // Блок popup rec4673146901 гарантированно скрываем, чтобы он не висел в воздухе поверх экрана
-    rec.style.display = 'none';
-    rec.style.visibility = 'hidden';
-    rec.style.opacity = '0';
-    rec.style.pointerEvents = 'none';
-
-    // Форма внутри слота — полностью встроена в нормальный поток страницы
-    form.style.display = 'block';
-    form.style.visibility = 'visible';
-    form.style.opacity = '1';
-    form.style.position = 'static';
-    form.style.transform = 'none';
+    form.style.setProperty('display', 'block', 'important');
+    form.style.setProperty('visibility', 'visible', 'important');
+    form.style.setProperty('opacity', '1', 'important');
+    form.style.setProperty('position', 'static', 'important');
+    form.style.setProperty('transform', 'none', 'important');
 
     // Заголовки и плашки
     var titleGroup = form.querySelector('.t-input-title');
@@ -5349,6 +5461,29 @@
     var subBtn = form.querySelector('.t-btnflex__text, .t-submit');
     if (subBtn) {
       subBtn.textContent = 'Получить подбор и фото среза ✦';
+    }
+
+    var submitBtnEl = form.querySelector('button[type="submit"], .t-submit');
+    if (submitBtnEl) {
+      submitBtnEl.style.setProperty('pointer-events', 'auto', 'important');
+      submitBtnEl.style.setProperty('cursor', 'pointer', 'important');
+      submitBtnEl.removeAttribute('disabled');
+
+      submitBtnEl.addEventListener('click', function(e) {
+        if (submitBtnEl.tildaSendingStatus === '1') {
+          submitBtnEl.tildaSendingStatus = '0';
+          submitBtnEl.classList.remove('t-btn_sending');
+        }
+
+        var activeGroup = form.querySelector('.t-contact-method__value-container > div.hp-method-active');
+        if (activeGroup) {
+          var telInp = activeGroup.querySelector('input[type="tel"]');
+          var resInp = activeGroup.querySelector('.js-phonemask-result');
+          if (telInp && resInp && telInp.value && !resInp.value) {
+            resInp.value = telInp.value;
+          }
+        }
+      });
     }
 
     var nameInp = form.querySelector('input[name="Name"]');
@@ -5364,6 +5499,28 @@
     if (maxInp) {
       maxInp.placeholder = 'Ссылка на профиль MAX или телефон';
     }
+
+    // Инициализируем телефонные маски Tilda
+    function initPhoneMasks() {
+      if (typeof window.t_form_phonemask__mulitple__load === 'function') {
+        var maskInputs = rec.querySelectorAll('[data-phonemask-lid="1770920801992"]');
+        if (maskInputs.length) {
+          try {
+            window.t_form_phonemask__mulitple__load(maskInputs);
+          } catch (e) {}
+        }
+      }
+      if (typeof window.t_contactMethod__init === 'function') {
+        try {
+          window.t_contactMethod__init('4673146901', '1770920801992');
+        } catch (e) {}
+      }
+    }
+
+    initPhoneMasks();
+    setTimeout(initPhoneMasks, 250);
+    setTimeout(initPhoneMasks, 600);
+    setTimeout(initPhoneMasks, 1200);
 
     setupContactMethodSwitcher(form);
 
