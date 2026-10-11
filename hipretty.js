@@ -2542,18 +2542,51 @@
           }
 
           // 4. Отправляем форму напрямую в Tilda API и эмулируем сабмит
-          var tSubmit = tildaForm.querySelector('button[type="submit"], .t-submit');
           var allRecs = document.getElementById('allrecords');
           var formKey = (allRecs && allRecs.getAttribute('data-tilda-formskey')) || 'a8a1a8151b151a0221d568e5a5500437';
+          var pageId = (allRecs && allRecs.getAttribute('data-tilda-page-id')) || '297318909';
+          var projectId = (allRecs && allRecs.getAttribute('data-tilda-project-id')) || '5500437';
+          var formId = tildaForm.id || 'form4673146901';
 
+          var params = new URLSearchParams();
+          var services = [
+            'b50f30259e15e3d8d5212d867a1d4954',
+            'f84b098f0cddc52c587a2c2f5e0fadfc',
+            '9f2f90b847bfb45b6924b750bb155691',
+            '3de76a792e289629ff456561531ed0ca',
+            '079d3725ab062a821f281c7010b7677f'
+          ];
+          services.forEach(function(s) { params.append('formservices[]', s); });
+          params.append('tildaspec-formname', 'Запись на подбор волос');
+          params.append('Name', fullNameToSend);
+          params.append('messenger-type', currentMethod);
+          params.append('messenger-id', contact);
+          if (currentMethod === 'phone' || /^\+?[0-9\s\-\(\)]{7,}$/.test(contact)) {
+            params.append('Phone', contact);
+          }
+          if (chosenCutParam) {
+            params.append('Comment', 'Параметры: ' + chosenCutParam);
+            params.append('Textarea', 'Параметры: ' + chosenCutParam);
+          }
+          params.append('Checkbox', 'yes');
+          params.append('tildaspec-formskey', formKey);
+          params.append('tildaspec-pageid', pageId);
+          params.append('tildaspec-projectid', projectId);
+          params.append('tildaspec-formid', formId);
+
+          try {
+            fetch('https://forms.tildacdn.com/procces/', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+              body: params.toString()
+            }).catch(function(e) { console.error('Tilda direct post err:', e); });
+          } catch(e) { console.error('Fetch error:', e); }
+
+          var tSubmit = tildaForm.querySelector('button[type="submit"], .t-submit');
           if (window.tildaForm && typeof window.tildaForm.send === 'function') {
-            try {
-              window.tildaForm.send(tildaForm, tSubmit, 2, formKey);
-            } catch(err) {
-              if (tSubmit && typeof tSubmit.click === 'function') tSubmit.click();
-            }
+            try { window.tildaForm.send(tildaForm, tSubmit, 2, formKey); } catch(err) {}
           } else if (tSubmit && typeof tSubmit.click === 'function') {
-            tSubmit.click();
+            try { tSubmit.click(); } catch(err) {}
           }
         }
 
