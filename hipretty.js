@@ -2719,17 +2719,18 @@
           submitBtn.textContent = 'Отправка...';
         }
 
-        var tildaForm = document.getElementById('form4673146901') || document.querySelector('form.js-form-proccess') || document.querySelector('form.t-form');
+        var tildaMethod = currentMethod === 'max' ? 'max_messenger' : currentMethod;
         var fullNameToSend = name;
         if (chosenCutParam) {
           fullNameToSend += ' (' + chosenCutParam + ')';
         }
+        var fullContactLabel = '[' + currentMethod.toUpperCase() + ': ' + contact + ']';
+        var combinedName = fullNameToSend + ' ' + fullContactLabel;
 
         var allRecs = document.getElementById('allrecords');
         var formKey = (allRecs && allRecs.getAttribute('data-tilda-formskey')) || 'a8a1a8151b151a0221d568e5a5500437';
         var pageId = (allRecs && allRecs.getAttribute('data-tilda-page-id')) || '297318909';
         var projectId = (allRecs && allRecs.getAttribute('data-tilda-project-id')) || '5500437';
-        var formId = (tildaForm && tildaForm.id) || 'form4673146901';
 
         var services = [
           'b50f30259e15e3d8d5212d867a1d4954',
@@ -2738,8 +2739,6 @@
           '3de76a792e289629ff456561531ed0ca',
           '079d3725ab062a821f281c7010b7677f'
         ];
-
-        var tildaMethod = currentMethod === 'max' ? 'max_messenger' : currentMethod;
 
         function showSuccessState() {
           var succEl = document.getElementById('hp-form-success');
@@ -2750,50 +2749,72 @@
           }
         }
 
-        // 1. Синхронизируем инпуты скрытой формы Тильды и отправляем через Tilda engine
+        // --- КАНАЛ 1: Синхронизация и отправка основной формы form4673146901 ---
+        var tildaForm = document.getElementById('form4673146901');
         if (tildaForm) {
+          // Заполняем имя (включая контакт в скобках, чтобы бот точно показал его)
           var tName = tildaForm.querySelector('input[name="Name"]');
           if (tName) {
-            tName.value = fullNameToSend;
+            tName.value = combinedName;
             tName.dispatchEvent(new Event('input', { bubbles: true }));
             tName.dispatchEvent(new Event('change', { bubbles: true }));
           }
 
-          var radioInput = tildaForm.querySelector('input[name="messenger-type"][value="' + tildaMethod + '"]');
-          var radioWrap = tildaForm.querySelector('[data-method-type="' + tildaMethod + '"]');
-          if (radioWrap) {
-            radioWrap.click();
-          } else if (radioInput) {
-            radioInput.checked = true;
-            radioInput.dispatchEvent(new Event('change', { bubbles: true }));
+          // Снимаем checked со всех радио-кнопок способа связи
+          var radios = tildaForm.querySelectorAll('input[name="messenger-type"]');
+          radios.forEach(function(r) { r.checked = false; });
+
+          // Выбираем радио нужного мессенджера
+          var targetRadio = tildaForm.querySelector('input[name="messenger-type"][value="' + tildaMethod + '"]');
+          if (targetRadio) {
+            targetRadio.checked = true;
+            targetRadio.dispatchEvent(new Event('change', { bubbles: true }));
+            var rLabel = tildaForm.querySelector('label[for="' + targetRadio.id + '"]');
+            if (rLabel) { try { rLabel.click(); } catch(e){} }
           }
 
-          var allContactInputs = tildaForm.querySelectorAll('input[name="messenger-id"]');
-          allContactInputs.forEach(function(inp) {
-            var mAttr = inp.getAttribute('data-contact-method');
-            if (mAttr === tildaMethod || (!mAttr && inp.classList.contains('js-phonemask-input') && (currentMethod === 'phone' || isGoodPhone))) {
-              inp.disabled = false;
-              inp.value = contact;
-              inp.dispatchEvent(new Event('input', { bubbles: true }));
-              inp.dispatchEvent(new Event('change', { bubbles: true }));
-            } else {
-              inp.disabled = true;
-              inp.removeAttribute('data-tilda-req');
-            }
+          // Отключаем и очищаем ВСЕ поля messenger-id, убирая js-tilda-rule
+          var allMsgInputs = tildaForm.querySelectorAll('input[name="messenger-id"]');
+          allMsgInputs.forEach(function(inp) {
+            inp.disabled = true;
+            inp.classList.remove('js-tilda-rule');
+            inp.removeAttribute('data-tilda-req');
+            inp.value = '';
           });
 
-          var phoneInps = tildaForm.querySelectorAll('input[name="Phone"]');
-          phoneInps.forEach(function(inp) {
-            if (isGoodPhone) {
-              inp.disabled = false;
-              inp.value = contact;
-              inp.dispatchEvent(new Event('input', { bubbles: true }));
-              inp.dispatchEvent(new Event('change', { bubbles: true }));
-            } else {
-              inp.disabled = true;
-              inp.removeAttribute('data-tilda-req');
-            }
-          });
+          // Находим единственное нужное активное поле ввода для выбранного мессенджера
+          var activeInp = null;
+          if (currentMethod === 'telegram') {
+            activeInp = tildaForm.querySelector('input[data-contact-method="telegram"]') || tildaForm.querySelector('.t-contact-method__telegram-value input[type="text"]');
+          } else if (currentMethod === 'max') {
+            activeInp = tildaForm.querySelector('input[data-contact-method="max_messenger"]') || tildaForm.querySelector('.t-contact-method__max_messenger-value input[type="text"]');
+          } else {
+            activeInp = tildaForm.querySelector('.t-contact-method__' + tildaMethod + '-value input.js-phonemask-input') || tildaForm.querySelector('input[name="messenger-id"]');
+          }
+
+          if (activeInp) {
+            activeInp.disabled = false;
+            activeInp.classList.add('js-tilda-rule');
+            activeInp.setAttribute('data-tilda-req', '1');
+            activeInp.value = contact;
+            activeInp.dispatchEvent(new Event('input', { bubbles: true }));
+            activeInp.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+
+          // Добавляем или обновляем скрытые поля Phone и Comment для гарантированной доставки в Telegram
+          var hPhone = tildaForm.querySelector('input[name="Phone"]');
+          if (!hPhone) {
+            tildaForm.insertAdjacentHTML('beforeend', '<input type="hidden" name="Phone" value="">');
+            hPhone = tildaForm.querySelector('input[name="Phone"]');
+          }
+          if (hPhone) hPhone.value = contact;
+
+          var hComment = tildaForm.querySelector('input[name="Comment"]');
+          if (!hComment) {
+            tildaForm.insertAdjacentHTML('beforeend', '<input type="hidden" name="Comment" value="">');
+            hComment = tildaForm.querySelector('input[name="Comment"]');
+          }
+          if (hComment) hComment.value = 'Способ связи: ' + currentMethod.toUpperCase() + ' (' + contact + ')' + (chosenCutParam ? ' • Срез: ' + chosenCutParam : '');
 
           var chk = tildaForm.querySelector('input[name="Checkbox"]');
           if (chk) chk.checked = true;
@@ -2801,6 +2822,7 @@
           var specComments = tildaForm.querySelector('input[name="form-spec-comments"]');
           if (specComments) specComments.value = '';
 
+          // Отправка через движок Tilda
           var tSubmit = tildaForm.querySelector('button[type="submit"], .t-submit');
           if (window.tildaForm && typeof window.tildaForm.send === 'function') {
             try { window.tildaForm.send(tildaForm, tSubmit, 2, formKey); } catch(err) { console.error('tildaForm.send err:', err); }
@@ -2809,26 +2831,37 @@
           }
         }
 
-        // 2. Прямой POST запрос через fetch для гарантированной доставки во все 5 сервисов приема данных
+        // --- КАНАЛ 2: Синхронизация и отправка консультационной формы form4673150901 ---
+        var form2 = document.getElementById('form4673150901');
+        if (form2) {
+          var f2Name = form2.querySelector('input[name="Name"]');
+          if (f2Name) f2Name.value = combinedName;
+          var f2Phone = form2.querySelector('input[name="Phone"]');
+          if (f2Phone) f2Phone.value = isGoodPhone ? contact : '+7 (993) 336-53-57';
+          var f2Text = form2.querySelector('textarea[name="Textarea"]');
+          if (f2Text) f2Text.value = 'Заявка на срез: ' + (chosenCutParam || 'Индивидуальный подбор') + ' • Связь в ' + currentMethod.toUpperCase() + ': ' + contact;
+          var f2Submit = form2.querySelector('button[type="submit"], .t-submit');
+          if (window.tildaForm && typeof window.tildaForm.send === 'function') {
+            try { window.tildaForm.send(form2, f2Submit, 2, formKey); } catch(e){}
+          }
+        }
+
+        // --- КАНАЛ 3: Прямой POST запрос через fetch для гарантированного приема всеми 5 сервисами ---
         var params = new URLSearchParams();
         services.forEach(function(s) { params.append('formservices[]', s); });
         params.append('tildaspec-formname', 'Запись на подбор волос');
-        params.append('Name', fullNameToSend);
+        params.append('Name', combinedName);
         params.append('messenger-type', tildaMethod);
         params.append('messenger-id', contact);
-        if (isGoodPhone) {
-          params.append('Phone', contact);
-        }
-        if (chosenCutParam) {
-          params.append('Comment', 'Параметры: ' + chosenCutParam);
-          params.append('Textarea', 'Параметры: ' + chosenCutParam);
-        }
+        params.append('Phone', contact);
+        params.append('Comment', 'Способ связи: ' + currentMethod.toUpperCase() + ' (' + contact + ')' + (chosenCutParam ? ' • Срез: ' + chosenCutParam : ''));
+        params.append('Textarea', 'Способ связи: ' + currentMethod.toUpperCase() + ' (' + contact + ')' + (chosenCutParam ? ' • Срез: ' + chosenCutParam : ''));
         params.append('Checkbox', 'yes');
         params.append('form-spec-comments', '');
         params.append('tildaspec-formskey', formKey);
         params.append('tildaspec-pageid', pageId);
         params.append('tildaspec-projectid', projectId);
-        params.append('tildaspec-formid', formId);
+        params.append('tildaspec-formid', 'form4673146901');
         params.append('tildaspec-referer', window.location.href);
 
         var requestFinished = false;
@@ -2837,7 +2870,7 @@
             requestFinished = true;
             showSuccessState();
           }
-        }, 2500);
+        }, 2200);
 
         fetch('https://forms.tildacdn.com/procces/', {
           method: 'POST',
