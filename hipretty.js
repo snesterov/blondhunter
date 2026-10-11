@@ -13,9 +13,9 @@
     var s = document.createElement('style');
     s.id = 'hp-styles';
     s.textContent = `
-      #allrecords > .r:not(#rec4673156001):not(#rec4673146901):not(#rec1935129061),
-      #allrecords > div.r:not(#rec4673156001):not(#rec4673146901):not(#rec1935129061),
-      .t-records > .r:not(#rec4673156001):not(#rec4673146901):not(#rec1935129061) {
+      #allrecords > .r:not(#rec4673156001):not(#rec4673146901):not(#rec4673150901):not(#rec1935129061),
+      #allrecords > div.r:not(#rec4673156001):not(#rec4673146901):not(#rec4673150901):not(#rec1935129061),
+      .t-records > .r:not(#rec4673156001):not(#rec4673146901):not(#rec4673150901):not(#rec1935129061) {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
@@ -951,6 +951,179 @@
       }
 
       /* КОНТАКТЫ */
+      /* СТИЛИЗАЦИЯ НАСТОЯЩЕЙ TILDA-ФОРМЫ ВНУТРИ LEAD-BOX */
+      #hp-tilda-form-slot {
+        width: 100%;
+        margin-top: 20px;
+      }
+      #hp-tilda-form-slot .t-popup,
+      #hp-tilda-form-slot .t702,
+      #hp-tilda-form-slot .t700 {
+        position: static !important;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: transparent !important;
+        padding: 0 !important;
+        height: auto !important;
+        min-height: auto !important;
+        width: 100% !important;
+        overflow: visible !important;
+      }
+      #hp-tilda-form-slot .t-popup__close,
+      #hp-tilda-form-slot .t-popup__block-close,
+      #hp-tilda-form-slot .t702__title,
+      #hp-tilda-form-slot .t702__descr,
+      #hp-tilda-form-slot .t702__text-wrapper,
+      #hp-tilda-form-slot .t-section__container,
+      #hp-tilda-form-slot .t700__content {
+        display: none !important;
+      }
+      #hp-tilda-form-slot .t-popup__container,
+      #hp-tilda-form-slot .t-col {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      #hp-tilda-form-slot .t702__wrapper {
+        padding: 0 !important;
+        background: transparent !important;
+      }
+      #hp-tilda-form-slot form.t-form {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+      }
+      #hp-tilda-form-slot .t-input-group {
+        margin-bottom: 18px !important;
+      }
+      #hp-tilda-form-slot .t-input-title {
+        color: var(--hp-rose-light, #fce7f3) !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 13.5px !important;
+        font-weight: 600 !important;
+        margin-bottom: 10px !important;
+        text-align: left !important;
+      }
+      #hp-tilda-form-slot .t-contact-method__types-container {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 10px !important;
+        margin-bottom: 14px !important;
+      }
+      @media (max-width: 600px) {
+        #hp-tilda-form-slot .t-contact-method__types-container {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+      #hp-tilda-form-slot .t-contact-method__type {
+        background: rgba(255, 255, 255, 0.04) !important;
+        border: 1px solid var(--hp-border, rgba(244, 114, 182, 0.25)) !important;
+        border-radius: 14px !important;
+        padding: 10px !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      #hp-tilda-form-slot .t-contact-method__type:hover {
+        border-color: var(--hp-rose, #f472b6) !important;
+      }
+      #hp-tilda-form-slot .t-contact-method__type:has(>.t-radio:checked) {
+        background: rgba(244, 114, 182, 0.2) !important;
+        border-color: var(--hp-rose, #f472b6) !important;
+        box-shadow: 0 0 16px rgba(244, 114, 182, 0.3) !important;
+      }
+      #hp-tilda-form-slot .t-contact-method__type-label {
+        display: flex !important;
+        align-items: center !important;
+        gap: 7px !important;
+        cursor: pointer !important;
+        white-space: nowrap !important;
+      }
+      #hp-tilda-form-slot .t-contact-method__title {
+        color: #fdfafd !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+      }
+      #hp-tilda-form-slot input.t-input,
+      #hp-tilda-form-slot textarea.t-input {
+        width: 100% !important;
+        background: rgba(14, 9, 21, 0.85) !important;
+        border: 1px solid var(--hp-border, rgba(244, 114, 182, 0.25)) !important;
+        border-radius: 16px !important;
+        padding: 15px 20px !important;
+        color: #fff !important;
+        font-size: 15px !important;
+        font-family: 'Montserrat', sans-serif !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+      }
+      #hp-tilda-form-slot input.t-input:focus,
+      #hp-tilda-form-slot textarea.t-input:focus {
+        border-color: var(--hp-rose, #f472b6) !important;
+        box-shadow: 0 0 15px rgba(244, 114, 182, 0.3) !important;
+      }
+      #hp-tilda-form-slot .t-input-group_tx .t-text {
+        color: var(--hp-rose-light, #fce7f3) !important;
+        font-size: 12.5px !important;
+        line-height: 1.5 !important;
+        text-align: left !important;
+        background: rgba(244, 114, 182, 0.08) !important;
+        border-left: 3px solid var(--hp-rose, #f472b6) !important;
+        padding: 10px 14px !important;
+        border-radius: 0 10px 10px 0 !important;
+      }
+      #hp-tilda-form-slot .t-checkbox__control {
+        color: var(--hp-text-muted, #b8acc7) !important;
+        font-size: 12px !important;
+        text-align: left !important;
+      }
+      #hp-tilda-form-slot .t-checkbox__indicator {
+        border-color: var(--hp-rose, #f472b6) !important;
+      }
+      #hp-tilda-form-slot .t-submit,
+      #hp-tilda-form-slot button[type="submit"] {
+        width: 100% !important;
+        background: var(--hp-grad-btn, linear-gradient(135deg, #fbcfe8 0%, #f472b6 50%, #db2777 100%)) !important;
+        color: #1a0818 !important;
+        border: none !important;
+        border-radius: 20px !important;
+        padding: 16px 24px !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        font-family: 'Montserrat', sans-serif !important;
+        cursor: pointer !important;
+        box-shadow: 0 8px 25px rgba(244, 114, 182, 0.4) !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+        text-transform: none !important;
+        letter-spacing: 0.5px !important;
+      }
+      #hp-tilda-form-slot .t-submit:hover,
+      #hp-tilda-form-slot button[type="submit"]:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 10px 32px rgba(244, 114, 182, 0.6) !important;
+      }
+      #hp-tilda-form-slot .t-btn_wrap-effects { display: none !important; }
+      #hp-tilda-form-slot .js-successbox {
+        background: rgba(16, 185, 129, 0.15) !important;
+        border: 1px solid #10B981 !important;
+        color: #6ee7b7 !important;
+        border-radius: 16px !important;
+        padding: 18px !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        margin-bottom: 20px !important;
+      }
+
       .hp-contacts-card {
         background: var(--hp-bg-card);
         border: 1px solid var(--hp-border);
@@ -1992,57 +2165,17 @@
           Оставьте контакты, и наш мастер бесплатно подберет идеальный срез по вашему фото и покажет варианты.
         </p>
 
-        <form id="hp-lead-form">
-          <!-- ПЛАШКА ВЫБРАННОГО СРЕЗА ИЛИ ПАРАМЕТРОВ КВИЗА -->
-          <div id="hp-selected-cut-box" class="hp-selected-cut-box">
-            <div class="hp-selected-cut-info">
-              <span class="hp-selected-cut-tag" id="hp-selected-cut-tag">Выбранный срез</span>
-              <span class="hp-selected-cut-title" id="hp-selected-cut-text"></span>
-            </div>
-            <button type="button" class="hp-selected-cut-reset" id="hp-selected-cut-reset" title="Очистить выбор">✕</button>
+        <!-- ПЛАШКА ВЫБРАННОГО СРЕЗА ИЛИ ПАРАМЕТРОВ КВИЗА -->
+        <div id="hp-selected-cut-box" class="hp-selected-cut-box">
+          <div class="hp-selected-cut-info">
+            <span class="hp-selected-cut-tag" id="hp-selected-cut-tag">Выбранный срез</span>
+            <span class="hp-selected-cut-title" id="hp-selected-cut-text"></span>
           </div>
+          <button type="button" class="hp-selected-cut-reset" id="hp-selected-cut-reset" title="Очистить выбор">✕</button>
+        </div>
 
-          <div class="hp-input-group">
-            <input type="text" id="hp-user-name" class="hp-input" placeholder="Ваше имя" required>
-          </div>
-
-          <div class="hp-method-label">Выберите удобный способ связи:</div>
-          <div class="hp-method-selector">
-            <button type="button" class="hp-method-btn active tg" data-m="telegram">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="#0088cc" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-              <span>Telegram</span>
-            </button>
-            <button type="button" class="hp-method-btn max" data-m="max">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="#FFAA44" style="flex-shrink:0;"><path d="M12 2C6.48 2 2 6.03 2 11C2 13.88 3.5 16.42 5.86 17.96L5 22L9.29 20.35C10.16 20.77 11.06 21 12 21C17.52 21 22 16.97 22 12C22 7.03 17.52 2 12 2M7.5 13.5C6.67 13.5 6 12.83 6 12C6 11.17 6.67 10.5 7.5 10.5C8.33 10.5 9 11.17 9 12C9 12.83 8.33 13.5 7.5 13.5M12 13.5C11.17 13.5 10.5 12.83 10.5 12C10.5 11.17 11.17 10.5 12 10.5C12.83 10.5 13.5 11.17 13.5 12C13.5 12.83 12.83 13.5 12 13.5M16.5 13.5C15.67 13.5 15 12.83 15 12C15 11.17 15.67 10.5 16.5 10.5C17.33 10.5 18 11.17 18 12C18 12.83 17.33 13.5 16.5 13.5Z"/></svg>
-              <span>MAX</span>
-            </button>
-            <button type="button" class="hp-method-btn wa" data-m="whatsapp">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="#25D366" style="flex-shrink:0;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2M12.05 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C16.6 3.67 20.3 7.37 20.3 11.92C20.29 16.46 16.59 20.15 12.05 20.15M16.57 14.33C16.32 14.21 15.1 13.61 14.87 13.53C14.65 13.44 14.48 13.4 14.32 13.65C14.15 13.9 13.68 14.45 13.54 14.62C13.39 14.78 13.25 14.8 13 14.68C12.75 14.55 11.95 14.29 11 13.45C10.26 12.79 9.76 11.97 9.61 11.72C9.47 11.47 9.6 11.34 9.72 11.22C9.83 11.11 9.97 10.93 10.1 10.78C10.22 10.64 10.27 10.53 10.35 10.37C10.43 10.2 10.39 10.06 10.33 9.94C10.27 9.81 9.77 8.58 9.57 8.08C9.37 7.6 9.17 7.66 9.02 7.65C8.88 7.65 8.71 7.65 8.55 7.65C8.38 7.65 8.11 7.71 7.88 7.96C7.65 8.21 7 8.82 7 10.06C7 11.31 7.91 12.51 8.03 12.68C8.16 12.84 9.82 15.4 12.35 16.5C12.95 16.76 13.42 16.91 13.78 17.03C14.38 17.22 14.93 17.19 15.36 17.13C15.84 17.06 16.84 16.52 17.05 15.94C17.26 15.36 17.26 14.86 17.2 14.76C17.14 14.65 16.82 14.46 16.57 14.33Z"/></svg>
-              <span>WhatsApp</span>
-            </button>
-            <button type="button" class="hp-method-btn phone" data-m="phone">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="#E8A598" style="flex-shrink:0;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-              <span>Телефон</span>
-            </button>
-          </div>
-
-          <div class="hp-input-group">
-            <input type="text" id="hp-user-contact" class="hp-input" placeholder="Ник @username или телефон" required>
-            <div id="hp-contact-hint" class="hp-input-hint">
-              <strong>Telegram:</strong> можно указать ник (@username) или номер телефона.
-            </div>
-          </div>
-
-          <button type="submit" id="hp-submit-btn" class="hp-form-submit">Получить подбор и фото среза ✦</button>
-
-          <div class="hp-form-policy">
-            Нажимая кнопку, вы соглашаетесь с <a onclick="openPolicyModal('privacy')">Политикой конфиденциальности</a> (152-ФЗ РФ).
-          </div>
-          <div id="hp-form-error" style="display:none;margin-top:12px;color:#f87171;font-weight:600;font-size:14px;line-height:1.4;"></div>
-          <div id="hp-form-success" style="display:none;margin-top:20px;color:#10B981;font-weight:700;font-size:15px;line-height:1.5;">
-            ✓ Заявка успешно принята! Менеджер уже подбирает срезы и готовит фото и видео.
-          </div>
-        </form>
+        <!-- СЛОТ ДЛЯ ОФИЦИАЛЬНОЙ РОДНОЙ TILDA-ФОРМЫ -->
+        <div id="hp-tilda-form-slot"></div>
       </div>
     </div>
   </section>
@@ -2500,25 +2633,52 @@
     }
   }
 
-  function polishTildaPopup() {
-    var popupRec = document.getElementById('rec4673146901');
-    if (!popupRec) return;
+  function mountTildaNativeForm() {
+    var slot = document.getElementById('hp-tilda-form-slot');
+    if (!slot) return;
 
-    var closeBtn = popupRec.querySelector('.t-popup__close-wrapper');
-    if (closeBtn) closeBtn.setAttribute('title', 'Закрыть');
+    // Ищем оригинальный Tilda-блок формы rec4673146901
+    var rec = document.getElementById('rec4673146901');
+    if (!rec) return;
 
-    var subBtn = popupRec.querySelector('.t-btnflex__text, .t-submit');
-    if (subBtn && (!subBtn.textContent || subBtn.textContent.trim() === '')) {
-      subBtn.textContent = 'Подобрать срез ✦';
+    // Встраиваем блок прямо в структуру секции захвата #lead-box
+    if (rec.parentElement !== slot) {
+      slot.appendChild(rec);
+    }
+    rec.style.display = 'block';
+    rec.style.visibility = 'visible';
+    rec.style.opacity = '1';
+
+    // Снимаем скрывающие классы popup, чтобы блок жил как стандартная форма
+    var popup = rec.querySelector('.t-popup');
+    if (popup) {
+      popup.classList.add('t-popup_show');
+      popup.style.display = 'block';
+      popup.style.opacity = '1';
     }
 
-    var nameInp = popupRec.querySelector('input[name="Name"]');
-    if (nameInp && !nameInp.placeholder) nameInp.placeholder = 'Ваше имя';
+    // Брендируем кнопку отправки и поля
+    var subBtn = rec.querySelector('.t-btnflex__text, .t-submit');
+    if (subBtn && (!subBtn.textContent || subBtn.textContent.trim() === '' || subBtn.textContent.indexOf('?') !== -1)) {
+      subBtn.textContent = 'Получить подбор и фото среза ✦';
+    }
 
-    var tildaForm = popupRec.querySelector('form');
-    if (tildaForm && !tildaForm.dataset.hpBound) {
-      tildaForm.dataset.hpBound = 'true';
+    var nameInp = rec.querySelector('input[name="Name"]');
+    if (nameInp) {
+      nameInp.placeholder = 'Ваше имя';
+    }
+
+    var tildaForm = rec.querySelector('form');
+    if (tildaForm && !tildaForm.dataset.hpMounted) {
+      tildaForm.dataset.hpMounted = 'true';
+
+      // При отправке формы подмешиваем выбранный срез в Name или скрытое поле
       tildaForm.addEventListener('submit', function() {
+        if (chosenCutParam) {
+          if (nameInp && nameInp.value && nameInp.value.indexOf(chosenCutParam) === -1) {
+            nameInp.value = nameInp.value + ' (' + chosenCutParam + ')';
+          }
+        }
         if (typeof window.ym === 'function') {
           window.ym(90792799, 'reachGoal', 'submitted');
           window.ym(90792799, 'reachGoal', 'gamelead_send');
@@ -2621,284 +2781,9 @@
       });
     }
 
-    // Селектор мессенджеров
-    var methodBtns = document.querySelectorAll('.hp-method-btn');
-    var contactInput = document.getElementById('hp-user-contact');
-    var contactHint = document.getElementById('hp-contact-hint');
-
-    methodBtns.forEach(function(b) {
-      b.addEventListener('click', function() {
-        methodBtns.forEach(function(x) { x.classList.remove('active'); });
-        b.classList.add('active');
-        currentMethod = b.getAttribute('data-m');
-        if (currentMethod === 'max') {
-          contactInput.placeholder = 'Ссылка на профиль MAX или телефон';
-          contactHint.innerHTML = '<strong>MAX:</strong> укажите ссылку на профиль MAX или номер телефона.';
-        } else if (currentMethod === 'telegram') {
-          contactInput.placeholder = 'Ник @username или телефон';
-          contactHint.innerHTML = '<strong>Telegram:</strong> можно указать ник (@username) или номер телефона.';
-        } else if (currentMethod === 'whatsapp') {
-          contactInput.placeholder = '+7 (999) 000-00-00 (WhatsApp)';
-          contactHint.innerHTML = '<strong>При выборе WhatsApp:</strong> Укажите ваш номер в WhatsApp.';
-        } else {
-          contactInput.placeholder = '+7 (999) 000-00-00';
-          contactHint.innerHTML = '<strong>При выборе телефона:</strong> Мы перезвоним для подтверждения параметров среза.';
-        }
-      });
-    });
-
-    // Отправка заявки
-    var leadForm = document.getElementById('hp-lead-form');
-    if (leadForm) {
-      leadForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var submitBtn = document.getElementById('hp-submit-btn');
-        var nameInput = document.getElementById('hp-user-name');
-        var contactInput = document.getElementById('hp-user-contact');
-        var name = (nameInput ? nameInput.value : '').trim();
-        var contact = (contactInput ? contactInput.value : '').trim();
-        var errEl = document.getElementById('hp-form-error');
-        if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
-
-        if (!name) {
-          if (errEl) {
-            errEl.textContent = 'Пожалуйста, укажите ваше имя.';
-            errEl.style.display = 'block';
-          }
-          if (nameInput) nameInput.focus();
-          return;
-        }
-
-        // Защита от дурака / валидация
-        var cleanDigits = contact.replace(/[^0-9]/g, '');
-        var isGoodPhone = cleanDigits.length >= 10 && cleanDigits.length <= 15;
-
-        if (currentMethod === 'telegram') {
-          var isTgUser = /^@[a-zA-Z0-9_]{5,32}$/.test(contact);
-          if (!isTgUser && !isGoodPhone) {
-            if (/^[a-zA-Z0-9_]{5,32}$/.test(contact)) {
-              contact = '@' + contact;
-              if (contactInput) contactInput.value = contact;
-            } else {
-              if (errEl) {
-                errEl.textContent = 'Для Telegram укажите ник от 5 символов латиницей (например, @username) или номер телефона.';
-                errEl.style.display = 'block';
-              }
-              if (contactInput) contactInput.focus();
-              return;
-            }
-          }
-        } else if (currentMethod === 'max') {
-          var isMaxProfile = /^(https?:\/\/)?(www\.)?max\.ru\/u\/[a-zA-Z0-9_\-]+/i.test(contact);
-          if (!isMaxProfile && !isGoodPhone) {
-            if (errEl) {
-              errEl.textContent = 'Для MAX укажите прямую ссылку на профиль (max.ru/u/...) или корректный номер телефона.';
-              errEl.style.display = 'block';
-            }
-            if (contactInput) contactInput.focus();
-            return;
-          }
-        } else if (currentMethod === 'whatsapp' || currentMethod === 'phone') {
-          if (!isGoodPhone) {
-            if (errEl) {
-              errEl.textContent = 'Укажите корректный номер телефона (не менее 10 цифр).';
-              errEl.style.display = 'block';
-            }
-            if (contactInput) contactInput.focus();
-            return;
-          }
-        }
-
-        if (typeof window.ym === 'function') {
-          window.ym(90792799, 'reachGoal', 'submitted');
-          window.ym(90792799, 'reachGoal', 'gamelead_send');
-        }
-
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Отправка...';
-        }
-
-        var tildaMethod = currentMethod === 'max' ? 'max_messenger' : currentMethod;
-        var fullNameToSend = name;
-        if (chosenCutParam) {
-          fullNameToSend += ' (' + chosenCutParam + ')';
-        }
-        var fullContactLabel = '[' + currentMethod.toUpperCase() + ': ' + contact + ']';
-        var combinedName = fullNameToSend + ' ' + fullContactLabel;
-
-        var allRecs = document.getElementById('allrecords');
-        var formKey = (allRecs && allRecs.getAttribute('data-tilda-formskey')) || 'a8a1a8151b151a0221d568e5a5500437';
-        var pageId = (allRecs && allRecs.getAttribute('data-tilda-page-id')) || '297318909';
-        var projectId = (allRecs && allRecs.getAttribute('data-tilda-project-id')) || '5500437';
-
-        var services = [
-          'b50f30259e15e3d8d5212d867a1d4954',
-          'f84b098f0cddc52c587a2c2f5e0fadfc',
-          '9f2f90b847bfb45b6924b750bb155691',
-          '3de76a792e289629ff456561531ed0ca',
-          '079d3725ab062a821f281c7010b7677f'
-        ];
-
-        function showSuccessState() {
-          var succEl = document.getElementById('hp-form-success');
-          if (succEl) succEl.style.display = 'block';
-          if (submitBtn) {
-            submitBtn.textContent = 'Заявка отправлена ✓';
-            submitBtn.disabled = true;
-          }
-        }
-
-        // --- КАНАЛ 1: Синхронизация и отправка основной формы form4673146901 ---
-        var tildaForm = document.getElementById('form4673146901');
-        if (tildaForm) {
-          // Заполняем имя (включая контакт в скобках, чтобы бот точно показал его)
-          var tName = tildaForm.querySelector('input[name="Name"]');
-          if (tName) {
-            tName.value = combinedName;
-            tName.dispatchEvent(new Event('input', { bubbles: true }));
-            tName.dispatchEvent(new Event('change', { bubbles: true }));
-          }
-
-          // Снимаем checked со всех радио-кнопок способа связи
-          var radios = tildaForm.querySelectorAll('input[name="messenger-type"]');
-          radios.forEach(function(r) { r.checked = false; });
-
-          // Выбираем радио нужного мессенджера
-          var targetRadio = tildaForm.querySelector('input[name="messenger-type"][value="' + tildaMethod + '"]');
-          if (targetRadio) {
-            targetRadio.checked = true;
-            targetRadio.dispatchEvent(new Event('change', { bubbles: true }));
-            var rLabel = tildaForm.querySelector('label[for="' + targetRadio.id + '"]');
-            if (rLabel) { try { rLabel.click(); } catch(e){} }
-          }
-
-          // Отключаем и очищаем ВСЕ поля messenger-id, убирая js-tilda-rule
-          var allMsgInputs = tildaForm.querySelectorAll('input[name="messenger-id"]');
-          allMsgInputs.forEach(function(inp) {
-            inp.disabled = true;
-            inp.classList.remove('js-tilda-rule');
-            inp.removeAttribute('data-tilda-req');
-            inp.value = '';
-          });
-
-          // Находим единственное нужное активное поле ввода для выбранного мессенджера
-          var activeInp = null;
-          if (currentMethod === 'telegram') {
-            activeInp = tildaForm.querySelector('input[data-contact-method="telegram"]') || tildaForm.querySelector('.t-contact-method__telegram-value input[type="text"]');
-          } else if (currentMethod === 'max') {
-            activeInp = tildaForm.querySelector('input[data-contact-method="max_messenger"]') || tildaForm.querySelector('.t-contact-method__max_messenger-value input[type="text"]');
-          } else {
-            activeInp = tildaForm.querySelector('.t-contact-method__' + tildaMethod + '-value input.js-phonemask-input') || tildaForm.querySelector('input[name="messenger-id"]');
-          }
-
-          if (activeInp) {
-            activeInp.disabled = false;
-            activeInp.classList.add('js-tilda-rule');
-            activeInp.setAttribute('data-tilda-req', '1');
-            activeInp.value = contact;
-            activeInp.dispatchEvent(new Event('input', { bubbles: true }));
-            activeInp.dispatchEvent(new Event('change', { bubbles: true }));
-          }
-
-          // Добавляем или обновляем скрытые поля Phone и Comment для гарантированной доставки в Telegram
-          var hPhone = tildaForm.querySelector('input[name="Phone"]');
-          if (!hPhone) {
-            tildaForm.insertAdjacentHTML('beforeend', '<input type="hidden" name="Phone" value="">');
-            hPhone = tildaForm.querySelector('input[name="Phone"]');
-          }
-          if (hPhone) hPhone.value = contact;
-
-          var hComment = tildaForm.querySelector('input[name="Comment"]');
-          if (!hComment) {
-            tildaForm.insertAdjacentHTML('beforeend', '<input type="hidden" name="Comment" value="">');
-            hComment = tildaForm.querySelector('input[name="Comment"]');
-          }
-          if (hComment) hComment.value = 'Способ связи: ' + currentMethod.toUpperCase() + ' (' + contact + ')' + (chosenCutParam ? ' • Срез: ' + chosenCutParam : '');
-
-          var chk = tildaForm.querySelector('input[name="Checkbox"]');
-          if (chk) chk.checked = true;
-
-          var specComments = tildaForm.querySelector('input[name="form-spec-comments"]');
-          if (specComments) specComments.value = '';
-
-          // Отправка через движок Tilda
-          var tSubmit = tildaForm.querySelector('button[type="submit"], .t-submit');
-          if (window.tildaForm && typeof window.tildaForm.send === 'function') {
-            try { window.tildaForm.send(tildaForm, tSubmit, 2, formKey); } catch(err) { console.error('tildaForm.send err:', err); }
-          } else if (tSubmit && typeof tSubmit.click === 'function') {
-            try { tSubmit.click(); } catch(err) { console.error('tSubmit.click err:', err); }
-          }
-        }
-
-        // --- КАНАЛ 2: Синхронизация и отправка консультационной формы form4673150901 ---
-        var form2 = document.getElementById('form4673150901');
-        if (form2) {
-          var f2Name = form2.querySelector('input[name="Name"]');
-          if (f2Name) f2Name.value = combinedName;
-          var f2Phone = form2.querySelector('input[name="Phone"]');
-          if (f2Phone) f2Phone.value = isGoodPhone ? contact : '+7 (993) 336-53-57';
-          var f2Text = form2.querySelector('textarea[name="Textarea"]');
-          if (f2Text) f2Text.value = 'Заявка на срез: ' + (chosenCutParam || 'Индивидуальный подбор') + ' • Связь в ' + currentMethod.toUpperCase() + ': ' + contact;
-          var f2Submit = form2.querySelector('button[type="submit"], .t-submit');
-          if (window.tildaForm && typeof window.tildaForm.send === 'function') {
-            try { window.tildaForm.send(form2, f2Submit, 2, formKey); } catch(e){}
-          }
-        }
-
-        // --- КАНАЛ 3: Прямой POST запрос через fetch для гарантированного приема всеми 5 сервисами ---
-        var params = new URLSearchParams();
-        services.forEach(function(s) { params.append('formservices[]', s); });
-        params.append('tildaspec-formname', 'Запись на подбор волос');
-        params.append('Name', combinedName);
-        params.append('messenger-type', tildaMethod);
-        params.append('messenger-id', contact);
-        params.append('Phone', contact);
-        params.append('Comment', 'Способ связи: ' + currentMethod.toUpperCase() + ' (' + contact + ')' + (chosenCutParam ? ' • Срез: ' + chosenCutParam : ''));
-        params.append('Textarea', 'Способ связи: ' + currentMethod.toUpperCase() + ' (' + contact + ')' + (chosenCutParam ? ' • Срез: ' + chosenCutParam : ''));
-        params.append('Checkbox', 'yes');
-        params.append('form-spec-comments', '');
-        params.append('tildaspec-formskey', formKey);
-        params.append('tildaspec-pageid', pageId);
-        params.append('tildaspec-projectid', projectId);
-        params.append('tildaspec-formid', 'form4673146901');
-        params.append('tildaspec-referer', window.location.href);
-
-        var requestFinished = false;
-        var safetyTimer = setTimeout(function() {
-          if (!requestFinished) {
-            requestFinished = true;
-            showSuccessState();
-          }
-        }, 2200);
-
-        fetch('https://forms.tildacdn.com/procces/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
-          body: params.toString()
-        }).then(function(res) {
-          return res.json().catch(function() { return { message: 'OK' }; });
-        }).then(function(data) {
-          console.log('Tilda direct response:', data);
-          if (!requestFinished) {
-            requestFinished = true;
-            clearTimeout(safetyTimer);
-            showSuccessState();
-          }
-        }).catch(function(err) {
-          console.error('Tilda direct post err:', err);
-          if (!requestFinished) {
-            requestFinished = true;
-            clearTimeout(safetyTimer);
-            showSuccessState();
-          }
-        });
-      });
-    }
-
-    polishTildaPopup();
-    setTimeout(polishTildaPopup, 1000);
-    setTimeout(polishTildaPopup, 2500);
+    mountTildaNativeForm();
+    setTimeout(mountTildaNativeForm, 500);
+    setTimeout(mountTildaNativeForm, 1500);
     checkCookieBannerInit();
   }
 
