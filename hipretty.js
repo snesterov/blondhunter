@@ -1948,6 +1948,7 @@
           <div class="hp-form-policy">
             Нажимая кнопку, вы соглашаетесь с <a onclick="openPolicyModal('privacy')">Политикой конфиденциальности</a> (152-ФЗ РФ).
           </div>
+          <div id="hp-form-error" style="display:none;margin-top:12px;color:#f87171;font-weight:600;font-size:14px;line-height:1.4;"></div>
           <div id="hp-form-success" style="display:none;margin-top:20px;color:#10B981;font-weight:700;font-size:15px;line-height:1.5;">
             ✓ Заявка успешно принята! Менеджер уже подбирает срезы и готовит фото и видео.
           </div>
@@ -2510,7 +2511,29 @@
       leadForm.addEventListener('submit', function(e) {
         e.preventDefault();
         var name = document.getElementById('hp-user-name').value;
-        var contact = document.getElementById('hp-user-contact').value;
+        var contact = document.getElementById('hp-user-contact').value.trim();
+        var errEl = document.getElementById('hp-form-error');
+        if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+
+        // Жесткая валидация для Telegram
+        if (currentMethod === 'telegram') {
+          var isPhone = /^\+?[0-9\s\-\(\)]{10,18}$/.test(contact);
+          var isTgUser = /^@[a-zA-Z0-9_]{3,32}$/.test(contact);
+          if (!isTgUser && !isPhone) {
+            // Если ввели ник латиницей без @, автоматически подставляем @
+            if (/^[a-zA-Z0-9_]{3,32}$/.test(contact)) {
+              contact = '@' + contact;
+              document.getElementById('hp-user-contact').value = contact;
+            } else {
+              if (errEl) {
+                errEl.textContent = 'Для Telegram укажите ник латиницей (например, @username) или номер телефона.';
+                errEl.style.display = 'block';
+              }
+              document.getElementById('hp-user-contact').focus();
+              return;
+            }
+          }
+        }
 
         if (typeof window.ym === 'function') {
           window.ym(90792799, 'reachGoal', 'submitted');
