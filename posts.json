@@ -1,5 +1,16 @@
 [
   {
+    "id": "4586",
+    "title": "Срез #33",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4586.jpg",
+    "badge": "● Со скидкой",
+    "badge_type": "discount",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "Девочки всем хорошего дня💗я собрала невероятную коллекцию эксклюзивов💎💝которые буду показывать в ноябре в Москве 🌏Скоро покажу превью. А пок",
+    "url": "https://t.me/blondhunter/4586"
+  },
+  {
     "id": "4583",
     "title": "Срез #56",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4583.jpg",
@@ -11,15 +22,15 @@
     "url": "https://t.me/blondhunter/4583"
   },
   {
-    "id": "4580",
+    "id": "4575",
     "title": "Срез #37",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4580.jpg",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4575.jpg",
     "badge": "● Первый срез 👶",
     "badge_type": "first",
     "is_sold": false,
     "tag": "56 см • 147 г • 186 000 ₽ / 1860 €",
     "desc": "Girls, these are real curls at the ends, they will also curl beautifully on your head after extensions💗 Девочки это настоящие кудряшки на ко",
-    "url": "https://t.me/blondhunter/4580"
+    "url": "https://t.me/blondhunter/4575"
   },
   {
     "id": "4573",
@@ -119,16 +130,5 @@
     "tag": "Детский блонд",
     "desc": "Девочки спасибо вам огромное за доверие. Я стараюсь быть лучшей для вас. У меня в студии оставался запас хвостиков. Я думала растянуть его д",
     "url": "https://t.me/blondhunter/4551"
-  },
-  {
-    "id": "4538",
-    "title": "Срез #39",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4538.jpg",
-    "badge": "● Продан / Sold",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "Детский блонд",
-    "desc": "Девочки 💗не судите строго🙂 сотрудник в Москве не профессиональный фотограф и не имеет хорошей камеры, как смог ,отснял актуальное наличие в ",
-    "url": "https://t.me/blondhunter/4538"
   }
 ]
