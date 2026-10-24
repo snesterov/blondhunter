@@ -1,25 +1,25 @@
 [
   {
-    "id": "4591",
-    "title": "Срез #37",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4591.jpg",
-    "badge": "● Первый срез 👶",
-    "badge_type": "first",
-    "is_sold": false,
-    "tag": "56 см • 147 г • 159 000 ₽ / 1590 €",
-    "desc": "Girls, these are real curls at the ends, they will also curl beautifully on your head after extensions💗 Девочки это настоящие кудряшки на ко",
-    "url": "https://t.me/blondhunter/4591"
-  },
-  {
-    "id": "4589",
+    "id": "4594",
     "title": "Срез #99",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4589.jpg",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4594.jpg",
     "badge": "● Горячее предложение 🔥",
     "badge_type": "hot",
     "is_sold": false,
     "tag": "57 см • 187 г • Тон 8/9 • 168 000 ₽ / 1680 €",
-    "desc": "девочки ,внимание❤️только 2 хвостика на финальных скидках осталось🫶 #99,57/187 g ,8/9 ,cold Hot💥💥💥 168 т💥💥💥 1680 euro",
-    "url": "https://t.me/blondhunter/4589"
+    "desc": "Last tail on final sale💥 #99,57/187 g ,8/9 ,cold Hot💥💥💥 168 т💥💥💥 1680 euro",
+    "url": "https://t.me/blondhunter/4594"
+  },
+  {
+    "id": "4591",
+    "title": "Срез #37",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4591.jpg",
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
+    "tag": "56 см • 147 г",
+    "desc": "Girls, these are real curls at the ends, they will also curl beautifully on your head after extensions💗 Девочки это настоящие кудряшки на ко",
+    "url": "https://t.me/blondhunter/4591"
   },
   {
     "id": "4586",

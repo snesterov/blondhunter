@@ -1,27 +1,27 @@
 [
   {
-    "id": "4591",
-    "title": "Hair Cut #37",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4591.jpg",
-    "badge": "● First Haircut 👶",
-    "badge_type": "first",
-    "is_sold": false,
-    "tag": "56 cm • 147 g • 159 000 ₽ / €1590",
-    "desc": "Exclusive virgin child blonde (56 cm • 147 g • 159 000 ₽ / €1590). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
-    "url": "https://t.me/blondhunter/4591",
-    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2337%20%2856%20cm%20%E2%80%A2%20147%20g%20%E2%80%A2%20159%20000%20%E2%82%BD%20/%20%E2%82%AC1590%29.%20Is%20it%20available%3F"
-  },
-  {
-    "id": "4589",
+    "id": "4594",
     "title": "Hair Cut #99",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4589.jpg",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4594.jpg",
     "badge": "● Hot Deal 🔥",
     "badge_type": "hot",
     "is_sold": false,
     "tag": "57 cm • 187 g • Tone 8/9 • 168 000 ₽ / €1680",
     "desc": "Exclusive virgin child blonde (57 cm • 187 g • Tone 8/9 • 168 000 ₽ / €1680). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
-    "url": "https://t.me/blondhunter/4589",
+    "url": "https://t.me/blondhunter/4594",
     "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2399%20%2857%20cm%20%E2%80%A2%20187%20g%20%E2%80%A2%20Tone%208/9%20%E2%80%A2%20168%20000%20%E2%82%BD%20/%20%E2%82%AC1680%29.%20Is%20it%20available%3F"
+  },
+  {
+    "id": "4591",
+    "title": "Hair Cut #37",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4591.jpg",
+    "badge": "● Sold Out",
+    "badge_type": "sold",
+    "is_sold": true,
+    "tag": "56 cm • 147 g",
+    "desc": "Exclusive virgin child blonde (56 cm • 147 g). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
+    "url": "https://t.me/blondhunter/4591",
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20saw%20Hair%20Cut%20%2337%20%2856%20cm%20%E2%80%A2%20147%20g%29%20is%20SOLD%20OUT.%20Can%20you%20show%20me%20similar%20available%20options%3F"
   },
   {
     "id": "4586",
