@@ -1,5 +1,38 @@
 [
   {
+    "id": "4618",
+    "title": "Срез #4618",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4618.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "Эксклюзивный срез детского славянского блонда.",
+    "url": "https://t.me/blondhunter/4618"
+  },
+  {
+    "id": "4608",
+    "title": "Срез #4608",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4608.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "Эксклюзивный срез детского славянского блонда.",
+    "url": "https://t.me/blondhunter/4608"
+  },
+  {
+    "id": "4598",
+    "title": "Срез #33",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4598.jpg",
+    "badge": "● Кудри 🦁",
+    "badge_type": "curly",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "Девочки, покажу совсем маленькую часть красоты, которая ждёт с четвёртого ноября моих клиентов.Будет много кудрей ,альбиносы ,блонд 💗💎 Girls",
+    "url": "https://t.me/blondhunter/4598"
+  },
+  {
     "id": "4594",
     "title": "Срез #99",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4594.jpg",
@@ -22,17 +55,6 @@
     "url": "https://t.me/blondhunter/4591"
   },
   {
-    "id": "4586",
-    "title": "Срез #33",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4586.jpg",
-    "badge": "● Со скидкой",
-    "badge_type": "discount",
-    "is_sold": false,
-    "tag": "Детский блонд",
-    "desc": "Девочки всем хорошего дня💗я собрала невероятную коллекцию эксклюзивов💎💝которые буду показывать в ноябре в Москве 🌏Скоро покажу превью. А пок",
-    "url": "https://t.me/blondhunter/4586"
-  },
-  {
     "id": "4583",
     "title": "Срез #56",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4583.jpg",
@@ -53,82 +75,5 @@
     "tag": "51 см • 160 г • 132 000 ₽ / 1320 €",
     "desc": "#48 51 cm /160g, 💥💥💥 132т💥💥❤️ Last price 1320euro Продан/sold💥💥💥",
     "url": "https://t.me/blondhunter/4573"
-  },
-  {
-    "id": "4568",
-    "title": "Срез #4568",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4568.jpg",
-    "badge": "● Продан / Sold",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "57 см • 164 г",
-    "desc": "57 cm/164 g New🔆 Продан/sold💥",
-    "url": "https://t.me/blondhunter/4568"
-  },
-  {
-    "id": "4567",
-    "title": "Срез #4567",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4567.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "50 см • 128 г",
-    "desc": "50 cm/128 g New",
-    "url": "https://t.me/blondhunter/4567"
-  },
-  {
-    "id": "4566",
-    "title": "Срез #4566",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4566.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "58 см • 100 г • 132 000 ₽ / 1320 €",
-    "desc": "58 cm/100 g New 132 т 💥💥💥 1320 euro",
-    "url": "https://t.me/blondhunter/4566"
-  },
-  {
-    "id": "4565",
-    "title": "Срез #89",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4565.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "57 см • 150 г",
-    "desc": "#89(1) 57 cm/150 g New",
-    "url": "https://t.me/blondhunter/4565"
-  },
-  {
-    "id": "4564",
-    "title": "Срез #100",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4564.jpg",
-    "badge": "● Продан / Sold",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "70 см • 150 г • Тон 8/9 • 1860 €",
-    "desc": "#100 70 cm,150 g Silk/тончайший волосок Холод/cold 8/9 1860 euro💥💥 🫶hot offer🫠💥 Продан/sold💥",
-    "url": "https://t.me/blondhunter/4564"
-  },
-  {
-    "id": "4558",
-    "title": "Срез #47",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4558.jpg",
-    "badge": "● Продан / Sold",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "173 г",
-    "desc": "Eahhh Ееее🦁❤️ #47 48 в кудре/in curly 173 g💝 Sold/продан💥",
-    "url": "https://t.me/blondhunter/4558"
-  },
-  {
-    "id": "4551",
-    "title": "Срез #4551",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4551.jpg",
-    "badge": "● В наличии",
-    "badge_type": "stock",
-    "is_sold": false,
-    "tag": "Детский блонд",
-    "desc": "Девочки спасибо вам огромное за доверие. Я стараюсь быть лучшей для вас. У меня в студии оставался запас хвостиков. Я думала растянуть его д",
-    "url": "https://t.me/blondhunter/4551"
   }
 ]
