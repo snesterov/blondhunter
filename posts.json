@@ -1,5 +1,16 @@
 [
   {
+    "id": "4624",
+    "title": "Срез #33",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4624.jpg",
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
+    "tag": "Детский блонд",
+    "desc": "Девочки всем хорошего дня💝на данный момент у меня sold out предыдущей коллекции 💥с 4-5 ноября буду показывать в Москве новинки 💝невероятное ",
+    "url": "https://t.me/blondhunter/4624"
+  },
+  {
     "id": "4618",
     "title": "Срез #4618",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4618.jpg",
@@ -22,25 +33,14 @@
     "url": "https://t.me/blondhunter/4608"
   },
   {
-    "id": "4598",
-    "title": "Срез #33",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4598.jpg",
-    "badge": "● Кудри 🦁",
-    "badge_type": "curly",
-    "is_sold": false,
-    "tag": "Детский блонд",
-    "desc": "Девочки, покажу совсем маленькую часть красоты, которая ждёт с четвёртого ноября моих клиентов.Будет много кудрей ,альбиносы ,блонд 💗💎 Girls",
-    "url": "https://t.me/blondhunter/4598"
-  },
-  {
     "id": "4594",
     "title": "Срез #99",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4594.jpg",
-    "badge": "● Горячее предложение 🔥",
-    "badge_type": "hot",
-    "is_sold": false,
-    "tag": "57 см • 187 г • Тон 8/9 • 168 000 ₽ / 1680 €",
-    "desc": "Last tail on final sale💥 #99,57/187 g ,8/9 ,cold Hot💥💥💥 168 т💥💥💥 1680 euro",
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
+    "tag": "57 см • 187 г • Тон 8/9",
+    "desc": "Last tail on final sale💥 #99,57/187 g ,8/9 ,cold Hot💥💥💥 Продан/sold💥",
     "url": "https://t.me/blondhunter/4594"
   },
   {
@@ -75,5 +75,38 @@
     "tag": "51 см • 160 г • 132 000 ₽ / 1320 €",
     "desc": "#48 51 cm /160g, 💥💥💥 132т💥💥❤️ Last price 1320euro Продан/sold💥💥💥",
     "url": "https://t.me/blondhunter/4573"
+  },
+  {
+    "id": "4568",
+    "title": "Срез #4568",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4568.jpg",
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
+    "tag": "57 см • 164 г",
+    "desc": "57 cm/164 g New🔆 Продан/sold💥",
+    "url": "https://t.me/blondhunter/4568"
+  },
+  {
+    "id": "4567",
+    "title": "Срез #4567",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4567.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "50 см • 128 г",
+    "desc": "50 cm/128 g New",
+    "url": "https://t.me/blondhunter/4567"
+  },
+  {
+    "id": "4566",
+    "title": "Срез #4566",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4566.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "58 см • 100 г • 132 000 ₽ / 1320 €",
+    "desc": "58 cm/100 g New 132 т 💥💥💥 1320 euro",
+    "url": "https://t.me/blondhunter/4566"
   }
 ]
