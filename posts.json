@@ -1,5 +1,27 @@
 [
   {
+    "id": "4628",
+    "title": "Срез #4628",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4628.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "Эксклюзивный срез детского славянского блонда.",
+    "url": "https://t.me/blondhunter/4628"
+  },
+  {
+    "id": "4627",
+    "title": "Срез #4627",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4627.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "Part 1🌶️",
+    "url": "https://t.me/blondhunter/4627"
+  },
+  {
     "id": "4625",
     "title": "Срез #39",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4625.jpg",
@@ -75,49 +97,5 @@
     "tag": "Детский блонд",
     "desc": "#56 Sold💥",
     "url": "https://t.me/blondhunter/4583"
-  },
-  {
-    "id": "4573",
-    "title": "Срез #48",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4573.jpg",
-    "badge": "● Продан / Sold",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "51 см • 160 г • 132 000 ₽ / 1320 €",
-    "desc": "#48 51 cm /160g, 💥💥💥 132т💥💥❤️ Last price 1320euro Продан/sold💥💥💥",
-    "url": "https://t.me/blondhunter/4573"
-  },
-  {
-    "id": "4568",
-    "title": "Срез #4568",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4568.jpg",
-    "badge": "● Продан / Sold",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "57 см • 164 г",
-    "desc": "57 cm/164 g New🔆 Продан/sold💥",
-    "url": "https://t.me/blondhunter/4568"
-  },
-  {
-    "id": "4567",
-    "title": "Срез #4567",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4567.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "50 см • 128 г",
-    "desc": "50 cm/128 g New",
-    "url": "https://t.me/blondhunter/4567"
-  },
-  {
-    "id": "4566",
-    "title": "Срез #4566",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4566.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "58 см • 100 г • 132 000 ₽ / 1320 €",
-    "desc": "58 cm/100 g New 132 т 💥💥💥 1320 euro",
-    "url": "https://t.me/blondhunter/4566"
   }
 ]
