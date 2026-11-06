@@ -1,5 +1,126 @@
 [
   {
+    "id": "4657",
+    "title": "Срез #77",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4657.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "188 г",
+    "desc": "#77 10💎 60/188 g",
+    "url": "https://t.me/blondhunter/4657"
+  },
+  {
+    "id": "4656",
+    "title": "Срез #28",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4656.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Тон 9 • 195 000 ₽",
+    "desc": "#28 🤩😎 51/142 ~9 195 т💥💥💥",
+    "url": "https://t.me/blondhunter/4656"
+  },
+  {
+    "id": "4654",
+    "title": "Срез #4654",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4654.jpg",
+    "badge": "● Горячее предложение 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "Девочки, не отвлекаемся, продолжаем слушать музыку смотреть на красоту и самое горячее ждёт впереди💃❤️ Girls, let’s stay focused,keep listen",
+    "url": "https://t.me/blondhunter/4654"
+  },
+  {
+    "id": "4653",
+    "title": "Срез #51",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4653.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "#51 Prime era tail❤️💎 54/176",
+    "url": "https://t.me/blondhunter/4653"
+  },
+  {
+    "id": "4652",
+    "title": "Срез #52",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4652.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "66 см • 192 г",
+    "desc": "In love💝 #52 10💎❤️ 66 cm/192 g",
+    "url": "https://t.me/blondhunter/4652"
+  },
+  {
+    "id": "4651",
+    "title": "Срез #16",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4651.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "141 г • Тон 9 • 213 000 ₽",
+    "desc": "#16 ~9 54/141g 213 т",
+    "url": "https://t.me/blondhunter/4651"
+  },
+  {
+    "id": "4649",
+    "title": "Срез #3",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4649.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "87 см • 174 г",
+    "desc": "#3 87 cm /174 g 240",
+    "url": "https://t.me/blondhunter/4649"
+  },
+  {
+    "id": "4648",
+    "title": "Срез #55",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4648.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "80 см • 205 г • Тон 8 • 222 000 ₽",
+    "desc": "#55 80/205 ~8 222 т",
+    "url": "https://t.me/blondhunter/4648"
+  },
+  {
+    "id": "4647",
+    "title": "Срез #76",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4647.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "65 см",
+    "desc": "#76 65 cm…,weight later",
+    "url": "https://t.me/blondhunter/4647"
+  },
+  {
+    "id": "4646",
+    "title": "Срез #33",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4646.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "60 см • 148 г • 168 000 ₽",
+    "desc": "#33 60/148g 168 т",
+    "url": "https://t.me/blondhunter/4646"
+  },
+  {
+    "id": "4645",
+    "title": "Срез #66",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4645.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "9 см • 10 г • Тон 9",
+    "desc": "#66 9/10 77/180",
+    "url": "https://t.me/blondhunter/4645"
+  },
+  {
     "id": "4644",
     "title": "Срез #78",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4644.jpg",
@@ -9,126 +130,5 @@
     "tag": "54 см • 96 000 ₽",
     "desc": "#78,54 cm…..,weight later Albino 96 т",
     "url": "https://t.me/blondhunter/4644"
-  },
-  {
-    "id": "4643",
-    "title": "Срез #26",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4643.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "63 см • 152 г • Тон 9 • 186 000 ₽",
-    "desc": "#26 63/152 ~9 186 т",
-    "url": "https://t.me/blondhunter/4643"
-  },
-  {
-    "id": "4642",
-    "title": "Срез #11",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4642.jpg",
-    "badge": "● Кудри 🦁",
-    "badge_type": "curly",
-    "is_sold": false,
-    "tag": "Детский блонд",
-    "desc": "#11 Dream curly💎 60/175",
-    "url": "https://t.me/blondhunter/4642"
-  },
-  {
-    "id": "4641",
-    "title": "Срез #29",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4641.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "54 см • Тон 9",
-    "desc": "#29 ~9 54 cm,160",
-    "url": "https://t.me/blondhunter/4641"
-  },
-  {
-    "id": "4640",
-    "title": "Срез #41",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4640.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "Тон 9 • 132 000 ₽",
-    "desc": "#41 Close to 9 50/142 132 т",
-    "url": "https://t.me/blondhunter/4640"
-  },
-  {
-    "id": "4639",
-    "title": "Срез #14",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4639.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "178 г",
-    "desc": "#14 10 tone Superexclusive💎 56/178 g",
-    "url": "https://t.me/blondhunter/4639"
-  },
-  {
-    "id": "4638",
-    "title": "Срез #75",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4638.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "60 см",
-    "desc": "#75 60 cm Weight later",
-    "url": "https://t.me/blondhunter/4638"
-  },
-  {
-    "id": "4637",
-    "title": "Срез #59",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4637.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "55 см • 263 г",
-    "desc": "#59,55/263 g",
-    "url": "https://t.me/blondhunter/4637"
-  },
-  {
-    "id": "4635",
-    "title": "Срез #67",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4635.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "70 см • 144 г • Тон 8/9",
-    "desc": "#67 70/144g 8/9 (close to 9) 195 (A little wet /влажный)",
-    "url": "https://t.me/blondhunter/4635"
-  },
-  {
-    "id": "4634",
-    "title": "Срез #39",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4634.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "62 см • 127 г • Тон 9",
-    "desc": "#39 62 cm/127 g 9/10 195",
-    "url": "https://t.me/blondhunter/4634"
-  },
-  {
-    "id": "4633",
-    "title": "Срез #46",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4633.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "54 см • 165 г",
-    "desc": "#46 54 cm /165 g 10",
-    "url": "https://t.me/blondhunter/4633"
-  },
-  {
-    "id": "4632",
-    "title": "Срез #60",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4632.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "7 см • 251 г • Тон 8",
-    "desc": "#60 7/8 58/251g",
-    "url": "https://t.me/blondhunter/4632"
   }
 ]
