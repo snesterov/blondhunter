@@ -1,5 +1,71 @@
 [
   {
+    "id": "4687",
+    "title": "Срез #1",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4687.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "75 см • 208 г",
+    "desc": "#1 75cm /208 g",
+    "url": "https://t.me/blondhunter/4687"
+  },
+  {
+    "id": "4684",
+    "title": "Срез #21",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4684.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "58 см • 208 г",
+    "desc": "#21 58 cm /208 g",
+    "url": "https://t.me/blondhunter/4684"
+  },
+  {
+    "id": "4682",
+    "title": "Срез #77",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4682.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "55 см • 176 г",
+    "desc": "#77 55/176 g",
+    "url": "https://t.me/blondhunter/4682"
+  },
+  {
+    "id": "4681",
+    "title": "Срез #8",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4681.jpg",
+    "badge": "● Кудри 🦁",
+    "badge_type": "curly",
+    "is_sold": false,
+    "tag": "178 г • Тон 8",
+    "desc": "#8 Baby curly blond💗🥰 70/178 g",
+    "url": "https://t.me/blondhunter/4681"
+  },
+  {
+    "id": "4680",
+    "title": "Срез #34",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4680.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "61 см • 220 г",
+    "desc": "#34 61/220",
+    "url": "https://t.me/blondhunter/4680"
+  },
+  {
+    "id": "4678",
+    "title": "Срез #33",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4678.jpg",
+    "badge": "● Кудри 🦁",
+    "badge_type": "curly",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "Самые редкие ,самые дорогие хвосты в мире - это детские неокрашенные славянские волосы в оттенке блонд и кудрявые структуры💗 девочки, не жди",
+    "url": "https://t.me/blondhunter/4678"
+  },
+  {
     "id": "4675",
     "title": "Срез #65",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4675.jpg",
@@ -64,71 +130,5 @@
     "tag": "223 г",
     "desc": "#4 Meet dream curly 2.0💎🤩🦁 80/223 g",
     "url": "https://t.me/blondhunter/4665"
-  },
-  {
-    "id": "4664",
-    "title": "Срез #49",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4664.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "249 000 ₽ / 2726 €",
-    "desc": "#49 Supersilk💗 60/190 249 т /2726 euro💥",
-    "url": "https://t.me/blondhunter/4664"
-  },
-  {
-    "id": "4663",
-    "title": "Срез #10",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4663.jpg",
-    "badge": "● Первый срез 👶",
-    "badge_type": "first",
-    "is_sold": false,
-    "tag": "240 000 ₽ / 2670 €",
-    "desc": "#10 Baby first haircut 64/152 240 т /2670 euro",
-    "url": "https://t.me/blondhunter/4663"
-  },
-  {
-    "id": "4662",
-    "title": "Срез #62",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4662.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "2400 €",
-    "desc": "#62 10 66/184 222/2400 euro пару прядей &lt;возможно&gt; осветлены/a couple of strands may be clarified",
-    "url": "https://t.me/blondhunter/4662"
-  },
-  {
-    "id": "4661",
-    "title": "Срез #61",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4661.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "65 см • 168 г",
-    "desc": "Albino💗💎 #61,65/168 g",
-    "url": "https://t.me/blondhunter/4661"
-  },
-  {
-    "id": "4660",
-    "title": "Срез #31",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4660.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "2850 €",
-    "desc": "#31 10 /cold💎🤲 53/162 2850 euro",
-    "url": "https://t.me/blondhunter/4660"
-  },
-  {
-    "id": "4659",
-    "title": "Срез #7",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4659.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "8 см • 9 г • Тон 8/9 • 186 000 ₽ / 2430 €",
-    "desc": "#7 8/9 wavy🌼 59/143 186 т/2220&#036;/2430 euro",
-    "url": "https://t.me/blondhunter/4659"
   }
 ]
