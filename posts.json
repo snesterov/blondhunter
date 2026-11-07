@@ -1,5 +1,126 @@
 [
   {
+    "id": "4702",
+    "title": "Срез #4702",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4702.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "Miracle 🤩😍🥳🥳🥳",
+    "url": "https://t.me/blondhunter/4702"
+  },
+  {
+    "id": "4701",
+    "title": "Срез #8",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4701.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "70 см • 178 г • Тон 8",
+    "desc": "Crazy curls 🦁❤️ #8 70 cm ,178 g🩷🦁",
+    "url": "https://t.me/blondhunter/4701"
+  },
+  {
+    "id": "4700",
+    "title": "Срез #54",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4700.jpg",
+    "badge": "● Кудри 🦁",
+    "badge_type": "curly",
+    "is_sold": false,
+    "tag": "55 см • 146 г",
+    "desc": "Cold curly absolutely ❤️ #54 ,55 cm /146 g 🥳",
+    "url": "https://t.me/blondhunter/4700"
+  },
+  {
+    "id": "4699",
+    "title": "Срез #26",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4699.jpg",
+    "badge": "● Горячее предложение 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "63 см • 152 г • 195 000 ₽ / 2130 €",
+    "desc": "#26,63 cm/152 g 💝 195 т/2130 euro Hot💥💥💥",
+    "url": "https://t.me/blondhunter/4699"
+  },
+  {
+    "id": "4698",
+    "title": "Срез #14",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4698.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "56 см • 178 г",
+    "desc": "#14🩷56 cm/178 g",
+    "url": "https://t.me/blondhunter/4698"
+  },
+  {
+    "id": "4697",
+    "title": "Срез #29",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4697.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "54 см • 160 г",
+    "desc": "Lovely 😻 #29,54 cm/160 g",
+    "url": "https://t.me/blondhunter/4697"
+  },
+  {
+    "id": "4695",
+    "title": "Срез #60",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4695.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "58 см • 251 г",
+    "desc": "Luxury aesthetics 💝😍🦁 👶 curl on ends #60 58/251 g🤩",
+    "url": "https://t.me/blondhunter/4695"
+  },
+  {
+    "id": "4691",
+    "title": "Срез #12",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4691.jpg",
+    "badge": "● Кудри 🦁",
+    "badge_type": "curly",
+    "is_sold": false,
+    "tag": "50 см • 136 г • 123 000 ₽ / 1320 €",
+    "desc": "Silk💝🤩oil silk curls/шелк-масло малышковый кудряш,#12,50 cm,136 g (123 т) 1320 euro",
+    "url": "https://t.me/blondhunter/4691"
+  },
+  {
+    "id": "4690",
+    "title": "Срез #11",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4690.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "60 см • 175 г",
+    "desc": "#11,60 cm,175 g 😍🤩",
+    "url": "https://t.me/blondhunter/4690"
+  },
+  {
+    "id": "4689",
+    "title": "Срез #76",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4689.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "65 см • 188 г",
+    "desc": "#76,65 cm,188 g,195",
+    "url": "https://t.me/blondhunter/4689"
+  },
+  {
+    "id": "4688",
+    "title": "Срез #4688",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4688.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "Посылочки улетают к клиентам в фирменных коробочках ,для хранения волос❤️🤲",
+    "url": "https://t.me/blondhunter/4688"
+  },
+  {
     "id": "4687",
     "title": "Срез #1",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4687.jpg",
@@ -9,126 +130,5 @@
     "tag": "75 см • 208 г",
     "desc": "#1 75cm /208 g",
     "url": "https://t.me/blondhunter/4687"
-  },
-  {
-    "id": "4684",
-    "title": "Срез #21",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4684.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "58 см • 208 г",
-    "desc": "#21 58 cm /208 g",
-    "url": "https://t.me/blondhunter/4684"
-  },
-  {
-    "id": "4682",
-    "title": "Срез #77",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4682.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "55 см • 176 г",
-    "desc": "#77 55/176 g",
-    "url": "https://t.me/blondhunter/4682"
-  },
-  {
-    "id": "4681",
-    "title": "Срез #8",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4681.jpg",
-    "badge": "● Кудри 🦁",
-    "badge_type": "curly",
-    "is_sold": false,
-    "tag": "178 г • Тон 8",
-    "desc": "#8 Baby curly blond💗🥰 70/178 g",
-    "url": "https://t.me/blondhunter/4681"
-  },
-  {
-    "id": "4680",
-    "title": "Срез #34",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4680.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "61 см • 220 г",
-    "desc": "#34 61/220",
-    "url": "https://t.me/blondhunter/4680"
-  },
-  {
-    "id": "4678",
-    "title": "Срез #33",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4678.jpg",
-    "badge": "● Кудри 🦁",
-    "badge_type": "curly",
-    "is_sold": false,
-    "tag": "Детский блонд",
-    "desc": "Самые редкие ,самые дорогие хвосты в мире - это детские неокрашенные славянские волосы в оттенке блонд и кудрявые структуры💗 девочки, не жди",
-    "url": "https://t.me/blondhunter/4678"
-  },
-  {
-    "id": "4675",
-    "title": "Срез #65",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4675.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "182 г",
-    "desc": "#65 💎💗 70/182 g",
-    "url": "https://t.me/blondhunter/4675"
-  },
-  {
-    "id": "4674",
-    "title": "Срез #36",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4674.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "61 см • 184 г",
-    "desc": "#36 61/184 g",
-    "url": "https://t.me/blondhunter/4674"
-  },
-  {
-    "id": "4672",
-    "title": "Срез #25",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4672.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "62 см • 210 г",
-    "desc": "#25 Luxury 💎💗💘 62 cm /210 g",
-    "url": "https://t.me/blondhunter/4672"
-  },
-  {
-    "id": "4668",
-    "title": "Срез #58",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4668.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "54 см • 152 г",
-    "desc": "Baby albino💗💘 #58 54/152g",
-    "url": "https://t.me/blondhunter/4668"
-  },
-  {
-    "id": "4667",
-    "title": "Срез #71",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4667.jpg",
-    "badge": "● Кудри 🦁",
-    "badge_type": "curly",
-    "is_sold": false,
-    "tag": "130 г",
-    "desc": "#71 Baby curly on ends💗 Love 1я стрижка 53/130 g",
-    "url": "https://t.me/blondhunter/4667"
-  },
-  {
-    "id": "4665",
-    "title": "Срез #4",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4665.jpg",
-    "badge": "● Кудри 🦁",
-    "badge_type": "curly",
-    "is_sold": false,
-    "tag": "223 г",
-    "desc": "#4 Meet dream curly 2.0💎🤩🦁 80/223 g",
-    "url": "https://t.me/blondhunter/4665"
   }
 ]
