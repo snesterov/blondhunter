@@ -1,5 +1,38 @@
 [
   {
+    "id": "4706",
+    "title": "Срез #68",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4706.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "143 г",
+    "desc": "#68 10💎 54/143 g",
+    "url": "https://t.me/blondhunter/4706"
+  },
+  {
+    "id": "4705",
+    "title": "Срез #22",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4705.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "56 см • 168 г • Тон 8/9 • 186 000 ₽ / 1950 €",
+    "desc": "#22 56/168 (8/9)silky 186 т/1950 euro",
+    "url": "https://t.me/blondhunter/4705"
+  },
+  {
+    "id": "4703",
+    "title": "Срез #1",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4703.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "75 см • 200 г",
+    "desc": "🌶️😍 Left-right #1,75 cm,200 g #36,61/184 g #29,54 cm/160 g",
+    "url": "https://t.me/blondhunter/4703"
+  },
+  {
     "id": "4702",
     "title": "Срез #4702",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4702.jpg",
@@ -97,38 +130,5 @@
     "tag": "60 см • 175 г",
     "desc": "#11,60 cm,175 g 😍🤩",
     "url": "https://t.me/blondhunter/4690"
-  },
-  {
-    "id": "4689",
-    "title": "Срез #76",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4689.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "65 см • 188 г",
-    "desc": "#76,65 cm,188 g,195",
-    "url": "https://t.me/blondhunter/4689"
-  },
-  {
-    "id": "4688",
-    "title": "Срез #4688",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4688.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "Детский блонд",
-    "desc": "Посылочки улетают к клиентам в фирменных коробочках ,для хранения волос❤️🤲",
-    "url": "https://t.me/blondhunter/4688"
-  },
-  {
-    "id": "4687",
-    "title": "Срез #1",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4687.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "75 см • 208 г",
-    "desc": "#1 75cm /208 g",
-    "url": "https://t.me/blondhunter/4687"
   }
 ]
