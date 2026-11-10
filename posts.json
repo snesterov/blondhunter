@@ -1,5 +1,27 @@
 [
   {
+    "id": "4744",
+    "title": "Срез #22",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4744.jpg",
+    "badge": "● Горячее предложение 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "56 см • 168 г • Тон 8/9 • 159 000 ₽",
+    "desc": "#22 56/168 (8/9)silky 159 т /1915 &#036; Hot hot Silk Настоящмй природный шелк С малышки 9 лет🥹",
+    "url": "https://t.me/blondhunter/4744"
+  },
+  {
+    "id": "4742",
+    "title": "Срез #62",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4742.jpg",
+    "badge": "● Горячее предложение 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "186 000 ₽",
+    "desc": "#62 10 66/184 186 т/2220 &#036;💥💥💥hot hot Очень красивый мягкий ,тонкий блонд🤩 пару прядей осветлены💥/a couple of strands may clarified",
+    "url": "https://t.me/blondhunter/4742"
+  },
+  {
     "id": "4740",
     "title": "Срез #3",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4740.jpg",
@@ -58,11 +80,11 @@
     "id": "4734",
     "title": "Срез #79",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4734.jpg",
-    "badge": "● Кудри 🦁",
-    "badge_type": "curly",
-    "is_sold": false,
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
     "tag": "80 см • 182 г",
-    "desc": "#79,curly albino ,80 cm/182 g ,есть теплые прядки ,a little warm",
+    "desc": "#79,curly albino ,80 cm/182 g ,есть теплые прядки ,a little warm Sold💥 Продан💥",
     "url": "https://t.me/blondhunter/4734"
   },
   {
@@ -84,7 +106,7 @@
     "badge_type": "curly",
     "is_sold": false,
     "tag": "55 см • 146 г • Тон 9",
-    "desc": "#54,baby ash curls 🩷🐩 Blond 9 curly cold shade💎🤲 55 см/146 g",
+    "desc": "#54,baby ash curls 🩷🐩 Blond 9 curly cold shade💎🤲 55 см/146 g Booked A❤️NY🫶",
     "url": "https://t.me/blondhunter/4732"
   },
   {
@@ -108,27 +130,5 @@
     "tag": "Детский блонд",
     "desc": "#44 Deluxe💗💎 Brilliant baby shine💗 60/161",
     "url": "https://t.me/blondhunter/4728"
-  },
-  {
-    "id": "4727",
-    "title": "Срез #9",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4727.jpg",
-    "badge": "● Продан / Sold",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "Тон 9",
-    "desc": "#9 Sold💥 Продан",
-    "url": "https://t.me/blondhunter/4727"
-  },
-  {
-    "id": "4726",
-    "title": "Срез #57",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4726.jpg",
-    "badge": "● Продан / Sold",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "55 см • 145 г • 168 000 ₽",
-    "desc": "#57 55/145 g Curly🧁 168 т (Хорош под осветление) Продан/sold💥",
-    "url": "https://t.me/blondhunter/4726"
   }
 ]

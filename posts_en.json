@@ -1,5 +1,29 @@
 [
   {
+    "id": "4744",
+    "title": "Hair Cut #22",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4744.jpg",
+    "badge": "● Hot Deal 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "56 cm • 168 g • Tone 8/9 • 159 000 ₽",
+    "desc": "Exclusive virgin child blonde (56 cm • 168 g • Tone 8/9 • 159 000 ₽). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
+    "url": "https://t.me/blondhunter/4744",
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2322%20%2856%20cm%20%E2%80%A2%20168%20g%20%E2%80%A2%20Tone%208/9%20%E2%80%A2%20159%20000%20%E2%82%BD%29.%20Is%20it%20available%3F"
+  },
+  {
+    "id": "4742",
+    "title": "Hair Cut #62",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4742.jpg",
+    "badge": "● Hot Deal 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "186 000 ₽",
+    "desc": "Exclusive virgin child blonde (186 000 ₽). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
+    "url": "https://t.me/blondhunter/4742",
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2362%20%28186%20000%20%E2%82%BD%29.%20Is%20it%20available%3F"
+  },
+  {
     "id": "4740",
     "title": "Hair Cut #3",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4740.jpg",
@@ -63,13 +87,13 @@
     "id": "4734",
     "title": "Hair Cut #79",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4734.jpg",
-    "badge": "● Curly Waves 🦁",
-    "badge_type": "curly",
-    "is_sold": false,
+    "badge": "● Sold Out",
+    "badge_type": "sold",
+    "is_sold": true,
     "tag": "80 cm • 182 g",
     "desc": "Exclusive virgin child blonde (80 cm • 182 g). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
     "url": "https://t.me/blondhunter/4734",
-    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2379%20%2880%20cm%20%E2%80%A2%20182%20g%29.%20Is%20it%20available%3F"
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20saw%20Hair%20Cut%20%2379%20%2880%20cm%20%E2%80%A2%20182%20g%29%20is%20SOLD%20OUT.%20Can%20you%20show%20me%20similar%20available%20options%3F"
   },
   {
     "id": "4733",
@@ -118,29 +142,5 @@
     "desc": "Exclusive virgin child blonde (Virgin Slavic Blonde). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
     "url": "https://t.me/blondhunter/4728",
     "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2344%20%28Virgin%20Slavic%20Blonde%29.%20Is%20it%20available%3F"
-  },
-  {
-    "id": "4727",
-    "title": "Hair Cut #9",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4727.jpg",
-    "badge": "● Sold Out",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "Tone 9",
-    "desc": "Exclusive virgin child blonde (Tone 9). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
-    "url": "https://t.me/blondhunter/4727",
-    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20saw%20Hair%20Cut%20%239%20%28Tone%209%29%20is%20SOLD%20OUT.%20Can%20you%20show%20me%20similar%20available%20options%3F"
-  },
-  {
-    "id": "4726",
-    "title": "Hair Cut #57",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4726.jpg",
-    "badge": "● Sold Out",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "55 cm • 145 g • 168 000 ₽",
-    "desc": "Exclusive virgin child blonde (55 cm • 145 g • 168 000 ₽). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
-    "url": "https://t.me/blondhunter/4726",
-    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20saw%20Hair%20Cut%20%2357%20%2855%20cm%20%E2%80%A2%20145%20g%20%E2%80%A2%20168%20000%20%E2%82%BD%29%20is%20SOLD%20OUT.%20Can%20you%20show%20me%20similar%20available%20options%3F"
   }
 ]
