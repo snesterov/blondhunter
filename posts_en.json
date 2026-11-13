@@ -87,13 +87,13 @@
     "id": "4777",
     "title": "Hair Cut #16",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4777.jpg",
-    "badge": "● Fresh Arrival",
-    "badge_type": "fresh",
-    "is_sold": false,
+    "badge": "● Sold Out",
+    "badge_type": "sold",
+    "is_sold": true,
     "tag": "141 g • Tone 9",
     "desc": "Exclusive virgin child blonde (141 g • Tone 9). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
     "url": "https://t.me/blondhunter/4777",
-    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2316%20%28141%20g%20%E2%80%A2%20Tone%209%29.%20Is%20it%20available%3F"
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20saw%20Hair%20Cut%20%2316%20%28141%20g%20%E2%80%A2%20Tone%209%29%20is%20SOLD%20OUT.%20Can%20you%20show%20me%20similar%20available%20options%3F"
   },
   {
     "id": "4775",

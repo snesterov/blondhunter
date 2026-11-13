@@ -80,11 +80,11 @@
     "id": "4777",
     "title": "Срез #16",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4777.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
     "tag": "141 г • Тон 9",
-    "desc": "#16 ~9 54/141g",
+    "desc": "#16 ~9 54/141g Sold/продан💥💥💥",
     "url": "https://t.me/blondhunter/4777"
   },
   {
