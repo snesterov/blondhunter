@@ -1,16 +1,5 @@
 [
   {
-    "id": "4784",
-    "title": "Срез #62",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4784.jpg",
-    "badge": "● Горячее предложение 🔥",
-    "badge_type": "hot",
-    "is_sold": false,
-    "tag": "186 000 ₽",
-    "desc": "#62 10 66/184  186 т💥💥💥hot hot Очень красивый мягкий ,тонкий блонд🤩  пару прядей осветлены💥/a couple of strands may clarified Booked Germany",
-    "url": "https://t.me/blondhunter/4784"
-  },
-  {
     "id": "4782",
     "title": "Срез #4782",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4782.jpg",
@@ -130,5 +119,16 @@
     "tag": "48 см • 125 г • Тон 8/9 • 2130 €",
     "desc": "New❤️😍loveee #82 48 cm 125 g 2130 euro 8/9 Baby curl ,first haircut💝",
     "url": "https://t.me/blondhunter/4768"
+  },
+  {
+    "id": "4767",
+    "title": "Срез #27",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4767.jpg",
+    "badge": "● Кудри 🦁",
+    "badge_type": "curly",
+    "is_sold": false,
+    "tag": "56 см • 215 г • Тон 8/9",
+    "desc": "Rarest🩷🦁🥹😍new curly 8/9 #27,56cm/215 g",
+    "url": "https://t.me/blondhunter/4767"
   }
 ]
