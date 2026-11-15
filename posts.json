@@ -1,5 +1,38 @@
 [
   {
+    "id": "4792",
+    "title": "Срез #49",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4792.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "249 000 ₽ / 2726 €",
+    "desc": "#49 Supersilk💗 60/190 249 т /2726 euro💥",
+    "url": "https://t.me/blondhunter/4792"
+  },
+  {
+    "id": "4791",
+    "title": "Срез #7",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4791.jpg",
+    "badge": "● Горячее предложение 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "8 см • 9 г • Тон 8/9 • 141 000 ₽",
+    "desc": "#7 8/9 wavy🌼 59/143 141 т💥💥💥/1700 &#036; Hot price💥💥💥",
+    "url": "https://t.me/blondhunter/4791"
+  },
+  {
+    "id": "4790",
+    "title": "Срез #11",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4790.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "60 см • 175 г",
+    "desc": "🌶️🍓 #11,60 cm,175 g 😍🤩",
+    "url": "https://t.me/blondhunter/4790"
+  },
+  {
     "id": "4787",
     "title": "Срез #4787",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4787.jpg",
@@ -88,17 +121,6 @@
     "url": "https://t.me/blondhunter/4777"
   },
   {
-    "id": "4775",
-    "title": "Срез #11",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4775.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "60 см • 175 г",
-    "desc": "#11,60 cm,175 g 😍🤩",
-    "url": "https://t.me/blondhunter/4775"
-  },
-  {
     "id": "4773",
     "title": "Срез #101",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4773.jpg",
@@ -108,27 +130,5 @@
     "tag": "48 см • 100 г • 1510 €",
     "desc": "#101 48 cm ,100 g 1510 euro",
     "url": "https://t.me/blondhunter/4773"
-  },
-  {
-    "id": "4772",
-    "title": "Срез #61",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4772.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "65 см • 168 г",
-    "desc": "Albino💗💎 #61,65/168 g",
-    "url": "https://t.me/blondhunter/4772"
-  },
-  {
-    "id": "4771",
-    "title": "Срез #42",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4771.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "Детский блонд",
-    "desc": "#42 10💎 62/168",
-    "url": "https://t.me/blondhunter/4771"
   }
 ]
