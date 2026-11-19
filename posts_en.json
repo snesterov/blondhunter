@@ -1,5 +1,65 @@
 [
   {
+    "id": "4843",
+    "title": "Hair Cut #29",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4843.jpg",
+    "badge": "● Fresh Arrival",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Virgin Slavic Blonde",
+    "desc": "Exclusive virgin child blonde (Virgin Slavic Blonde). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
+    "url": "https://t.me/blondhunter/4843",
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2329%20%28Virgin%20Slavic%20Blonde%29.%20Is%20it%20available%3F"
+  },
+  {
+    "id": "4842",
+    "title": "Hair Cut #1",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4842.jpg",
+    "badge": "● Fresh Arrival",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "75 cm • 200 g",
+    "desc": "Exclusive virgin child blonde (75 cm • 200 g). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
+    "url": "https://t.me/blondhunter/4842",
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%231%20%2875%20cm%20%E2%80%A2%20200%20g%29.%20Is%20it%20available%3F"
+  },
+  {
+    "id": "4840",
+    "title": "Hair Cut #44",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4840.jpg",
+    "badge": "● Hot Deal 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "267 000 ₽",
+    "desc": "Exclusive virgin child blonde (267 000 ₽). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
+    "url": "https://t.me/blondhunter/4840",
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2344%20%28267%20000%20%E2%82%BD%29.%20Is%20it%20available%3F"
+  },
+  {
+    "id": "4839",
+    "title": "Hair Cut #55",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4839.jpg",
+    "badge": "● Hot Deal 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "Tone 8 • 177 000 ₽",
+    "desc": "Exclusive virgin child blonde (Tone 8 • 177 000 ₽). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
+    "url": "https://t.me/blondhunter/4839",
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2355%20%28Tone%208%20%E2%80%A2%20177%20000%20%E2%82%BD%29.%20Is%20it%20available%3F"
+  },
+  {
+    "id": "4837",
+    "title": "Hair Cut #16",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4837.jpg",
+    "badge": "● Fresh Arrival",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "8 cm • 141 g • Tone 8/9",
+    "desc": "Exclusive virgin child blonde (8 cm • 141 g • Tone 8/9). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
+    "url": "https://t.me/blondhunter/4837",
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2316%20%288%20cm%20%E2%80%A2%20141%20g%20%E2%80%A2%20Tone%208/9%29.%20Is%20it%20available%3F"
+  },
+  {
     "id": "4836",
     "title": "Hair Cut #81",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4836.jpg",
@@ -63,13 +123,13 @@
     "id": "4831",
     "title": "Hair Cut #4831",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4831.jpg",
-    "badge": "● Fresh Arrival",
-    "badge_type": "fresh",
-    "is_sold": false,
+    "badge": "● Sold Out",
+    "badge_type": "sold",
+    "is_sold": true,
     "tag": "Virgin Slavic Blonde",
     "desc": "Exclusive virgin child blonde (Virgin Slavic Blonde). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
     "url": "https://t.me/blondhunter/4831",
-    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%234831%20%28Virgin%20Slavic%20Blonde%29.%20Is%20it%20available%3F"
+    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20saw%20Hair%20Cut%20%234831%20%28Virgin%20Slavic%20Blonde%29%20is%20SOLD%20OUT.%20Can%20you%20show%20me%20similar%20available%20options%3F"
   },
   {
     "id": "4830",
@@ -82,65 +142,5 @@
     "desc": "Exclusive virgin child blonde (56 cm • 200 g • Tone 8/9). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
     "url": "https://t.me/blondhunter/4830",
     "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20saw%20Hair%20Cut%20%2327%20%2856%20cm%20%E2%80%A2%20200%20g%20%E2%80%A2%20Tone%208/9%29%20is%20SOLD%20OUT.%20Can%20you%20show%20me%20similar%20available%20options%3F"
-  },
-  {
-    "id": "4828",
-    "title": "Hair Cut #61",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4828.jpg",
-    "badge": "● Fresh Arrival",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "65 cm • 168 g",
-    "desc": "Exclusive virgin child blonde (65 cm • 168 g). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
-    "url": "https://t.me/blondhunter/4828",
-    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2361%20%2865%20cm%20%E2%80%A2%20168%20g%29.%20Is%20it%20available%3F"
-  },
-  {
-    "id": "4827",
-    "title": "Hair Cut #7",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4827.jpg",
-    "badge": "● Hot Deal 🔥",
-    "badge_type": "hot",
-    "is_sold": false,
-    "tag": "8 cm • 9 g • Tone 8/9 • 141 000 ₽",
-    "desc": "Exclusive virgin child blonde (8 cm • 9 g • Tone 8/9 • 141 000 ₽). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
-    "url": "https://t.me/blondhunter/4827",
-    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%237%20%288%20cm%20%E2%80%A2%209%20g%20%E2%80%A2%20Tone%208/9%20%E2%80%A2%20141%20000%20%E2%82%BD%29.%20Is%20it%20available%3F"
-  },
-  {
-    "id": "4826",
-    "title": "Hair Cut #86",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4826.jpg",
-    "badge": "● Fresh Arrival",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "50 cm • 160 g",
-    "desc": "Exclusive virgin child blonde (50 cm • 160 g). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
-    "url": "https://t.me/blondhunter/4826",
-    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2386%20%2850%20cm%20%E2%80%A2%20160%20g%29.%20Is%20it%20available%3F"
-  },
-  {
-    "id": "4824",
-    "title": "Hair Cut #87",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4824.jpg",
-    "badge": "● Fresh Arrival",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "48 cm • 161 g • €1950",
-    "desc": "Exclusive virgin child blonde (48 cm • 161 g • €1950). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
-    "url": "https://t.me/blondhunter/4824",
-    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2387%20%2848%20cm%20%E2%80%A2%20161%20g%20%E2%80%A2%20%E2%82%AC1950%29.%20Is%20it%20available%3F"
-  },
-  {
-    "id": "4823",
-    "title": "Hair Cut #82",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4823.jpg",
-    "badge": "● First Haircut 👶",
-    "badge_type": "first",
-    "is_sold": false,
-    "tag": "48 cm • 125 g • Tone 8/9",
-    "desc": "Exclusive virgin child blonde (48 cm • 125 g • Tone 8/9). 100% natural, ethically sourced Slavic hair. Worldwide express delivery.",
-    "url": "https://t.me/blondhunter/4823",
-    "wa_url": "https://wa.me/79266721978?text=Hello%20Olga%21%20I%20would%20like%20to%20order%20Hair%20Cut%20%2382%20%2848%20cm%20%E2%80%A2%20125%20g%20%E2%80%A2%20Tone%208/9%29.%20Is%20it%20available%3F"
   }
 ]

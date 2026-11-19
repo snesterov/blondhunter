@@ -1,5 +1,60 @@
 [
   {
+    "id": "4843",
+    "title": "Срез #29",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4843.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "#29😍🦁",
+    "url": "https://t.me/blondhunter/4843"
+  },
+  {
+    "id": "4842",
+    "title": "Срез #1",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4842.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "75 см • 200 г",
+    "desc": "#1🔆Woww💥💥💥 Wavy/волна натуральная #1,75 cm,200 g",
+    "url": "https://t.me/blondhunter/4842"
+  },
+  {
+    "id": "4840",
+    "title": "Срез #44",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4840.jpg",
+    "badge": "● Горячее предложение 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "267 000 ₽",
+    "desc": "#44😍 Deluxe💗💎 Brilliant baby shine💗 60/161 10💎 267 т💥💥🤲hot💥💥",
+    "url": "https://t.me/blondhunter/4840"
+  },
+  {
+    "id": "4839",
+    "title": "Срез #55",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4839.jpg",
+    "badge": "● Горячее предложение 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "Тон 8 • 177 000 ₽",
+    "desc": "#55 Русик /dark blond 7/8 80/205 ~8 Hot price💥💥💥 177 т",
+    "url": "https://t.me/blondhunter/4839"
+  },
+  {
+    "id": "4837",
+    "title": "Срез #16",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4837.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "8 см • 141 г • Тон 8/9",
+    "desc": "#16 8/9 ~9 54/141g",
+    "url": "https://t.me/blondhunter/4837"
+  },
+  {
     "id": "4836",
     "title": "Срез #81",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4836.jpg",
@@ -58,11 +113,11 @@
     "id": "4831",
     "title": "Срез #4831",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4831.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
     "tag": "Детский блонд",
-    "desc": "Afro❤️🐩",
+    "desc": "Afro❤️🐩 Sold💥",
     "url": "https://t.me/blondhunter/4831"
   },
   {
@@ -75,60 +130,5 @@
     "tag": "56 см • 200 г • Тон 8/9",
     "desc": "Rarest🩷🦁🥹😍new curly 8/9 #27,56cm/200g Sold💥",
     "url": "https://t.me/blondhunter/4830"
-  },
-  {
-    "id": "4828",
-    "title": "Срез #61",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4828.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "65 см • 168 г",
-    "desc": "Albino💗💎 #61,65/168 g",
-    "url": "https://t.me/blondhunter/4828"
-  },
-  {
-    "id": "4827",
-    "title": "Срез #7",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4827.jpg",
-    "badge": "● Горячее предложение 🔥",
-    "badge_type": "hot",
-    "is_sold": false,
-    "tag": "8 см • 9 г • Тон 8/9 • 141 000 ₽",
-    "desc": "#7 8/9 wavy🌼 59/143 141 т💥💥💥/1700 &#036; Hot price💥💥💥",
-    "url": "https://t.me/blondhunter/4827"
-  },
-  {
-    "id": "4826",
-    "title": "Срез #86",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4826.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "50 см • 160 г",
-    "desc": "#86 50/160 g",
-    "url": "https://t.me/blondhunter/4826"
-  },
-  {
-    "id": "4824",
-    "title": "Срез #87",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4824.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "48 см • 161 г • 1950 €",
-    "desc": "#87 48 cm 161 g 1950euro",
-    "url": "https://t.me/blondhunter/4824"
-  },
-  {
-    "id": "4823",
-    "title": "Срез #82",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4823.jpg",
-    "badge": "● Первый срез 👶",
-    "badge_type": "first",
-    "is_sold": false,
-    "tag": "48 см • 125 г • Тон 8/9",
-    "desc": "New❤️😍loveee #82 48 cm 125 g 8/9 Baby curl ,first haircut💝",
-    "url": "https://t.me/blondhunter/4823"
   }
 ]
