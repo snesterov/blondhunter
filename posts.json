@@ -1,13 +1,24 @@
 [
   {
+    "id": "4845",
+    "title": "Срез #17",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4845.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "Детский блонд",
+    "desc": "#17 💎🤲 60/165",
+    "url": "https://t.me/blondhunter/4845"
+  },
+  {
     "id": "4843",
     "title": "Срез #29",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4843.jpg",
     "badge": "● Свежий лот",
     "badge_type": "fresh",
     "is_sold": false,
-    "tag": "Детский блонд",
-    "desc": "#29😍🦁",
+    "tag": "54 см • Тон 8/9",
+    "desc": "😍🦁 #29❤️ 8/9 ~9 54 cm,160",
     "url": "https://t.me/blondhunter/4843"
   },
   {
@@ -119,16 +130,5 @@
     "tag": "Детский блонд",
     "desc": "Afro❤️🐩 Sold💥",
     "url": "https://t.me/blondhunter/4831"
-  },
-  {
-    "id": "4830",
-    "title": "Срез #27",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4830.jpg",
-    "badge": "● Продан / Sold",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "56 см • 200 г • Тон 8/9",
-    "desc": "Rarest🩷🦁🥹😍new curly 8/9 #27,56cm/200g Sold💥",
-    "url": "https://t.me/blondhunter/4830"
   }
 ]
