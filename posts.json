@@ -47,11 +47,11 @@
     "id": "4842",
     "title": "Срез #1",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4842.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
     "tag": "75 см • 200 г",
-    "desc": "#1🔆Woww💥💥💥 Wavy/волна натуральная #1,75 cm,200 g",
+    "desc": "#1🔆Woww💥💥💥 Wavy/волна натуральная #1,75 cm,200 g Продан/sold💥",
     "url": "https://t.me/blondhunter/4842"
   },
   {
