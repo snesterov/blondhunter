@@ -1,5 +1,60 @@
 [
   {
+    "id": "4865",
+    "title": "Срез #81",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4865.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "60 см • 160 г • Тон 9",
+    "desc": "#81 Neww💗 60 cm/160 g Cold 9🙂",
+    "url": "https://t.me/blondhunter/4865"
+  },
+  {
+    "id": "4864",
+    "title": "Срез #101",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4864.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "48 см • 96 г",
+    "desc": "#101 48 cm ,96 g 1140&#036;",
+    "url": "https://t.me/blondhunter/4864"
+  },
+  {
+    "id": "4862",
+    "title": "Срез #68",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4862.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "143 г",
+    "desc": "#68 10💎 54/143 g 2310 &#036;",
+    "url": "https://t.me/blondhunter/4862"
+  },
+  {
+    "id": "4861",
+    "title": "Срез #17",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4861.jpg",
+    "badge": "● Свежий лот",
+    "badge_type": "fresh",
+    "is_sold": false,
+    "tag": "60 см • 165 г • Тон 9",
+    "desc": "#17 💎🤲 9/10 60 см/165 g 2600&#036;",
+    "url": "https://t.me/blondhunter/4861"
+  },
+  {
+    "id": "4857",
+    "title": "Срез #33",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4857.jpg",
+    "badge": "● В наличии",
+    "badge_type": "stock",
+    "is_sold": false,
+    "tag": "60 см • 210 г",
+    "desc": "любимая рубрика до и после🧝‍♀️в наращивании использовано 210 гр волос ,смешано 2 хвостика 55 и 60 см My favorite segment: before and after&#",
+    "url": "https://t.me/blondhunter/4857"
+  },
+  {
     "id": "4856",
     "title": "Срез #77",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4856.jpg",
@@ -44,17 +99,6 @@
     "url": "https://t.me/blondhunter/4853"
   },
   {
-    "id": "4851",
-    "title": "Срез #33",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4851.jpg",
-    "badge": "● В наличии",
-    "badge_type": "stock",
-    "is_sold": false,
-    "tag": "Детский блонд",
-    "desc": "Подготовка к зиме официально открыта🌼💎 За зимней хвостиком к blondhunter ,пока еще есть в наличии эксклюзивчики🧁❤️ Preparations for winter h",
-    "url": "https://t.me/blondhunter/4851"
-  },
-  {
     "id": "4846",
     "title": "Срез #16",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4846.jpg",
@@ -64,17 +108,6 @@
     "tag": "8 см • 141 г • Тон 8/9 • 195 000 ₽",
     "desc": "#16 8/9 ~9 54/141g Hot💥💥💥195 т Нежнейший блонд ,1я стрижка❤️",
     "url": "https://t.me/blondhunter/4846"
-  },
-  {
-    "id": "4845",
-    "title": "Срез #17",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4845.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "Детский блонд",
-    "desc": "#17 💎🤲 60/165",
-    "url": "https://t.me/blondhunter/4845"
   },
   {
     "id": "4843",
@@ -97,38 +130,5 @@
     "tag": "75 см • 200 г",
     "desc": "#1🔆Woww💥💥💥 Wavy/волна натуральная #1,75 cm,200 g Продан/sold💥",
     "url": "https://t.me/blondhunter/4842"
-  },
-  {
-    "id": "4839",
-    "title": "Срез #55",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4839.jpg",
-    "badge": "● Горячее предложение 🔥",
-    "badge_type": "hot",
-    "is_sold": false,
-    "tag": "Тон 8 • 177 000 ₽",
-    "desc": "#55 Русик /dark blond 7/8 80/205 ~8 Hot price💥💥💥 177 т",
-    "url": "https://t.me/blondhunter/4839"
-  },
-  {
-    "id": "4836",
-    "title": "Срез #81",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4836.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "60 см • 160 г • Тон 9",
-    "desc": "#81 Neww💗 60 cm/160 g Cold 9🙂",
-    "url": "https://t.me/blondhunter/4836"
-  },
-  {
-    "id": "4835",
-    "title": "Срез #12",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4835.jpg",
-    "badge": "● Кудри 🦁",
-    "badge_type": "curly",
-    "is_sold": false,
-    "tag": "50 см • 136 г • 123 000 ₽ / 1320 €",
-    "desc": "Silk💝🤩oil silk curls/шелк-масло малышковый кудряш,#12,50 cm,136 g (123 т) 1320 euro",
-    "url": "https://t.me/blondhunter/4835"
   }
 ]
