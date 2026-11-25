@@ -1,5 +1,16 @@
 [
   {
+    "id": "4868",
+    "title": "Срез #74",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4868.jpg",
+    "badge": "● Кудри 🦁",
+    "badge_type": "curly",
+    "is_sold": false,
+    "tag": "188 г",
+    "desc": "In love🩷 #74 Первая стрижка🫶💗 Baby curly🥰 70/188g",
+    "url": "https://t.me/blondhunter/4868"
+  },
+  {
     "id": "4866",
     "title": "Срез #55",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4866.jpg",
@@ -119,16 +130,5 @@
     "tag": "8 см • 141 г • Тон 8/9 • 195 000 ₽",
     "desc": "#16 8/9 ~9 54/141g Hot💥💥💥195 т/2310 &#036; Нежнейший блонд ,1я стрижка❤️",
     "url": "https://t.me/blondhunter/4846"
-  },
-  {
-    "id": "4843",
-    "title": "Срез #29",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4843.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
-    "tag": "54 см • Тон 8/9",
-    "desc": "😍🦁 #29❤️ 8/9 ~9 54 cm,160",
-    "url": "https://t.me/blondhunter/4843"
   }
 ]
