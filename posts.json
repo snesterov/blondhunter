@@ -1,5 +1,16 @@
 [
   {
+    "id": "4866",
+    "title": "Срез #55",
+    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4866.jpg",
+    "badge": "● Горячее предложение 🔥",
+    "badge_type": "hot",
+    "is_sold": false,
+    "tag": "Тон 8 • 177 000 ₽",
+    "desc": "#55 Русик /dark blond 7/8 80/205 Hot price💥💥💥 177 т💥",
+    "url": "https://t.me/blondhunter/4866"
+  },
+  {
     "id": "4865",
     "title": "Срез #81",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4865.jpg",
@@ -14,11 +25,11 @@
     "id": "4864",
     "title": "Срез #101",
     "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4864.jpg",
-    "badge": "● Свежий лот",
-    "badge_type": "fresh",
-    "is_sold": false,
+    "badge": "● Продан / Sold",
+    "badge_type": "sold",
+    "is_sold": true,
     "tag": "48 см • 96 г",
-    "desc": "#101 48 cm ,96 g 1140&#036;",
+    "desc": "#101 48 cm ,96 g Sold/продан💥",
     "url": "https://t.me/blondhunter/4864"
   },
   {
@@ -29,7 +40,7 @@
     "badge_type": "fresh",
     "is_sold": false,
     "tag": "143 г",
-    "desc": "#68 10💎 54/143 g 2310 &#036;",
+    "desc": "#68 10💎 54/143 g 2310 &#036; 190.000 руб",
     "url": "https://t.me/blondhunter/4862"
   },
   {
@@ -106,7 +117,7 @@
     "badge_type": "hot",
     "is_sold": false,
     "tag": "8 см • 141 г • Тон 8/9 • 195 000 ₽",
-    "desc": "#16 8/9 ~9 54/141g Hot💥💥💥195 т Нежнейший блонд ,1я стрижка❤️",
+    "desc": "#16 8/9 ~9 54/141g Hot💥💥💥195 т/2310 &#036; Нежнейший блонд ,1я стрижка❤️",
     "url": "https://t.me/blondhunter/4846"
   },
   {
@@ -119,16 +130,5 @@
     "tag": "54 см • Тон 8/9",
     "desc": "😍🦁 #29❤️ 8/9 ~9 54 cm,160",
     "url": "https://t.me/blondhunter/4843"
-  },
-  {
-    "id": "4842",
-    "title": "Срез #1",
-    "image": "https://raw.githubusercontent.com/snesterov/blondhunter/main/images/post_4842.jpg",
-    "badge": "● Продан / Sold",
-    "badge_type": "sold",
-    "is_sold": true,
-    "tag": "75 см • 200 г",
-    "desc": "#1🔆Woww💥💥💥 Wavy/волна натуральная #1,75 cm,200 g Продан/sold💥",
-    "url": "https://t.me/blondhunter/4842"
   }
 ]
