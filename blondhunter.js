@@ -1541,6 +1541,40 @@ html, body {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  
+  // ==========================================
+  // BLONDHUNTER BULLETPROOF METRIKA TRACKING
+  // ==========================================
+  document.addEventListener('click', function(e) {
+    var target = e.target && e.target.closest ? e.target.closest('a, button, .bh-card-btn-tg, .bh-btn-max-act, .bh-btn-request-analog') : null;
+    if (!target) return;
+    var href = (target.getAttribute('href') || target.getAttribute('data-href') || '').toLowerCase();
+    
+    // 1. Telegram clicks
+    if (href.indexOf('t.me') !== -1 || target.classList.contains('bh-card-btn-tg') || target.classList.contains('bh-footer-tg')) {
+      if (typeof ym !== 'undefined') {
+        try {
+          ym(98769271, 'reachGoal', '435228953'); // Все переходы в телегу
+          if (href.indexOf('t.me/blondhunter') !== -1) {
+            ym(98769271, 'reachGoal', '349621363'); // Переход в канал телеграм
+          }
+          ym(98769271, 'extLink', href || 'https://t.me/blondhunter');
+        } catch (err) { console.error('YM TG error:', err); }
+      }
+    }
+
+    // 2. MAX clicks
+    if (href.indexOf('max.ru') !== -1 || target.classList.contains('bh-btn-max-act') || target.classList.contains('bh-btn-request-analog')) {
+      if (typeof ym !== 'undefined') {
+        try {
+          ym(98769271, 'reachGoal', '547886889'); // MAX
+          ym(98769271, 'reachGoal', '349621206'); // Автоцель: переход в мессенджер
+          ym(98769271, 'extLink', href || 'https://max.ru/u/f9LHodD0cOKu_NdSA68R7JlIWv1dBiiK_yoA5ITTmEVHTmQdiijwgmxBvBc');
+        } catch (err) { console.error('YM MAX error:', err); }
+      }
+    }
+  }, true);
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', mount);
   } else {
